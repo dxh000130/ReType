@@ -14,6 +14,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using ReType.Data;
+using ReType.Handler;
+using ReType.data;
 
 namespace ReType
 {
@@ -29,18 +31,18 @@ namespace ReType
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddAuthentication("MyAuthentication").
-            //AddScheme<AuthenticationSchemeOptions, MyAuthHandler>
-            //("MyAuthentication", null);
+            services.AddAuthentication("MyAuthentication").
+            AddScheme<AuthenticationSchemeOptions, MyAuthHandler>
+            ("MyAuthentication", null);
             services.AddDbContext<WebAPIDBContext>(options => options.UseSqlite(Configuration.GetConnectionString("WebAPIConnection")));
-            //services.AddControllers();
-            //services.AddScoped<IWebAPIRepo, DBWebAPIRepo>();
+            services.AddControllers();
+            services.AddScoped<IWebAPIRepo, DBWebAPIRepo>();
             //services.AddMvc(options => options.OutputFormatters.Add(new VCardOutputFormatter()));
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("UserOnly", policy => policy.RequireClaim("userName"));
-            //}
-        //);
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("UserOnly", policy => policy.RequireClaim("userName"));
+            }
+        );
 
             //services.AddSwaggerGen(c =>
             //{
