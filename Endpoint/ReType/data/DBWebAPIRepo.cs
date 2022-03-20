@@ -15,17 +15,17 @@ namespace ReType.data
     {
         private readonly WebAPIDBContext _dbContext;
 
-        public DBWebAPIRepo(WebAPIDBContext dbContext)
+        public DBWebAPIRepo(WebAPIDBContext dbContext) //Connect to database
         {
             _dbContext = dbContext;
         }
         public void SaveChanges()
         {
-            _dbContext.SaveChanges();
+            _dbContext.SaveChanges(); //Sava database change
         }
         public bool ValidLogin(string userName, string password)
         {
-            User c = _dbContext.User.FirstOrDefault(e => e.UserName == userName && e.Password == password);
+            User c = _dbContext.User.FirstOrDefault(e => e.UserName == userName && e.Password == password); //Vaild username and password from database and user input
             if (c == null)
                 return false;
             else
@@ -33,32 +33,32 @@ namespace ReType.data
         }
         public void Register(User user)
         {
-            EntityEntry<User> e = _dbContext.User.Add(user);
-            _dbContext.SaveChanges();
+            EntityEntry<User> e = _dbContext.User.Add(user); // Add new user to database
+            _dbContext.SaveChanges(); //Sava database change
         }
         public User Getuser(string Username)
         {
-            User user = _dbContext.User.FirstOrDefault(e => e.UserName == Username);
+            User user = _dbContext.User.FirstOrDefault(e => e.UserName == Username); //Find username exist in database or not
             return user;
         }
-        public bool Send(string to, string subject, string body)
+        public bool Send(string to, string subject, string body) //Send email to user
         {
-            MailMessage message = new MailMessage();
+            MailMessage email = new MailMessage(); // Initial
 
-            message.From = new MailAddress("xdua752@gmail.com");
-            message.To.Add(new MailAddress(to));
+            email.From = new MailAddress("xdua752@gmail.com"); // Send from my email
+            email.To.Add(new MailAddress(to)); // Send to user
 
-            message.SubjectEncoding = Encoding.GetEncoding("UTF-8");
-            message.Subject = subject;
+            email.SubjectEncoding = Encoding.GetEncoding("UTF-8"); //Title Encoding
+            email.Subject = subject; //Subject
 
-            message.BodyEncoding = Encoding.GetEncoding("UTF-8");
-            message.Body = body;
-            message.IsBodyHtml = true;
+            email.BodyEncoding = Encoding.GetEncoding("UTF-8"); //Email Body endcoding
+            email.Body = body; //Email body
+            email.IsBodyHtml = true; //Body style
 
-            SmtpClient smtpclient = new SmtpClient("smtp.gmail.com", 587);
-            smtpclient.Credentials = new System.Net.NetworkCredential("xdua752@gmail.com", "zvkfwrpekddzeedf");
-            smtpclient.EnableSsl = true;
-            smtpclient.Send(message);
+            SmtpClient smtp_Gmail = new SmtpClient("smtp.gmail.com", 587); // Email server (Use GOOGLE Gmail as server)
+            smtp_Gmail.Credentials = new System.Net.NetworkCredential("xdua752@gmail.com", "zvkfwrpekddzeedf"); // Login to Gmail
+            smtp_Gmail.EnableSsl = true; // Securte option (Gmail require)
+            smtp_Gmail.Send(email); //Send email
 
             return true;
         }

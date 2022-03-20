@@ -8,10 +8,10 @@ namespace ReType.data
 {
     public interface IWebAPIRepo
     {
-        void SaveChanges();
-        bool ValidLogin(string userName, string password);
-        void Register(User user);
-        User Getuser(string Username);
-        bool Send(string to, string subject, string body);
+        void SaveChanges(); //Save change to database
+        bool ValidLogin(string userName, string password); //Vaild username and password from database and user input
+        void Register(User user);// Add new user to database
+        User Getuser(string Username);//Find username exist in database or not
+        bool Send(string to, string subject, string body);//Send email to user
     }
 }

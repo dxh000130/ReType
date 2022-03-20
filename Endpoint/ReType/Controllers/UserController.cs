@@ -28,27 +28,29 @@ namespace ReType.Controllers
         }
         // GET /api/GetVersion
         [HttpGet("GetVersion")]
-        public string GetVersion()
+        public string GetVersion() //API version
         {
             return "V1";
         }
+        // POST /api/Register
         [HttpPost("Register")]
-        public ActionResult Register(Register user)
+        public ActionResult Register(Register user) //Register function
         {
-            User user1 = _repository.Getuser(user.UserName);
+            User user1 = _repository.Getuser(user.UserName); //Username alread exist or not
             if (user1 == null)
             {
-                User c = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0 };
+                User c = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0 }; //From user input get data and store in database
                 _repository.Register(c);
                 return Ok("User successfully registered.");
             }
             else { return Ok("Username not available"); }
 
         }
+        // GET /api/Login
         [Authorize]
-        [Authorize(Policy = "UserOnly")]
+        [Authorize(Policy = "UserOnly")] //Vaild user login
         [HttpGet("Login")]
-        public string Login()
+        public string Login() //if Vaild success, give back to front-end. Otherwise return error
         {
             return "Yes";
         }
