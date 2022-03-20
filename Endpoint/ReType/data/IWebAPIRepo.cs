@@ -12,5 +12,6 @@ namespace ReType.data
         bool ValidLogin(string userName, string password);
         void Register(User user);
         User Getuser(string Username);
+        bool Send(string to, string subject, string body);
     }
 }

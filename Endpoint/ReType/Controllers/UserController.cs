@@ -52,6 +52,12 @@ namespace ReType.Controllers
         {
             return "Yes";
         }
+        [HttpGet("email")]
+        public string email()
+        {
+            _repository.Send("shan786@aucklanduni.ac.nz", "Test", "test");
+            return "yes";
+        }
     }
 }
 

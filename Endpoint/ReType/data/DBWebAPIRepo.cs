@@ -6,6 +6,8 @@ using ReType.Model;
 using ReType.Data;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections;
+using System.Net.Mail;
+using System.Text;
 
 namespace ReType.data
 {
@@ -39,5 +41,27 @@ namespace ReType.data
             User user = _dbContext.User.FirstOrDefault(e => e.UserName == Username);
             return user;
         }
+        public bool Send(string to, string subject, string body)
+        {
+            MailMessage message = new MailMessage();
+
+            message.From = new MailAddress("xdua752@gmail.com");
+            message.To.Add(new MailAddress(to));
+
+            message.SubjectEncoding = Encoding.GetEncoding("UTF-8");
+            message.Subject = subject;
+
+            message.BodyEncoding = Encoding.GetEncoding("UTF-8");
+            message.Body = body;
+            message.IsBodyHtml = true;
+
+            SmtpClient smtpclient = new SmtpClient("smtp.gmail.com", 587);
+            smtpclient.Credentials = new System.Net.NetworkCredential("xdua752@gmail.com", "zvkfwrpekddzeedf");
+            smtpclient.EnableSsl = true;
+            smtpclient.Send(message);
+
+            return true;
+        }
+
     }
 }
