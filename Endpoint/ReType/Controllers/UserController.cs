@@ -57,6 +57,11 @@ namespace ReType.Controllers
         [HttpGet("Registrationverificationcode/{email}")]
         public string Registrationverificationcode(string email)
         {
+            Verificationcode c1 = _repository.findemail(email);
+            if (c1 != null)
+            {
+                _repository.Deleteverificationcode(c1);
+            }
             Random random = new Random();
             int single;
             string code = string.Empty;
@@ -74,6 +79,16 @@ namespace ReType.Controllers
         [HttpGet("Resetpasswordcode/{email}")]
         public string Resetpasswordcode(string email)
         {
+            Verificationcode c1 = _repository.findemail(email);
+            if (c1 != null)
+            {
+                _repository.Deleteverificationcode(c1);
+            }
+            User user1 = _repository.Getuserbyemail(email);
+            if (user1 == null)
+            {
+                return "The user is not found in the database";
+            }
             Random random = new Random();
             int single;
             string code = string.Empty;

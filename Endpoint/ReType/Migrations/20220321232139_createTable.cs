@@ -34,9 +34,9 @@ namespace ReType.Migrations
                     Password = table.Column<string>(type: "TEXT", nullable: false),
                     Score = table.Column<int>(type: "INTEGER", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", nullable: false),
-                    Dataofbirth = table.Column<string>(type: "TEXT", nullable: false),
-                    Gerder = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Dataofbirth = table.Column<string>(type: "TEXT", nullable: true),
+                    Gerder = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

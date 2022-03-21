@@ -77,5 +77,15 @@ namespace ReType.data
             _dbContext.Verificationcode.Remove(code);
             _dbContext.SaveChanges();
         }
+        public Verificationcode findemail(string email)
+        {
+            Verificationcode fullcode = _dbContext.Verificationcode.FirstOrDefault(e => e.Email == email); //Find verification code exist in database or not
+            return fullcode;
+        }
+        public User Getuserbyemail(string Email)
+        {
+            User user = _dbContext.User.FirstOrDefault(e => e.Email == Email); //Find username exist in database or not
+            return user;
+        }
     }
 }

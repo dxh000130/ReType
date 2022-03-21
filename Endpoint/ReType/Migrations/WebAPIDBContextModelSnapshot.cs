@@ -54,7 +54,6 @@ namespace ReType.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Dataofbirth")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -62,11 +61,9 @@ namespace ReType.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Gerder")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
