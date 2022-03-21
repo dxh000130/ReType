@@ -16,5 +16,8 @@ namespace ReType.Model
         [Required]
         public int Score { get; set; } //User score
         public string Email { get; set; } //User Email
+        public string Name { get; set; } //User Name
+        public string Dataofbirth { get; set; } //User Dataofbirth
+        public string Gerder { get; set; }// User Gender
     }
 }
