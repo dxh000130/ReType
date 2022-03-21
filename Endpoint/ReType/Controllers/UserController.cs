@@ -95,7 +95,7 @@ namespace ReType.Controllers
             if (c == null)
             {
                 return "verification code Wrong";
-            } else if (c.Date.AddMinutes(30) >= DateTime.Now)
+            } else if (c.Date.AddMinutes(30) <= DateTime.Now)
             {
                 _repository.Deleteverificationcode(c);
                 return "verification code timeout";
