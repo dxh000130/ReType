@@ -62,6 +62,20 @@ namespace ReType.data
 
             return true;
         }
-
+        public void Storeverificationcode(Verificationcode code)
+        {
+            EntityEntry<Verificationcode> e = _dbContext.Verificationcode.Add(code);
+            _dbContext.SaveChanges();
+        }
+        public Verificationcode Getverificationcode(string email, string code)
+        {
+            Verificationcode fullcode = _dbContext.Verificationcode.FirstOrDefault(e => e.Email == email && e.code == code); //Find verification code exist in database or not
+            return fullcode;
+        }
+        public void Deleteverificationcode(Verificationcode code)
+        {
+            _dbContext.Verificationcode.Remove(code);
+            _dbContext.SaveChanges();
+        }
     }
 }

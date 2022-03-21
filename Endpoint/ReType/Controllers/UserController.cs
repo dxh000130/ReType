@@ -12,7 +12,7 @@ using System.Drawing;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using ReType.data;
-using Assignment2.Dtos;
+using ReType.Dtos;
 
 namespace ReType.Controllers
 {
@@ -54,11 +54,56 @@ namespace ReType.Controllers
         {
             return "Yes";
         }
-        [HttpGet("email")]
-        public string email()
+        [HttpGet("Registrationverificationcode/{email}")]
+        public string Registrationverificationcode(string email)
         {
-            _repository.Send("shan786@aucklanduni.ac.nz", "Test", "test");
+            Random random = new Random();
+            int single;
+            string code = string.Empty;
+            for (int p = 0; p < 6; p++)
+            {
+                single = Convert.ToInt32(random.NextDouble() * 10);
+                code += single;
+            }
+            string content = "Registration verification code：" + code;
+            _repository.Send(email, "【Retype】Registration verification code", content);//收件人邮箱，邮箱标题，邮箱内容
+            Verificationcode c = new Verificationcode { Email = email, code = code, Date = DateTime.Now };
+            _repository.Storeverificationcode(c);
             return "yes";
+        }
+        [HttpGet("Resetpasswordcode/{email}")]
+        public string Resetpasswordcode(string email)
+        {
+            Random random = new Random();
+            int single;
+            string code = string.Empty;
+            for (int p = 0; p < 6; p++)
+            {
+                single = Convert.ToInt32(random.NextDouble() * 10);
+                code += single;
+            }
+            string content = "Reset password verification code：" + code;
+            _repository.Send(email, "【Retype】Reset password verification code", content);//收件人邮箱，邮箱标题，邮箱内容
+            Verificationcode c = new Verificationcode { Email = email, code = code, Date = DateTime.Now };
+            _repository.Storeverificationcode(c);
+            return "yes";
+        }
+        [HttpPost("verifycode")]
+        public string verifycode(Verifycode code)
+        {
+            Verificationcode c = _repository.Getverificationcode(code.Email, code.Code);
+            if (c == null)
+            {
+                return "verification code Wrong";
+            } else if (c.Date.AddMinutes(30) >= DateTime.Now)
+            {
+                _repository.Deleteverificationcode(c);
+                return "verification code timeout";
+            }
+            else {
+                _repository.Deleteverificationcode(c);
+                return "Correct";
+                    }
         }
     }
 }

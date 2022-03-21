@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -41,6 +42,19 @@ namespace ReType.Migrations
                 {
                     table.PrimaryKey("PK_User", x => x.UserName);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Verificationcode",
+                columns: table => new
+                {
+                    Email = table.Column<string>(type: "TEXT", nullable: false),
+                    code = table.Column<string>(type: "TEXT", nullable: false),
+                    Date = table.Column<DateTime>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Verificationcode", x => x.Email);
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -50,6 +64,9 @@ namespace ReType.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Verificationcode");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace ReType.Data
 
         public DbSet<User> User { get; set; }
 
+        public DbSet<Verificationcode> Verificationcode { get; set; }
 
 
 

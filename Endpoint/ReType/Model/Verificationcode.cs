@@ -12,7 +12,7 @@ namespace ReType.Model
         [Key]
         public string Email { get; set; } //Username
         [Required]
-        public int code { get; set; } //Password
+        public string code { get; set; } //Password
         [Required]
         public DateTime Date { get; set; } //User score
     }
