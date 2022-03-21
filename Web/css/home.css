@@ -1,67 +1,133 @@
+/*下边四个可点击按钮的图案设置*/
 html,body,#home_page{
 	width:100%;
 	height: 250px;
 	position: fixed;
-	bottom: 10px;
+	bottom: 40px;
+}
+/*button中字体风格和颜色的设置*/
+.homepage_button_typeface{
+	font-size: 2vw;
+	word-break: break-all;
+	color: oldlace;
+	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
 
-#user{
-	width: 90%;
-	height: 90%;
-	margin: 5%;
-	background: burlywood;
-	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
-
-
-	/*float: left;*/
-	/*margin-right: -0.5vw;*/
-	/*margin-left: -2vw;*/
-	/*border-top: 20px solid;*/
-	/*border-top-color: black;*/
-}
-#user1{
+/*personal details所有设置*/
+#user_container{
 	width: 25%;
 	height: 100%;
-	background: burlywood;
 	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
 	float: left;
 	margin-right: -0.5vw;
 	margin-left: -2vw;
 	background: black;
 }
+#user_front,#user_back{
+	width: 90%;
+	height: 90%;
+	margin: 5%;
+	background: burlywood;
+	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
+}
+#user_typeface1,#user_typeface3{
+	padding-left: 28%;
+	padding-right: 20%;
+	padding-top: 20%;
+	margin-bottom: -20px;
+	text-align: left;
+	/*clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);*/
+}
+#user_typeface2{
+	padding-left: 28%;
+	padding-right: 20%;
+	text-align: left;
+}
+/*personal details所有设置完成*/
 
-#leaderboard{
+/*leaderboard所有设置*/
+#leaderboard_container{
 	width: 25%;
 	height: 100%;
-	background: burlywood;
+	background: black;
 	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
 	float: left;
 	margin-right: -1.5vw;
 	margin-left: -6vw;
 }
-#play{
+#leaderboard_front{
+	width: 90%;
+	height: 90%;
+	margin: 7%;
+	background: burlywood;
+	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
+}
+#leaderboard_typeface1,#leaderboard_typeface2{
+	padding-left: 33%;
+	padding-right: 12%;
+	padding-top: 30%;
+	text-align: center;
+}
+/*leaderboard所有设置完成*/
+#play_container{
 	width: 30%;
 	height: 100%;
-	background: burlywood;
+	background: black;
 	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
 	float: left;
 	margin-right: -7vw;
 	margin-left: -1vw;
 }
-#introduction{
+#play_front{
+	width: 90%;
+	height: 90%;
+	margin: 5%;
+	background: burlywood;
+	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
+}
+#introduction_container{
 	width: 30%;
 	height: 100%;
-	background: burlywood;
+	background: black;
 	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
 	float: right;
 	margin-right: 2.5vw;
 	margin-left: -5vw;
 }
-
-#leaderboard_title{
-	padding-top: 40%;
-	padding-left: 5%;
-	padding-right: 5%;
-	font-size: 1vw;
+#introduction_front{
+	width: 90%;
+	height: 90%;
+	margin: 5%;
+	background: burlywood;
+	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
 
 }
+
+
+/*3D反转动画的实现开始*/
+
+
+.container{
+	position: relative;
+	perspective: 1000px;
+}
+.front,.back{
+	position: absolute;
+	backface-visibility: hidden;
+	transition: 1s;
+	transform-style: preserve-3d;
+}
+.back{
+	transform-style: preserve-3d;
+	transform: perspective(1000px) rotateY(180deg);
+}
+.container:hover .front{
+	transform-style: preserve-3d;
+	transform: perspective(1000px) rotateY(180deg);
+}
+.container:hover .back{
+	transform-style: preserve-3d;
+	transform: perspective(1000px) rotateY(360deg);
+}
+
+/*3D反转动画的实现结束*/

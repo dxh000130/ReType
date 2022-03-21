@@ -4,27 +4,52 @@
 	<meta charset="UTF-8">
 	<title>Title</title>
 	<link rel="stylesheet" href="css/home.css">
-	<script src="css/home.css"></script>
+	<script src="js/home.js"></script>
 </head>
 <body >
+
 <div id="home_page" style="background: white" >
-	<div id="user1">
-		<a href="#">
-			<div id="user">
+	<!--personal detail button的设置开始-->
+	<a href="https://www.cnblogs.com/pineconeguo/p/9758422.html">
+		<div id="user_container" class="container">
+			<!--翻转以前显示的东西-->
+			<div id="user_front" class="front">
+				<p id="user_typeface1" class="homepage_button_typeface">Personal<br/></p>
+				<p id="user_typeface2" class="homepage_button_typeface">Details<br/></p>
 			</div>
-		</a>
+			<!--翻转以后显示的东西-->
+			<div id="user_back" class="back">
+				<p id="user_typeface3" class="homepage_button_typeface">Click me!<br/></p>
+			</div>
+		</div>
+	</a>
+	<!--personal detail button的设置结束-->
 
-	</div>
+	<!--leaderboard button设置的开始-->
+	<a href="#">
+		<div id="leaderboard_container" class="container">
+			<div id="leaderboard_front" class="front">
+				<p id="leaderboard_typeface1" class="homepage_button_typeface">Leaderboard<br/></p>
+			</div>
+			<div id="leaderboard_back" class="back">
+				<p id="leaderboard_typeface2" class="homepage_button_typeface">Click me!</p>
+			</div>
+		</div>
+	</a>
+	<!--leaderboard button设置的结束-->
 
-	<div id="leaderboard">
-		<p id="leaderboard_title">Ranking</p>
-	</div>
-
-	<div id="play">
-	</div>
-
-	<div id="introduction">
-	</div>
+	<a href="#">
+		<div id="play_container">
+			<div id="play_front">
+			</div>
+		</div>
+	</a>
+	<a>
+		<div id="introduction_container">
+			<div id="introduction_front">
+			</div>
+		</div>
+	</a>
 </div>
 
 </div>
