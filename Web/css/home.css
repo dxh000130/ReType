@@ -8,7 +8,7 @@ html,body,#home_page{
 /*button中字体风格和颜色的设置*/
 .homepage_button_typeface{
 	font-size: 2vw;
-	word-break: break-all;
+	word-break: break-word;
 	color: oldlace;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
@@ -30,7 +30,7 @@ html,body,#home_page{
 	background: burlywood;
 	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
 }
-#user_typeface1,#user_typeface3{
+#user_typeface1{
 	padding-left: 28%;
 	padding-right: 20%;
 	padding-top: 20%;
@@ -42,6 +42,14 @@ html,body,#home_page{
 	padding-left: 28%;
 	padding-right: 20%;
 	text-align: left;
+}
+#user_typeface3{
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-top: 15%;
+	margin-bottom: -20px;
+	text-align: left;
+	/*clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);*/
 }
 /*personal details所有设置完成*/
 
@@ -55,21 +63,31 @@ html,body,#home_page{
 	margin-right: -1.5vw;
 	margin-left: -6vw;
 }
-#leaderboard_front{
+#leaderboard_front,#leaderboard_back{
 	width: 90%;
 	height: 90%;
 	margin: 7%;
 	background: burlywood;
 	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
 }
-#leaderboard_typeface1,#leaderboard_typeface2{
+#leaderboard_typeface1{
 	padding-left: 33%;
 	padding-right: 12%;
 	padding-top: 30%;
+	text-align: left;
+}
+/*背面*/
+#leaderboard_typeface2{
+	padding-left: 33%;
+	padding-right: 12%;
+	padding-top: 15%;
 	text-align: center;
+
 }
 /*leaderboard所有设置完成*/
-#play_container{
+
+/*introduction 所有设置开始*/
+#introduction_container{
 	width: 30%;
 	height: 100%;
 	background: black;
@@ -78,14 +96,29 @@ html,body,#home_page{
 	margin-right: -7vw;
 	margin-left: -1vw;
 }
-#play_front{
+#introduction_front,#introduction_back{
 	width: 90%;
 	height: 90%;
 	margin: 5%;
 	background: burlywood;
 	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
 }
-#introduction_container{
+#introduction_typeface1{
+	padding-left: 27%;
+	padding-right: 12%;
+	padding-top: 15%;
+	text-align: left;
+}
+#introduction_typeface2{
+	padding-left: 27%;
+	padding-right: 12%;
+	padding-top: 15%;
+	text-align: left;
+}
+/*introduction 所有设置结束*/
+
+/*play 所有设置开始*/
+#play_container{
 	width: 30%;
 	height: 100%;
 	background: black;
@@ -94,19 +127,38 @@ html,body,#home_page{
 	margin-right: 2.5vw;
 	margin-left: -5vw;
 }
-#introduction_front{
+#play_front,#play_back{
 	width: 90%;
 	height: 90%;
 	margin: 5%;
 	background: burlywood;
 	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
-
 }
+#play_typeface1{
+	padding-left: 27%;
+	padding-right: 12%;
+	padding-top: 10%;
+	text-align: center;
+	font-size: 4vw;
+	word-break: break-word;
+	color: mediumseagreen;
+	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
+}
+#play_typeface2{
+	padding-left: 27%;
+	padding-right: 12%;
+	padding-top: 10%;
+	text-align: center;
+	font-size: 3vw;
+	word-break: break-word;
+	color: mediumseagreen;
+	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
+}
+
+/*play 所有设置结束*/
 
 
 /*3D反转动画的实现开始*/
-
-
 .container{
 	position: relative;
 	perspective: 1000px;
@@ -129,5 +181,4 @@ html,body,#home_page{
 	transform-style: preserve-3d;
 	transform: perspective(1000px) rotateY(360deg);
 }
-
 /*3D反转动画的实现结束*/
