@@ -200,6 +200,9 @@
 
 
 }
+#log_in_button:active{
+	opacity: 0.5;
+}
 #log_in_button{
 	/*position: relative;*/
 	width: 15vw;
