@@ -2,7 +2,7 @@
 
 /*下边四个可点击按钮的图案设置*/
 body {
-	background: url("../images/homepage.jpg") no-repeat center center;
+	background: url("../images/homepage.jpg");
 	background-size: cover;
 }
 
