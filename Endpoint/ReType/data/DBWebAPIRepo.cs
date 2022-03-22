@@ -25,7 +25,15 @@ namespace ReType.data
         }
         public bool ValidLogin(string userName, string password)
         {
-            User c = _dbContext.User.FirstOrDefault(e => e.UserName == userName && e.Password == password); //Vaild username and password from database and user input
+            User c = _dbContext.User.FirstOrDefault(e => (e.UserName == userName && e.Password == password )); //Vaild username and password from database and user input
+            if (c == null)
+                return false;
+            else
+                return true;
+        }
+        public bool ValidLoginbyemail(string Email, string password)
+        {
+            User c = _dbContext.User.FirstOrDefault(e => (e.Email == Email && e.Password == password)); //Vaild username and password from database and user input
             if (c == null)
                 return false;
             else
@@ -88,6 +96,11 @@ namespace ReType.data
             return user;
         }
         public void UpdateUserDetail(User user)
+        {
+            _dbContext.Update(user);
+            _dbContext.SaveChanges();
+        }
+        public void UpdateEmail(User user)
         {
             _dbContext.Update(user);
             _dbContext.SaveChanges();

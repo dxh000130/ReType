@@ -19,5 +19,7 @@ namespace ReType.data
         Verificationcode findemail(string email);
         User Getuserbyemail(string Email);
         void UpdateUserDetail(User user);
+        void UpdateEmail(User user);
+        bool ValidLoginbyemail(string Email, string password);
     }
 }

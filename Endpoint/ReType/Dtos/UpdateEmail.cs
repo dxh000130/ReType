@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace ReType.Dtos
 {
-    public class Register
+    public class UpdateEmail
     {
         [Required]
         public string UserName { get; set; }
         [Required]
-        public string Password { get; set; }
-        [Required]
         public string Email { get; set; }
-        [Required]
         public string Code { get; set; }
     }
 }

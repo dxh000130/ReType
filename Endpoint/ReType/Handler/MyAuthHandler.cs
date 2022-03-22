@@ -44,7 +44,7 @@ namespace ReType.Handler
                 var username = credentials[0];
                 var password = credentials[1];
 
-                if (_repository.ValidLogin(username, password))
+                if (_repository.ValidLogin(username, password) | _repository.ValidLoginbyemail(username, password))
                 {
                     var claims = new[] { new Claim("userName", username) };
 
