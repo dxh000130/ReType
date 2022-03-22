@@ -1,6 +1,13 @@
 /*最下边四个button的设置的开始*/
 
 /*下边四个可点击按钮的图案设置*/
+body {
+	background: url("../images/homepage.jpg") no-repeat center center;
+	background-size: cover;
+}
+
+
+
 #home_page{
 	width:100%;
 	height: 250px;
@@ -15,6 +22,9 @@
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
 
+#home_page_bottom_button{
+	opacity: 0.9;
+}
 /*personal details所有设置*/
 #user_container{
 	width: 25%;
@@ -24,6 +34,7 @@
 	margin-right: -0.5vw;
 	margin-left: -2vw;
 	background: black;
+	opacity: 0.8;
 }
 #user_front,#user_back{
 	width: 90%;
