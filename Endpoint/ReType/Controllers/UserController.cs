@@ -120,6 +120,18 @@ namespace ReType.Controllers
                 return "Correct";
                     }
         }
+        [Authorize]
+        [Authorize(Policy = "UserOnly")] //Vaild user login
+        [HttpPost("UpdateUserDetail")]
+        public string UpdateUserDetail(UpdateUser user)
+        {
+            User c = _repository.Getuser(user.UserName);
+            c.Name = user.Name;
+            c.Dataofbirth = user.Dataofbirth;
+            c.Gerder = user.Gerder;
+            _repository.UpdateUserDetail(c);
+            return "success";
+        }
     }
 }
 

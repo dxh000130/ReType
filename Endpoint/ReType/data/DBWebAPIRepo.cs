@@ -87,5 +87,10 @@ namespace ReType.data
             User user = _dbContext.User.FirstOrDefault(e => e.Email == Email); //Find username exist in database or not
             return user;
         }
+        public void UpdateUserDetail(User user)
+        {
+            _dbContext.Update(user);
+            _dbContext.SaveChanges();
+        }
     }
 }

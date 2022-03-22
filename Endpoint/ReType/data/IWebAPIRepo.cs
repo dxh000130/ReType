@@ -18,5 +18,6 @@ namespace ReType.data
         void Deleteverificationcode(Verificationcode code);
         Verificationcode findemail(string email);
         User Getuserbyemail(string Email);
+        void UpdateUserDetail(User user);
     }
 }
