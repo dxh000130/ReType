@@ -1,12 +1,14 @@
 /*最下边四个button的设置的开始*/
 
 /*下边四个可点击按钮的图案设置*/
+
 body {
-	background: url("../images/homepage.jpg");
+	background-image: url("../images/homepage.jpg")  ;
+	background-repeat: no-repeat;
+	background-position: center 0;
 	background-size: cover;
+	min-height: 97.9vh;
 }
-
-
 
 #home_page{
 	width:100%;
