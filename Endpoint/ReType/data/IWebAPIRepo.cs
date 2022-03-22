@@ -21,5 +21,6 @@ namespace ReType.data
         void UpdateUserDetail(User user); //Update User detail
         void UpdateEmail(User user);//Update user email
         bool ValidLoginbyemail(string Email, string password);//Vaild email and password from database and user input
+        bool preventsqlinjection(string str); //Prevent users from using SQL commands to compromise database security
     }
 }

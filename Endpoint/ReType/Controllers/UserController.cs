@@ -35,6 +35,10 @@ namespace ReType.Controllers
         [HttpGet("Registrationverificationcode/{email}")] //Send a verification code to verify the validity of the mailbox
         public string Registrationverificationcode(string email)
         {
+            if (_repository.preventsqlinjection(email))
+            {
+                return "There are potential SQL instructions";
+            }
             User user1 = _repository.Getuserbyemail(email);
             if (user1 != null)
             {
@@ -63,6 +67,10 @@ namespace ReType.Controllers
         [HttpPost("Register")]
         public string Register(Register user) //Register function
         {
+            if (_repository.preventsqlinjection(user.UserName)| _repository.preventsqlinjection(user.Email)| _repository.preventsqlinjection(user.Password) | _repository.preventsqlinjection(user.Code))
+            {
+                return "There are potential SQL instructions";
+            }
             User user1 = _repository.Getuser(user.UserName); //Username alread exist or not
             if (user1 == null)
             {
@@ -100,6 +108,10 @@ namespace ReType.Controllers
         [HttpPost("Changepassword")]
         public string ChangePassword(Changepassword password)  //Allows users to change passwords
         {
+            if (_repository.preventsqlinjection(password.UserName)| _repository.preventsqlinjection(password.Password))
+            {
+                return "There are potential SQL instructions";
+            }
             User c = _repository.Getuser(password.UserName);
             c.Password = password.Password;
             _repository.UpdateUserDetail(c);
@@ -108,6 +120,10 @@ namespace ReType.Controllers
         [HttpGet("Resetpasswordcode/{email}")]   //Forget password option
         public string Resetpasswordcode(string email)
         {
+            if (_repository.preventsqlinjection(email))
+            {
+                return "There are potential SQL instructions";
+            }
             Verificationcode c1 = _repository.findemail(email);
             if (c1 != null)
             {
@@ -135,6 +151,10 @@ namespace ReType.Controllers
         [HttpPost("ResetPassword")]
         public string ResetPassword(ResetPassword code)
         {
+            if (_repository.preventsqlinjection(code.Code) | _repository.preventsqlinjection(code.Email) | _repository.preventsqlinjection(code.Password))
+            {
+                return "There are potential SQL instructions";
+            }
             Verificationcode c = _repository.Getverificationcode(code.Email, code.Code);
             if (c == null)
             {
@@ -157,6 +177,10 @@ namespace ReType.Controllers
         [HttpPost("UpdateUserDetail")] //Allows users to add personal information
         public string UpdateUserDetail(UpdateUser user)
         {
+            if (_repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Name) | _repository.preventsqlinjection(user.Gerder) | _repository.preventsqlinjection(user.Dataofbirth))
+            {
+                return "There are potential SQL instructions";
+            }
             User c = _repository.Getuser(user.UserName);
             c.Name = user.Name;
             c.Dataofbirth = user.Dataofbirth;
@@ -169,6 +193,10 @@ namespace ReType.Controllers
         [HttpPost("UpdateEmail")] //Allows users to change mailboxes
         public string UpdateEmail(UpdateEmail user)
         {
+            if (_repository.preventsqlinjection(user.Email) | _repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Code))
+            {
+                return "There are potential SQL instructions";
+            }
             Verificationcode c = _repository.Getverificationcode(user.Email, user.Code);
             if (c == null)
             {
@@ -192,6 +220,10 @@ namespace ReType.Controllers
         [HttpGet("UpdateEmailverificationcode/{email}")]  //Verify the mailbox changed by the user
         public string UpdateEmailverificationcode(string email)
         {
+            if (_repository.preventsqlinjection(email))
+            {
+                return "There are potential SQL instructions";
+            }
             Random random = new Random();
             int single;
             string code = string.Empty;

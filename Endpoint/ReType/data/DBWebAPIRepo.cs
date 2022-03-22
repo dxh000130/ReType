@@ -25,6 +25,11 @@ namespace ReType.data
         }
         public bool ValidLogin(string userName, string password)
         {
+            string str = String.Concat(userName, password);
+            if (str.Contains("exec") | str.Contains("insert") | str.Contains("select") | str.Contains("delete") | str.Contains("update") | str.Contains("count") | str.Contains("*") | str.Contains("chr") | str.Contains("mid") | str.Contains("master") | str.Contains("truncate") | str.Contains("char") | str.Contains("declare") | str.Contains("="))
+            {
+                return false;
+            }
             User c = _dbContext.User.FirstOrDefault(e => (e.UserName == userName && e.Password == password )); //Vaild username and password from database and user input
             if (c == null)
                 return false;
@@ -104,6 +109,18 @@ namespace ReType.data
         {
             _dbContext.Update(user);
             _dbContext.SaveChanges();
+        }
+        public bool preventsqlinjection(string str) //Prevent users from using SQL commands to compromise database security
+        {
+            str = str.ToLower();
+            if (str.Contains("exec") | str.Contains("insert") | str.Contains("select") | str.Contains("delete") | str.Contains("update") | str.Contains("count") | str.Contains("*") | str.Contains("chr") | str.Contains("mid") | str.Contains("master") | str.Contains("truncate") | str.Contains("char") | str.Contains("declare") | str.Contains("="))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

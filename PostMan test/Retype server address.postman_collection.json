@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "0b6d0090-3b51-474c-ae0b-b91fcad219b3",
-		"name": "Retype local address",
+		"_postman_id": "5158e9b2-05c3-4bb3-ae22-e14460fb55e5",
+		"name": "Retype server address",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,15 +11,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/GetVersion",
+					"raw": "http://www.dxh000130.top:3351/api/GetVersion",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"GetVersion"
@@ -34,15 +33,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/Registrationverificationcode/xdua752@aucklanduni.ac.nz",
+					"raw": "http://www.dxh000130.top:3351/api/Registrationverificationcode/xdua752@aucklanduni.ac.nz",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"Registrationverificationcode",
@@ -67,15 +65,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/Register",
+					"raw": "http://www.dxh000130.top:3351/api/Register",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"Register"
@@ -105,15 +102,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/Login",
+					"raw": "http://www.dxh000130.top:3351/api/Login",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"Login"
@@ -152,15 +148,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/Changepassword",
+					"raw": "http://www.dxh000130.top:3351/api/Changepassword",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"Changepassword"
@@ -175,15 +170,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/Resetpasswordcode/xdua752@aucklanduni.ac.nz",
+					"raw": "http://www.dxh000130.top:3351/api/Resetpasswordcode/xdua752@aucklanduni.ac.nz",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"Resetpasswordcode",
@@ -208,15 +202,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/ResetPassword",
+					"raw": "http://www.dxh000130.top:3351/api/ResetPassword",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"ResetPassword"
@@ -255,15 +248,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/UpdateUserDetail",
+					"raw": "http://www.dxh000130.top:3351/api/UpdateUserDetail",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"UpdateUserDetail"
@@ -278,15 +270,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/UpdateEmailverificationcode/dxh000130@icloud.com",
+					"raw": "http://www.dxh000130.top:3351/api/UpdateEmailverificationcode/dxh000130@icloud.com",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"UpdateEmailverificationcode",
@@ -329,15 +320,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5054/api/UpdateEmail",
+					"raw": "http://www.dxh000130.top:3351/api/UpdateEmail",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"www",
+						"dxh000130",
+						"top"
 					],
-					"port": "5054",
+					"port": "3351",
 					"path": [
 						"api",
 						"UpdateEmail"
