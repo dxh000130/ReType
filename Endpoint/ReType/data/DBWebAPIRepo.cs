@@ -31,9 +31,9 @@ namespace ReType.data
             else
                 return true;
         }
-        public bool ValidLoginbyemail(string Email, string password)
+        public bool ValidLoginbyemail(string Email, string password) 
         {
-            User c = _dbContext.User.FirstOrDefault(e => (e.Email == Email && e.Password == password)); //Vaild username and password from database and user input
+            User c = _dbContext.User.FirstOrDefault(e => (e.Email == Email && e.Password == password)); //Vaild email and password from database and user input
             if (c == null)
                 return false;
             else
@@ -70,37 +70,37 @@ namespace ReType.data
 
             return true;
         }
-        public void Storeverificationcode(Verificationcode code)
+        public void Storeverificationcode(Verificationcode code) //Store verification code
         {
             EntityEntry<Verificationcode> e = _dbContext.Verificationcode.Add(code);
             _dbContext.SaveChanges();
         }
-        public Verificationcode Getverificationcode(string email, string code)
+        public Verificationcode Getverificationcode(string email, string code) //Vaild verification code
         {
             Verificationcode fullcode = _dbContext.Verificationcode.FirstOrDefault(e => e.Email == email && e.code == code); //Find verification code exist in database or not
             return fullcode;
         }
-        public void Deleteverificationcode(Verificationcode code)
+        public void Deleteverificationcode(Verificationcode code) //Delete the used verification code
         {
             _dbContext.Verificationcode.Remove(code);
             _dbContext.SaveChanges();
         }
-        public Verificationcode findemail(string email)
+        public Verificationcode findemail(string email) //Vaild email in database or not
         {
             Verificationcode fullcode = _dbContext.Verificationcode.FirstOrDefault(e => e.Email == email); //Find verification code exist in database or not
             return fullcode;
         }
-        public User Getuserbyemail(string Email)
+        public User Getuserbyemail(string Email) //Get user by user email
         {
             User user = _dbContext.User.FirstOrDefault(e => e.Email == Email); //Find username exist in database or not
             return user;
         }
-        public void UpdateUserDetail(User user)
+        public void UpdateUserDetail(User user) //Update User detail
         {
             _dbContext.Update(user);
             _dbContext.SaveChanges();
         }
-        public void UpdateEmail(User user)
+        public void UpdateEmail(User user) //Update user email
         {
             _dbContext.Update(user);
             _dbContext.SaveChanges();

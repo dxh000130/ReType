@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "0b6d0090-3b51-474c-ae0b-b91fcad219b3",
+		"name": "Retype local address",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/GetVersion",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"GetVersion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Registration verification code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Registrationverificationcode/xdua752@aucklanduni.ac.nz",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Registrationverificationcode",
+						"xdua752@aucklanduni.ac.nz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"dxh000130\",\r\n    \"Password\": \"duan002349\",\r\n    \"Email\": \"xdua752@aucklanduni.ac.nz\",\r\n    \"Code\": \"974942\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"dxh000130\",\r\n    \"Password\": \"Duan002349.!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Changepassword",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Changepassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Reset Password code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Resetpasswordcode/xdua752@aucklanduni.ac.nz",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Resetpasswordcode",
+						"xdua752@aucklanduni.ac.nz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"xdua752@aucklanduni.ac.nz\",\r\n    \"Password\": \"Duan002349\",\r\n    \"Code\": \"4889510\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/ResetPassword",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"ResetPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Detail",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"dxh000130\",\r\n    \"Name\": \"Duan Xuheng\",\r\n    \"DataofBirth\": \"30/01/2000\",\r\n    \"Gerder\": \"M\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/UpdateUserDetail",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"UpdateUserDetail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Update Email verification code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/UpdateEmailverificationcode/liukaiyue0@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"UpdateEmailverificationcode",
+						"liukaiyue0@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Email",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

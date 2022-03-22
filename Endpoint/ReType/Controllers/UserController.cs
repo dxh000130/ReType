@@ -32,7 +32,7 @@ namespace ReType.Controllers
         {
             return "V1";
         }
-        [HttpGet("Registrationverificationcode/{email}")]
+        [HttpGet("Registrationverificationcode/{email}")] //Send a verification code to verify the validity of the mailbox
         public string Registrationverificationcode(string email)
         {
             User user1 = _repository.Getuserbyemail(email);
@@ -59,7 +59,7 @@ namespace ReType.Controllers
             _repository.Storeverificationcode(c);
             return "yes";
         }
-        // POST /api/Register
+        // POST /api/Register  //Register a new user and make sure the mailbox is valid
         [HttpPost("Register")]
         public string Register(Register user) //Register function
         {
@@ -98,14 +98,14 @@ namespace ReType.Controllers
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
         [HttpPost("Changepassword")]
-        public string ChangePassword(Changepassword password)
+        public string ChangePassword(Changepassword password)  //Allows users to change passwords
         {
             User c = _repository.Getuser(password.UserName);
             c.Password = password.Password;
             _repository.UpdateUserDetail(c);
             return "success";
         }
-        [HttpGet("Resetpasswordcode/{email}")]
+        [HttpGet("Resetpasswordcode/{email}")]   //Forget password option
         public string Resetpasswordcode(string email)
         {
             Verificationcode c1 = _repository.findemail(email);
@@ -154,7 +154,7 @@ namespace ReType.Controllers
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
-        [HttpPost("UpdateUserDetail")]
+        [HttpPost("UpdateUserDetail")] //Allows users to add personal information
         public string UpdateUserDetail(UpdateUser user)
         {
             User c = _repository.Getuser(user.UserName);
@@ -166,7 +166,7 @@ namespace ReType.Controllers
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
-        [HttpPost("UpdateEmail")]
+        [HttpPost("UpdateEmail")] //Allows users to change mailboxes
         public string UpdateEmail(UpdateEmail user)
         {
             Verificationcode c = _repository.Getverificationcode(user.Email, user.Code);
@@ -189,7 +189,7 @@ namespace ReType.Controllers
                 return "success";
             }
         }
-        [HttpGet("UpdateEmailverificationcode/{email}")]
+        [HttpGet("UpdateEmailverificationcode/{email}")]  //Verify the mailbox changed by the user
         public string UpdateEmailverificationcode(string email)
         {
             Random random = new Random();
