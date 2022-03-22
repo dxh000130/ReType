@@ -195,6 +195,7 @@
 	top: 0px;
 	right: 10px;
 	border-radius:25px;
+	animation: move 0.5s ;
 
 
 
@@ -220,6 +221,24 @@
 	font-size: 2vw;
 	color: oldlace;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
+}
+@keyframes move {
+    0%{
+		opacity: 0;
+		top: 0px;
+		left: 100px;
+
+	 }
+	/*50%{*/
+	/*	opacity: 2;*/
+	/*	top: 0px;*/
+	/*	left: 300px;*/
+	/*}*/
+    100%{
+		opacity: 3;
+		top: 0px;
+		left: 1000px;
+	}
 }
 
 /*login button的设置结束*/
