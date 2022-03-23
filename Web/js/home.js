@@ -18,11 +18,11 @@ function Login() {
         credentials: 'include',
         method: 'GET',
         headers:headers1
-    })
-        .then(r => {
+    }).then(r => {
         if (r.status == 200) {
             user_id = username;
             pass = password;
+            console.log("Log in Success")
             document.getElementById("closebtn").click();
             document.getElementById("button_login").style.visibility = "hidden";
             document.getElementById("button_logout").style.visibility = "visible";
