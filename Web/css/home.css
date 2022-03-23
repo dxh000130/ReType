@@ -300,7 +300,7 @@ input[type="password"]{
 	color: #fff;
 	outline: none;
 	border: none;
-	background: #3ea751;
+	background: burlywood;
 	width: 100%;
 	padding: 18px 0;
 	border-bottom-left-radius: 15px;
@@ -314,7 +314,7 @@ input[type="password"]{
 	  cursor: pointer;
   }
  .btnlogin:hover {
-	  background: #ff2775;
+	  opacity: 0.5;
 	border-bottom-left-radius: 15px;
 	  -webkit-border-bottom-left-radius: 15px;
 	  -moz-border-bottom-left-radius: 15px;
