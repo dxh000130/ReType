@@ -3,7 +3,7 @@
 /*下边四个可点击按钮的图案设置*/
 
 body {
-	background-image: url("../images/homepage1.jpg")  ;
+	background-image: url("../images/homepage.jpg")  ;
 	background-repeat: no-repeat;
 	background-position: center 0;
 	background-size: cover;
@@ -225,7 +225,7 @@ body {
 /*实现一打开网页log in 跳跃开始*/
 @keyframes move {
 	50% {
-		transform: rotate(-180deg) translate(5vw, -5vw);
+		transform: rotate(-360deg) translate(5vw, -5vw);
 		box-shadow: -0.2vw 2vw 0.2vw -0.2vw black;
 	}
 }
@@ -429,7 +429,7 @@ input[type="password"]{
 	color: #fff;
 	outline: none;
 	border: none;
-	background: #3ea751;
+	background: burlywood;
 	width: 100%;
 	padding: 18px 0;
 	border-bottom-left-radius: 15px;
@@ -443,7 +443,7 @@ input[type="password"]{
 	  cursor: pointer;
   }
  .btnlogin:hover {
-	  background: #ff2775;
+	  opacity: 0.5;
 	border-bottom-left-radius: 15px;
 	  -webkit-border-bottom-left-radius: 15px;
 	  -moz-border-bottom-left-radius: 15px;
