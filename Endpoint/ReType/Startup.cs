@@ -42,15 +42,12 @@ namespace ReType
             {
                 options.AddPolicy("any", builder =>
                 {
-                    builder.WithMethods("GET", "POST", "HEAD", "PUT", "DELETE", "OPTIONS").WithOrigins("https://www.dxh000130.top").AllowCredentials();
-                //允许任何来源的主机访问
+                    builder.WithOrigins("https://www.dxh000130.top").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
                 });
             });
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("UserOnly", policy => {
-                    policy.RequireClaim("userName");
-                });
+                options.AddPolicy("UserOnly", policy => policy.RequireClaim("userName"));
             }
 
         );
@@ -77,6 +74,7 @@ namespace ReType
             app.UseCors("any");
             app.UseAuthentication();
             app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers().RequireCors("any"); ;
