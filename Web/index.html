@@ -12,7 +12,8 @@
 </head>
 
 <body>
-
+<!--主界面的开始-->
+<div id="first_page" style="height: 100%;width: 100%">
 	<!--log in button的开始-->
 	<a id="log_in_a" ,href="#">
 		<div id="log_in_button_container">
@@ -35,39 +36,49 @@
 			</form>
 		</div>
 	</a>
-
 	<!--Log in button的结束-->
+
+    <!--中间标题retype的开始-->
+	<div class="word">
+		<span id="R">R</span>
+		<span id="E1">E</span>
+		<span id="T">T</span>
+		<span id="Y">Y</span>
+		<span id="P">P</span>
+		<span id="E2">E</span>
+	</div>
+	<!--中间标题retype的结束-->
 
 	<!--最下边4个Button的开始-->
 	<div id="home_page_bottom_button" >
 		<div id="home_page" >
 			<!--personal detail button的设置开始-->
-			<a href="https://www.cnblogs.com/pineconeguo/p/9758422.html">
+			<a href="https://www.cnblogs.com/pineconeguo/p/9758422.html" class="user_button">
 				<div id="user_container" class="container">
 					<!--翻转以前显示的东西-->
 					<div id="user_front" class="front">
-						<p id="user_typeface1" class="homepage_button_typeface">User Details<br /></p>
-<!--						<p id="user_typeface2" class="homepage_button_typeface">Details<br /></p>-->
+						<p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
+						<!--						<p id="user_typeface2" class="homepage_button_typeface">Details<br /></p>-->
 					</div>
 					<!--翻转以后显示的东西-->
 					<div id="user_back" class="back">
-						<p id="user_typeface3" class="homepage_button_typeface"><i class="fa fa-address-book"
-																				   style="font-size:4vw"></i></p>
+						<p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book"
+																					style="font-size:4vw"></i></p>
 					</div>
 				</div>
 			</a>
-<!--			personal detail button的设置结束-->
+			<!--			personal detail button的设置结束-->
 
 			<!--leaderboard button设置的开始-->
 			<a href="#">
 				<div id="leaderboard_container" class="container">
 					<!--翻转以前显示的东西-->
 					<div id="leaderboard_front" class="front">
-						<p id="leaderboard_typeface1" class="homepage_button_typeface">Leaderboard<br /></p>
+						<p id="leaderboard_typeface1" class="homepage_button_typeface1">Leaderboard<br /></p>
 					</div>
 					<!--翻转以后显示的东西-->
 					<div id="leaderboard_back" class="back">
-						<p id="leaderboard_typeface2" class="homepage_button_typeface"><i
+						<p id="leaderboard_typeface2" class="homepage_button_typeface2"><i
 								class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
 					</div>
 				</div>
@@ -79,16 +90,16 @@
 				<div id="introduction_container" class="container">
 					<!--翻转以前显示的东西-->
 					<div id="introduction_front" class="front">
-						<p id="introduction_typeface1" class="homepage_button_typeface">Introduction</p>
+						<p id="introduction_typeface1" class="homepage_button_typeface1">Introduction</p>
 					</div>
 					<!--翻转以后显示的东西-->
 					<div id="introduction_back" class="back">
-						<p id="introduction_typeface2" class="homepage_button_typeface"> <i
+						<p id="introduction_typeface2" class="homepage_button_typeface2"> <i
 								class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
 					</div>
 				</div>
 			</a>
-<!--			introduction button设置的结束-->
+			<!--			introduction button设置的结束-->
 
 			<!--play button设置的开始-->
 			<a>
@@ -109,6 +120,10 @@
 
 	</div>
 	<!--最下边4个Button的结束-->
+</div>
+<!--主界面的结束-->
+
+
 
 
 
