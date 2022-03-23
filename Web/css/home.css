@@ -1,9 +1,20 @@
+/*最下边四个button的设置的开始*/
+
 /*下边四个可点击按钮的图案设置*/
-html,body,#home_page{
+
+body {
+	background-image: url("../images/homepage.jpg")  ;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: cover;
+	min-height: 97.9vh;
+}
+
+#home_page{
 	width:100%;
-	height: 250px;
+	height: 25vh;
 	position: fixed;
-	bottom: 40px;
+	bottom: 0%;
 }
 /*button中字体风格和颜色的设置*/
 .homepage_button_typeface{
@@ -13,50 +24,45 @@ html,body,#home_page{
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
 
+#home_page_bottom_button{
+	opacity: 0.9;
+}
 /*personal details所有设置*/
 #user_container{
 	width: 25%;
-	height: 100%;
+	height: 22vh;
 	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
 	float: left;
-	margin-right: -0.5vw;
-	margin-left: -2vw;
 	background: black;
+	opacity: 0.8;
+	bottom: -2%;
+	text-align: center;
 }
 #user_front,#user_back{
 	width: 90%;
 	height: 90%;
-	margin: 5%;
+	margin-left: 1vw;
+	margin-top:1vh;
 	background: burlywood;
 	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
+	position: absolute;
+	align-items: center;
+	display: flex;
+
 }
-#user_typeface1{
-	padding-left: 28%;
-	padding-right: 20%;
-	padding-top: 20%;
-	margin-bottom: -20px;
-	text-align: left;
-	/*clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);*/
+#user_typeface1,#user_typeface3{
+	background: burlywood;
+	margin: 0 auto ;
+	width: 40%;
+
 }
-#user_typeface2{
-	padding-left: 28%;
-	padding-right: 20%;
-	text-align: left;
-}
-#user_typeface3{
-	padding-left: 25%;
-	padding-right: 25%;
-	padding-top: 15%;
-	margin-bottom: -20px;
-	text-align: left;
-	/*clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);*/
-}
+
 /*personal details所有设置完成*/
 
 /*leaderboard所有设置*/
 #leaderboard_container{
 	width: 25%;
-	height: 100%;
+	height: 22vh;
 	background: black;
 	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
 	float: left;
@@ -66,32 +72,34 @@ html,body,#home_page{
 #leaderboard_front,#leaderboard_back{
 	width: 90%;
 	height: 90%;
-	margin: 7%;
+	margin-left: 1.5vw;
+	margin-top:1.4vh;
 	background: burlywood;
 	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
+	position: absolute;
+	align-items: center;
+	display: flex;
 }
 #leaderboard_typeface1{
-	padding-left: 33%;
-	padding-right: 12%;
-	padding-top: 30%;
-	text-align: left;
+	background: burlywood;
+	padding-left: 7vw;
+	width: 55%;
 }
-/*背面*/
 #leaderboard_typeface2{
-	padding-left: 33%;
-	padding-right: 12%;
-	padding-top: 15%;
-	text-align: center;
-
+	background: burlywood;
+	padding-left: 9.5vw;
+	width: 55%;
 }
 /*leaderboard所有设置完成*/
 
 /*introduction 所有设置开始*/
 #introduction_container{
 	width: 30%;
-	height: 100%;
+	height: 22vh;
 	background: black;
 	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
+	bottom: -2%;
+	text-align: center;
 	float: left;
 	margin-right: -7vw;
 	margin-left: -1vw;
@@ -99,57 +107,62 @@ html,body,#home_page{
 #introduction_front,#introduction_back{
 	width: 90%;
 	height: 90%;
-	margin: 5%;
+	margin-left: 1.5vw;
+	margin-top:1.2vh;
+	position: absolute;
+	align-items: center;
+	display: flex;
 	background: burlywood;
 	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
 }
 #introduction_typeface1{
-	padding-left: 27%;
-	padding-right: 12%;
-	padding-top: 15%;
-	text-align: left;
+	background: burlywood;
+	padding-left: 7vw;
+	width: 55%;
 }
 #introduction_typeface2{
-	padding-left: 27%;
-	padding-right: 12%;
-	padding-top: 15%;
-	text-align: left;
+	background: burlywood;
+	padding-left: 5.5vw;
+	width: 55%;
 }
 /*introduction 所有设置结束*/
 
 /*play 所有设置开始*/
 #play_container{
 	width: 30%;
-	height: 100%;
+	height: 22vh;
 	background: black;
 	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
 	float: right;
 	margin-right: 2.5vw;
 	margin-left: -5vw;
+	bottom: -2%;
+	text-align: center;
+
 }
 #play_front,#play_back{
 	width: 90%;
 	height: 90%;
-	margin: 5%;
+	margin-left: 1.8vw;
+	margin-top:1.2vh;
+	position: absolute;
+	align-items: center;
+	display: flex;
 	background: burlywood;
 	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
 }
 #play_typeface1{
-	padding-left: 27%;
-	padding-right: 12%;
-	padding-top: 10%;
-	text-align: center;
-	font-size: 4vw;
+	background: burlywood;
+	padding-left: 10vw;
+	width: 55%;
+	font-size: 5.5vw;
 	word-break: break-word;
 	color: mediumseagreen;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
 #play_typeface2{
-	padding-left: 27%;
-	padding-right: 12%;
-	padding-top: 10%;
-	text-align: center;
-	font-size: 3vw;
+	padding-left: 10vw;
+	width: 55%;
 	word-break: break-word;
 	color: mediumseagreen;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
@@ -182,3 +195,150 @@ html,body,#home_page{
 	transform: perspective(1000px) rotateY(360deg);
 }
 /*3D反转动画的实现结束*/
+/*最下边四个button的设置的结束*/
+
+/*login button的设置开始*/
+#log_in_button_container{
+	position: fixed;
+	background: black;
+	width: 15vw;
+	height: 10vw;
+	top: 0px;
+	right: 10px;
+	border-radius:25px;
+	animation: move 3s;
+}
+#log_in_button:active{
+	animation: move 5s;
+
+}
+#log_in_button{
+	/*position: relative;*/
+	width: 13vw;
+	height: 8vw;
+	margin-top:1vw;
+	margin-left: 1vw;
+	border-radius:25px;
+	background: burlywood;
+	text-align: center;
+	position: relative;
+}
+#log_in_typeface1{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	margin-top:1vw;
+	margin-left: 0.2vw;
+	font-size: 2vw;
+	color: oldlace;
+	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
+}
+/*实现一打开网页log in 跳跃开始*/
+@keyframes move {
+	50% {
+		transform: rotate(-360deg);
+		translate(5vw, -5vw);
+		box-shadow: -0.2vw 2vw 0.2vw -0.2vw gray;
+	}
+}
+/*实现一打开网页log in 跳跃结束*/
+
+/*login button的设置结束*/
+
+/*login*/
+.modal {
+	z-index: 1;
+    left: 30%;
+    top: 10%;
+    width: 30%;
+    height: auto;
+    overflow: auto;
+    display: none;
+	background: #2b2b36;
+	position: fixed;
+	margin: 3% auto 0 auto;
+	text-align: center;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+}
+
+input[type="username"] {
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+	color: #9199aa;
+	font-size: 18px;
+	outline: none;
+	background: url(../images/adm.png) no-repeat 10px 15px;
+	border: none;
+	font-weight: 100;
+	border-bottom: 1px solid#484856;
+	margin-top: 2em;
+}
+input[type="password"]{
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+	color: #dd3e3e;
+	font-size: 18px;
+	outline: none;
+	background: url(../images/key.png) no-repeat 10px 23px;
+	border: none;
+	font-weight: 100;
+	border-bottom: 1px solid#484856;
+	margin-bottom: 3em;
+}
+/* Modal Content/Box */
+
+.modal-content {
+    
+}
+
+.btnlogin{
+	font-size: 30px;
+	color: #fff;
+	outline: none;
+	border: none;
+	background: burlywood;
+	width: 100%;
+	padding: 18px 0;
+	border-bottom-left-radius: 15px;
+	  -webkit-border-bottom-left-radius: 15px;
+	  -moz-border-bottom-left-radius: 15px;
+	  -o-border-bottom-left-radius: 15px;
+	  border-bottom-right-radius: 15px;
+	  -webkit-border-bottom-right-radius: 15px;
+	  -moz-border-bottom-right-radius: 15px;
+	  -o-border-bottom-right-radius: 15px;
+	  cursor: pointer;
+  }
+ .btnlogin:hover {
+	  opacity: 0.5;
+	border-bottom-left-radius: 15px;
+	  -webkit-border-bottom-left-radius: 15px;
+	  -moz-border-bottom-left-radius: 15px;
+	  -o-border-bottom-left-radius: 15px;
+	  border-bottom-right-radius: 15px;
+	  -webkit-border-bottom-right-radius: 15px;
+	  -moz-border-bottom-right-radius: 15px;
+	  -o-border-bottom-right-radius: 15px;
+		transition: 1s all;
+	  -webkit-transition: 1s all;
+	  -moz-transition: 1s all;
+	  -o-transition: 1s all;
+  }
+  .cancelbtn{
+	background: url('../images/close.png') no-repeat 0px 0px;
+	  cursor: pointer;
+	  width: 20px;
+	  height: 20px;
+	  position: absolute;
+	  left: 20px;
+	  top: 20px;
+	  -webkit-transition: color 0.2s ease-in-out;
+	  -moz-transition: color 0.2s ease-in-out;
+	  -o-transition: color 0.2s ease-in-out;
+	  transition: color 0.2s ease-in-out;
+	}
+	/*--/close--*/
