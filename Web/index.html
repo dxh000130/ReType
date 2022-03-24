@@ -21,21 +21,27 @@
 				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
 			</div>
 		</div>
+
 		<div id="id01" class="modal">
-			<span onclick="document.getElementById('id01').style.display='none'" id="closebtn" class="close" title="Close Modal">&times;</span>
+			<!--			<span onclick="document.getElementById('id01').style.display='none'" id="closebtn" class="close" title="Close Modal">&times;</span>-->
 			<form class="modal-content animate">
+
 				<div class="login_form">
 					<input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
 					<input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
 					<input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
+
+					<hr style="width: 90%;border-width:2px; margin-top: 20px">
+					<p style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp<a href="#" style="color: #dd3e3e">Register Now!</a></p>
 				</div>
-				<div class="login_form" style="background-color:#f1f1f1">
+				<div class="login_form" >
 					<button type="button" onclick="document.getElementById('id01').style.display='none'"
 							class="cancelbtn"></button>
 				</div>
 			</form>
 		</div>
 	</a>
+
 	<!--Log in button的结束-->
 
     <!--中间标题retype的开始-->
@@ -58,7 +64,6 @@
 					<!--翻转以前显示的东西-->
 					<div id="user_front" class="front">
 						<p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
-						<!--						<p id="user_typeface2" class="homepage_button_typeface">Details<br /></p>-->
 					</div>
 					<!--翻转以后显示的东西-->
 					<div id="user_back" class="back">
@@ -122,7 +127,6 @@
 	<!--最下边4个Button的结束-->
 </div>
 <!--主界面的结束-->
-
 
 
 
