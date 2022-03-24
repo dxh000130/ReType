@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<meta name=”viewport”content=”width=device-width,initial-scale=1″/>
+	<meta name=”viewport”content=”width=device-width,initial-scale=1″ />
 
 	<meta charset="UTF-8">
 	<title>Title</title>
@@ -12,39 +12,39 @@
 </head>
 
 <body>
-<!--主界面的开始-->
-<div id="first_page" style="height: 100%;width: 100%">
-	<!--log in button的开始-->
-	<a id="log_in_a" ,href="#">
+	<!--主界面的开始-->
+	<div id="first_page" style="height: 100%;width: 100%">
+		<!--log in button的开始-->
 		<div id="log_in_button_container">
-			<div onclick="document.getElementById('id01').style.display='block'" class="button log_in_button" id="log_in_button">
+			<div onclick="document.getElementById('login_modal').style.display='block'" class="button log_in_button"
+				id="log_in_button">
 				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
 			</div>
 		</div>
-
-		<div id="id01" class="modal">
-			<!--			<span onclick="document.getElementById('id01').style.display='none'" id="closebtn" class="close" title="Close Modal">&times;</span>-->
-			<form class="modal-content animate">
-
+		<div id="login_modal" class="login_modal">
+			<img src="../Web/images/animal.png" width="150px" height="150px">
+			<div class="login_modal-content">
 				<div class="login_form">
 					<input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
 					<input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
 					<input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
 
 					<hr style="width: 90%;border-width:2px; margin-top: 20px">
-					<p style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp<a href="#" style="color: #dd3e3e">Register Now!</a></p>
+					<p style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp<a href="#"
+							style="color: #dd3e3e">Register Now!</a></p>
 				</div>
-				<div class="login_form" >
-					<button type="button" onclick="document.getElementById('id01').style.display='none'"
-							class="cancelbtn"></button>
+				<div class="login_form">
+					<button type="button" onclick="document.getElementById('login_modal').style.display='none'"
+						class="cancelbtn"></button>
 				</div>
-			</form>
+			</div>
 		</div>
-	</a>
+	</div>
+
 
 	<!--Log in button的结束-->
 
-    <!--中间标题retype的开始-->
+	<!--中间标题retype的开始-->
 	<div class="word">
 		<span id="R">R</span>
 		<span id="E1">E</span>
@@ -56,8 +56,8 @@
 	<!--中间标题retype的结束-->
 
 	<!--最下边4个Button的开始-->
-	<div id="home_page_bottom_button" >
-		<div id="home_page" >
+	<div id="home_page_bottom_button">
+		<div id="home_page">
 			<!--personal detail button的设置开始-->
 			<a href="https://www.cnblogs.com/pineconeguo/p/9758422.html" class="user_button">
 				<div id="user_container" class="container">
@@ -68,7 +68,7 @@
 					<!--翻转以后显示的东西-->
 					<div id="user_back" class="back">
 						<p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book"
-																					style="font-size:4vw"></i></p>
+								style="font-size:4vw"></i></p>
 					</div>
 				</div>
 			</a>
@@ -125,8 +125,8 @@
 
 	</div>
 	<!--最下边4个Button的结束-->
-</div>
-<!--主界面的结束-->
+	</div>
+	<!--主界面的结束-->
 
 
 
