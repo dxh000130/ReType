@@ -380,7 +380,7 @@ body {
 .login_modal,.register {
 	z-index: 1;
     left: 38%;
-	top: 15%;
+	top: 5%;
     width: 30%;
     height: auto;
     overflow: auto;
@@ -395,21 +395,15 @@ body {
 	-o-border-radius: 20px;
 	animation: jumpdown 1s ease-out;
 }
+
 .owl{
-	background: url(../images/animal.png);
-	width: 150px;
+	background: url(../images/animal.png) no-repeat center;
+	width: 100%;
 	height: 150px;
+	/*padding-bottom: 10px;*/
+
 }
-.owl .hand{
-	width: 34px;
-	height: 34px;
-	border-radius: 40px;
-	background: #472d20;
-	position: absolute;
-	left: 12px;
-	transform: scaleY(0.6);
-	transition: 0.3s ease-out;
-}
+
 
 @keyframes jumpdown {
 	0% {
@@ -448,6 +442,8 @@ input[type="password"]{
 }
 /* Modal Content/Box */
 
+
+/* Modal Content/Box */
 
 .btnlogin{
 	font-size: 30px;
