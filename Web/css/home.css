@@ -377,7 +377,7 @@ body {
 
 /*login*/
 
-.login_modal,.register {
+.login_modal,.register_modal{
 	z-index: 1;
     left: 38%;
 	top: 5%;
@@ -394,6 +394,8 @@ body {
 	-moz-border-radius: 15px;
 	-o-border-radius: 20px;
 	animation: jumpdown 1s ease-out;
+	opacity: 0.98;
+
 }
 
 .owl{
@@ -428,7 +430,43 @@ input[type="username"] {
 	font-weight: 100;
 	border-bottom: 1px solid#484856;
 }
-input[type="password"]{
+
+input[name="psw"]{
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+	color: #dd3e3e;
+	font-size: 18px;
+	outline: none;
+	background: url(../images/key.png) no-repeat 10px 23px;
+	border: none;
+	font-weight: 100;
+	border-bottom: 1px solid#484856;
+	margin-bottom: 3em;
+}
+input[name="psw1"]{
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+	color: #dd3e3e;
+	font-size: 18px;
+	outline: none;
+	background: url(../images/key.png) no-repeat 10px 23px;
+	border: none;
+	font-weight: 100;
+	border-bottom: 1px solid#484856;
+
+}
+input[type="email"]{
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+	color: #dd3e3e;
+	font-size: 18px;
+	outline: none;
+	background: url(../images/key.png) no-repeat 10px 23px;
+	border: none;
+	font-weight: 100;
+	border-bottom: 1px solid#484856;
+}
+input[type="text"]{
 	width: 70%;
 	padding: 1em 2em 1em 3em;
 	color: #dd3e3e;
@@ -478,6 +516,40 @@ input[type="password"]{
 	  -moz-transition: 1s all;
 	  -o-transition: 1s all;
   }
+.btnregister{
+	font-size: 30px;
+	color: #fff;
+	outline: none;
+	border: none;
+	background: burlywood;
+	width: 95%;
+	padding: 18px 0;
+	border-radius: 15px;
+	/*-webkit-border-bottom-left-radius: 15px;*/
+	/*-moz-border-bottom-left-radius: 15px;*/
+	/*-o-border-bottom-left-radius: 15px;*/
+	/*border-bottom-right-radius: 15px;*/
+	/*-webkit-border-bottom-right-radius: 15px;*/
+	/*-moz-border-bottom-right-radius: 15px;*/
+	/*-o-border-bottom-right-radius: 15px;*/
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+.btnregister:hover {
+	opacity: 0.5;
+	border-bottom-left-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-bottom-left-radius: 15px;
+	-o-border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
+	-moz-border-bottom-right-radius: 15px;
+	-o-border-bottom-right-radius: 15px;
+	transition: 1s all;
+	-webkit-transition: 1s all;
+	-moz-transition: 1s all;
+	-o-transition: 1s all;
+}
   .cancelbtn{
 	  background: url('../images/close.png') no-repeat center burlywood ;
 	  background-size: 30px;

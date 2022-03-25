@@ -16,19 +16,13 @@
 	<div id="first_page" style="height: 100%;width: 100%">
 		<!--log in button的开始-->
 		<div id="log_in_button_container">
-			<div onclick="document.getElementById('login_modal').style.display='block'" class="button log_in_button"
+			<div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none'" class="button log_in_button"
 				id="log_in_button">
 				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
 			</div>
 		</div>
 		<div id="login_modal" class="login_modal">
 			<div id="owl" class="owl">
-				<div class="hand"></div>
-				<div class="hand hand-r"></div>
-				<div class="arms">
-					<div class="arm"></div>
-					<div class="arm arm-r"></div>
-				</div>
 			</div>
 			<div class="login_modal-content">
 				<div class="login_form">
@@ -37,22 +31,39 @@
 					<input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
 
 					<hr style="width: 90%;border-width:2px; margin-top: 20px">
-					<div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register').style.display='block'" style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp
-						<button style="color: #dd3e3e">Register Now!</button>
+					<div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'" style="font-size: 18px;color: #9199aa;margin-left: 3%">
+						 Don't have Account? &nbsp &nbsp
+						<button style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px">Register Now!</button>
 					</div>
-							
 				</div>
 				<div class="login_form">
 					<button type="button" onclick="document.getElementById('login_modal').style.display='none'"
 						class="cancelbtn"></button>
 				</div>
-
 			</div>
-			
 		</div>
-		<div id="register" class="register">
-			<input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
-			<input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
+
+		<div id="register_modal" class="register_modal">
+			<div id="owl1" class="owl">
+			</div>
+			<div class="register_modal-content">
+				<div class="register_form">
+					<input id="register-username" type="username" placeholder="Enter Username" name="uname" required>
+					<input id="register-password" type="password" placeholder="Enter Password" name="psw1" required>
+					<input id="register-email" type="email" placeholder="Enter Email"  required>
+					<button onclick="verification()">Get Verification Code</button>
+					<input id="register-verification" type="text" placeholder="Enter verification code"  required>
+					<input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
+
+
+
+
+				</div>
+				<div class="login_form">
+					<button type="button" onclick="document.getElementById('register_modal').style.display='none'"
+							class="cancelbtn"></button>
+				</div>
+			</div>
 		</div>
 
 
