@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="027ce9db-7e28-408b-ab38-83ccefbdd563" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/.dockerignore" afterDir="false" />
@@ -55,6 +56,7 @@
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/staticwebassets.pack.sentinel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Web/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/home.js" afterDir="false" />
     </list>
@@ -113,6 +115,7 @@
       <workItem from="1648012417368" duration="684000" />
       <workItem from="1648013632298" duration="338000" />
       <workItem from="1648014816985" duration="570000" />
+      <workItem from="1648202211532" duration="1561000" />
     </task>
     <servers />
   </component>
