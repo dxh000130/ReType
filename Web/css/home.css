@@ -377,7 +377,7 @@ body {
 
 /*login*/
 
-.login_modal {
+.login_modal,.register {
 	z-index: 1;
     left: 38%;
 	top: 15%;

@@ -37,14 +37,22 @@
 					<input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
 
 					<hr style="width: 90%;border-width:2px; margin-top: 20px">
-					<p style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp<a href="#"
-							style="color: #dd3e3e">Register Now!</a></p>
+					<div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register').style.display='block'" style="font-size: 18px; color: #9199aa ">Don't have Account? &nbsp &nbsp
+						<button style="color: #dd3e3e">Register Now!</button>
+					</div>
+							
 				</div>
 				<div class="login_form">
 					<button type="button" onclick="document.getElementById('login_modal').style.display='none'"
 						class="cancelbtn"></button>
 				</div>
+
 			</div>
+			
+		</div>
+		<div id="register" class="register">
+			<input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
+			<input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
 		</div>
 
 
