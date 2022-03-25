@@ -395,7 +395,17 @@ body {
 	-o-border-radius: 20px;
 	animation: jumpdown 1s ease-out;
 }
-
+.owl .hand{
+	width: 34px;
+	height: 34px;
+	border-radius: 40px;
+	background: #472d20;
+	position: absolute;
+	left: 12px;
+	bottom: -8px;
+	transform: scaleY(0.6);
+	transition: 0.3s ease-out;
+}
 
 @keyframes jumpdown {
 	0% {
