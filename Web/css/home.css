@@ -292,11 +292,15 @@ body {
 .word {
 	perspective: 1000px;
 	text-align: center;
-	position: fixed;
+	position: absolute;
 	margin-left: 30%;
 	margin-top: 18vh;
 	color: #fee375;
 	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+	display: inline;
+	float:left ;
+
+
 
 }
 
@@ -434,7 +438,7 @@ body {
 	overflow: auto;
 	background: #2b2b36;
 	position: absolute;
-	display: none;
+	/*display: none;*/
 	/*margin: 3% auto 0 auto;*/
 	text-align: center;
 	border-radius: 20px;
@@ -443,6 +447,7 @@ body {
 	-o-border-radius: 20px;
 	animation: jumpdown 1s ease-out;
 	opacity: 0.98;
+	float: left;
 
 }
 
@@ -453,7 +458,46 @@ body {
 	/*padding-bottom: 10px;*/
 
 }
+#error_box{
+	float: left;
+	margin-left: 69%;
+	margin-top: 220px;
+	animation: fade_in 1.5s;
+	transform-origin: left;
+	clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 55%);
+	border-radius: 10px;
+	opacity: 0.98;
+}
+.error_button{
+	background: url('../images/close.png') no-repeat center papayawhip;
+	background-size: 30px;
+	width: 45px;
+	height: 45px;
+	float: right;
+	border-radius: 15px;
+}
 
+
+
+
+@keyframes fade_in {
+	0% {
+		opacity: 0;
+		transform: scale(0.0, 0.0);
+	}
+	25% {
+		opacity: 0.5;
+	}
+	75% {
+		opacity: 0.8;
+
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1, 1);
+
+	}
+}
 
 @keyframes jumpdown {
 	0% {
@@ -462,6 +506,7 @@ body {
 
 	50% {
 		transform: translate(0, 50px);
+
 	}
 
 	100% {
@@ -609,7 +654,7 @@ input[type="text"] {
 }
 
 .cancelbtn {
-	background: url('../images/close.png') no-repeat center burlywood;
+	background: url('../images/close.png') no-repeat center papayawhip;
 	background-size: 30px;
 	cursor: pointer;
 	width: 45px;
