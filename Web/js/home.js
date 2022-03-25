@@ -32,3 +32,45 @@ function Login() {
         }
         });
     }
+function register(){
+    var username = document.getElementById("register-username").value;
+    var password = document.getElementById("register-password").value;
+    var email = document.getElementById("register-email").value;
+    var verification = document.getElementById("register-verification").value;
+    const signup = fetch("https://api.dxh000130.top/api/Register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "text/plain",
+        },
+        body: JSON.stringify({
+            "UserName": username,
+            "Password": password,
+            "Email": email,
+            "Code": verification,
+        })
+
+    })
+    signup.then(res => {
+        res.text().then(function (text) {
+            window.alert(text);
+        });
+
+    });
+};
+function verification(){
+    var email = document.getElementById("register-email").value;
+    const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email,{
+        method:"GET",
+        headers:{
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        }
+    }).then(res => {
+        res.text().then(function (text) {
+            window.alert(text);
+        });
+    })
+}
+
+

@@ -38,18 +38,10 @@ namespace ReType
             services.AddControllers();
             services.AddScoped<IWebAPIRepo, DBWebAPIRepo>();
             //services.AddMvc(options => options.OutputFormatters.Add(new VCardOutputFormatter()));
-            services.AddCors(options =>
-            {
-                options.AddPolicy("any", builder =>
-                {
-                    builder.WithOrigins("https://www.dxh000130.top").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
-                });
-            });
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("UserOnly", policy => policy.RequireClaim("userName"));
             }
-
         );
 
             //services.AddSwaggerGen(c =>
@@ -71,13 +63,12 @@ namespace ReType
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors("any");
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireCors("any"); ;
+                endpoints.MapControllers();
             });
         }
     }
