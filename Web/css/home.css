@@ -3,41 +3,44 @@
 /*下边四个可点击按钮的图案设置*/
 
 body {
-	background-image: url("../images/homepage.jpg")  ;
+	background-image: url("../images/homepage.jpg");
 	background-repeat: no-repeat;
 	background-position: center 0;
 	background-size: cover;
 	min-height: 98vh;
 }
 
-#home_page{
-	width:100%;
+#home_page {
+	width: 100%;
 	height: 25vh;
 	position: fixed;
 	bottom: 0%;
 }
+
 /*button中字体风格和颜色的设置*/
-.homepage_button_typeface1{
+.homepage_button_typeface1 {
 	font-size: 2.7vw;
 	word-break: break-word;
-	color: 	#fee375;
-	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black,8px 8px black;
+	color: #fee375;
+	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
-.homepage_button_typeface2{
+
+.homepage_button_typeface2 {
 
 	word-break: break-word;
 	color: lightcoral;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
 
-#home_page_bottom_button{
+#home_page_bottom_button {
 	opacity: 0.9;
 }
+
 /*personal details所有设置*/
-#user_container{
+#user_container {
 	width: 25%;
 	height: 22vh;
-	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
+	clip-path: polygon(50% 0%, 100% 100%, 12% 100%, 23% 19%);
 	float: left;
 	background: beige;
 	opacity: 0.9;
@@ -46,21 +49,25 @@ body {
 
 	border-color: black;
 }
-#user_front,#user_back{
+
+#user_front,
+#user_back {
 	width: 90%;
 	height: 90%;
 	margin-left: 1vw;
-	margin-top:1vh;
+	margin-top: 1vh;
 	background: peru;
-	clip-path: polygon(50% 0%,100% 100%,12% 100%, 23% 19%);
+	clip-path: polygon(50% 0%, 100% 100%, 12% 100%, 23% 19%);
 	position: absolute;
 	align-items: center;
 	display: flex;
 
 }
-#user_typeface1,#user_typeface3{
+
+#user_typeface1,
+#user_typeface3 {
 	background: peru;
-	margin: 0 auto ;
+	margin: 0 auto;
 	width: 45%;
 
 }
@@ -68,7 +75,7 @@ body {
 /*personal details所有设置完成*/
 
 /*leaderboard所有设置*/
-#leaderboard_container{
+#leaderboard_container {
 	width: 25%;
 	height: 22vh;
 	background: beige;
@@ -78,35 +85,40 @@ body {
 	margin-left: -6vw;
 	opacity: 0.9;
 }
-#leaderboard_front,#leaderboard_back{
+
+#leaderboard_front,
+#leaderboard_back {
 	width: 90%;
 	height: 90%;
 	margin-left: 1.5vw;
-	margin-top:1.4vh;
+	margin-top: 1.4vh;
 	background: peru;
 	clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
 	position: absolute;
 	align-items: center;
 	display: flex;
 }
-#leaderboard_typeface1{
+
+#leaderboard_typeface1 {
 	background: peru;
 	padding-left: 4.7vw;
 	width: 100%;
 }
-#leaderboard_typeface2{
+
+#leaderboard_typeface2 {
 	background: peru;
 	padding-left: 9.5vw;
 	width: 55%;
 }
+
 /*leaderboard所有设置完成*/
 
 /*introduction 所有设置开始*/
-#introduction_container{
+#introduction_container {
 	width: 30%;
 	height: 22vh;
 	background: beige;
-	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
+	clip-path: polygon(46% 0%, 84% 37%, 82% 100%, 18% 100%, 16% 11%);
 	bottom: -2%;
 	text-align: center;
 	float: left;
@@ -114,35 +126,40 @@ body {
 	margin-left: -1vw;
 	opacity: 0.9;
 }
-#introduction_front,#introduction_back{
+
+#introduction_front,
+#introduction_back {
 	width: 90%;
 	height: 90%;
 	margin-left: 1.5vw;
-	margin-top:1.2vh;
+	margin-top: 1.2vh;
 	position: absolute;
 	align-items: center;
 	display: flex;
 	background: peru;
-	clip-path: polygon(46% 0%,84% 37%, 82% 100%,18% 100%,16% 11%);
+	clip-path: polygon(46% 0%, 84% 37%, 82% 100%, 18% 100%, 16% 11%);
 }
-#introduction_typeface1{
+
+#introduction_typeface1 {
 	background: peru;
 	padding-left: 5.5vw;
 	width: 60%;
 }
-#introduction_typeface2{
+
+#introduction_typeface2 {
 	background: peru;
 	padding-left: 5.5vw;
 	width: 55%;
 }
+
 /*introduction 所有设置结束*/
 
 /*play 所有设置开始*/
-#play_container{
+#play_container {
 	width: 30%;
 	height: 22vh;
 	background: beige;
-	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
+	clip-path: polygon(74% 4%, 100% 19%, 100% 99%, 18% 100%, 26% 36%);
 	float: right;
 	margin-right: 2.5vw;
 	margin-left: -5vw;
@@ -150,18 +167,21 @@ body {
 	text-align: center;
 	opacity: 0.9;
 }
-#play_front,#play_back{
+
+#play_front,
+#play_back {
 	width: 90%;
 	height: 90%;
 	margin-left: 1.8vw;
-	margin-top:1.2vh;
+	margin-top: 1.2vh;
 	position: absolute;
 	align-items: center;
 	display: flex;
 	background: peru;
-	clip-path: polygon(74% 4%,100% 19%, 100% 99%,18% 100%,26% 36%);
+	clip-path: polygon(74% 4%, 100% 19%, 100% 99%, 18% 100%, 26% 36%);
 }
-#play_typeface1{
+
+#play_typeface1 {
 	background: peru;
 	padding-left: 10vw;
 	width: 55%;
@@ -170,7 +190,8 @@ body {
 	color: mediumseagreen;
 	text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
-#play_typeface2{
+
+#play_typeface2 {
 	padding-left: 10vw;
 	width: 55%;
 	word-break: break-word;
@@ -182,25 +203,30 @@ body {
 
 
 /*3D反转动画的实现开始*/
-.container{
+.container {
 	position: relative;
 	perspective: 1000px;
 }
-.front,.back{
+
+.front,
+.back {
 	position: absolute;
 	backface-visibility: hidden;
 	transition: 1s;
 	transform-style: preserve-3d;
 }
-.back{
+
+.back {
 	transform-style: preserve-3d;
 	transform: perspective(1000px) rotateY(180deg);
 }
-.container:hover .front{
+
+.container:hover .front {
 	transform-style: preserve-3d;
 	transform: perspective(1000px) rotateY(180deg);
 }
-.container:hover .back{
+
+.container:hover .back {
 	transform-style: preserve-3d;
 	transform: perspective(1000px) rotateY(360deg);
 }
@@ -210,18 +236,19 @@ body {
 
 
 /*login button的设置开始*/
-#log_in_button_container{
+#log_in_button_container {
 	position: fixed;
 	background: beige;
 	width: 15vw;
 	height: 10vw;
 	top: 0px;
 	right: 10px;
-	border-radius:25px;
+	border-radius: 25px;
 	animation: move 2s 2;
 	opacity: 0.8;
 
 }
+
 /*实现一打开网页log in 跳跃开始*/
 /*@keyframes move {*/
 /*	50% {*/
@@ -230,31 +257,32 @@ body {
 /*	}*/
 /*}*/
 /*实现一打开网页log in 跳跃结束*/
-#log_in_button:active{
-	background: beige ;
+#log_in_button:active {
+	background: beige;
 }
 
-#log_in_button{
+#log_in_button {
 	/*position: relative;*/
 	width: 13vw;
 	height: 8vw;
-	margin-top:1vw;
+	margin-top: 1vw;
 	margin-left: 1vw;
-	border-radius:25px;
+	border-radius: 25px;
 	background: peru;
 	text-align: center;
 	position: relative;
 }
-#log_in_typeface1{
+
+#log_in_typeface1 {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	margin-top:1vw;
+	margin-top: 1vw;
 	margin-left: 0.2vw;
 	font-size: 2vw;
 	color: #fee375;
-	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black,8px 8px black;
+	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
 
 
@@ -267,44 +295,51 @@ body {
 	position: fixed;
 	margin-left: 30%;
 	margin-top: 18vh;
-	color: 	#fee375;
-	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black,8px 8px black;
+	color: #fee375;
+	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 
 }
+
 .word span {
 	position: relative;
 	display: inline-block;
 	font-size: 10vw;
 	margin-right: 2vw;
 }
-#R{
+
+#R {
 	animation: left_r 2.5s 2 ease-out;
 	transform-origin: 0% 100% 1vw;
 }
+
 @keyframes left_r {
-	0%{
+	0% {
 		transform: rotate(0deg);
 	}
-	50%
-	 {
+
+	50% {
 		transform: rotate(-30deg);
 	}
-	100%{
+
+	100% {
 		transform: rotate(0deg);
 	}
 }
 
-#E1{
+#E1 {
 	animation: jump_e1 2s 2 ease-in-out;
 	transform-origin: bottom;
 }
+
 @keyframes jump_e1 {
-	25%{
+	25% {
 		transform: scale(1.5, 0.5);
 	}
+
 	50% {
-		transform:translate(0, -50px);
+		transform: translate(0, -50px);
 	}
+
 	100% {
 		transform: translate(0, 0);
 	}
@@ -312,27 +347,33 @@ body {
 
 #T {
 	animation: down_t 2s 2 ease-out;
-	transform-origin: top ;
+	transform-origin: top;
 }
-@keyframes down_t{
-	25%{
+
+@keyframes down_t {
+	25% {
 		transform: scale(1.5, 0.5);
 	}
+
 	50% {
-		transform:translate(0, 50px);
+		transform: translate(0, 50px);
 	}
+
 	100% {
 		transform: translate(0, 0);
 	}
 }
-#Y{
+
+#Y {
 	animation: rotate_y 2s 2 ease-out;
 }
-@keyframes rotate_y{
-	20%{
+
+@keyframes rotate_y {
+	20% {
 		transform: rotateY(90deg);
 	}
-	50%{
+
+	50% {
 		transform: rotateY(180deg);
 	}
 
@@ -341,14 +382,16 @@ body {
 	}
 }
 
-#P{
+#P {
 	animation: rotate_p 2s 2 ease-out;
 }
-@keyframes rotate_p{
-	20%{
+
+@keyframes rotate_p {
+	20% {
 		transform: rotateZ(90deg);
 	}
-	50%{
+
+	50% {
 		transform: rotateZ(180deg);
 	}
 
@@ -356,34 +399,39 @@ body {
 		transform: rotateZ(360deg);
 	}
 }
-#E2{
+
+#E2 {
 	animation: right_r 2.5s 2 ease-out;
 	transform-origin: 0% 100% 1vw;
 
 }
+
 @keyframes right_r {
-	0%{
+	0% {
 		transform: rotate(0deg);
 	}
-	50%
-	{
+
+	50% {
 		transform: rotate(30deg);
 	}
-	100%{
+
+	100% {
 		transform: rotate(0deg);
 	}
 }
+
 /*retype设置结束*/
 
 /*login*/
 
-.login_modal,.register_modal{
+.login_modal,
+.register_modal {
 	z-index: 1;
-    left: 38%;
+	left: 38%;
 	top: 5%;
-    width: 30%;
-    height: auto;
-    overflow: auto;
+	width: 30%;
+	height: auto;
+	overflow: auto;
 	background: #2b2b36;
 	position: absolute;
 	display: none;
@@ -398,7 +446,7 @@ body {
 
 }
 
-.owl{
+.owl {
 	background: url(../images/animal.png) no-repeat center;
 	width: 100%;
 	height: 150px;
@@ -409,11 +457,13 @@ body {
 
 @keyframes jumpdown {
 	0% {
-		transform:translate(0, -100px);
+		transform: translate(0, -100px);
 	}
+
 	50% {
-		transform:translate(0, 50px);
+		transform: translate(0, 50px);
 	}
+
 	100% {
 		transform: translate(0, 0);
 	}
@@ -431,7 +481,7 @@ input[type="username"] {
 	border-bottom: 1px solid#484856;
 }
 
-input[name="psw"]{
+input[name="psw"] {
 	width: 70%;
 	padding: 1em 2em 1em 3em;
 	color: #dd3e3e;
@@ -443,7 +493,8 @@ input[name="psw"]{
 	border-bottom: 1px solid#484856;
 	margin-bottom: 3em;
 }
-input[name="psw1"]{
+
+input[name="psw1"] {
 	width: 70%;
 	padding: 1em 2em 1em 3em;
 	color: #dd3e3e;
@@ -455,7 +506,8 @@ input[name="psw1"]{
 	border-bottom: 1px solid#484856;
 
 }
-input[type="email"]{
+
+input[type="email"] {
 	width: 70%;
 	padding: 1em 2em 1em 3em;
 	color: #dd3e3e;
@@ -466,7 +518,8 @@ input[type="email"]{
 	font-weight: 100;
 	border-bottom: 1px solid#484856;
 }
-input[type="text"]{
+
+input[type="text"] {
 	width: 70%;
 	padding: 1em 2em 1em 3em;
 	color: #dd3e3e;
@@ -478,12 +531,13 @@ input[type="text"]{
 	border-bottom: 1px solid#484856;
 	margin-bottom: 3em;
 }
-/* Modal Content/Box */
-
 
 /* Modal Content/Box */
 
-.btnlogin{
+
+/* Modal Content/Box */
+
+.btnlogin {
 	font-size: 30px;
 	color: #fff;
 	outline: none;
@@ -492,31 +546,33 @@ input[type="text"]{
 	width: 95%;
 	padding: 18px 0;
 	border-radius: 15px;
-	  /*-webkit-border-bottom-left-radius: 15px;*/
-	  /*-moz-border-bottom-left-radius: 15px;*/
-	  /*-o-border-bottom-left-radius: 15px;*/
-	  /*border-bottom-right-radius: 15px;*/
-	  /*-webkit-border-bottom-right-radius: 15px;*/
-	  /*-moz-border-bottom-right-radius: 15px;*/
-	  /*-o-border-bottom-right-radius: 15px;*/
-	  cursor: pointer;
-  }
- .btnlogin:hover {
-	  opacity: 0.5;
-	  border-bottom-left-radius: 15px;
-	  -webkit-border-bottom-left-radius: 15px;
-	  -moz-border-bottom-left-radius: 15px;
-	  -o-border-bottom-left-radius: 15px;
-	  border-bottom-right-radius: 15px;
-	  -webkit-border-bottom-right-radius: 15px;
-	  -moz-border-bottom-right-radius: 15px;
-	  -o-border-bottom-right-radius: 15px;
-		transition: 1s all;
-	  -webkit-transition: 1s all;
-	  -moz-transition: 1s all;
-	  -o-transition: 1s all;
-  }
-.btnregister{
+	/*-webkit-border-bottom-left-radius: 15px;*/
+	/*-moz-border-bottom-left-radius: 15px;*/
+	/*-o-border-bottom-left-radius: 15px;*/
+	/*border-bottom-right-radius: 15px;*/
+	/*-webkit-border-bottom-right-radius: 15px;*/
+	/*-moz-border-bottom-right-radius: 15px;*/
+	/*-o-border-bottom-right-radius: 15px;*/
+	cursor: pointer;
+}
+
+.btnlogin:hover {
+	opacity: 0.5;
+	border-bottom-left-radius: 15px;
+	-webkit-border-bottom-left-radius: 15px;
+	-moz-border-bottom-left-radius: 15px;
+	-o-border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
+	-moz-border-bottom-right-radius: 15px;
+	-o-border-bottom-right-radius: 15px;
+	transition: 1s all;
+	-webkit-transition: 1s all;
+	-moz-transition: 1s all;
+	-o-transition: 1s all;
+}
+
+.btnregister {
 	font-size: 30px;
 	color: #fff;
 	outline: none;
@@ -535,6 +591,7 @@ input[type="text"]{
 	cursor: pointer;
 	margin-bottom: 20px;
 }
+
 .btnregister:hover {
 	opacity: 0.5;
 	border-bottom-left-radius: 15px;
@@ -550,21 +607,34 @@ input[type="text"]{
 	-moz-transition: 1s all;
 	-o-transition: 1s all;
 }
-  .cancelbtn{
-	  background: url('../images/close.png') no-repeat center burlywood ;
-	  background-size: 30px;
-	  cursor: pointer;
-	  width: 45px;
-	  height: 45px;
-	  position: absolute;
-	  left: 2px;
-	  top: 2px;
-	  border-radius: 15px;
-	  -webkit-transition: color 0.2s ease-in-out;
-	  -moz-transition: color 0.2s ease-in-out;
-	  -o-transition: color 0.2s ease-in-out;
-	  transition: color 0.2s ease-in-out;
-	}
-	/*--/close--*/
+
+.cancelbtn {
+	background: url('../images/close.png') no-repeat center burlywood;
+	background-size: 30px;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	border-radius: 15px;
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+/*--/close--*/
 
 
+
+.code {
+	font-size: 18px;
+	width: 70%;
+	padding: 1em 2em 1em 3em;
+}
+
+.code:hover {
+	background: #F6F9FE;
+	color: #174ea6;
+}
