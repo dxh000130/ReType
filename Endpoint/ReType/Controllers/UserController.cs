@@ -261,17 +261,25 @@ namespace ReType.Controllers
                     
                     User c1 = new User { UserName = token.Email, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
-                    return code;
+                    return token.Email + "," + code;
                 }
                 else if (user1 != null && userbyemail == null)
                 {
-                    User c1 = new User { UserName = token.Email + "1", Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    Random random1 = new Random();
+                    int single1;
+                    string code1 = string.Empty;
+                    for (int p = 0; p < 4; p++)
+                    {
+                        single = Convert.ToInt32(random.NextDouble() * 10);
+                        code += single;
+                    }
+                    User c1 = new User { UserName = token.Email + code, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
-                    return code;
+                    return token.Email + "," + code;
                 }
                 else if(userbyemail != null && userbyemail.Google == "true")
                 {
-                    return userbyemail.Password;
+                    return token.Email + "," + userbyemail.Password;
                 }
                 else if (userbyemail != null && userbyemail.Google == "false")
                 {

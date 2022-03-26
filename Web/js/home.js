@@ -130,8 +130,8 @@ function onSignIn(googleUser) {
     signup.then(res => {
         res.text().then(function (text) {
             console.log(text);
-            if (text != "User successfully registered."){
-
+            if (text != "This email has been occupied, please log in first and then bind Google" || text != "no"){
+                
             }
         });
 
