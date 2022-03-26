@@ -61,6 +61,8 @@ function log_out(){
     valid_log=false;
     document.getElementById("error_box").style.display="none";
     document.getElementById("login_modal").style.display="none";
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut()
 }
 
 
@@ -155,7 +157,8 @@ function onSignIn(googleUser) {
     console.log('Family Name: ' + profile.getFamilyName());
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
-
+    document.getElementById("error_box").style.display="block";
+    var text1=document.getElementById("error_text");
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
@@ -176,10 +179,23 @@ function onSignIn(googleUser) {
         res.text().then(function (text) {
             console.log(text);
             if (text != "This email has been occupied, please log in first and then bind Google" || text != "no"){
-                
+                user = text.split(",");
+                user_id = user[0];
+                pass = user[1];
+                console.log(user_id);
+                console.log(pass);
+                text1.innerText="You have successfully logged in!";
+                valid_log=true;
+                const button=document.getElementById("error_button");
+                document.getElementById("login_modal").style.display="none";
+                button.onclick=function(){
+                    document.getElementById("error_box").style.display="none";
+                    document.getElementById("login_modal").style.display="none";
+                }
+                document.getElementById("log_in_button_container").style.display="none";
+                document.getElementById("log_out_button_container").style.display="block";
             }
         });
 
     });
 }
-

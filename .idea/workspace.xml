@@ -2,8 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="027ce9db-7e28-408b-ab38-83ccefbdd563" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/.vs/ReType/project-colors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/.vs/ReType/project-colors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Changepassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Changepassword.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Register.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Register.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/ResetPassword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/ResetPassword.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/UpdateEmail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/UpdateEmail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/UpdateUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/UpdateUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/VaildGoogle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/VaildGoogle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Verifycode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Dtos/Verifycode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Handler/MyAuthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Handler/MyAuthHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Migrations/20220326022346_createTable.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Migrations/20220326022346_createTable.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Migrations/20220326022346_createTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Migrations/20220326022346_createTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Migrations/WebAPIDBContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Migrations/WebAPIDBContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Model/Article.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Model/Article.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Model/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Model/Verificationcode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Model/Verificationcode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/ReType.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/ReType.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/ReType.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/ReType.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/bin/Debug/net6.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/data/DBWebAPIRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/data/DBWebAPIRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/data/IWebAPIRepo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/data/IWebAPIRepo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/data/WebAPIDBContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/data/WebAPIDBContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Container/VolumeMappings.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Container/VolumeMappings.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/ReType.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/Debug/net6.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/ReType.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Web/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/game.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/game.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/home.js" afterDir="false" />
     </list>
@@ -69,6 +122,7 @@
       <workItem from="1648268982462" duration="1959000" />
       <workItem from="1648273505134" duration="5522000" />
       <workItem from="1648279421125" duration="7654000" />
+      <workItem from="1648287883973" duration="1675000" />
     </task>
     <servers />
   </component>
