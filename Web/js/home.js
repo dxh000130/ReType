@@ -81,6 +81,8 @@ function register(){
         text.innerText="Please Enter your Email !";
     }else if(username !="" && password!="" && email !="" &&  verification=="") {
         text.innerText = "Please Enter your Verification Code !";
+    }else if(username !="" && password!="" && !/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email) &&  verification=="") {
+        text.innerText = "Please Enter Correct Email !";
     }else if(username !="" && password!="" && email !="" &&  verification!=""){
         const signup = fetch("https://api.dxh000130.top/api/Register", {
             method: "POST",
@@ -126,7 +128,10 @@ function verification(){
     document.getElementById("error_box").style.display="block";
     if(email==""){
         text.innerText="Please Enter your Email !";
-    }else{
+    }else if(!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)){
+        text.innerText="Please Enter your Correct Email !";
+    }
+    else{
         document.getElementById("error_box").style.display="none";
         const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email,{
             method:"GET",
