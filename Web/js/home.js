@@ -39,7 +39,15 @@ function Login() {
                 // document.getElementById("button_logout").style.visibility = "visible";
                 text.innerText="You have successfully logged in!";
                 valid_log=true;
-                disappear_login();
+                const button=document.getElementById("error_button");
+                button.onclick=function(){
+                    document.getElementById("error_box").style.display="none";
+                    document.getElementById("login_modal").style.display="none";}
+                document.getElementById("log_in_typeface1").innerText="Welcome !";
+
+
+
+
             } else {
                 text.innerText="Your username or password is wrong ! Please try it again !";
                 valid_log=false;
@@ -48,10 +56,6 @@ function Login() {
             }
         });
     }
-}
-function disappear_login(){
-    document.getElementById("error_box").style.display="none";
-    document.getElementById("login_modal").style.display="none";
 }
 
 
