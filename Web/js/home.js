@@ -35,8 +35,6 @@ function Login() {
                 user_id = username;
                 pass = password;
                 console.log("Log in Success");
-                // document.getElementById("button_login").style.visibility = "hidden";
-                // document.getElementById("button_logout").style.visibility = "visible";
                 text.innerText="You have successfully logged in!";
                 valid_log=true;
                 const button=document.getElementById("error_button");
@@ -56,6 +54,7 @@ function Login() {
         });
     }
 }
+
 function log_out(){
     document.getElementById("log_in_button_container").style.display="block";
     document.getElementById("log_out_button_container").style.display="none";
@@ -66,45 +65,85 @@ function log_out(){
 
 
 function register(){
+    document.getElementById("error_box").style.display="block";
     var username = document.getElementById("register-username").value;
     var password = document.getElementById("register-password").value;
     var email = document.getElementById("register-email").value;
     var verification = document.getElementById("register-verification").value;
-    const signup = fetch("https://api.dxh000130.top/api/Register", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "text/plain",
-        },
-        body: JSON.stringify({
-            "UserName": username,
-            "Password": password,
-            "Email": email,
-            "Code": verification,
-        })
-
-    })
-    signup.then(res => {
-        res.text().then(function (text) {
-            window.alert(text);
+    var text=document.getElementById("error_text");
+    if(username =="" && password!="" && email !="" &&  verification!=""){
+        text.innerText="Please Enter Your Username !";
+    }else if(username !="" && password=="" && email !="" &&  verification!=""){
+        text.innerText="Please Enter Your Password !";
+    }else if(username !="" && password!="" && email =="" &&  verification!=""){
+        text.innerText="Please Enter your Email !";
+    }else if(username !="" && password!="" && email !="" &&  verification=="") {
+        text.innerText = "Please Enter your Verification Code !";
+    }else if(username !="" && password!="" && email !="" &&  verification!=""){
+        const signup = fetch("https://api.dxh000130.top/api/Register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "text/plain",
+            },
+            body: JSON.stringify({
+                "UserName": username,
+                "Password": password,
+                "Email": email,
+                "Code": verification,
+            })
         });
-
+        signup.then(res => {
+        res.text().then(function (return_text) {
+            text.innerText =return_text;
+            if(return_text=="User successfully registered."){
+                const button=document.getElementById("error_button");
+                button.onclick=function(){
+                    document.getElementById("error_box").style.display="none";
+                    document.getElementById("register_modal").style.display="none";
+                }
+            }else{
+                const button=document.getElementById("error_button");
+                button.onclick=function(){
+                    document.getElementById("error_box").style.display="none";
+                    document.getElementById("register_modal").style.display="block";
+                }
+            }
+        });
     });
-};
+    }else{
+        text.innerText = "Please Complete All Information !";
+    }
+}
+
+
+
 function verification(){
     var email = document.getElementById("register-email").value;
-    const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email,{
-        method:"GET",
-        headers:{
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-        }
-    }).then(res => {
-        res.text().then(function (text) {
-            window.alert(text);
-        });
-    })
+    var text=document.getElementById("error_text");
+    document.getElementById("error_box").style.display="block";
+    if(email==""){
+        text.innerText="Please Enter your Email !";
+    }else{
+        document.getElementById("error_box").style.display="none";
+        const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email,{
+            method:"GET",
+            headers:{
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+            }
+        }).then(res => {
+            res.text().then(function (return_text) {
+                console.log(return_text);
+                if(return_text=='"This email has been registered by another user"'){
+                    document.getElementById("error_box").style.display="block";
+                    text.innerText = "This Email Has Been Resgistered !";
+                }
+            });
+        })
+    }
 }
+
 
 ///bug
 function onSignIn(googleUser) {
@@ -143,3 +182,4 @@ function onSignIn(googleUser) {
 
     });
 }
+

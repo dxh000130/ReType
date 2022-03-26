@@ -18,7 +18,7 @@
 	<div id="first_page" style="height: 100%;width: 100%">
 		<!--log in button的开始-->
 		<div id="log_in_button_container" >
-			<div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none'" class="button log_in_button"
+			<div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button"
 				id="log_in_button">
 				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br/>Sign In</p>
 			</div>
@@ -45,7 +45,7 @@
 					<hr style="width: 90%;border-width:2px; margin-top: 20px">
 					<div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'" style="font-size: 18px;color: #9199aa;margin-left: 3%">
 						Don't have Account? &nbsp &nbsp
-						<button style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px">Register Now!</button>
+						<button style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px" onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
 					</div>
 				</div>
 				<div class="login_form">
@@ -72,7 +72,7 @@
 					<input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
 				</div>
 				<div class="login_form">
-					<button type="button" onclick="document.getElementById('register_modal').style.display='none'"
+					<button type="button" onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'"
 							class="cancelbtn"></button>
 				</div>
 			</div>

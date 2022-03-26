@@ -464,14 +464,14 @@ body {
 	float: left;
 
 }
-
+/*猫头鹰*/
 .owl {
 	background: url(../images/animal.png) no-repeat center;
 	width: 100%;
 	height: 150px;
 	/*padding-bottom: 10px;*/
-
 }
+/*提示框*/
 #error_box{
 	float: left;
 	margin-left: 69%;
@@ -695,8 +695,6 @@ input[type="text"] {
 }
 
 /*--/close--*/
-
-
 
 .code {
 	font-size: 18px;
