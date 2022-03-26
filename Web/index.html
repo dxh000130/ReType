@@ -86,10 +86,9 @@
 		<!--登录注册状态提示框-->
 
 			<div style="background-color: #2b2b36;width: 30%;height: 150px" id="error_box">
-
-				<button type="button" onclick="document.getElementById('error_box').style.display='none'"
+				<button type="button" onclick="disappear_login();document.getElementById('error_box').style.display='none'"
 						class="error_button"></button>
-				<p id="error_text">Your username or password is wrong ! Please try it again !</p>
+				<p id="error_text"></p>
 			</div>
 		</div>
 

@@ -22,7 +22,7 @@ function Login() {
        text.innerText="Please Enter Your Username !";
     }else if(username !="" && password ==""){
         text.innerText="Please enter your password !";
-    }else if(username_log =="" && password_log ==""){
+    }else if(username =="" && password ==""){
         text.innerText="Please enter your username and password !";
     }else{
         headers1.append('Authorization', 'Basic '+ btoa(username+ ":" + password));
@@ -35,20 +35,23 @@ function Login() {
                 user_id = username;
                 pass = password;
                 console.log("Log in Success");
-                document.getElementById("closebtn").click();
-                document.getElementById("button_login").style.visibility = "hidden";
-                document.getElementById("button_logout").style.visibility = "visible";
+                // document.getElementById("button_login").style.visibility = "hidden";
+                // document.getElementById("button_logout").style.visibility = "visible";
                 text.innerText="You have successfully logged in!";
                 valid_log=true;
-
+                disappear_login();
             } else {
                 text.innerText="Your username or password is wrong ! Please try it again !";
                 valid_log=false;
-                document.getElementById("login-username")="";
-                document.getElementById("login-password")="";
+                document.getElementById("login-username").value="";
+                document.getElementById("login-password").value="";
             }
         });
     }
+}
+function disappear_login(){
+    document.getElementById("error_box").style.display="none";
+    document.getElementById("login_modal").style.display="none";
 }
 
 
