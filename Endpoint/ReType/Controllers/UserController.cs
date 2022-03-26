@@ -246,24 +246,32 @@ namespace ReType.Controllers
             bool vaildgoogle = await _repository.VaildGoogleTokenAsync(token.ID, token.Email);
             if (vaildgoogle == true)
             {
+                Random random = new Random();
+                int single;
+                string code = string.Empty;
+                for (int p = 0; p < 12; p++)
+                {
+                    single = Convert.ToInt32(random.NextDouble() * 10);
+                    code += single;
+                }
                 User user1 = _repository.Getuser(token.Email); //Username alread exist or not
                 User userbyemail = _repository.Getuserbyemail(token.Email); //Username alread exist or not
                 if (user1 == null && userbyemail == null)
                 {
                     
-                    User c1 = new User { UserName = token.Email, Password = token.ID, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    User c1 = new User { UserName = token.Email, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
-                    return "User successfully registered.";
+                    return code;
                 }
                 else if (user1 != null && userbyemail == null)
                 {
-                    User c1 = new User { UserName = token.Email + "1", Password = token.ID, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    User c1 = new User { UserName = token.Email + "1", Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
-                    return "User successfully registered.";
+                    return code;
                 }
                 else if(userbyemail != null && userbyemail.Google == "true")
                 {
-                    return "Login success";
+                    return userbyemail.Password;
                 }
                 else if (userbyemail != null && userbyemail.Google == "false")
                 {

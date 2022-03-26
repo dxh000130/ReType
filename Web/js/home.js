@@ -100,7 +100,7 @@ function verification(){
     })
 }
 
-
+///bug
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
@@ -114,4 +114,26 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
+    const signup = fetch("https://api.dxh000130.top/api/vaildgoogleAsync", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "text/plain",
+        },
+        body: JSON.stringify({
+            "Email": profile.getEmail(),
+            "ID": id_token,
+            "Name": profile.getName(),
+        })
+
+    })
+    signup.then(res => {
+        res.text().then(function (text) {
+            console.log(text);
+            if (text != "User successfully registered."){
+
+            }
+        });
+
+    });
 }

@@ -27,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.csproj.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/ReType.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/ReType.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Endpoint/ReType/RetypeDatabase.sqlite-shm" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/RetypeDatabase.sqlite-shm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Endpoint/ReType/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Endpoint/ReType/appsettings.json" afterDir="false" />
@@ -119,6 +120,7 @@
       <workItem from="1648219455841" duration="10307000" />
       <workItem from="1648256115748" duration="7475000" />
       <workItem from="1648263769979" duration="2665000" />
+      <workItem from="1648268982462" duration="1529000" />
     </task>
     <servers />
   </component>
