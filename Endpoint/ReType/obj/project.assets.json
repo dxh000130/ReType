@@ -68,6 +68,19 @@
           "lib/netstandard2.0/Google.Apis.Drive.v3.dll": {}
         }
       },
+      "Google.Apis.Oauth2.v2/1.56.0.1869": {
+        "type": "package",
+        "dependencies": {
+          "Google.Apis": "1.56.0",
+          "Google.Apis.Auth": "1.56.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Apis.Oauth2.v2.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Apis.Oauth2.v2.dll": {}
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -875,6 +888,34 @@
         "lib/netstandard2.0/Google.Apis.Drive.v3.dll",
         "lib/netstandard2.0/Google.Apis.Drive.v3.pdb",
         "lib/netstandard2.0/Google.Apis.Drive.v3.xml"
+      ]
+    },
+    "Google.Apis.Oauth2.v2/1.56.0.1869": {
+      "sha512": "7FtSROh5sfwp4ZhzWpsq/q0X+2F/YwSYCx6zNnFmimKDj8kJPiorLWUNpxtbAf6whcPRfLdfG5PHcfFHEdKuQQ==",
+      "type": "package",
+      "path": "google.apis.oauth2.v2/1.56.0.1869",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NuGetIcon.png",
+        "google.apis.oauth2.v2.1.56.0.1869.nupkg.sha512",
+        "google.apis.oauth2.v2.nuspec",
+        "lib/net40/Google.Apis.Oauth2.v2.dll",
+        "lib/net40/Google.Apis.Oauth2.v2.pdb",
+        "lib/net40/Google.Apis.Oauth2.v2.xml",
+        "lib/net45/Google.Apis.Oauth2.v2.dll",
+        "lib/net45/Google.Apis.Oauth2.v2.pdb",
+        "lib/net45/Google.Apis.Oauth2.v2.xml",
+        "lib/netstandard1.0/Google.Apis.Oauth2.v2.dll",
+        "lib/netstandard1.0/Google.Apis.Oauth2.v2.pdb",
+        "lib/netstandard1.0/Google.Apis.Oauth2.v2.xml",
+        "lib/netstandard1.3/Google.Apis.Oauth2.v2.dll",
+        "lib/netstandard1.3/Google.Apis.Oauth2.v2.pdb",
+        "lib/netstandard1.3/Google.Apis.Oauth2.v2.xml",
+        "lib/netstandard2.0/Google.Apis.Oauth2.v2.dll",
+        "lib/netstandard2.0/Google.Apis.Oauth2.v2.pdb",
+        "lib/netstandard2.0/Google.Apis.Oauth2.v2.xml"
       ]
     },
     "Humanizer.Core/2.8.26": {
@@ -2027,6 +2068,7 @@
     "net6.0": [
       "Google.Apis.Auth.AspNetCore3 >= 1.56.0",
       "Google.Apis.Drive.v3 >= 1.56.0.2601",
+      "Google.Apis.Oauth2.v2 >= 1.56.0.1869",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Sqlite >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.3",
@@ -2085,6 +2127,10 @@
           "Google.Apis.Drive.v3": {
             "target": "Package",
             "version": "[1.56.0.2601, )"
+          },
+          "Google.Apis.Oauth2.v2": {
+            "target": "Package",
+            "version": "[1.56.0.1869, )"
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",

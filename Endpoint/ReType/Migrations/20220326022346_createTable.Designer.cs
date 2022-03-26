@@ -11,7 +11,7 @@ using ReType.Data;
 namespace ReType.Migrations
 {
     [DbContext(typeof(WebAPIDBContext))]
-    [Migration("20220321232139_createTable")]
+    [Migration("20220326022346_createTable")]
     partial class createTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,7 +62,16 @@ namespace ReType.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FaceBook")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Gerder")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Google")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Microsoft")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

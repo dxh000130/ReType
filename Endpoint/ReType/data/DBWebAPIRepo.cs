@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections;
 using System.Net.Mail;
 using System.Text;
+using Google.Apis.Auth;
 
 namespace ReType.data
 {
@@ -121,6 +122,51 @@ namespace ReType.data
             {
                 return false;
             }
+        }
+        public async Task<bool> VaildGoogleTokenAsync(string token, string email)
+        {
+            bool valid = true;
+            try
+            {
+                GoogleJsonWebSignature.Payload payload = await GoogleJsonWebSignature.ValidateAsync(token);
+                if (!payload.Audience.Equals("975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com"))
+                {
+                    valid = false;
+                    Console.Error.WriteLine("11");
+                    Console.Error.WriteLine(payload.Audience.ToString());
+                }
+                if (!payload.Issuer.Equals("accounts.google.com") && !payload.Issuer.Equals("https://accounts.google.com"))
+                {
+                    valid = false;
+                    Console.Error.WriteLine("22");
+                }
+                if (payload.ExpirationTimeSeconds == null)
+                {
+                    valid = false;
+                    Console.Error.WriteLine("33");
+                }
+                if (payload.Email != email)
+                {
+                    valid = false;
+                    Console.Error.WriteLine(payload.Email);
+                }
+                else
+                {
+                    DateTime now = DateTime.Now.ToUniversalTime();
+                    DateTime expiration = DateTimeOffset.FromUnixTimeSeconds((long)payload.ExpirationTimeSeconds).DateTime;
+                    if (now > expiration)
+                    {
+                        valid = false;
+                        Console.Error.WriteLine("44");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                valid = false;
+                Console.Error.WriteLine("55");
+            }
+            return valid;
         }
     }
 }

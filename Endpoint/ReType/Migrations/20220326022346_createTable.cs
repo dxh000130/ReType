@@ -36,7 +36,10 @@ namespace ReType.Migrations
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Dataofbirth = table.Column<string>(type: "TEXT", nullable: true),
-                    Gerder = table.Column<string>(type: "TEXT", nullable: true)
+                    Gerder = table.Column<string>(type: "TEXT", nullable: true),
+                    Google = table.Column<string>(type: "TEXT", nullable: true),
+                    FaceBook = table.Column<string>(type: "TEXT", nullable: true),
+                    Microsoft = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

@@ -19,5 +19,8 @@ namespace ReType.Model
         public string? Name { get; set; } //User Name
         public string? Dataofbirth { get; set; } //User Dataofbirth
         public string? Gerder { get; set; }// User Gender
+        public string? Google { get; set; }// User Gender
+        public string? FaceBook { get; set; }// User Gender
+        public string? Microsoft { get; set; }// User Gender
     }
 }

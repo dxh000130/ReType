@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YTPuLolXAnfPsMGOa2MpAzyUzSFbnizcOS5NVMy4tba/kjNAkI/7NwuO2V9mqkuGX1yKsmmZHvCZVIhj5SSWwQ==",
+  "dgSpecHash": "+4JNJs36ok5CN3orqU3eGE0NPJGCcQ23XdCJRgTd+SHiHdlUsKLvAH+JC7EPkWzgflD17vLftQnLWJlIE+bX2Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\ReType.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\dxh00\\.nuget\\packages\\google.apis.auth.aspnetcore3\\1.56.0\\google.apis.auth.aspnetcore3.1.56.0.nupkg.sha512",
     "C:\\Users\\dxh00\\.nuget\\packages\\google.apis.core\\1.56.0\\google.apis.core.1.56.0.nupkg.sha512",
     "C:\\Users\\dxh00\\.nuget\\packages\\google.apis.drive.v3\\1.56.0.2601\\google.apis.drive.v3.1.56.0.2601.nupkg.sha512",
+    "C:\\Users\\dxh00\\.nuget\\packages\\google.apis.oauth2.v2\\1.56.0.1869\\google.apis.oauth2.v2.1.56.0.1869.nupkg.sha512",
     "C:\\Users\\dxh00\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\dxh00\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\3.0.3\\microsoft.aspnetcore.authentication.openidconnect.3.0.3.nupkg.sha512",
     "C:\\Users\\dxh00\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.0.3\\microsoft.aspnetcore.authorization.3.0.3.nupkg.sha512",
