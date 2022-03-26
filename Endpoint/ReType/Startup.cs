@@ -71,5 +71,6 @@ namespace ReType
                 endpoints.MapControllers();
             });
         }
+        
     }
 }

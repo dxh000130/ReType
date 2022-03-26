@@ -60,7 +60,16 @@ namespace ReType.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FaceBook")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Gerder")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Google")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Microsoft")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")

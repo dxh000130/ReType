@@ -13,6 +13,8 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using ReType.data;
 using ReType.Dtos;
+using Google.Apis.Oauth2.v2;
+using Google.Apis.Auth;
 
 namespace ReType.Controllers
 {
@@ -88,7 +90,7 @@ namespace ReType.Controllers
                 {
                     _repository.Deleteverificationcode(c);
                 }
-                User c1 = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0 }; //From user input get data and store in database
+                User c1 = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0, Google = "false", FaceBook = "false", Microsoft = "false"}; //From user input get data and store in database
                 _repository.Register(c1);
                 return "User successfully registered.";
             }
@@ -237,6 +239,39 @@ namespace ReType.Controllers
             Verificationcode c = new Verificationcode { Email = email, code = code, Date = DateTime.Now };
             _repository.Storeverificationcode(c);
             return "yes";
+        }
+        [HttpPost("vaildgoogleAsync")]
+        public async Task<string> vaildgoogleAsync(VaildGoogle token)
+        {
+            bool vaildgoogle = await _repository.VaildGoogleTokenAsync(token.ID, token.Email);
+            if (vaildgoogle == true)
+            {
+                User user1 = _repository.Getuser(token.Email); //Username alread exist or not
+                User userbyemail = _repository.Getuserbyemail(token.Email); //Username alread exist or not
+                if (user1 == null && userbyemail == null)
+                {
+                    
+                    User c1 = new User { UserName = token.Email, Password = token.ID, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    _repository.Register(c1);
+                    return "User successfully registered.";
+                }
+                else if (user1 != null && userbyemail == null)
+                {
+                    User c1 = new User { UserName = token.Email + "1", Password = token.ID, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    _repository.Register(c1);
+                    return "User successfully registered.";
+                }
+                else if(userbyemail != null && userbyemail.Google == "true")
+                {
+                    return "Login success";
+                }
+                else if (userbyemail != null && userbyemail.Google == "false")
+                {
+                    return "This email has been occupied, please log in first and then bind Google";
+                }
+                
+            }
+            return "no";
         }
     }
 }
