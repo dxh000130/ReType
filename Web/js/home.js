@@ -194,6 +194,11 @@ function onSignIn(googleUser) {
                 }
                 document.getElementById("log_in_button_container").style.display="none";
                 document.getElementById("log_out_button_container").style.display="block";
+            } else if(text == "This email has been occupied, please log in first and then bind Google"){
+                text.innerText="This email has been occupied, please log in first and then bind Google!";
+                valid_log=false;
+                document.getElementById("login-username").value="";
+                document.getElementById("login-password").value="";
             }
         });
 
