@@ -236,7 +236,7 @@ body {
 
 
 /*login button的设置开始*/
-#log_in_button_container {
+#log_in_button_container, #log_out_button_container{
 	position: fixed;
 	background: beige;
 	width: 15vw;
@@ -260,8 +260,10 @@ body {
 #log_in_button:active {
 	background: beige;
 }
-
-#log_in_button {
+#log_out_button:active {
+	background: beige;
+}
+#log_in_button,#log_out_button {
 	/*position: relative;*/
 	width: 13vw;
 	height: 8vw;
@@ -272,7 +274,6 @@ body {
 	text-align: center;
 	position: relative;
 }
-
 #log_in_typeface1 {
 	position: absolute;
 	width: 100%;
@@ -282,6 +283,22 @@ body {
 	margin-left: 0.2vw;
 	font-size: 2vw;
 	color: #fee375;
+	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+}
+#log_out_typeface1 {
+	text-align: center;
+	margin-top: 1vw;
+	margin-left: 0.2vw;
+	padding-top: 0.5vw;
+	font-size: 2vw;
+	color: #fee375;
+	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+}
+#log_out_typeface2 {
+	text-align: center;
+	margin-left: 0.2vw;
+	font-size: 1.5vw;
+	color: white;
 	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
 
@@ -299,9 +316,6 @@ body {
 	text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 	display: inline;
 	float:left ;
-
-
-
 }
 
 .word span {
@@ -483,7 +497,7 @@ body {
 	text-align: left;
 	margin-top: 0px;
 	margin-left: 9%;
-	padding-top: 8%;
+	padding-top: 11%;
 	font-size: 20px;
 	word-break: break-word;
 	color: #fee375;

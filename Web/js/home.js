@@ -42,11 +42,10 @@ function Login() {
                 const button=document.getElementById("error_button");
                 button.onclick=function(){
                     document.getElementById("error_box").style.display="none";
-                    document.getElementById("login_modal").style.display="none";}
-                document.getElementById("log_in_typeface1").innerText="Welcome !";
-
-
-
+                    document.getElementById("login_modal").style.display="none";
+                }
+                document.getElementById("log_in_button_container").style.display="none";
+                document.getElementById("log_out_button_container").style.display="block";
 
             } else {
                 text.innerText="Your username or password is wrong ! Please try it again !";
@@ -56,6 +55,13 @@ function Login() {
             }
         });
     }
+}
+function log_out(){
+    document.getElementById("log_in_button_container").style.display="block";
+    document.getElementById("log_out_button_container").style.display="none";
+    valid_log=false;
+    document.getElementById("error_box").style.display="none";
+    document.getElementById("login_modal").style.display="none";
 }
 
 

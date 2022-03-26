@@ -17,10 +17,20 @@
 	<!--主界面的开始-->
 	<div id="first_page" style="height: 100%;width: 100%">
 		<!--log in button的开始-->
-		<div id="log_in_button_container">
+		<div id="log_in_button_container" >
 			<div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none'" class="button log_in_button"
 				id="log_in_button">
-				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
+				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br/>Sign In</p>
+			</div>
+
+		</div>
+
+		<div id="log_out_button_container" style="display: none">
+			<div onclick="log_out()" class="button log_out_button"
+				 id="log_out_button">
+				<p id="log_out_typeface1">Welcome !<br/>
+					<p id="log_out_typeface2">Log Out</p>
+				</p>
 			</div>
 		</div>
 
@@ -39,7 +49,7 @@
 					</div>
 				</div>
 				<div class="login_form">
-					<button type="button" onclick="document.getElementById('login_modal').style.display='none'"
+					<button type="button" onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'"
 							class="cancelbtn"></button>
 				</div>
 				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
