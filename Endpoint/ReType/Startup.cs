@@ -38,6 +38,14 @@ namespace ReType
             services.AddControllers();
             services.AddScoped<IWebAPIRepo, DBWebAPIRepo>();
             //services.AddMvc(options => options.OutputFormatters.Add(new VCardOutputFormatter()));
+            services.AddCors(options =>
+            {
+                options.AddPolicy("any", builder =>
+                {
+                    builder.WithOrigins("https://www.dxh000130.top").AllowCredentials().AllowAnyHeader().AllowAnyMethod();
+                    //允许任何来源的主机访问
+                });
+            });
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("UserOnly", policy => policy.RequireClaim("userName"));
@@ -61,14 +69,14 @@ namespace ReType
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
+            app.UseCors("any");
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireCors("any"); 
             });
         }
         
