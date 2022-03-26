@@ -270,10 +270,10 @@ namespace ReType.Controllers
                     string code1 = string.Empty;
                     for (int p = 0; p < 4; p++)
                     {
-                        single = Convert.ToInt32(random.NextDouble() * 10);
-                        code += single;
+                        single1 = Convert.ToInt32(random1.NextDouble() * 10);
+                        code1 += single1;
                     }
-                    User c1 = new User { UserName = token.Email + code, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
+                    User c1 = new User { UserName = token.Email + code1, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
                     return token.Email + "," + code;
                 }
