@@ -146,8 +146,29 @@ function verification(){
                     document.getElementById("error_box").style.display="block";
                     text.innerText = "This Email Has Been Resgistered !";
                 }
+                else {
+                    t = setInterval(function () {
+                        countdown()
+                    }, 1000)
+                    countdown();
+                }
             });
         })
+    }
+}
+var time = 60;
+function countdown(){
+    if (time == 0) {
+        //这里时设置当时间到0的时候重新设置点击事件，并且默认time修改为60
+        document.getElementById("code").onclick = "verification()";
+        document.getElementById("code").value="Get Verification Code";
+        time = 60;
+        clearInterval(t);
+    }else{
+        //这里是显示时间倒计时的时候点击不生效
+        document.getElementById("code").onclick = "";
+        document.getElementById("code").value="Resend in "+time+"s";
+        time--;
     }
 }
 
