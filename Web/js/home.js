@@ -10,29 +10,48 @@ fetch('https://api.dxh000130.top/api/GetVersion', {
     });
 var user_id = "";
 var pass = "";
+
+let valid_log=false;
 function Login() {
+    document.getElementById("error_box").style.display="block";
     var username = document.getElementById("login-username").value;
     var password = document.getElementById("login-password").value;
     let headers1 = new Headers();
-    headers1.append('Authorization', 'Basic '+ btoa(username+ ":" + password));
-    fetch('https://api.dxh000130.top/api/Login', {
-        credentials: 'include',
-        method: 'GET',
-        headers:headers1
-    }).then(r => {
-        if (r.status == 200) {
-            user_id = username;
-            pass = password;
-            console.log("Log in Success")
-            document.getElementById("closebtn").click();
-            document.getElementById("button_login").style.visibility = "hidden";
-            document.getElementById("button_logout").style.visibility = "visible";
-            alert("You have successfully logged in!");
-        } else {
-            alert("Sorry, incorrect username or wrong password! Please try again!");
-        }
+    var text=document.getElementById("error_text");
+    if(username =="" && password!=""){
+       text.innerText="Please Enter Your Username !";
+    }else if(username !="" && password ==""){
+        text.innerText="Please enter your password !";
+    }else if(username_log =="" && password_log ==""){
+        text.innerText="Please enter your username and password !";
+    }else{
+        headers1.append('Authorization', 'Basic '+ btoa(username+ ":" + password));
+        fetch('https://api.dxh000130.top/api/Login',{
+            credentials: 'include',
+            method: 'GET',
+            headers:headers1
+        }).then(r => {
+            if (r.status == 200) {
+                user_id = username;
+                pass = password;
+                console.log("Log in Success");
+                document.getElementById("closebtn").click();
+                document.getElementById("button_login").style.visibility = "hidden";
+                document.getElementById("button_logout").style.visibility = "visible";
+                text.innerText="You have successfully logged in!";
+                valid_log=true;
+
+            } else {
+                text.innerText="Your username or password is wrong ! Please try it again !";
+                valid_log=false;
+                document.getElementById("login-username")="";
+                document.getElementById("login-password")="";
+            }
         });
     }
+}
+
+
 function register(){
     var username = document.getElementById("register-username").value;
     var password = document.getElementById("register-password").value;
@@ -75,3 +94,17 @@ function verification(){
 }
 
 
+function onSignIn(googleUser) {
+    // Useful data for your client-side scripts:
+    var profile = googleUser.getBasicProfile();
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
+
+    // The ID token you need to pass to your backend:
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
+}
