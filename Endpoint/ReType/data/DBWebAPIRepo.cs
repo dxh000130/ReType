@@ -170,8 +170,22 @@ namespace ReType.data
         }
         public Article ChooseArticle(string diff, string type)
         {
-            Article c = _dbContext.Article.FirstOrDefault(e => (e.Difficulty == diff && e.Type == type));
-            return c;
+            IEnumerable<Article> c = _dbContext.Article.ToList<Article>();
+            IEnumerable<Article> out1 = new List<Article>(); //新建输出
+            for (int i = 0; i < c.Count(); i++)
+            {
+                if (c.ElementAt(i).Difficulty == diff && c.ElementAt(i).Type == type)
+                {
+                    out1 = out1.Append(c.ElementAt(i));
+                }
+            }
+            Random ran = new Random();
+            int RandKey = ran.Next(0, out1.Count());
+            if (out1.Count() == 0)
+            {
+                return null;
+            }
+            return out1.ElementAt(RandKey);
         }
         public IEnumerable<User> GetAllUser()
         {
