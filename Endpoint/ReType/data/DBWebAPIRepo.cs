@@ -168,5 +168,10 @@ namespace ReType.data
             }
             return valid;
         }
+        public Article ChooseArticle(string diff, string type)
+        {
+            Article c = _dbContext.Article.FirstOrDefault(e => (e.Difficulty == diff && e.Type == type));
+            return c;
+        }
     }
 }

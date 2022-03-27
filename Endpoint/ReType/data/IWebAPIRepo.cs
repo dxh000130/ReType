@@ -23,5 +23,6 @@ namespace ReType.data
         bool ValidLoginbyemail(string Email, string password);//Vaild email and password from database and user input
         bool preventsqlinjection(string str); //Prevent users from using SQL commands to compromise database security
         Task<bool> VaildGoogleTokenAsync(string token, string email);
+        Article ChooseArticle(string diff, string type);
     }
 }
