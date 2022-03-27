@@ -330,6 +330,17 @@ namespace ReType.Controllers
                 if (users.Contains(c)) //如果前十名中有该用户
                 {
                     IEnumerable<LeaderBoard_output> out1 = new List<LeaderBoard_output>(); //新建输出
+                    if (users.Count() <= 10)
+                    {
+                        for (int i = 0; i < users.Count(); i++)
+                        {
+                            User temp = users.ElementAt(i);
+                            out1 = out1.Append(new LeaderBoard_output { Username = temp.UserName, Score = temp.Score, Index = i + 1 }); //把前十名的用户名，分数，排行 挨个加到output中
+
+                        }
+                        return Ok(out1); //输出
+                    }
+                    
                     for (int i = 0; i < 10; i++)
                     {
                         User temp = users.ElementAt(i);
