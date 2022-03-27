@@ -289,6 +289,30 @@ namespace ReType.Controllers
             }
             return "no";
         }
+        [Authorize]
+        [Authorize(Policy = "UserOnly")] //Vaild user login
+        [HttpGet("Leaderboard/{username}")]
+        public ActionResult<IEnumerable<LeaderBoard_output>> Leaderboard(string username)
+        {
+            User c = _repository.Getuser(username);
+            IEnumerable<User> users = _repository.GetAllUser();
+            if (users != null)
+            {
+                users = users.Take(10);
+                if (users.Contains(c))
+                {
+                    IEnumerable<LeaderBoard_output> out1 = users.Select(e => new LeaderBoard_output { Username = e.UserName, Score = e.Score });
+                    return Ok(out1);
+                }
+                else
+                {
+                    users = users.Append(c);
+                    IEnumerable<LeaderBoard_output> out1 = users.Select(e => new LeaderBoard_output { Username = e.UserName, Score = e.Score });
+                    return Ok(out1);
+                }
+            }else
+            return NotFound();
+        }
     }
 }
 

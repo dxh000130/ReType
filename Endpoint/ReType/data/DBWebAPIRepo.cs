@@ -173,5 +173,11 @@ namespace ReType.data
             Article c = _dbContext.Article.FirstOrDefault(e => (e.Difficulty == diff && e.Type == type));
             return c;
         }
+        public IEnumerable<User> GetAllUser()
+        {
+            IEnumerable<User> User1 = _dbContext.User.ToList<User>();
+            User1 = User1.OrderByDescending(c => c.Score).ThenBy(c => c.Name);
+            return User1;
+        }
     }
 }
