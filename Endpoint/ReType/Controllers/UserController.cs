@@ -110,6 +110,13 @@ namespace ReType.Controllers
         [HttpPost("Changepassword")]
         public string ChangePassword(Changepassword password)  //Allows users to change passwords
         {
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username = claim.Value;
+            if (password.UserName != username)
+            {
+                return "You can not change other user password";
+            }
             if (_repository.preventsqlinjection(password.UserName)| _repository.preventsqlinjection(password.Password))
             {
                 return "There are potential SQL instructions";
@@ -179,6 +186,13 @@ namespace ReType.Controllers
         [HttpPost("UpdateUserDetail")] //Allows users to add personal information
         public string UpdateUserDetail(UpdateUser user)
         {
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username = claim.Value;
+            if (user.UserName != username)
+            {
+                return "You cannot change other user detail.";
+            }
             if (_repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Name) | _repository.preventsqlinjection(user.Gerder) | _repository.preventsqlinjection(user.Dataofbirth))
             {
                 return "There are potential SQL instructions";
@@ -195,28 +209,38 @@ namespace ReType.Controllers
         [HttpPost("UpdateEmail")] //Allows users to change mailboxes
         public string UpdateEmail(UpdateEmail user)
         {
-            if (_repository.preventsqlinjection(user.Email) | _repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Code))
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username = claim.Value;
+            if (user.UserName == username)
             {
-                return "There are potential SQL instructions";
-            }
-            Verificationcode c = _repository.Getverificationcode(user.Email, user.Code);
-            if (c == null)
-            {
-                return "verification code Wrong";
-            }
-            else if (c.Date.AddMinutes(30) <= DateTime.Now)
-            {
-                _repository.Deleteverificationcode(c);
-                return "verification code timeout";
+                if (_repository.preventsqlinjection(user.Email) | _repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Code))
+                {
+                    return "There are potential SQL instructions";
+                }
+                Verificationcode c = _repository.Getverificationcode(user.Email, user.Code);
+                if (c == null)
+                {
+                    return "verification code Wrong";
+                }
+                else if (c.Date.AddMinutes(30) <= DateTime.Now)
+                {
+                    _repository.Deleteverificationcode(c);
+                    return "verification code timeout";
+                }
+                else
+                {
+                    _repository.Deleteverificationcode(c);
+
+                    User c1 = _repository.Getuser(user.UserName);
+                    c1.Email = user.Email;
+                    _repository.UpdateUserDetail(c1);
+                    return "success";
+                }
             }
             else
             {
-                _repository.Deleteverificationcode(c);
-
-                User c1 = _repository.Getuser(user.UserName);
-                c1.Email = user.Email;
-                _repository.UpdateUserDetail(c1);
-                return "success";
+                return "You cannot change other user email.";
             }
         }
         [HttpGet("UpdateEmailverificationcode/{email}")]  //Verify the mailbox changed by the user
@@ -291,9 +315,12 @@ namespace ReType.Controllers
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
-        [HttpGet("Leaderboard/{username}")]
-        public ActionResult<IEnumerable<LeaderBoard_output>> Leaderboard(string username)
+        [HttpGet("Leaderboard/{username1}")]
+        public ActionResult<IEnumerable<LeaderBoard_output>> Leaderboard(string username1)
         {
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username = claim.Value;
             User c = _repository.Getuser(username); //获取当前用户
             IEnumerable<User> users = _repository.GetAllUser(); //获取所有用户
             if (users != null)
