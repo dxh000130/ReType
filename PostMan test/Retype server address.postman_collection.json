@@ -11,14 +11,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/GetVersion",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/GetVersion",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"GetVersion"
@@ -33,14 +32,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/Registrationverificationcode/xdua752@aucklanduni.ac.nz",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/Registrationverificationcode/xdua752@aucklanduni.ac.nz",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"Registrationverificationcode",
@@ -57,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"UserName\": \"dxh000130\",\r\n    \"Password\": \"duan002349\",\r\n    \"Email\": \"xdua752@aucklanduni.ac.nz\",\r\n    \"Code\": \"974942\"\r\n}",
+					"raw": "{\r\n    \"UserName\": \"dxh000130\",\r\n    \"Password\": \"duan002349\",\r\n    \"Email\": \"xdua752@aucklanduni.ac.nz\",\r\n    \"Code\": \"880126\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,14 +63,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/Register",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/Register",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"Register"
@@ -102,14 +99,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/Login",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/Login",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"Login"
@@ -148,14 +144,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/Changepassword",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/Changepassword",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"Changepassword"
@@ -170,14 +165,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/Resetpasswordcode/xdua752@aucklanduni.ac.nz",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/Resetpasswordcode/xdua752@aucklanduni.ac.nz",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"Resetpasswordcode",
@@ -202,14 +196,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/ResetPassword",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/ResetPassword",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"ResetPassword"
@@ -248,14 +241,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/UpdateUserDetail",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/UpdateUserDetail",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"UpdateUserDetail"
@@ -270,14 +262,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/UpdateEmailverificationcode/dxh000130@icloud.com",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/UpdateEmailverificationcode/dxh000130@icloud.com",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"UpdateEmailverificationcode",
@@ -289,9 +280,6 @@
 		},
 		{
 			"name": "Update Email",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -308,7 +296,7 @@
 						}
 					]
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -320,17 +308,98 @@
 					}
 				},
 				"url": {
-					"raw": "http://www.dxh000130.top:3351/api/UpdateEmail",
-					"protocol": "http",
+					"raw": "https://api.dxh000130.top/api/UpdateEmail",
+					"protocol": "https",
 					"host": [
-						"www",
+						"api",
 						"dxh000130",
 						"top"
 					],
-					"port": "3351",
 					"path": [
 						"api",
 						"UpdateEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Article Choose",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Difficulty\": \"M\",\r\n    \"Type\": \"Tech\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.dxh000130.top/api/ArticleChoose",
+					"protocol": "https",
+					"host": [
+						"api",
+						"dxh000130",
+						"top"
+					],
+					"path": [
+						"api",
+						"ArticleChoose"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leaderboard",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.dxh000130.top/api/Leaderboard/dxh000130",
+					"protocol": "https",
+					"host": [
+						"api",
+						"dxh000130",
+						"top"
+					],
+					"path": [
+						"api",
+						"Leaderboard",
+						"dxh000130"
 					]
 				}
 			},

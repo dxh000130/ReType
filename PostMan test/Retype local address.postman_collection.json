@@ -298,9 +298,6 @@
 		},
 		{
 			"name": "Update Email",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -317,7 +314,7 @@
 						}
 					]
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -341,6 +338,97 @@
 					"path": [
 						"api",
 						"UpdateEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ArticleChoose",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Difficulty\": \"M\",\r\n    \"Type\": \"Tech\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/ArticleChoose",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"ArticleChoose"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leaderboard",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "duan002349",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dxh000130",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5054/api/Leaderboard/sgs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5054",
+					"path": [
+						"api",
+						"Leaderboard",
+						"sgs"
 					]
 				}
 			},
