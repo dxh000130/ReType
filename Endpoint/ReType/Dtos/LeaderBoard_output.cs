@@ -12,5 +12,7 @@ namespace ReType.Dtos
         public string Username { get; set; }
         [Required]
         public int Score { get; set; }
+        [Required]
+        public int Index { get; set; }
     }
 }

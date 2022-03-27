@@ -294,21 +294,34 @@ namespace ReType.Controllers
         [HttpGet("Leaderboard/{username}")]
         public ActionResult<IEnumerable<LeaderBoard_output>> Leaderboard(string username)
         {
-            User c = _repository.Getuser(username);
-            IEnumerable<User> users = _repository.GetAllUser();
+            User c = _repository.Getuser(username); //获取当前用户
+            IEnumerable<User> users = _repository.GetAllUser(); //获取所有用户
             if (users != null)
             {
-                users = users.Take(10);
-                if (users.Contains(c))
+                int Currrentuser = users.ToList().FindIndex(e => e.UserName == username); //获取当前用户的排名
+                users = users.Take(10); //取前十名用户
+                if (users.Contains(c)) //如果前十名中有该用户
                 {
-                    IEnumerable<LeaderBoard_output> out1 = users.Select(e => new LeaderBoard_output { Username = e.UserName, Score = e.Score });
-                    return Ok(out1);
+                    IEnumerable<LeaderBoard_output> out1 = new List<LeaderBoard_output>(); //新建输出
+                    for (int i = 0; i < 10; i++)
+                    {
+                        User temp = users.ElementAt(i);
+                        out1 = out1.Append(new LeaderBoard_output { Username =temp.UserName, Score = temp.Score, Index = i+1 }); //把前十名的用户名，分数，排行 挨个加到output中
+
+                    }
+                    return Ok(out1); //输出
                 }
                 else
                 {
-                    users = users.Append(c);
-                    IEnumerable<LeaderBoard_output> out1 = users.Select(e => new LeaderBoard_output { Username = e.UserName, Score = e.Score });
-                    return Ok(out1);
+                    IEnumerable<LeaderBoard_output> out1 = new List<LeaderBoard_output>(); //新建输出
+                    for (int i = 0; i < 10; i++)
+                    {
+                        User temp = users.ElementAt(i);
+                        out1 = out1.Append(new LeaderBoard_output { Username = temp.UserName, Score = temp.Score, Index = i + 1 });//把前十名的用户名，分数，排行 挨个加到output中
+
+                    }
+                    out1 = out1.Append(new LeaderBoard_output { Username = c.UserName, Score = c.Score, Index = Currrentuser+1 }); //添加当前用户的用户名，分数，排行
+                    return Ok(out1); //输出
                 }
             }else
             return NotFound();
