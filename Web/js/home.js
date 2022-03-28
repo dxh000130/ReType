@@ -1,4 +1,3 @@
-
 fetch('https://api.dxh000130.top/api/GetVersion', {
     method: 'GET'
 })
@@ -183,7 +182,7 @@ function onSignIn(googleUser) {
     console.log('Family Name: ' + profile.getFamilyName());
     console.log("Image URL: " + profile.getImageUrl());
     console.log("Email: " + profile.getEmail());
-    document.getElementById("error_box").style.display="block";
+    
     var text1=document.getElementById("error_text");
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
@@ -216,7 +215,7 @@ function onSignIn(googleUser) {
                 document.getElementById("log_in_button_container").style.display="none";
                 document.getElementById("log_out_button_container").style.display="block";
             } else if(text == "This email has been occupied, please log in first and then bind Google"){
-
+				document.getElementById("error_box").style.display="block";
                 text1.innerText="This email has been occupied, please log in first and then bind Google!";
                 valid_log=false;
                 document.getElementById("login-username").value="";
