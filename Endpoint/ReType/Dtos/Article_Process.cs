@@ -9,10 +9,11 @@ namespace ReType.Dtos
     public class Article_Process
     {
         [Required]
-        public string ArticleID { get; set; }
+        public int ArticleID { get; set; }
         [Required]
         public string Article { get; set; }
         [Required]
         public string Input { get; set; }
+        public string? AlreadyCorrect { get; set; }
     }
 }

@@ -46,16 +46,22 @@ namespace ReType.Controllers
             }
         }
         [HttpPost("ArticleProcess")]
-        public ActionResult<Article_Process_out> ArticleProcess(Article_Process Article)
+        public ActionResult<string> ArticleProcess(Article_Process Article)
         {
-            string input = "SASAE DADSEW SSDSAE";
-            string pattern1 = @"[A-Za-z]*";
-            string pattern3 = "+[A-Za-z]*";
+            string pattern1 = @"[A-Za-z]*(?i:";
+            string pattern3 = ")+[A-Za-z]*";
             string pattern = pattern1 + Article.Input + pattern3;
+            string replacement = "<span style=\"color: red;\">$&</span>";
+            Regex rgx = new Regex(pattern);
+            string result = rgx.Replace(Article.Article, replacement);
+            //foreach (Match match in Regex.Matches(Article.Article.ToUpper(), pattern))
+            //{
+            //    //Console.WriteLine(match.Value);
+            //    int index1 = match.Index;
+            //    Console.WriteLine(Article.Article.Substring(index1, match.Value.Length));
+            //}
 
-            foreach (Match match in Regex.Matches(Article.Article, pattern))
-                Console.WriteLine(match.Value);
-            return Ok();
+            return Ok(result);
         }
     }
 }
