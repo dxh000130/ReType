@@ -15,6 +15,7 @@ using ReType.data;
 using ReType.Dtos;
 using Google.Apis.Oauth2.v2;
 using Google.Apis.Auth;
+using System.Text.RegularExpressions;
 
 namespace ReType.Controllers
 {
@@ -43,6 +44,18 @@ namespace ReType.Controllers
             {
                 return NotFound();
             }
+        }
+        [HttpPost("ArticleProcess")]
+        public ActionResult<Article_Process_out> ArticleProcess(Article_Process Article)
+        {
+            string input = "SASAE DADSEW SSDSAE";
+            string pattern1 = @"[A-Za-z]*";
+            string pattern3 = "+[A-Za-z]*";
+            string pattern = pattern1 + Article.Input + pattern3;
+
+            foreach (Match match in Regex.Matches(Article.Article, pattern))
+                Console.WriteLine(match.Value);
+            return Ok();
         }
     }
 }
