@@ -25,5 +25,10 @@ namespace ReType.data
         Task<bool> VaildGoogleTokenAsync(string token, string email);
         Article ChooseArticle(string diff, string type);
         IEnumerable<User> GetAllUser();
+        string[] CorrectWordList(int ArticleID);
+        string[] WrongWordList(int ArticleID);
+        int GetUserScore(string id);
+        int AddUserScore(string id);
+        int MinusUserScore(string id);
     }
 }

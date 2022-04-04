@@ -193,5 +193,37 @@ namespace ReType.data
             User1 = User1.OrderByDescending(c => c.Score).ThenBy(c => c.Name);
             return User1;
         }
+        public string[] CorrectWordList(int ArticleID)
+        {
+            string[] CorrectWordList = _dbContext.Article.FirstOrDefault(e => (e.Id == ArticleID)).CorrectList.Split(',');
+            return CorrectWordList;
+        }
+        public string[] WrongWordList(int ArticleID)
+        {
+            string[] WrongWordList = _dbContext.Article.FirstOrDefault(e => (e.Id == ArticleID)).WrongList.Split(',');
+            Console.WriteLine(WrongWordList.ElementAt(0));
+            return WrongWordList;
+        }
+        public int GetUserScore(string id)
+        {
+            int Score = _dbContext.User.FirstOrDefault(e => (e.UserName == id)).Score;
+            return Score;
+        }
+        public int AddUserScore(string id)
+        {
+            User user = _dbContext.User.FirstOrDefault(e => (e.UserName == id));
+            user.Score = user.Score + 1;
+            _dbContext.Update(user);
+            _dbContext.SaveChanges();
+            return user.Score;
+        }
+        public int MinusUserScore(string id)
+        {
+            User user = _dbContext.User.FirstOrDefault(e => (e.UserName == id));
+            user.Score = user.Score - 1;
+            _dbContext.Update(user);
+            _dbContext.SaveChanges();
+            return user.Score;
+        }
     }
 }

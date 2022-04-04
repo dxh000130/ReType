@@ -9,7 +9,7 @@ namespace ReType.Dtos
     public class Article_Process_out
     {
         [Required]
-        public string ArticleID { get; set; }
+        public int ArticleID { get; set; }
         [Required]
         public string Article { get; set; }
         [Required]
@@ -17,6 +17,8 @@ namespace ReType.Dtos
         [Required]
         public string ArticleDisp { get; set; }
         [Required]
-        public string ErrorRemain { get; set; }
+        public int ErrorRemain { get; set; }
+        public string? AlreadyCorrect { get; set; }
+        public int? Score { get; set; }
     }
 }

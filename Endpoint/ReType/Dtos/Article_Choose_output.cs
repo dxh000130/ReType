@@ -12,5 +12,7 @@ namespace ReType.Dtos
         public int ID { get; set; }
         [Required]
         public string Article { get; set; }
+        [Required]
+        public int ErrorRemain { get; set; }
     }
 }
