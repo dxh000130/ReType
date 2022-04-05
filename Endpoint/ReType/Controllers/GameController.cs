@@ -93,7 +93,7 @@ namespace ReType.Controllers
                     Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "tryagain, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username) };
                     return Ok(final);
                 }
-                    if (Regex.Matches(already, "(?i:" + Article.Input+ "),").Count >= 1 && Article.Enter == 1)
+                if (Regex.Matches(already.ToUpper(), Article.Input.ToUpper()).Count >= 1 && Article.Enter == 1)
                 {
                     int error_remain = wronglist.Count();
                     if (already != "")
