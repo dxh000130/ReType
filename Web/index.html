@@ -2,180 +2,187 @@
 <html lang="en">
 
 <head>
-	<meta name=”viewport”content=”width=device-width,initial-scale=1″ />
-	<meta name="google-signin-scope" content="profile email">
-	<meta charset="UTF-8">
-	<meta name="google-signin-client_id" content="975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com">
-	<title>Title</title>
-	<link rel="stylesheet" href="css/home.css">
-	<script src="js/home.js"></script>
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+    <meta name=”viewport”content=”width=device-width,initial-scale=1″ />
+    <meta name="google-signin-scope" content="profile email">
+    <meta charset="UTF-8">
+    <meta name="google-signin-client_id" content="975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/home.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 </head>
 
 <body>
-	<!--主界面的开始-->
-	<div id="first_page" style="height: 100%;width: 100%">
-		<!--log in button的开始-->
-		<div id="log_in_button_container" >
-			<div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button"
-				id="log_in_button">
-				<p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br/>Sign In</p>
-			</div>
+    <!--主界面的开始-->
+    <div id="first_page" style="height: 100%;width: 100%">
+        <!--log in button的开始-->
+        <div id="log_in_button_container">
+            <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
+                <p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br/>Sign In</p>
+            </div>
 
-		</div>
+        </div>
 
-		<div id="log_out_button_container" style="display: none">
-			<div onclick="log_out()" class="button log_out_button"
-				 id="log_out_button">
-				<p id="log_out_typeface1">Welcome !<br/>
-					<p id="log_out_typeface2">Log Out</p>
-				</p>
-			</div>
-		</div>
+        <div id="log_out_button_container" style="display: none">
+            <div onclick="log_out()" class="button log_out_button" id="log_out_button">
+                <p id="log_out_typeface1">Welcome !<br/>
+                    <p id="log_out_typeface2">Log Out</p>
+                </p>
+            </div>
+        </div>
 
-		<div id="login_modal" class="login_modal">
-			<div id="owl" class="owl">
-			</div>
-			<div class="login_modal-content">
-				<div class="login_form">
-					<input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
-					<input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
-					<input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
-					<hr style="width: 90%;border-width:2px; margin-top: 20px">
-					<div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'" style="font-size: 18px;color: #9199aa;margin-left: 3%">
-						Don't have Account? &nbsp &nbsp
-						<button style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px" onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
-					</div>
-				</div>
-				<div class="login_form">
-					<button type="button" onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'"
-							class="cancelbtn"></button>
-				</div>
-				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="padding-left: 50px; padding-bottom: 15px"></div>
-			</div>
-		</div>
+        <div id="login_modal" class="login_modal">
+            <div id="owl" class="owl">
+            </div>
+            <div class="login_modal-content">
+                <div class="login_form">
+                    <input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
+                    <input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
+                    <input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
+                    <hr style="width: 90%;border-width:2px; margin-top: 20px">
+                    <div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'" style="font-size: 18px;color: #9199aa;margin-left: 3%">
+                        Don't have Account? &nbsp &nbsp
+                        <button style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px" onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
+                    </div>
+                </div>
+                <div class="login_form">
+                    <button type="button" onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="cancelbtn"></button>
+                </div>
+                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="padding-left: 50px; padding-bottom: 15px"></div>
+            </div>
+        </div>
 
 
 
 
-		<div id="register_modal" class="register_modal">
-			<div id="owl1" class="owl">
-			</div>
-			<div class="register_modal-content">
-				<div class="register_form">
-					<input id="register-username" type="username" placeholder="Enter Username" name="uname" required>
-					<input id="register-password" type="password" placeholder="Enter Password" name="psw1" required>
-					<input id="register-email" type="email" placeholder="Enter Email"  required>
-					<input id="code" type="button" class="code" onclick="verification()" style="vertical-align:middle" value="Get Verification Code">
-					<input id="register-verification" type="text" placeholder="Enter verification code"  required>
-					<input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
-				</div>
-				<div class="login_form">
-					<button type="button" onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'"
-							class="cancelbtn"></button>
-				</div>
-			</div>
-		</div>
+        <div id="register_modal" class="register_modal">
+            <div id="owl1" class="owl">
+            </div>
+            <div class="register_modal-content">
+                <div class="register_form">
+                    <input id="register-username" type="username" placeholder="Enter Username" name="uname" required>
+                    <input id="register-password" type="password" placeholder="Enter Password" name="psw1" required>
+                    <input id="register-email" type="email" placeholder="Enter Email" required>
+                    <input id="code" type="button" class="code" onclick="verification()" style="vertical-align:middle" value="Get Verification Code">
+                    <input id="register-verification" type="text" placeholder="Enter verification code" required>
+                    <input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
+                </div>
+                <div class="login_form">
+                    <button type="button" onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="cancelbtn"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="leaderboard_page" class="leaderboard_page" style="display: none;">
+            <table class="ranktable" id="ranktable">
+                <tr>
+                    <th>Rank</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+                <tbody id="rank">
+
+                </tbody>
+            </table>
+            <button type="button" onclick="document.getElementById('leaderboard_page').style.display='none';ClearLeaderBoard()" class="cancelbtn"></button>
+        </div>
 
 
+        <!--Log in button的结束-->
 
+        <!--中间标题retype的开始-->
+        <div style="width: 100%;height: 40vh">
+            <div class="word">
+                <span id="R">R</span>
+                <span id="E1">E</span>
+                <span id="T">T</span>
+                <span id="Y">Y</span>
+                <span id="P">P</span>
+                <span id="E2">E</span>
+            </div>
+            <!--登录注册状态提示框-->
 
-		<!--Log in button的结束-->
+            <div style="background-color: #2b2b36;width: 30%;height: 150px" id="error_box">
+                <button type="button" onclick="document.getElementById('error_box').style.display='none'" id="error_button" class="error_button"></button>
+                <p id="error_text"></p>
+            </div>
+        </div>
 
-		<!--中间标题retype的开始-->
-		<div style="width: 100%;height: 40vh">
-			<div class="word" >
-				<span id="R">R</span>
-				<span id="E1">E</span>
-				<span id="T">T</span>
-				<span id="Y">Y</span>
-				<span id="P">P</span>
-				<span id="E2">E</span>
-			</div>
-		<!--登录注册状态提示框-->
+        <!--中间标题retype的结束-->
 
-			<div style="background-color: #2b2b36;width: 30%;height: 150px" id="error_box">
-				<button type="button" onclick="document.getElementById('error_box').style.display='none'" id="error_button"
-						class="error_button"></button>
-				<p id="error_text"></p>
-			</div>
-		</div>
+        <!--最下边4个Button的开始-->
+        <div id="home_page_bottom_button">
+            <div id="home_page">
+                <!--personal detail button的设置开始-->
+                <a href="#" class="user_button">
+                    <div id="user_container" class="container">
+                        <!--翻转以前显示的东西-->
+                        <div id="user_front" class="front">
+                            <p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
+                        </div>
+                        <!--翻转以后显示的东西-->
+                        <div id="user_back" class="back">
+                            <p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book" style="font-size:4vw"></i></p>
+                        </div>
+                    </div>
+                </a>
+                <!--			personal detail button的设置结束-->
 
-		<!--中间标题retype的结束-->
+                <!--leaderboard button设置的开始-->
 
-		<!--最下边4个Button的开始-->
-		<div id="home_page_bottom_button">
-			<div id="home_page">
-				<!--personal detail button的设置开始-->
-				<a href="#" class="user_button">
-					<div id="user_container" class="container">
-						<!--翻转以前显示的东西-->
-						<div id="user_front" class="front">
-							<p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
-						</div>
-						<!--翻转以后显示的东西-->
-						<div id="user_back" class="back">
-							<p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book"
-									style="font-size:4vw"></i></p>
-						</div>
-					</div>
-				</a>
-				<!--			personal detail button的设置结束-->
+                <div onclick="document.getElementById('leaderboard_page').style.display='block';GetLeaderboard()">
+                    <div id="leaderboard_container" class="container">
+                        <!--翻转以前显示的东西-->
+                        <div id="leaderboard_front" class="front">
+                            <p id="leaderboard_typeface1" class="homepage_button_typeface1">Leaderboard<br /></p>
+                        </div>
+                        <!--翻转以后显示的东西-->
+                        <div id="leaderboard_back" class="back">
+                            <p id="leaderboard_typeface2" class="homepage_button_typeface2"><i class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
+                        </div>
+                    </div>
+                </div>
 
-				<!--leaderboard button设置的开始-->
-				<a href="#">
-					<div id="leaderboard_container" class="container">
-						<!--翻转以前显示的东西-->
-						<div id="leaderboard_front" class="front">
-							<p id="leaderboard_typeface1" class="homepage_button_typeface1">Leaderboard<br /></p>
-						</div>
-						<!--翻转以后显示的东西-->
-						<div id="leaderboard_back" class="back">
-							<p id="leaderboard_typeface2" class="homepage_button_typeface2"><i
-									class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
-						</div>
-					</div>
-				</a>
-				<!--leaderboard button设置的结束-->
+                <!--leaderboard button设置的结束-->
 
-				<!--introduction button设置的开始-->
-				<a href="#">
-					<div id="introduction_container" class="container">
-						<!--翻转以前显示的东西-->
-						<div id="introduction_front" class="front">
-							<p id="introduction_typeface1" class="homepage_button_typeface1">Introduction</p>
-						</div>
-						<!--翻转以后显示的东西-->
-						<div id="introduction_back" class="back">
-							<p id="introduction_typeface2" class="homepage_button_typeface2"> <i
-									class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
-						</div>
-					</div>
-				</a>
-				<!--			introduction button设置的结束-->
+                <!--introduction button设置的开始-->
+                <a href="#">
+                    <div id="introduction_container" class="container">
+                        <!--翻转以前显示的东西-->
+                        <div id="introduction_front" class="front">
+                            <p id="introduction_typeface1" class="homepage_button_typeface1">Introduction</p>
+                        </div>
+                        <!--翻转以后显示的东西-->
+                        <div id="introduction_back" class="back">
+                            <p id="introduction_typeface2" class="homepage_button_typeface2"> <i class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
+                        </div>
+                    </div>
+                </a>
+                <!--			introduction button设置的结束-->
 
-				<!--play button设置的开始-->
-				<a href="../Web/game.html">
-					<div id="play_container" class="container">
-						<!--翻转以前显示的东西-->
-						<div id="play_front" class="front">
-							<p id="play_typeface1">PLAY</p>
-						</div>
-						<!--翻转以后显示的东西-->
-						<div id="play_back" class="back">
-							<p id="play_typeface2"> <i class="fa-solid fa-circle-play" style="font-size:6vw"></i>
-							</p>
-						</div>
-					</div>
-				</a>
-				<!--play button设置的结束-->
-			</div>
+                <!--play button设置的开始-->
+                <a href="../Web/game.html">
+                    <div id="play_container" class="container">
+                        <!--翻转以前显示的东西-->
+                        <div id="play_front" class="front">
+                            <p id="play_typeface1">PLAY</p>
+                        </div>
+                        <!--翻转以后显示的东西-->
+                        <div id="play_back" class="back">
+                            <p id="play_typeface2"> <i class="fa-solid fa-circle-play" style="font-size:6vw"></i>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <!--play button设置的结束-->
+            </div>
 
-		</div>
-		<!--最下边4个Button的结束-->
-	</div>
-	<!--主界面的结束-->
+        </div>
+        <!--最下边4个Button的结束-->
+
+    </div>
+    <!--主界面的结束-->
 
 
 
