@@ -15,5 +15,6 @@ namespace ReType.Dtos
         [Required]
         public string Input { get; set; }
         public string? AlreadyCorrect { get; set; }
+        public int Enter { get; set; }
     }
 }
