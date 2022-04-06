@@ -472,8 +472,7 @@
 /*login*/
 
 .login_modal,
-.register_modal,
-.leaderboard_page {
+.register_modal {
     z-index: 1;
     left: 38%;
     top: 5%;
@@ -492,6 +491,56 @@
     animation: jumpdown 1s ease-out;
     opacity: 0.98;
     float: left;
+}
+
+.leaderboard_page {
+    z-index: 1;
+    margin: 0 auto;
+    background: linear-gradient(#555, #222);
+    border-radius: 12px;
+    perspective: 400px;
+    transform-style: preserve-3d;
+    box-shadow: 0 7px 20px #242424;
+    position: absolute;
+    left: 38%;
+    top: 5%;
+    width: auto;
+    height: auto;
+    overflow: auto;
+}
+
+.leaderboard_page h1 {
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(#393939, #373737);
+    font-size: 1.5rem;
+    color: #e1e1e1;
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.leaderboard_page th {
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(#393939, #373737);
+    font-size: 1.5rem;
+    color: #e1e1e1;
+    padding: 1rem 3rem 1rem 3rem;
+    border-radius: 10px 10px 0 0;
+}
+
+.rank td {
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1.25rem 0.625rem 1.25rem 1.5rem;
+    cursor: pointer;
+    transform: translateZ(0) scale(1, 1);
+    transition: box-shadow .2s ease-in-out;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 0.5rem 1px rgba(0, 0, 0, 0.15);
+    color: #e1e1e1;
 }
 
 
