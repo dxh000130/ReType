@@ -628,7 +628,7 @@ input[type="username"] {
     background: url(../images/adm.png) no-repeat 10px 15px;
     border: none;
     font-weight: 100;
-    border-bottom: 1px solid#484856;
+    border-bottom: 1px solid #484856;
 }
 
 input[name="psw"] {
@@ -640,7 +640,7 @@ input[name="psw"] {
     background: url(../images/key.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
-    border-bottom: 1px solid#484856;
+    border-bottom: 1px solid #484856;
     margin-bottom: 3em;
 }
 
@@ -653,7 +653,7 @@ input[name="psw1"] {
     background: url(../images/key.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
-    border-bottom: 1px solid#484856;
+    border-bottom: 1px solid #484856;
 }
 
 input[type="email"] {
@@ -665,7 +665,7 @@ input[type="email"] {
     background: url(../images/email.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
-    border-bottom: 1px solid#484856;
+    border-bottom: 1px solid #484856;
 }
 
 input[type="text"] {
@@ -677,7 +677,7 @@ input[type="text"] {
     background: url(../images/key.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
-    border-bottom: 1px solid#484856;
+    border-bottom: 1px solid #484856;
     margin-bottom: 3em;
 }
 
