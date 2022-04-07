@@ -28,7 +28,8 @@ namespace ReType.data
         string[] CorrectWordList(int ArticleID);
         string[] WrongWordList(int ArticleID);
         int GetUserScore(string id);
-        int AddUserScore(string id);
-        int MinusUserScore(string id);
+        int AddUserScore(string id, int score);
+        int MinusUserScore(string id, int score);
+        int articlediff(int id);
     }
 }

@@ -209,21 +209,36 @@ namespace ReType.data
             int Score = _dbContext.User.FirstOrDefault(e => (e.UserName == id)).Score;
             return Score;
         }
-        public int AddUserScore(string id)
+        public int AddUserScore(string id, int score)
         {
             User user = _dbContext.User.FirstOrDefault(e => (e.UserName == id));
-            user.Score = user.Score + 1;
+            user.Score = user.Score + score;
             _dbContext.Update(user);
             _dbContext.SaveChanges();
             return user.Score;
         }
-        public int MinusUserScore(string id)
+        public int MinusUserScore(string id, int score)
         {
             User user = _dbContext.User.FirstOrDefault(e => (e.UserName == id));
-            user.Score = user.Score - 1;
+            user.Score = user.Score - score;
             _dbContext.Update(user);
             _dbContext.SaveChanges();
             return user.Score;
+        }
+        public int articlediff(int id)
+        {
+            Article Article = _dbContext.Article.FirstOrDefault(e => (e.Id == id));
+            if (Article.Difficulty == "L")
+            {
+                return 2;
+            }else if (Article.Difficulty == "M")
+            {
+                return 3;
+            }
+            else
+            {
+                return 4;
+            }
         }
     }
 }

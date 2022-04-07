@@ -20,5 +20,6 @@ namespace ReType.Dtos
         public int ErrorRemain { get; set; }
         public string? AlreadyCorrect { get; set; }
         public int? Score { get; set; }
+        public string hint { get; set; }
     }
 }
