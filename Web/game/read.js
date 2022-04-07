@@ -123,11 +123,15 @@ textinput.addEventListener("keyup", function(event) {
         Login(Enterbutton)
     }else{
         Enterbutton = 0;
-        Login(Enterbutton)
+        Login(Enterbutton, 0)
         //console.log("没回车");
     }
 });
-function Login(Enterbutton) {
+function Hint(){
+    document.getElementById("login-username").value = "";
+    Login(0, 1);
+}
+function Login(Enterbutton, hint) {
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic '+ btoa("dxh000130"+ ":" + "duan002349"));
     headers2.append('Content-Type', 'application/json')
@@ -147,6 +151,7 @@ function Login(Enterbutton) {
                 "Input": username,
                 "AlreadyCorrect": AlreadyCorrect,
                 "Enter": Enterbutton,
+                "hint": hint,
             })
         });
         ArticleProcess.then(res => {
@@ -168,6 +173,26 @@ function Login(Enterbutton) {
 
         })
     }else {
+        if (hint === 1){
+            const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
+                method: "POST",
+                credentials: 'include',
+                headers: headers2,
+                body: JSON.stringify({
+                    "ArticleID": articleid,
+                    "Article": wholearticle,
+                    "Input": "Hint",
+                    "AlreadyCorrect": AlreadyCorrect,
+                    "Enter": Enterbutton,
+                    "hint": hint,
+                })
+            });
+            ArticleProcess.then(res => {
+                res.json().then(function (return_text1) {
+                    console.log(return_text1.hint);
+                    document.querySelector('#content').innerHTML = return_text1.articleDisp;
+                })})
+        }
         document.querySelector('#content').innerHTML = wholearticle;
     }
 }
