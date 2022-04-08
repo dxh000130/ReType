@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%">
+    <div id="first_page" style="height: 100%;width: 100%;display: none" >
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -73,6 +73,8 @@
                 </div>
             </div>
         </div>
+
+<!--        排行榜页面-->
 
         <div id="leaderboard_page" class="leaderboard_page" style="display: none;">
             <table class="ranktable" id="ranktable">
@@ -163,7 +165,7 @@
                 <!--			introduction button设置的结束-->
 
                 <!--play button设置的开始-->
-                <a href="../Web/game/index.html">
+                <a href="#" onclick="display_game()">
                     <div id="play_container" class="container">
                         <!--翻转以前显示的东西-->
                         <div id="play_front" class="front">
@@ -185,9 +187,25 @@
     </div>
     <!--主界面的结束-->
 
+<!--play 困难度选择界面-->
+<div class="kunnandu" >
+    <div class="wrap">
+        <div class="cards_wrap" id="cards_wrap">
+            <div class="item" id="i1">Easy
+            </div>
+            <div class="item" id="i2">Medium</div>
+            <div class="item" id="i3">High</div>
+        </div>
+    </div>
+    <div style="margin-bottom: 100px">
 
-
-
+    </div>
+    <div class="qiehuanbutton" style="width: 100%">
+        <button class="qiehuan" id="qiehuan1" style="display: none"  type="button" onclick="donghua1()">Change difficulty level</button>
+        <button class="qiehuan" id="qiehuan2"  type="button" style="display: block" onclick="donghua2()">Change difficulty level</button>
+        <button class="qiehuan" id="qiehuan3"  type="button"style="display: none"  onclick="donghua3()">Change difficulty level</button>
+    </div>
+</div>
 
 
 </body>

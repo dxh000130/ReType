@@ -11,7 +11,7 @@ var user_id = "";
 var pass = "";
 
 let valid_log = false;
-
+//登录界面
 function Login() {
     document.getElementById("error_box").style.display = "block";
     var username = document.getElementById("login-username").value;
@@ -65,8 +65,10 @@ function log_out() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut()
 }
+// 退出登录
 
 
+// 注册界面
 function register() {
     document.getElementById("error_box").style.display = "block";
     var username = document.getElementById("register-username").value;
@@ -122,7 +124,7 @@ function register() {
 }
 
 
-
+// 邮箱验证
 function verification() {
     var email = document.getElementById("register-email").value;
     var text = document.getElementById("error_text");
@@ -229,6 +231,7 @@ function onSignIn(googleUser) {
     });
 }
 
+// 排行榜页面
 function GetLeaderboard() {
     var htmltable = document.getElementById("rank")
     let headers2 = new Headers();
@@ -256,4 +259,32 @@ function GetLeaderboard() {
 function ClearLeaderBoard() {
     var table = document.getElementById("rank");
     table.innerHTML = "";
+}
+// 排行榜页面结束
+//
+// function display_game(){
+//     document.getElementById("first_page").style.display="none";
+// }
+
+
+
+
+function donghua1(){
+    document.getElementById("cards_wrap").className="cards_wrap_1";
+    document.getElementById("qiehuan1").style.display="none";
+    document.getElementById("qiehuan3").style.display="none";
+    document.getElementById("qiehuan2").style.display="block";
+}
+
+function donghua2(){
+    document.getElementById("cards_wrap").className="cards_wrap_2";
+    document.getElementById("qiehuan2").style.display="none";
+    document.getElementById("qiehuan1").style.display="none";
+    document.getElementById("qiehuan3").style.display="block";
+}
+function donghua3(){
+    document.getElementById("cards_wrap").className="cards_wrap_3";
+    document.getElementById("qiehuan1").style.display="block";
+    document.getElementById("qiehuan2").style.display="none";
+    document.getElementById("qiehuan3").style.display="none";
 }
