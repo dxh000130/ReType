@@ -187,7 +187,7 @@
     <!--主界面的结束-->
 
     <!--play 困难度选择界面-->
-    <div id="kunnandu" style="display: none">
+    <div id="difficult_page" style="display: none">
         <div class="homebtn-container">
             <button class="backhome" onclick="BackToHome()">
                 <span class="text">Back to Homepage</span>
@@ -244,14 +244,11 @@
 
         <div style="margin-bottom: 100px"></div>
         <div class="qiehuanbutton" style="width: 100%" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
-            <button class="qiehuan" id="qiehuan1" style="display: none" type="button" onclick="donghua1()">Change difficulty level</button>
-            <button class="qiehuan" id="qiehuan2" type="button" style="display: block" onclick="donghua2()">Change difficulty level</button>
-            <button class="qiehuan" id="qiehuan3" type="button" style="display: none" onclick="donghua3()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button1" style="display: none" type="button" onclick="change_difficult1()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button2" type="button" style="display: block" onclick="change_difficult2()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button3" type="button" style="display: none" onclick="change_difficult3()">Change difficulty level</button>
         </div>
     </div>
-    </div>
-
-
 
 
 </body>

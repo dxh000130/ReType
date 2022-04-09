@@ -272,32 +272,32 @@ function display_game() {
     //     window.alert("Please Log in")
     // } else {
     document.getElementById("first_page").style.display = "none";
-    document.getElementById("kunnandu").style.display = "block";
+    document.getElementById("difficult_page").style.display = "block";
     // }
 }
 
-function donghua1() {
+function change_difficult1() {
     document.getElementById("cards_wrap").className = "cards_wrap_1";
-    document.getElementById("qiehuan1").style.display = "none";
-    document.getElementById("qiehuan3").style.display = "none";
-    document.getElementById("qiehuan2").style.display = "block";
+    document.getElementById("difficult_button1").style.display = "none";
+    document.getElementById("difficult_button3").style.display = "none";
+    document.getElementById("difficult_button2").style.display = "block";
 }
 
-function donghua2() {
+function change_difficult2() {
     document.getElementById("cards_wrap").className = "cards_wrap_2";
-    document.getElementById("qiehuan2").style.display = "none";
-    document.getElementById("qiehuan1").style.display = "none";
-    document.getElementById("qiehuan3").style.display = "block";
+    document.getElementById("difficult_button2").style.display = "none";
+    document.getElementById("difficult_button1").style.display = "none";
+    document.getElementById("difficult_button3").style.display = "block";
 }
 
-function donghua3() {
+function change_difficult3() {
     document.getElementById("cards_wrap").className = "cards_wrap_3";
-    document.getElementById("qiehuan1").style.display = "block";
-    document.getElementById("qiehuan2").style.display = "none";
-    document.getElementById("qiehuan3").style.display = "none";
+    document.getElementById("difficult_button1").style.display = "block";
+    document.getElementById("difficult_button2").style.display = "none";
+    document.getElementById("difficult_button3").style.display = "none";
 }
 
 function BackToHome() {
     document.getElementById("first_page").style.display = "block";
-    document.getElementById("kunnandu").style.display = "none";
+    document.getElementById("difficult_page").style.display = "none";
 }

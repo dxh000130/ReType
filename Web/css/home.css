@@ -18,7 +18,6 @@
     bottom: 0%;
 }
 
-
 /*button中字体风格和颜色的设置*/
 
 .homepage_button_typeface1 {
@@ -115,12 +114,9 @@
     width: 55%;
 }
 
-
 /*leaderboard所有设置完成*/
 
-
 /*introduction 所有设置开始*/
-
 #introduction_container {
     width: 30%;
     height: 22vh;
@@ -161,8 +157,6 @@
 
 
 /*introduction 所有设置结束*/
-
-
 /*play 所有设置开始*/
 
 #play_container {
@@ -212,14 +206,11 @@
 
 /*play 所有设置结束*/
 
-
 /*3D反转动画的实现开始*/
-
 .container {
     position: relative;
     perspective: 1000px;
 }
-
 .front,
 .back {
     position: absolute;
@@ -246,7 +237,6 @@
 
 /*3D反转动画的实现结束*/
 
-
 /*最下边四个button的设置的结束*/
 
 
@@ -261,7 +251,7 @@
     top: 0px;
     right: 10px;
     border-radius: 25px;
-    animation: move 2s 2;
+    /*animation: move 2s 2;*/
     opacity: 0.8;
 }
 
@@ -269,22 +259,7 @@
 /*实现一打开网页log in 跳跃开始*/
 
 
-/*@keyframes move {*/
 
-
-/*	50% {*/
-
-
-/*		transform: rotate(-360deg) translate(5vw, -5vw);*/
-
-
-/*		box-shadow: -0.2vw 2vw 0.2vw -0.2vw black;*/
-
-
-/*	}*/
-
-
-/*}*/
 
 
 /*实现一打开网页log in 跳跃结束*/
@@ -342,10 +317,7 @@
 
 
 /*login button的设置结束*/
-
-
 /*retype设置开始*/
-
 .word {
     perspective: 1000px;
     text-align: center;
@@ -357,7 +329,6 @@
     display: inline;
     float: left;
 }
-
 .word span {
     position: relative;
     display: inline-block;
@@ -788,7 +759,6 @@ input[type="text"] {
     color: #174ea6;
 }
 
-
 /*选择困难度界面*/
 
 * {
@@ -809,6 +779,7 @@ body {
     overflow: hidden;
     background: #FFE4B5;
 }
+
 
 .wrap {
     position: relative;
@@ -882,6 +853,7 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
+    cursor: pointer;
 }
 
 #i1 {
@@ -895,6 +867,24 @@ body {
     opacity: 0.7;
     transform: rotateY(0deg) translateZ(700px);
     background-color: chocolate;
+    animation: fade_in_style 1s  1;
+}
+@keyframes fade_in_style {
+    0% {
+        opacity: 0;
+        transform: scale(0.0, 0.0);
+    }
+    25% {
+        opacity: 0.5;
+        transform: scale(0.5, 0.5);
+    }
+    75% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
 }
 
 #b1 p {
@@ -950,7 +940,7 @@ body {
     font-size: 30px;
 }
 
-.qiehuan {
+.difficult_button {
     font-size: 30px;
     color: #fff;
     outline: none;
@@ -969,7 +959,7 @@ body {
     cursor: pointer;
 }
 
-.qiehuan:hover {
+.difficult_button:hover {
     opacity: 0.5;
     border-bottom-left-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;
