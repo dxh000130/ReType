@@ -90,7 +90,7 @@ namespace ReType.Controllers
                     }
 
                     string result = rgx.Replace(Article.Article, replacement);
-                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "tryagain, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "" };
+                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "tryagain, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
                     return Ok(final);
                 }
                 if (Regex.Matches(already.ToUpper(), Article.Input.ToUpper()).Count >= 1 && Article.Enter == 1)
@@ -102,7 +102,7 @@ namespace ReType.Controllers
                     }
 
                     string result = rgx.Replace(Article.Article, replacement);
-                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Already Input, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "" };
+                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Already Input, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
                     return Ok(final);
                 }
                 else if (correctlist[i].ToUpper() == Article.Input.ToUpper() && Article.Enter == 1)
@@ -121,7 +121,7 @@ namespace ReType.Controllers
                         already += "," + wronglist[i] + "," + correctlist[i];
                     }
                     int error_remain = wronglist.Count() - already.Split(',').Count() / 2;
-                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articleout, Correct = "yes,add 1 score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.AddUserScore(username, articlediff), hint = "" };
+                    Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articleout, Correct = "yes,add score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.AddUserScore(username, articlediff), hint = "", ScoreChange = articlediff };
                     return Ok(final);
                 }
                 
@@ -140,7 +140,7 @@ namespace ReType.Controllers
             Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "" };
             if (articlecopy == result3 && Article.Enter==1)
             {
-                return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "" });
+                return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
             }
             if (Article.hint == 1)
             {
@@ -150,7 +150,7 @@ namespace ReType.Controllers
                     {
                         Regex rgx4 = new Regex("(?i:" + wronglist[i] + ")+");
                         string result4 = rgx4.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
-                        return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Hint", ArticleDisp = result4, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, 1), hint = wronglist[i] });
+                        return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Hint", ArticleDisp = result4, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, 1), hint = wronglist[i], ScoreChange = -1 });
                     }
                 }
             }
