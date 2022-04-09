@@ -222,7 +222,7 @@
                     <a href="#">Style3</a>
                 </div>
 
-                <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">Medium</div>
+                <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">Normal</div>
                 <div class="item" id="b2" style="display: none">
                     <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
@@ -231,7 +231,7 @@
                     <a href="#">Style3</a>
                 </div>
 
-                <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">High</div>
+                <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">Hard</div>
                 <div class="item" id="b3" style="display: none">
                     <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
@@ -242,13 +242,18 @@
             </div>
         </div>
 
-        <div style="margin-bottom: 100px"></div>
-        <div class="qiehuanbutton" style="width: 100%" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
-            <button class="difficult_button" id="difficult_button1" style="display: none" type="button" onclick="change_difficult1()">Change difficulty level</button>
-            <button class="difficult_button" id="difficult_button2" type="button" style="display: block" onclick="change_difficult2()">Change difficulty level</button>
+        <div style="margin-bottom: 50px"></div>
+        <div class="qiehuanbutton"  style="text-align: center;width: 380px;" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
+<!--            <div class="difficult_button" id="difficult_button1" data-text="Change difficulty level" style="&#45;&#45;c:#1e90ff;display: block" onclick="change_difficult1()"></div>-->
+            <button class="difficult_button" id="difficult_button1" style="display: block" type="button" onclick="change_difficult1()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button2" type="button" style="display: none" onclick="change_difficult2()">Change difficulty level</button>
             <button class="difficult_button" id="difficult_button3" type="button" style="display: none" onclick="change_difficult3()">Change difficulty level</button>
         </div>
+<!--        <div id="type_gif">-->
+<!--            <img src="images/type.gif">-->
+<!--        </div>-->
     </div>
+    <!--play 困难度选择界面结束-->
 
 
 </body>

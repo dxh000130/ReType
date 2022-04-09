@@ -772,24 +772,44 @@ html {
     width: 100%;
 }
 
-body {
+/*body  {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    overflow: hidden;*/
+/*    background: #FFE4B5;*/
+/*}*/
+
+
+#difficult_page{
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background: #FFE4B5;
-}
+    background: #336699;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*bottom: 0;*/
+    min-width: 100%;
+    min-height: 100%;
 
+    border-bottom-right-radius: 35%;
+    border-top-left-radius: 15%;
+
+}
 
 .wrap {
     position: relative;
-    background: #FFE4B5;
+    /*background: #FFE4B5;*/
     height: 250px;
     width: 380px;
     justify-content: center;
     align-items: center;
     /*flex-wrap: wrap;*/
     perspective: 900px;
+    margin-top:230px;
+    margin-left: 39%;
+    margin-right: 20%;
 }
 
 .cards_wrap {
@@ -867,23 +887,22 @@ body {
     opacity: 0.7;
     transform: rotateY(0deg) translateZ(700px);
     background-color: chocolate;
-    animation: fade_in_style 1s  1;
+    animation: fade_in_style_b1 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
-@keyframes fade_in_style {
+@keyframes fade_in_style_b1 {
     0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
         opacity: 0;
-        transform: scale(0.0, 0.0);
-    }
-    25% {
-        opacity: 0.5;
-        transform: scale(0.5, 0.5);
-    }
-    75% {
-        opacity: 0.8;
     }
     100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateY(0deg) translateZ(700px) ;
+        -webkit-transform-origin: top;
+        transform-origin: top;
         opacity: 1;
-        transform: scale(1, 1);
     }
 }
 
@@ -901,12 +920,30 @@ body {
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
+
 }
 
 #b2 {
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
     background-color: chocolate;
+    animation: fade_in_style_b2 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+@keyframes fade_in_style_b2 {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateY(120deg) translateZ(700px) ;
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
 }
 
 #b2 p {
@@ -929,6 +966,23 @@ body {
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
     background-color: chocolate;
+    animation:  fade_in_style_b3 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+@keyframes fade_in_style_b3 {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateY(240deg) translateZ(700px) ;
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
 }
 
 #b3 p {
@@ -941,39 +995,39 @@ body {
 }
 
 .difficult_button {
-    font-size: 30px;
-    color: #fff;
+    font-size: 45px;
     outline: none;
     border: none;
-    background: burlywood;
-    width: 95%;
-    padding: 18px 0;
+    /*background: burlywood;*/
+    width: 70vw;
+    padding: 15px 0;
     border-radius: 15px;
-    /*-webkit-border-bottom-left-radius: 15px;*/
-    /*-moz-border-bottom-left-radius: 15px;*/
-    /*-o-border-bottom-left-radius: 15px;*/
-    /*border-bottom-right-radius: 15px;*/
-    /*-webkit-border-bottom-right-radius: 15px;*/
-    /*-moz-border-bottom-right-radius: 15px;*/
-    /*-o-border-bottom-right-radius: 15px;*/
     cursor: pointer;
+    background:burlywood;
+    color: #fee375;
+    text-shadow: -1px -1px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black;
+    font-weight: bold;
+    font-style: italic;
+    margin-left: 60%;
+
+
+
+
 }
 
-.difficult_button:hover {
-    opacity: 0.5;
-    border-bottom-left-radius: 15px;
-    -webkit-border-bottom-left-radius: 15px;
-    -moz-border-bottom-left-radius: 15px;
-    -o-border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    -webkit-border-bottom-right-radius: 15px;
-    -moz-border-bottom-right-radius: 15px;
-    -o-border-bottom-right-radius: 15px;
-    transition: 1s all;
-    -webkit-transition: 1s all;
-    -moz-transition: 1s all;
-    -o-transition: 1s all;
+.difficult_button:hover{
+    background-image: linear-gradient(to left , #03a9f4,#f441a5,rgb(124, 241, 241),#e3a5f0,#03a9f4);
+    background-size: 400%;
+    animation: run 4s linear 0s infinite;
 }
+@keyframes run{
+    100%{
+        background-position: 400% 0px;
+    }
+
+}
+
+
 
 @keyframes rotate {
     0% {
@@ -1119,3 +1173,6 @@ body {
     transform: translateX(200%);
     opacity: 0;
 }
+
+/*选择困难界面结束*/
+
