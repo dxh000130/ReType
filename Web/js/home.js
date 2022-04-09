@@ -233,25 +233,30 @@ function onSignIn(googleUser) {
 
 // 排行榜页面
 function GetLeaderboard() {
-    var htmltable = document.getElementById("rank")
-    let headers2 = new Headers();
-    headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
-    fetch("https://api.dxh000130.top/api/Leaderboard/" + user_id, {
-        credentials: 'include',
-        method: 'GET',
-        headers: headers2
-    }).then(r => {
-        r.json().then(function(data) {
-            for (var i = 0; i < data.length; i++) {
-                var row = ` <tr>
+    if (valid_log == false) {
+        window.alert("Please Log in")
+    } else {
+        document.getElementById('leaderboard_page').style.display = 'block';
+        var htmltable = document.getElementById("rank")
+        let headers2 = new Headers();
+        headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
+        fetch("https://api.dxh000130.top/api/Leaderboard/" + user_id, {
+            credentials: 'include',
+            method: 'GET',
+            headers: headers2
+        }).then(r => {
+            r.json().then(function(data) {
+                for (var i = 0; i < data.length; i++) {
+                    var row = ` <tr>
                                 <td>${data[i].index}</td>
                                 <td>${data[i].username}</td>
                                 <td>${data[i].score}</td>
                             </tr>`
-                htmltable.innerHTML += row
-            }
+                    htmltable.innerHTML += row
+                }
+            })
         })
-    })
+    }
 }
 
 
@@ -263,8 +268,12 @@ function ClearLeaderBoard() {
 // 排行榜页面结束
 //
 function display_game() {
+    // if (valid_log == false) {
+    //     window.alert("Please Log in")
+    // } else {
     document.getElementById("first_page").style.display = "none";
     document.getElementById("kunnandu").style.display = "block";
+    // }
 }
 
 function donghua1() {
