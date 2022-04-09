@@ -789,16 +789,12 @@ input[type="text"] {
 }
 
 
-
-
-
-
 /*选择困难度界面*/
+
 * {
     padding: 0;
     margin: 0;
 }
-
 
 body,
 html {
@@ -806,7 +802,7 @@ html {
     width: 100%;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -822,10 +818,10 @@ body{
     justify-content: center;
     align-items: center;
     /*flex-wrap: wrap;*/
-    perspective:900px;
-
+    perspective: 900px;
 }
-.cards_wrap{
+
+.cards_wrap {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -835,7 +831,7 @@ body{
     align-items: center;
 }
 
-.cards_wrap_1{
+.cards_wrap_1 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -844,9 +840,10 @@ body{
     animation: rotate 1s;
     justify-content: center;
     align-items: center;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
 }
-.cards_wrap_2{
+
+.cards_wrap_2 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -855,9 +852,10 @@ body{
     animation: rotate2 1s;
     justify-content: center;
     align-items: center;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
 }
-.cards_wrap_3{
+
+.cards_wrap_3 {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -866,9 +864,8 @@ body{
     animation: rotate3 1s;
     justify-content: center;
     align-items: center;
-    animation-fill-mode:forwards;
+    animation-fill-mode: forwards;
 }
-
 
 .item {
     border: 1px solid #ccc;
@@ -878,8 +875,8 @@ body{
     font-size: 4rem;
     font-weight: bold;
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     right: 0;
     bottom: 0;
     width: 100%;
@@ -892,22 +889,22 @@ body{
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(0) translateZ(700px);
-
 }
-#b1{
+
+#b1 {
     opacity: 0.7;
     transform: rotateY(0deg) translateZ(700px);
     background-color: chocolate;
 }
 
-#b1 p{
+#b1 p {
     font-size: 40px;
     padding-top: 15%;
 }
-#b1 a{
+
+#b1 a {
     font-size: 30px;
 }
-
 
 #i2 {
     background: url(../images/bg1.png) no-repeat top center;
@@ -915,38 +912,44 @@ body{
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
 }
-#b2{
+
+#b2 {
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
     background-color: chocolate;
 }
 
-#b2 p{
+#b2 p {
     font-size: 40px;
     padding-top: 15%;
 }
-#b2 a{
+
+#b2 a {
     font-size: 30px;
 }
+
 #i3 {
     background: url(../images/bg3.png) no-repeat top center;
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
 }
-#b3{
+
+#b3 {
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
     background-color: chocolate;
 }
 
-#b3 p{
+#b3 p {
     font-size: 40px;
     padding-top: 15%;
 }
-#b3 a{
+
+#b3 a {
     font-size: 30px;
 }
+
 .qiehuan {
     font-size: 30px;
     color: #fff;
@@ -981,30 +984,34 @@ body{
     -moz-transition: 1s all;
     -o-transition: 1s all;
 }
+
 @keyframes rotate {
-    0%{
+    0% {
         transform: translateZ(-700px) rotateY(0);
     }
-    100%{
+    100% {
         transform: translateZ(-700px) rotateY(-120deg);
     }
 }
+
 @keyframes rotate2 {
-    0%{
+    0% {
         transform: translateZ(-700px) rotateY(-120deg);
     }
-    100%{
+    100% {
         transform: translateZ(-700px) rotateY(-240deg);
     }
 }
+
 @keyframes rotate3 {
-    0%{
+    0% {
         transform: translateZ(-700px) rotateY(-240deg);
     }
-    100%{
+    100% {
         transform: translateZ(-700px) rotateY(-360deg);
     }
 }
+
 .cancelbtn_play {
     background: url('../images/close.png') no-repeat center papayawhip;
     background-size: 30px;
@@ -1021,4 +1028,104 @@ body{
     transition: color 0.2s ease-in-out;
 }
 
-/*选择困难度结束*/
+.homebtn-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+}
+
+.homebtn-container:nth-child(1) {
+    --btn-bg: #fac300;
+    --bg: #fc6100;
+}
+
+.backhome {
+    right: 20px;
+    top: 10px;
+    --width: 200px;
+    --height: 60px;
+    border: 0;
+    position: fixed;
+    min-width: var(--width);
+    min-height: var(--height);
+    border-radius: var(--height);
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+    color: rgb(255, 255, 255);
+    font-family: "Montserrat";
+    font-weight: bold;
+}
+
+.backhome .text,
+.backhome .icon-container {
+    position: relative;
+    z-index: 2;
+}
+
+.backhome .icon-container {
+    --icon-size: 25px;
+    position: relative;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-left: 15px;
+    transition: transform 500ms ease;
+}
+
+.backhome .icon-container .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    transition: transform 500ms ease, opacity 250ms ease;
+}
+
+.backhome .icon-container .icon--left {
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.backhome .icon-container .icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+.backhome::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-bg);
+    border-radius: var(--height);
+    z-index: 1;
+    transition: transform 500ms ease;
+}
+
+.backhome:hover::after {
+    transform: translateX(70%);
+}
+
+.backhome:hover .icon-container {
+    transform: translateX(40%);
+}
+
+.backhome:hover .icon-container .icon--left {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.backhome:hover .icon-container .icon--right {
+    transform: translateX(200%);
+    opacity: 0;
+}

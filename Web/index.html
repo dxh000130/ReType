@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: block" >
+    <div id="first_page" style="height: 100%;width: 100%;display: block">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-<!--        排行榜页面-->
+        <!--        排行榜页面-->
 
         <div id="leaderboard_page" class="leaderboard_page" style="display: none;">
             <table class="ranktable" id="ranktable">
@@ -186,46 +186,69 @@
     </div>
     <!--主界面的结束-->
 
-<!--play 困难度选择界面-->
+    <!--play 困难度选择界面-->
     <div id="kunnandu" style="display: none">
-            <div class="wrap">
-                <div class="cards_wrap" id="cards_wrap">
-                    <div class="item" id="i1" onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">Easy</div>
-                    <div class="item" id="b1" style="display: none">
-                        <button type="button" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'" class="cancelbtn_play"></button>
-                        <p>Choose Style</p>
-                        <a href="#">Style1</a>
-                        <a href="#">Style2</a>
-                        <a href="#">Style3</a>
+        <div class="homebtn-container">
+            <button class="backhome" onclick="BackToHome()">
+                <span class="text">Back to Homepage</span>
+                <div class="icon-container">
+                    <div class="icon icon--left">
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
                     </div>
-
-                    <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">Medium</div>
-                    <div class="item" id="b2" style="display: none">
-                        <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
-                        <p>Choose Style</p>
-                        <a href="#">Style1</a>
-                        <a href="#">Style2</a>
-                        <a href="#">Style3</a>
-                    </div>
-
-                    <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">High</div>
-                    <div class="item" id="b3" style="display: none">
-                        <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
-                        <p>Choose Style</p>
-                        <a href="#">Style1</a>
-                        <a href="#">Style2</a>
-                        <a href="#">Style3</a>
+                    <div class="icon icon--right">
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
                     </div>
                 </div>
-            </div>
+            </button>
+        </div>
+        <svg style="display: none;">
+            <symbol id="arrow-right" viewBox="0 0 20 10">
+                <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
+            </symbol>
+        </svg>
 
-            <div style="margin-bottom: 100px"></div>
-            <div class="qiehuanbutton" style="width: 100%"  onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
-                <button class="qiehuan" id="qiehuan1" style="display: none"  type="button" onclick="donghua1()">Change difficulty level</button>
-                <button class="qiehuan" id="qiehuan2"  type="button" style="display: block" onclick="donghua2()">Change difficulty level</button>
-                <button class="qiehuan" id="qiehuan3"  type="button"style="display: none"  onclick="donghua3()">Change difficulty level</button>
+        <div class="wrap">
+            <div class="cards_wrap" id="cards_wrap">
+                <div class="item" id="i1" onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">Easy</div>
+                <div class="item" id="b1" style="display: none">
+                    <button type="button" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'" class="cancelbtn_play"></button>
+                    <p>Choose Style</p>
+                    <a href="#">Style1</a>
+                    <a href="#">Style2</a>
+                    <a href="#">Style3</a>
+                </div>
+
+                <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">Medium</div>
+                <div class="item" id="b2" style="display: none">
+                    <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
+                    <p>Choose Style</p>
+                    <a href="#">Style1</a>
+                    <a href="#">Style2</a>
+                    <a href="#">Style3</a>
+                </div>
+
+                <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">High</div>
+                <div class="item" id="b3" style="display: none">
+                    <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
+                    <p>Choose Style</p>
+                    <a href="#">Style1</a>
+                    <a href="#">Style2</a>
+                    <a href="#">Style3</a>
+                </div>
             </div>
         </div>
+
+        <div style="margin-bottom: 100px"></div>
+        <div class="qiehuanbutton" style="width: 100%" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
+            <button class="qiehuan" id="qiehuan1" style="display: none" type="button" onclick="donghua1()">Change difficulty level</button>
+            <button class="qiehuan" id="qiehuan2" type="button" style="display: block" onclick="donghua2()">Change difficulty level</button>
+            <button class="qiehuan" id="qiehuan3" type="button" style="display: none" onclick="donghua3()">Change difficulty level</button>
+        </div>
+    </div>
     </div>
 
 

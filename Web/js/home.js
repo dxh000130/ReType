@@ -262,27 +262,33 @@ function ClearLeaderBoard() {
 }
 // 排行榜页面结束
 //
-function display_game(){
-    document.getElementById("first_page").style.display="none";
-    document.getElementById("kunnandu").style.display="block";
+function display_game() {
+    document.getElementById("first_page").style.display = "none";
+    document.getElementById("kunnandu").style.display = "block";
 }
 
-function donghua1(){
-    document.getElementById("cards_wrap").className="cards_wrap_1";
-    document.getElementById("qiehuan1").style.display="none";
-    document.getElementById("qiehuan3").style.display="none";
-    document.getElementById("qiehuan2").style.display="block";
+function donghua1() {
+    document.getElementById("cards_wrap").className = "cards_wrap_1";
+    document.getElementById("qiehuan1").style.display = "none";
+    document.getElementById("qiehuan3").style.display = "none";
+    document.getElementById("qiehuan2").style.display = "block";
 }
 
-function donghua2(){
-    document.getElementById("cards_wrap").className="cards_wrap_2";
-    document.getElementById("qiehuan2").style.display="none";
-    document.getElementById("qiehuan1").style.display="none";
-    document.getElementById("qiehuan3").style.display="block";
+function donghua2() {
+    document.getElementById("cards_wrap").className = "cards_wrap_2";
+    document.getElementById("qiehuan2").style.display = "none";
+    document.getElementById("qiehuan1").style.display = "none";
+    document.getElementById("qiehuan3").style.display = "block";
 }
-function donghua3(){
-    document.getElementById("cards_wrap").className="cards_wrap_3";
-    document.getElementById("qiehuan1").style.display="block";
-    document.getElementById("qiehuan2").style.display="none";
-    document.getElementById("qiehuan3").style.display="none";
+
+function donghua3() {
+    document.getElementById("cards_wrap").className = "cards_wrap_3";
+    document.getElementById("qiehuan1").style.display = "block";
+    document.getElementById("qiehuan2").style.display = "none";
+    document.getElementById("qiehuan3").style.display = "none";
+}
+
+function BackToHome() {
+    document.getElementById("first_page").style.display = "block";
+    document.getElementById("kunnandu").style.display = "none";
 }
