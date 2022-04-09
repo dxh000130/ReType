@@ -262,12 +262,10 @@ function ClearLeaderBoard() {
 }
 // 排行榜页面结束
 //
-// function display_game(){
-//     document.getElementById("first_page").style.display="none";
-// }
-
-
-
+function display_game(){
+    document.getElementById("first_page").style.display="none";
+    document.getElementById("kunnandu").style.display="block";
+}
 
 function donghua1(){
     document.getElementById("cards_wrap").className="cards_wrap_1";

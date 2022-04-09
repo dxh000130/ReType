@@ -798,12 +798,14 @@ input[type="text"] {
     padding: 0;
     margin: 0;
 }
+
+
 body,
 html {
     height: 100%;
     width: 100%;
-
 }
+
 body{
     display: flex;
     justify-content: center;
@@ -890,7 +892,22 @@ body{
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(0) translateZ(700px);
+
 }
+#b1{
+    opacity: 0.7;
+    transform: rotateY(0deg) translateZ(700px);
+    background-color: chocolate;
+}
+
+#b1 p{
+    font-size: 40px;
+    padding-top: 15%;
+}
+#b1 a{
+    font-size: 30px;
+}
+
 
 #i2 {
     background: url(../images/bg1.png) no-repeat top center;
@@ -898,13 +915,38 @@ body{
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
 }
+#b2{
+    opacity: 0.7;
+    transform: rotateY(120deg) translateZ(700px);
+    background-color: chocolate;
+}
+
+#b2 p{
+    font-size: 40px;
+    padding-top: 15%;
+}
+#b2 a{
+    font-size: 30px;
+}
 #i3 {
     background: url(../images/bg3.png) no-repeat top center;
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
 }
+#b3{
+    opacity: 0.7;
+    transform: rotateY(240deg) translateZ(700px);
+    background-color: chocolate;
+}
 
+#b3 p{
+    font-size: 40px;
+    padding-top: 15%;
+}
+#b3 a{
+    font-size: 30px;
+}
 .qiehuan {
     font-size: 30px;
     color: #fff;
@@ -963,4 +1005,20 @@ body{
         transform: translateZ(-700px) rotateY(-360deg);
     }
 }
+.cancelbtn_play {
+    background: url('../images/close.png') no-repeat center papayawhip;
+    background-size: 30px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 2px;
+    top: 1px;
+    border-radius: 15px;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
 
+/*选择困难度结束*/
