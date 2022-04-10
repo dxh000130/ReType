@@ -7,8 +7,8 @@ fetch('https://api.dxh000130.top/api/GetVersion', {
     .then(function(myJson) {
         console.log('Version' + myJson);
     });
-var user_id = "";
-var pass = "";
+localStorage.user_id = "";
+localStorage.pass = "";
 
 let valid_log = false;
 //登录界面
@@ -32,10 +32,10 @@ function Login() {
             headers: headers1
         }).then(r => {
             if (r.status == 200) {
-                user_id = username;
-                pass = password;
+                localStorage.user_id = username;
+                localStorage.pass = password;
                 console.log("Log in Success");
-                console.log(user_id);
+                console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
                 const button = document.getElementById("error_button");
@@ -208,10 +208,10 @@ function onSignIn(googleUser) {
             console.log(text);
             if (text != "This email has been occupied, please log in first and then bind Google" && text != "no") {
                 user = text.split(",");
-                user_id = user[0];
-                pass = user[1];
-                console.log(user_id);
-                console.log(pass);
+                localStorage.user_id = user[0];
+                localStorage.pass = user[1];
+                console.log(localStorage.user_id);
+                console.log(localStorage.pass);
                 valid_log = true;
                 const button = document.getElementById("error_button");
                 document.getElementById("login_modal").style.display = "none";
@@ -239,8 +239,8 @@ function GetLeaderboard() {
         document.getElementById('leaderboard_page').style.display = 'block';
         var htmltable = document.getElementById("rank")
         let headers2 = new Headers();
-        headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
-        fetch("https://api.dxh000130.top/api/Leaderboard/" + user_id, {
+        headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+        fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
             credentials: 'include',
             method: 'GET',
             headers: headers2
@@ -440,7 +440,7 @@ var textinput = document.getElementById("user_input");
 
 function choosearticle() {
     var ArticleChooseheader = new Headers();
-    ArticleChooseheader.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
+    ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
     const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
@@ -482,7 +482,7 @@ function Hint() {
 } //高亮 加减分 hint主程序
 function ArticleProcessMainFunction(Enterbutton, hint) {
     let headers2 = new Headers();
-    headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass)); //需修改
+    headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass)); //需修改
     headers2.append('Content-Type', 'application/json');
     headers2.append('Accept', 'text/plain');
     var textinput = document.getElementById("user_input");
