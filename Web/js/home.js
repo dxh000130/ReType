@@ -370,31 +370,29 @@ function change_font_family() {
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
 
-// // 改变字体大小
-// if (!localStorage.change_font_size_small) {
-//     localStorage.change_font_size_small = '3';
-//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
-// } else
-//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
-//
-// function change_font_size_big() {
-//     localStorage.change_font_size_small++;
-//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
-// }
-//
-// function change_font_size_small(){
-//     localStorage.change_font_size_small=localStorage.change_font_size_small-1;
-//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
-// }
+// 改变字体大小
 
-// let font_value = document.getElementById("text").value;
+if (localStorage.zitidaxiao!=20) {
+    localStorage.zitidaxiao = "20";
+    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+} else{
+    console.log(localStorage.zitidaxiao);
+    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+}
 
-// var font_value=3;
-// function change_font_size_big(){
-//     console.log(font_value);
-//     document.getElementById("text").style.fontSize = font_value+"vw" ;
-//     font_value+=1;
-// }
+function change_font_size_big() {
+    localStorage.zitidaxiao++;
+    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+}
+
+function change_font_size_small() {
+    localStorage.zitidaxiao--;
+    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+}
+
+
+
+
 
 // var difficulties = "";
 // document.getElementById('easy1').addEventListener("click", function() {
@@ -476,6 +474,7 @@ document.getElementById('user_input').addEventListener("keyup", function(event) 
             //console.log("没回车");
     }
 });
+
 //Hint
 function Hint() {
     document.getElementById("user_input").value = "";
@@ -550,3 +549,4 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         document.querySelector('#text').innerHTML = wholearticle;
     }
 }
+

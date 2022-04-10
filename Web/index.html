@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: block">
+    <div id="first_page" style="height: 100%;width: 100%;display: none">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -245,7 +245,6 @@
             </div>
         </div>
 
-
         <div style="margin-bottom: 50px "></div>
         <div class="qiehuanbutton" style="text-align: center;width: 380px; " onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(
                         'i1').style.display='block' ;document.getElementById( 'i2').style.display='block' ;document.getElementById( 'i3').style.display='block' ">
@@ -261,7 +260,30 @@
     <!--play 困难度选择界面结束-->
 
     <!--游戏主界面-->
-    <div id="play_homepage" style="display: none">
+    <div id="play_homepage" style="display: block">
+        <div class="homebtn-container_play">
+            <button class="backhome" onclick="BackToHome()">
+                <span class="text">Back to Homepage</span>
+                <div class="icon-container">
+                    <div class="icon icon--left">
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                    <div class="icon icon--right">
+                        <svg>
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <svg style="display: none;">
+            <symbol id="arrow-right" viewBox="0 0 20 10">
+                <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
+            </symbol>
+        </svg>
+
         <div class="play_left">
             <div id="content">
                 <div class="adjust_text">
@@ -271,14 +293,15 @@
                     <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
                     <!-- <button class="adjust_text_button ">B</button>-->
                 </div>
-                <div id="text" style="font-size:20px"></div>
+                <div id="text" >Mitochondria are tiny cells that live within the cells of animals. They have their own DNA, make their own proteins, and can grow or divide like other cells; allthough they've lived to long inside the cells of animals to live free. Most of the proteins made by mitochondria are for \"aerobic respitoration\" - using oxygen to turn certain molecules into energy. And when biologists say \"energy\" they actually mean a molicule called ATP, which stores energy to be used for later. Think of ATP like a compresed spring that can be released at a later point to create motion. So Mitochondria take in Oxygen, fat, and pyruvate (that comes from sugar); and spit out ATP and water. The entire process by which it does it inside the mitochondria is divided into two parts, the Kreb's cycle and Electron Transport chain. There are other mechanisms for creating ATP, mitochondria is the most effcient.</div>
             </div>
         </div>
 
         <div class="play_right">
-            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">
+<!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
             <div id="input">
-                <input id="user_input" type="text" name="uname" required>
+                <input id="user_input">
+                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>
             </div>
             <div id="play_score" data-text="score">
                 <p id="score"></p>
@@ -289,6 +312,5 @@
     </div>
     <script src="js/home.js"></script>
 </body>
-
 
 </html>
