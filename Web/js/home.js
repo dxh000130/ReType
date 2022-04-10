@@ -301,3 +301,84 @@ function BackToHome() {
     document.getElementById("first_page").style.display = "block";
     document.getElementById("difficult_page").style.display = "none";
 }
+
+// 游戏主界面开始
+// 改变背景颜色
+if (!localStorage.change_background) {
+    localStorage.change_background = "#18222d";
+    localStorage.content = "#adadad";
+    document.body.style.backgroundColor = localStorage.change_background;
+    document.getElementById("text").style.color = localStorage.content;
+} else {
+    document.body.style.backgroundColor = localStorage.change_background;
+    document.getElementById("text").style.color = localStorage.content;
+}
+
+function change_background() {
+    if (localStorage.change_background == "#ffffff")
+        localStorage.change_background = "#f6f1e7";
+    else if (localStorage.change_background == "#f6f1e7")
+        localStorage.change_background = "#dadada";
+    else if (localStorage.change_background == "#dadada")
+        localStorage.change_background = "#dae9da";
+    else if (localStorage.change_background == "#dae9da")
+        localStorage.change_background = "#ebcece";
+    else if (localStorage.change_background == "#ebcece") {
+        localStorage.change_background = "#18222d";
+        localStorage.content = "#adadad";
+        document.getElementById("text").style.color = localStorage.content;
+    } else if (localStorage.change_background == "#18222d") {
+        localStorage.change_background = "#ebddae";
+        localStorage.content = "";
+        document.getElementById("text").style.color = localStorage.content;
+    } else if (localStorage.change_background == "#ebddae")
+        localStorage.change_background = "#dfecf0";
+    else
+        localStorage.change_background = "#ffffff";
+    document.getElementById("text").style.backgroundColor = localStorage.change_background;
+}
+
+// // 改变字体
+if (!localStorage.change_font_family) {
+    localStorage.change_font_family = "SimSun";
+    document.getElementById("text").style.fontFamily = localStorage.ziti;
+} else {
+    document.getElementById("text").style.fontFamily = localStorage.ziti;
+}
+function change_font_family() {
+    if (localStorage.ziti == "SimSun") {
+        localStorage.ziti = "SimHei";
+    } else if (localStorage.ziti == "SimHei") {
+
+        localStorage.ziti = "Times New Roman";
+    } else {
+        localStorage.ziti = "SimSun";
+    }
+    document.getElementById("text").style.fontFamily = localStorage.ziti;
+}
+
+// // 改变字体大小
+// if (!localStorage.change_font_size_small) {
+//     localStorage.change_font_size_small = '3';
+//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
+// } else
+//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
+//
+// function change_font_size_big() {
+//     localStorage.change_font_size_small++;
+//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
+// }
+//
+// function change_font_size_small(){
+//     localStorage.change_font_size_small=localStorage.change_font_size_small-1;
+//     document.getElementById("text").style.fontSize = localStorage.change_font_size_small + 'vw';
+// }
+
+// let font_value = document.getElementById("text").value;
+
+// var font_value=3;
+// function change_font_size_big(){
+//     console.log(font_value);
+//     document.getElementById("text").style.fontSize = font_value+"vw" ;
+//     font_value+=1;
+// }

@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: block">
+    <div id="first_page" style="height: 100%;width: 100%;display: none">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -255,6 +255,29 @@
     </div>
     <!--play 困难度选择界面结束-->
 
+<!--游戏主界面-->
+    <div id="play_homepage">
+        <div class="play_left">
+            <div id="content">
+                <div class="adjust_text">
+                    <button class="adjust_text_button" onclick="change_background()">Background</button>
+                    <button class="adjust_text_button"  onclick="change_font_family()">Font Family</button>
+                    <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>
+                    <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
+                    <!--                    <button class="adjust_text_button">B</button>-->
+                </div>
+                <div id="text">dasdsadsadasdasdsadasdsadasdasdasdas</div>
+            </div>
+        </div>
+
+        <div class="play_right">
+            <div id="input">
+                <input type="text" id="user_input">
+            </div>
+            <div id="play_score">分数</div>
+            <div id="dictionaries">翻译</div>
+        </div>
+    </div>
 
 </body>
 

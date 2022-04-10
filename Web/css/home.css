@@ -1176,3 +1176,105 @@ html {
 
 /*选择困难界面结束*/
 
+/*游戏主界面开始*/
+#play_homepage{
+    width: 99%;
+    height: 99%;
+    background-color: coral;
+    position: absolute;
+}
+.play_left{
+    width: 55%;
+    height: 90%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 5vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/play.jpg") ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#content{
+    background-color: beige;
+    width: 52.5%;
+    height: 68%;
+    /*margin-top: 5%;*/
+    margin-left: 22.5%;
+    margin-right: 18%;
+    margin-top:18vh;
+    opacity: 0.8;
+    border-radius: 30px;
+}
+.adjust_text{
+    width: 100%;
+    height: 8%;
+    background-color: rosybrown;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.adjust_text button{
+    width: 20%;
+    height: 90%;
+    float: left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 0.5%;
+    border-radius: 26px 6px;
+    font-size: 50%;
+    word-break: break-word;
+}
+
+#text{
+    width: 100%;
+    height: 92%;
+    /*background-color: red;*/
+    font-size: 3vw;
+    word-break: break-word;
+}
+
+.play_right{
+    background-color: yellow;
+    width: 30%;
+    height: 100%;
+    /*margin-top: 5%;*/
+    /*margin-left: 5%;*/
+    margin-left: 5%;
+    float: left;
+}
+
+#input{
+    background-color: darkslateblue;
+    width: 90%;
+    height: 10%;
+    margin-top: 25%;
+    margin-left: 5%;
+}
+
+#input input{
+    width: 70%;
+    height: 50%;
+    margin-left: 3%;
+    margin-top: 3%;
+
+}
+#play_score{
+    width: 90%;
+    height: 35%;
+    background-color: steelblue;
+    margin-top: 5%;
+    margin-left: 5%;
+
+}
+#dictionaries{
+    width: 90%;
+    height: 30%;
+    margin-top: 5%;
+    margin-left: 5%;
+    background-color: aqua;
+}
+
+
+
