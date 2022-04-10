@@ -97,17 +97,17 @@ function bg() {
 
 
 //获取文章
-let headers1 = new Headers();
-headers1.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349"));
-headers1.append('Content-Type', 'application/json')
-headers1.append('Accept', 'text/plain')
+let ArticleChooseheader = new Headers();
+ArticleChooseheader.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349"));
+ArticleChooseheader.append('Content-Type', 'application/json')
+ArticleChooseheader.append('Accept', 'text/plain')
 let articleid = 999;
 let error_remain = 999;
 let wholearticle = "";
 const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
     method: "POST",
     credentials: 'include',
-    headers: headers1,
+    headers: ArticleChooseheader,
     body: JSON.stringify({
         "Difficulty": "H", //需关联选择页面 需修改
         "Type": "Tech",//需关联选择页面 需修改
@@ -124,29 +124,29 @@ ArticleChoose.then(res => {
 //键盘监听
 })
 var AlreadyCorrect = ""
-var textinput = document.getElementById("login-username")
+var textinput = document.getElementById("User-input-answer")
 textinput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         //console.log("回车");
         Enterbutton = 1;
-        Login(Enterbutton)
+        ArticleProcessMainFunction(Enterbutton)
     } else {
         Enterbutton = 0;
-        Login(Enterbutton, 0)
+        ArticleProcessMainFunction(Enterbutton, 0)
             //console.log("没回车");
     }
 });
 //Hint
 function Hint() {
-    document.getElementById("login-username").value = "";
-    Login(0, 1);
+    document.getElementById("User-input-answer").value = "";
+    ArticleProcessMainFunction(0, 1);
 }//高亮 加减分 hint主程序
-function Login(Enterbutton, hint) {
+function ArticleProcessMainFunction(Enterbutton, hint) {
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349")); //需修改
     headers2.append('Content-Type', 'application/json')
     headers2.append('Accept', 'text/plain')
-    var textinput = document.getElementById("login-username")
+    var textinput = document.getElementById("User-input-answer")
     var username = textinput.value;
 
     if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
