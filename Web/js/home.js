@@ -277,6 +277,12 @@ function display_game() {
     // }
 }
 
+function display_play() {
+    document.getElementById("first_page").style.display = "none";
+    document.getElementById("difficult_page").style.display = "none";
+    document.getElementById("play_homepage").style.display = "block";
+}
+
 function change_difficult1() {
     document.getElementById("cards_wrap").className = "cards_wrap_1";
     document.getElementById("difficult_button1").style.display = "none";
@@ -313,10 +319,11 @@ if (!localStorage.change_background) {
     localStorage.content = "#adadad";
     document.body.style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
-} else {
-    document.body.style.backgroundColor = localStorage.change_background;
-    document.getElementById("text").style.color = localStorage.content;
 }
+// } else {
+//     // document.body.style.backgroundColor = localStorage.change_background;
+//     document.getElementById("text").style.color = localStorage.content;
+// }
 
 function change_background() {
     if (localStorage.change_background == "#ffffff")
@@ -346,9 +353,10 @@ function change_background() {
 if (!localStorage.change_font_family) {
     localStorage.change_font_family = "SimSun";
     document.getElementById("text").style.fontFamily = localStorage.ziti;
-} else {
-    document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
+// } else {
+//     document.getElementById("text").style.fontFamily = localStorage.ziti;
+// }
 
 function change_font_family() {
     if (localStorage.ziti == "SimSun") {
@@ -388,54 +396,55 @@ function change_font_family() {
 //     font_value+=1;
 // }
 
-var difficulties = "";
-document.getElementById('easy1').addEventListener("click", function() {
-    difficulties = "L";
-    display_play();
-});
-document.getElementById('easy2').addEventListener("click", function() {
-    difficulties = "L";
-    display_play();
-});
-document.getElementById('easy3').addEventListener("click", function() {
-    difficulties = "L";
-    display_play();
-});
-document.getElementById('normal1').addEventListener("click", function() {
-    difficulties = "M";
-    display_play();
-});
-document.getElementById('normal2').addEventListener("click", function() {
-    difficulties = "M";
-    display_play();
-});
-document.getElementById('normal3').addEventListener("click", function() {
-    difficulties = "M";
-    display_play();
-});
-document.getElementById('hard1').addEventListener("click", function() {
-    difficulties = "H";
-    display_play();
-});
-document.getElementById('hard2').addEventListener("click", function() {
-    difficulties = "H";
-    display_play();
-});
-document.getElementById('hard3').addEventListener("click", function() {
-    difficulties = "H";
-    display_play();
-});
-console.log(difficulties);
+// var difficulties = "";
+// document.getElementById('easy1').addEventListener("click", function() {
+//     difficulties = "L";
+//     display_play();
+// });
+// document.getElementById('easy2').addEventListener("click", function() {
+//     difficulties = "L";
+//     display_play();
+// });
+// document.getElementById('easy3').addEventListener("click", function() {
+//     difficulties = "L";
+//     display_play();
+// });
+// document.getElementById('normal1').addEventListener("click", function() {
+//     difficulties = "M";
+//     display_play();
+// });
+// document.getElementById('normal2').addEventListener("click", function() {
+//     difficulties = "M";
+//     display_play();
+// });
+// document.getElementById('normal3').addEventListener("click", function() {
+//     difficulties = "M";
+//     display_play();
+// });
+// document.getElementById('hard1').addEventListener("click", function() {
+//     difficulties = "H";
+//     display_play();
+// });
+// document.getElementById('hard2').addEventListener("click", function() {
+//     difficulties = "H";
+//     display_play();
+// });
+// document.getElementById('hard3').addEventListener("click", function() {
+//     difficulties = "H";
+//     display_play();
+// });
+// console.log(difficulties);
+var articleid = 999;
+var error_remain = 999;
+var wholearticle = "";
+var AlreadyCorrect = "";
+var textinput = document.getElementById("user_input");
 
 function choosearticle() {
     var ArticleChooseheader = new Headers();
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
-
-    let articleid = 999;
-    let error_remain = 999;
-    let wholearticle = "";
     const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
         method: "POST",
         credentials: 'include',
@@ -456,9 +465,7 @@ function choosearticle() {
             //键盘监听
     });
 }
-var AlreadyCorrect = "";
-var textinput = document.getElementById("user_input")
-textinput.addEventListener("keyup", function(event) {
+document.getElementById('user_input').addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         //console.log("回车");
         Enterbutton = 1;
@@ -541,10 +548,4 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         }
         document.querySelector('#text').innerHTML = wholearticle;
     }
-}
-
-function display_play() {
-    document.getElementById("first_page").style.display = "none";
-    document.getElementById("difficult_page").style.display = "none";
-    document.getElementById("play_homepage").style.display = "block";
 }
