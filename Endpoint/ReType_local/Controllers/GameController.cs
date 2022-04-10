@@ -137,7 +137,7 @@ namespace ReType.Controllers
             string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
             Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*");
             string result3 = rgx3.Replace(result2, "<span style=\"background-color: DarkGray;\">$&</span>");
-            Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "" };
+            Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = -1 * articlediff };
             if (articlecopy == result3 && Article.Enter==1)
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
