@@ -96,7 +96,7 @@ function bg() {
 }
 
 
-
+//获取文章
 let headers1 = new Headers();
 headers1.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349"));
 headers1.append('Content-Type', 'application/json')
@@ -109,8 +109,8 @@ const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
     credentials: 'include',
     headers: headers1,
     body: JSON.stringify({
-        "Difficulty": "H",
-        "Type": "Tech",
+        "Difficulty": "H", //需关联选择页面 需修改
+        "Type": "Tech",//需关联选择页面 需修改
     })
 });
 ArticleChoose.then(res => {
@@ -121,7 +121,7 @@ ArticleChoose.then(res => {
         articleid = return_text.id;
         wholearticle = return_text.article;
     })
-
+//键盘监听
 })
 var AlreadyCorrect = ""
 var textinput = document.getElementById("login-username")
@@ -136,21 +136,20 @@ textinput.addEventListener("keyup", function(event) {
             //console.log("没回车");
     }
 });
-
+//Hint
 function Hint() {
     document.getElementById("login-username").value = "";
     Login(0, 1);
-}
-
+}//高亮 加减分 hint主程序
 function Login(Enterbutton, hint) {
     let headers2 = new Headers();
-    headers2.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349"));
+    headers2.append('Authorization', 'Basic ' + btoa("dxh000130" + ":" + "duan002349")); //需修改
     headers2.append('Content-Type', 'application/json')
     headers2.append('Accept', 'text/plain')
     var textinput = document.getElementById("login-username")
     var username = textinput.value;
 
-    if (username !== "" && username.search(" ") === -1) {
+    if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
         const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
             method: "POST",
@@ -170,12 +169,14 @@ function Login(Enterbutton, hint) {
                 if (username !== "") {
                     //console.log(return_text1)
                     document.querySelector('#content').innerHTML = return_text1.articleDisp
-                    if (return_text1.correct === "yes,add 1 score") {
+                    if (return_text1.correct === "yes,add score") { //用户答题正确
                         wholearticle = return_text1.article;
                         AlreadyCorrect = return_text1.alreadyCorrect;
-                        console.log(return_text1.correct + "Score:" + return_text1.score);
-                    } else if (return_text1.correct !== "No, No plus or minus score") {
-                        console.log(return_text1.correct + "Score:" + return_text1.score);
+                        console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
+                    } else if (return_text1.correct === "No, minus score") { //回答错误 减分
+                        console.log(return_text1.correct + " Score:" + return_text1.score);
+                    } else{
+                        console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
                     }
                 } else {
                     document.querySelector('#content').innerHTML = wholearticle;
@@ -200,8 +201,8 @@ function Login(Enterbutton, hint) {
             });
             ArticleProcess.then(res => {
                 res.json().then(function(return_text1) {
-                    console.log(return_text1.hint);
-                    document.querySelector('#content').innerHTML = return_text1.articleDisp;
+                    console.log(return_text1.hint); //Hint内容
+                    document.querySelector('#content').innerHTML = return_text1.articleDisp; //高亮hint内容
                 })
             })
         }
