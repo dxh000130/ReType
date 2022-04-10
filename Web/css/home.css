@@ -18,6 +18,7 @@
     bottom: 0%;
 }
 
+
 /*button中字体风格和颜色的设置*/
 
 .homepage_button_typeface1 {
@@ -114,9 +115,12 @@
     width: 55%;
 }
 
+
 /*leaderboard所有设置完成*/
 
+
 /*introduction 所有设置开始*/
+
 #introduction_container {
     width: 30%;
     height: 22vh;
@@ -157,6 +161,8 @@
 
 
 /*introduction 所有设置结束*/
+
+
 /*play 所有设置开始*/
 
 #play_container {
@@ -206,11 +212,14 @@
 
 /*play 所有设置结束*/
 
+
 /*3D反转动画的实现开始*/
+
 .container {
     position: relative;
     perspective: 1000px;
 }
+
 .front,
 .back {
     position: absolute;
@@ -237,6 +246,7 @@
 
 /*3D反转动画的实现结束*/
 
+
 /*最下边四个button的设置的结束*/
 
 
@@ -257,9 +267,6 @@
 
 
 /*实现一打开网页log in 跳跃开始*/
-
-
-
 
 
 /*实现一打开网页log in 跳跃结束*/
@@ -317,7 +324,10 @@
 
 
 /*login button的设置结束*/
+
+
 /*retype设置开始*/
+
 .word {
     perspective: 1000px;
     text-align: center;
@@ -329,6 +339,7 @@
     display: inline;
     float: left;
 }
+
 .word span {
     position: relative;
     display: inline-block;
@@ -759,6 +770,7 @@ input[type="text"] {
     color: #174ea6;
 }
 
+
 /*选择困难度界面*/
 
 * {
@@ -772,16 +784,28 @@ html {
     width: 100%;
 }
 
+
 /*body  {*/
+
+
 /*    display: flex;*/
+
+
 /*    justify-content: center;*/
+
+
 /*    align-items: center;*/
+
+
 /*    overflow: hidden;*/
+
+
 /*    background: #FFE4B5;*/
+
+
 /*}*/
 
-
-#difficult_page{
+#difficult_page {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -792,10 +816,8 @@ html {
     /*bottom: 0;*/
     min-width: 100%;
     min-height: 100%;
-
     border-bottom-right-radius: 35%;
     border-top-left-radius: 15%;
-
 }
 
 .wrap {
@@ -807,7 +829,7 @@ html {
     align-items: center;
     /*flex-wrap: wrap;*/
     perspective: 900px;
-    margin-top:230px;
+    margin-top: 230px;
     margin-left: 39%;
     margin-right: 20%;
 }
@@ -889,6 +911,7 @@ html {
     background-color: chocolate;
     animation: fade_in_style_b1 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
+
 @keyframes fade_in_style_b1 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -899,7 +922,7 @@ html {
     }
     100% {
         -webkit-transform: rotateX(0deg);
-        transform: rotateY(0deg) translateZ(700px) ;
+        transform: rotateY(0deg) translateZ(700px);
         -webkit-transform-origin: top;
         transform-origin: top;
         opacity: 1;
@@ -920,7 +943,6 @@ html {
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
-
 }
 
 #b2 {
@@ -929,6 +951,7 @@ html {
     background-color: chocolate;
     animation: fade_in_style_b2 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
+
 @keyframes fade_in_style_b2 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -939,7 +962,7 @@ html {
     }
     100% {
         -webkit-transform: rotateX(0deg);
-        transform: rotateY(120deg) translateZ(700px) ;
+        transform: rotateY(120deg) translateZ(700px);
         -webkit-transform-origin: top;
         transform-origin: top;
         opacity: 1;
@@ -966,8 +989,9 @@ html {
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
     background-color: chocolate;
-    animation:  fade_in_style_b3 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: fade_in_style_b3 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
+
 @keyframes fade_in_style_b3 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -978,7 +1002,7 @@ html {
     }
     100% {
         -webkit-transform: rotateX(0deg);
-        transform: rotateY(240deg) translateZ(700px) ;
+        transform: rotateY(240deg) translateZ(700px);
         -webkit-transform-origin: top;
         transform-origin: top;
         opacity: 1;
@@ -1003,31 +1027,25 @@ html {
     padding: 15px 0;
     border-radius: 15px;
     cursor: pointer;
-    background:burlywood;
+    background: burlywood;
     color: #fee375;
     text-shadow: -1px -1px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black;
     font-weight: bold;
     font-style: italic;
     margin-left: 60%;
-
-
-
-
 }
 
-.difficult_button:hover{
-    background-image: linear-gradient(to left , #03a9f4,#f441a5,rgb(124, 241, 241),#e3a5f0,#03a9f4);
+.difficult_button:hover {
+    background-image: linear-gradient(to left, #03a9f4, #f441a5, rgb(124, 241, 241), #e3a5f0, #03a9f4);
     background-size: 400%;
     animation: run 4s linear 0s infinite;
 }
-@keyframes run{
-    100%{
+
+@keyframes run {
+    100% {
         background-position: 400% 0px;
     }
-
 }
-
-
 
 @keyframes rotate {
     0% {
@@ -1174,16 +1192,20 @@ html {
     opacity: 0;
 }
 
+
 /*选择困难界面结束*/
 
+
 /*游戏主界面开始*/
-#play_homepage{
+
+#play_homepage {
     width: 99%;
     height: 99%;
     background-color: coral;
     position: absolute;
 }
-.play_left{
+
+.play_left {
     width: 55%;
     height: 90%;
     float: left;
@@ -1191,22 +1213,24 @@ html {
     margin-top: 5vh;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/play.jpg") ;
+    background-image: url("../images/play.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
-#content{
+
+#content {
     background-color: beige;
     width: 52.5%;
     height: 68%;
     /*margin-top: 5%;*/
     margin-left: 22.5%;
     margin-right: 18%;
-    margin-top:18vh;
+    margin-top: 18vh;
     opacity: 0.8;
     border-radius: 30px;
 }
-.adjust_text{
+
+.adjust_text {
     width: 100%;
     height: 8%;
     background-color: #272727;
@@ -1214,9 +1238,9 @@ html {
     align-items: center;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
-
 }
-.adjust_text button{
+
+.adjust_text button {
     width: 20%;
     height: 90%;
     float: left;
@@ -1228,14 +1252,15 @@ html {
     word-break: break-word;
     background-color: #3C3C3C;
     color: beige;
-    border-color:  black;
+    border-color: black;
     /*border-style: solid;*/
-
 }
-.adjust_text button:hover{
+
+.adjust_text button:hover {
     -webkit-animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+
 @keyframes adjust_button {
     0%,
     100% {
@@ -1268,10 +1293,9 @@ html {
         -webkit-transform: rotate(8deg);
         transform: rotate(8deg);
     }
-
 }
 
-#text{
+#text {
     width: 100%;
     height: 92%;
     /*background-color: red;*/
@@ -1279,7 +1303,7 @@ html {
     word-break: break-word;
 }
 
-.play_right{
+.play_right {
     background-color: yellow;
     width: 30%;
     height: 100%;
@@ -1289,7 +1313,7 @@ html {
     float: left;
 }
 
-#input{
+#input {
     background-color: darkslateblue;
     width: 90%;
     height: 10%;
@@ -1297,28 +1321,25 @@ html {
     margin-left: 5%;
 }
 
-#input input{
+#input input {
     width: 70%;
     height: 50%;
     margin-left: 3%;
     margin-top: 3%;
-
 }
-#play_score{
+
+#play_score {
     width: 90%;
     height: 35%;
     background-color: steelblue;
     margin-top: 5%;
     margin-left: 5%;
-
 }
-#dictionaries{
+
+#dictionaries {
     width: 90%;
     height: 30%;
     margin-top: 5%;
     margin-left: 5%;
     background-color: aqua;
 }
-
-
-

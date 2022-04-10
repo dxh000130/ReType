@@ -276,10 +276,14 @@
         </div>
 
         <div class="play_right">
+            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">
             <div id="input">
                 <input id="user_input" type="text" name="uname" required>
             </div>
-            <div id="play_score">分数</div>
+            <div id="play_score" data-text="score">
+                <p id="score"></p>
+            </div>
+
             <div id="dictionaries">翻译</div>
         </div>
     </div>
