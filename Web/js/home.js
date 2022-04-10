@@ -457,7 +457,7 @@ function choosearticle() {
     });
 }
 var AlreadyCorrect = "";
-var textinput = document.getElementById("User-input-answer")
+var textinput = document.getElementById("user_input")
 textinput.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         //console.log("回车");
@@ -471,7 +471,7 @@ textinput.addEventListener("keyup", function(event) {
 });
 //Hint
 function Hint() {
-    document.getElementById("User-input-answer").value = "";
+    document.getElementById("user_input").value = "";
     ArticleProcessMainFunction(0, 1);
 } //高亮 加减分 hint主程序
 function ArticleProcessMainFunction(Enterbutton, hint) {
@@ -479,7 +479,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass)); //需修改
     headers2.append('Content-Type', 'application/json');
     headers2.append('Accept', 'text/plain');
-    var textinput = document.getElementById("User-input-answer");
+    var textinput = document.getElementById("user_input");
     var username = textinput.value;
 
     if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
@@ -501,7 +501,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
             res.json().then(function(return_text1) {
                 if (username !== "") {
                     //console.log(return_text1)
-                    document.querySelector('#content').innerHTML = return_text1.articleDisp
+                    document.querySelector('#text').innerHTML = return_text1.articleDisp
                     if (return_text1.correct === "yes,add score") { //用户答题正确
                         wholearticle = return_text1.article;
                         AlreadyCorrect = return_text1.alreadyCorrect;
@@ -512,7 +512,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
                     }
                 } else {
-                    document.querySelector('#content').innerHTML = wholearticle;
+                    document.querySelector('#text').innerHTML = wholearticle;
                 }
             })
 
@@ -535,11 +535,11 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
             ArticleProcess.then(res => {
                 res.json().then(function(return_text1) {
                     console.log(return_text1.hint); //Hint内容
-                    document.querySelector('#content').innerHTML = return_text1.articleDisp; //高亮hint内容
+                    document.querySelector('#text').innerHTML = return_text1.articleDisp; //高亮hint内容
                 })
             })
         }
-        document.querySelector('#content').innerHTML = wholearticle;
+        document.querySelector('#text').innerHTML = wholearticle;
     }
 }
 
