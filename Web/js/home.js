@@ -271,6 +271,7 @@ function display_game() {
     // if (valid_log == false) {
     //     window.alert("Please Log in")
     // } else {
+    document.getElementById("play_homepage").style.display = "none";
     document.getElementById("first_page").style.display = "none";
     document.getElementById("difficult_page").style.display = "block";
     // }
@@ -300,7 +301,10 @@ function change_difficult3() {
 function BackToHome() {
     document.getElementById("first_page").style.display = "block";
     document.getElementById("difficult_page").style.display = "none";
+    document.getElementById("play_homepage").style.display = "none";
 }
+
+
 
 // 游戏主界面开始
 // 改变背景颜色
@@ -345,6 +349,7 @@ if (!localStorage.change_font_family) {
 } else {
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
+
 function change_font_family() {
     if (localStorage.ziti == "SimSun") {
         localStorage.ziti = "SimHei";
@@ -382,3 +387,164 @@ function change_font_family() {
 //     document.getElementById("text").style.fontSize = font_value+"vw" ;
 //     font_value+=1;
 // }
+
+var difficulties = "";
+document.getElementById('easy1').addEventListener("click", function() {
+    difficulties = "L";
+    display_play();
+});
+document.getElementById('easy2').addEventListener("click", function() {
+    difficulties = "L";
+    display_play();
+});
+document.getElementById('easy3').addEventListener("click", function() {
+    difficulties = "L";
+    display_play();
+});
+document.getElementById('normal1').addEventListener("click", function() {
+    difficulties = "M";
+    display_play();
+});
+document.getElementById('normal2').addEventListener("click", function() {
+    difficulties = "M";
+    display_play();
+});
+document.getElementById('normal3').addEventListener("click", function() {
+    difficulties = "M";
+    display_play();
+});
+document.getElementById('hard1').addEventListener("click", function() {
+    difficulties = "H";
+    display_play();
+});
+document.getElementById('hard2').addEventListener("click", function() {
+    difficulties = "H";
+    display_play();
+});
+document.getElementById('hard3').addEventListener("click", function() {
+    difficulties = "H";
+    display_play();
+});
+console.log(difficulties);
+
+function choosearticle() {
+    var ArticleChooseheader = new Headers();
+    ArticleChooseheader.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass));
+    ArticleChooseheader.append('Content-Type', 'application/json')
+    ArticleChooseheader.append('Accept', 'text/plain')
+
+    let articleid = 999;
+    let error_remain = 999;
+    let wholearticle = "";
+    const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
+        method: "POST",
+        credentials: 'include',
+        headers: ArticleChooseheader,
+        body: JSON.stringify({
+            "Difficulty": "H", //需关联选择页面 需修改
+            "Type": "Tech", //需关联选择页面 需修改
+        })
+    });
+    ArticleChoose.then(res => {
+        res.json().then(function(return_text) {
+                console.log(return_text.article)
+                document.querySelector('#text').innerHTML = return_text.article
+                error_remain = return_text.errorRemain;
+                articleid = return_text.id;
+                wholearticle = return_text.article;
+            })
+            //键盘监听
+    });
+}
+var AlreadyCorrect = "";
+var textinput = document.getElementById("User-input-answer")
+textinput.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        //console.log("回车");
+        Enterbutton = 1;
+        ArticleProcessMainFunction(Enterbutton)
+    } else {
+        Enterbutton = 0;
+        ArticleProcessMainFunction(Enterbutton, 0)
+            //console.log("没回车");
+    }
+});
+//Hint
+function Hint() {
+    document.getElementById("User-input-answer").value = "";
+    ArticleProcessMainFunction(0, 1);
+} //高亮 加减分 hint主程序
+function ArticleProcessMainFunction(Enterbutton, hint) {
+    let headers2 = new Headers();
+    headers2.append('Authorization', 'Basic ' + btoa(user_id + ":" + pass)); //需修改
+    headers2.append('Content-Type', 'application/json');
+    headers2.append('Accept', 'text/plain');
+    var textinput = document.getElementById("User-input-answer");
+    var username = textinput.value;
+
+    if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
+        //console.log(Enterbutton)
+        const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
+            method: "POST",
+            credentials: 'include',
+            headers: headers2,
+            body: JSON.stringify({
+                "ArticleID": articleid,
+                "Article": wholearticle,
+                "Input": username,
+                "AlreadyCorrect": AlreadyCorrect,
+                "Enter": Enterbutton,
+                "hint": hint,
+            })
+        });
+        ArticleProcess.then(res => {
+            res.json().then(function(return_text1) {
+                if (username !== "") {
+                    //console.log(return_text1)
+                    document.querySelector('#content').innerHTML = return_text1.articleDisp
+                    if (return_text1.correct === "yes,add score") { //用户答题正确
+                        wholearticle = return_text1.article;
+                        AlreadyCorrect = return_text1.alreadyCorrect;
+                        console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
+                    } else if (return_text1.correct === "No, minus score") { //回答错误 减分
+                        console.log(return_text1.correct + " Score:" + return_text1.score);
+                    } else {
+                        console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
+                    }
+                } else {
+                    document.querySelector('#content').innerHTML = wholearticle;
+                }
+            })
+
+        })
+    } else {
+        if (hint === 1) {
+            const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
+                method: "POST",
+                credentials: 'include',
+                headers: headers2,
+                body: JSON.stringify({
+                    "ArticleID": articleid,
+                    "Article": wholearticle,
+                    "Input": "Hint",
+                    "AlreadyCorrect": AlreadyCorrect,
+                    "Enter": Enterbutton,
+                    "hint": hint,
+                })
+            });
+            ArticleProcess.then(res => {
+                res.json().then(function(return_text1) {
+                    console.log(return_text1.hint); //Hint内容
+                    document.querySelector('#content').innerHTML = return_text1.articleDisp; //高亮hint内容
+                })
+            })
+        }
+        document.querySelector('#content').innerHTML = wholearticle;
+    }
+}
+
+function display_play() {
+    document.getElementById("first_page").style.display = "none";
+    document.getElementById("difficult_page").style.display = "none";
+    document.getElementById("play_homepage").style.display = "block";
+}
