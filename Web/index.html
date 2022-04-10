@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: none">
+    <div id="first_page" style="height: 100%;width: 100%;display: block">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <!--        排行榜页面-->
+        <!--排行榜页面-->
 
         <div id="leaderboard_page" class="leaderboard_page" style="display: none;">
             <table class="ranktable" id="ranktable">
@@ -217,30 +217,31 @@
                 <div class="item" id="b1" style="display: none">
                     <button type="button" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a href="#">Style1</a>
-                    <a href="#">Style2</a>
-                    <a href="#">Style3</a>
+                    <a id="easy1" href="#">Style1</a>
+                    <a id="easy2"  href="#">Style2</a>
+                    <a id="easy3"  href="#">Style3</a>
                 </div>
 
                 <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">Normal</div>
                 <div class="item" id="b2" style="display: none">
                     <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a href="#">Style1</a>
-                    <a href="#">Style2</a>
-                    <a href="#">Style3</a>
+                    <a id="normal1" href="#">Style1</a>
+                    <a id="normal2" href="#">Style2</a>
+                    <a id="normal3" href="#">Style3</a>
                 </div>
 
                 <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">Hard</div>
                 <div class="item" id="b3" style="display: none">
                     <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a href="#">Style1</a>
-                    <a href="#">Style2</a>
-                    <a href="#">Style3</a>
+                    <a id="hard1" href="#">Style1</a>
+                    <a id="hard2" href="#">Style2</a>
+                    <a id="hard3" href="#">Style3</a>
                 </div>
             </div>
         </div>
+
 
         <div style="margin-bottom: 50px"></div>
         <div class="qiehuanbutton"  style="text-align: center;width: 380px;" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('i1').style.display='block';document.getElementById('i2').style.display='block';document.getElementById('i3').style.display='block'">
@@ -264,7 +265,7 @@
                     <button class="adjust_text_button"  onclick="change_font_family()">Font Family</button>
                     <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>
                     <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
-                    <!--                    <button class="adjust_text_button">B</button>-->
+                    <!-- <button class="adjust_text_button">B</button>-->
                 </div>
                 <div id="text">dasdsadsadasdasdsadasdsadasdasdasdas</div>
             </div>
@@ -272,7 +273,7 @@
 
         <div class="play_right">
             <div id="input">
-                <input type="text" id="user_input">
+                <input id="user_input">
             </div>
             <div id="play_score">分数</div>
             <div id="dictionaries">翻译</div>

@@ -1209,11 +1209,12 @@ html {
 .adjust_text{
     width: 100%;
     height: 8%;
-    background-color: rosybrown;
+    background-color: #272727;
     justify-content: center;
     align-items: center;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+
 }
 .adjust_text button{
     width: 20%;
@@ -1225,6 +1226,49 @@ html {
     border-radius: 26px 6px;
     font-size: 50%;
     word-break: break-word;
+    background-color: #3C3C3C;
+    color: beige;
+    border-color:  black;
+    /*border-style: solid;*/
+
+}
+.adjust_text button:hover{
+    -webkit-animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+@keyframes adjust_button {
+    0%,
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+    10% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+    20%,
+    40%,
+    60% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    30%,
+    50%,
+    70% {
+        -webkit-transform: rotate(10deg);
+        transform: rotate(10deg);
+    }
+    80% {
+        -webkit-transform: rotate(-8deg);
+        transform: rotate(-8deg);
+    }
+    90% {
+        -webkit-transform: rotate(8deg);
+        transform: rotate(8deg);
+    }
+
 }
 
 #text{
