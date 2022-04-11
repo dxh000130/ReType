@@ -5,6 +5,8 @@ if (!localStorage.user_id || !localStorage.pass){
     document.getElementById("login-username").value = localStorage.user_id;
     document.getElementById("login-password").value = localStorage.pass;
     Login();
+    document.getElementById("error_box").style.display = "none";
+    document.getElementById("login_modal").style.display= "none";
 }
 fetch('https://api.dxh000130.top/api/GetVersion', {
         method: 'GET'
