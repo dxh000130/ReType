@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: block">
+    <div id="first_page" style="height: 100%;width: 100%;display: none">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -260,7 +260,7 @@
     <!--play 困难度选择界面结束-->
 
     <!--游戏主界面-->
-    <div id="play_homepage" style="display: none">
+    <div id="play_homepage" style="display: block">
         <div class="homebtn-container_play">
             <button class="backhome" onclick="BackToHome()">
                 <span class="text">Back to Homepage</span>
@@ -322,7 +322,43 @@
                 </div>
             </div>
             
-            <div id="dictionaries">翻译</div>
+            <div id="dictionaries">
+
+                <table style="width: 100%;height: 100%;overflow:hidden;word-break: break-all">
+                    <tr style="width: 100%;height: 30%;display: block" >
+                        <td style="width:2%"></td>
+                        <td style="width:50%">
+                            <input id="dictionaries_input" placeholder="It is Dictionarie">
+                        </td>
+                        <td style="width:2%"></td>
+                        <td style="width:20%">
+                            <button id="dictionaries_check" onclick="define_dictionaries()">Define</button>
+                        </td>
+                        <td style="width:2%"></td>
+                        <td id="loudspeaker" style="width: 20%">
+                            <button id="dictionaries_loudspeaker" >&#128226;</button>
+                            <audio id="voice" src="http://dict.youdao.com/dictvoice?type=0&amp;audio=1"></audio>
+                        </td>
+                    </tr>
+
+                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: aquamarine;word-break: break-word">
+
+                        <td style="overflow:auto;word-break: break-word;display: inline-block; ">
+                            Definition:
+                            <span id="definition" style="word-break: break-word;display: inline-block;"></span>
+                        </td>
+                    </tr>
+
+                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: blueviolet">
+                        <td>
+                            Example:
+                            <span id="example"></span>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
         </div>
     </div>
     <script src="js/home.js"></script>

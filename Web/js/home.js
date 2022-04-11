@@ -321,10 +321,10 @@ function BackToHome() {
 if (!localStorage.change_background) {
     localStorage.change_background = "#18222d";
     localStorage.content = "#adadad";
-    document.body.style.backgroundColor = localStorage.change_background;
+    document.getElementById("text").style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
 } else {
-    document.body.style.backgroundColor = localStorage.change_background;
+    document.getElementById("text").style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
 }
 
@@ -565,4 +565,54 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         }
         document.querySelector('#text').innerHTML = wholearticle;
     }
+}
+document.getElementById("dictionaries_loudspeaker").addEventListener("click",audio_dictionaries);
+
+// 单词发音: 现在只能是发一次音,不能修改单词以后再发音
+function audio_dictionaries(){
+    const get_input=document.getElementById("dictionaries_input").value;
+    console.log(get_input);
+    var audio=document.getElementById("voice");
+    var url=audio.src;
+    var new_url=url.replace("1",get_input);
+    audio.src=new_url;
+    audio.play();
+    audio;
+}
+
+function define_dictionaries(){
+    const get_input=document.getElementById("dictionaries_input").value;
+    const get_meaning=fetch('https://api.dictionaryapi.dev/api/v2/entries/en/'+get_input, {
+        method: "GET",
+        headers: {
+            "Accept": "text/plain",
+        },
+    });
+    get_meaning.then(res=>res.text()).then(data=>{
+        var first=data.split('meanings')[1];
+        console.log(first);
+        // 找到example开始
+        if(first.indexOf("example")==-1){
+            document.getElementById("example").innerText="There is no examples";
+        }else{
+            var example_index=first.split("example")[1];
+            console.log(example_index);
+            var example_index1=example_index.indexOf(":");
+            var example_index2=example_index.indexOf("}");
+            var example_final=example_index.substr(example_index1+2,example_index2-4);
+            document.getElementById("example").innerText=example_final;
+        }
+
+        // 找到example结束
+
+        // 找到definitiaon开始
+        var definition_index=first.split("definition")[2];
+        var definition_index1=definition_index.split('definition":"')[0];
+        var definition_index2=definition_index1.split(',"synonyms"')[0];
+        var definition_index3=definition_index2.substr(3,);
+        var definition_final=definition_index3.replace('"',"");
+        console.log(definition_final);
+        document.getElementById("definition").innerText=definition_final;
+
+    });
 }

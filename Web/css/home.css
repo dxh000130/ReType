@@ -1396,14 +1396,14 @@ html {
     width: 65%;
     height: 45%;
     margin-top: 7vh;
-    margin-left: 12%;
+    margin-left: 15%;
     /*background-color: burlywood;*/
     position:relative;
     display: flex;
 }
 .play_score_span1{
-    width: 100%;
-    height: 100%;
+    width: 86%;
+    height: 98%;
     position: absolute;
     /*z-index:-1;*/
     background:rgba(230, 126, 34,0.4);
@@ -1512,9 +1512,47 @@ html {
 
 #dictionaries {
     width: 90%;
-    height: 17%;
+    height: 19%;
     margin-top: 4vh;
     margin-left: 5%;
     background-color: aqua;
-    display: flex;
+    /*display: flex;*/
+    border-radius: 15px;
+}
+
+#dictionaries_input{
+    width: 100%;
+    height: 50%;
+    /*margin-top: 5px;*/
+    /*border-radius: 15px;*/
+    /*margin-left: 3%;*/
+    font-size: 20px;
+}
+#dictionaries_check{
+    width: 100%;
+    height: 80%;
+    /*margin-top: 5px;*/
+    border-radius: 15px;
+
+}
+#dictionaries_loudspeaker{
+    width: 100%;
+    height: 80%;
+    /*margin-top: -8px;*/
+    font-size: 33px;
+    background: none;
+    border: none;
+    text-align: left;
+    margin-top: -20%;
+}
+#dictionaries_loudspeaker:hover{
+    animation:  hint 0.5s ease-in-out infinite both;
+}
+/*#dictionaries_input::placeholder{*/
+/*    font-size: 20px;*/
+/*    color: slategray;*/
+/*    text-align: center;*/
+/*}*/
+#definition{
+
 }
