@@ -1,12 +1,12 @@
-if (!localStorage.user_id || !localStorage.pass){
+if (!localStorage.user_id || !localStorage.pass) {
     localStorage.user_id = "";
     localStorage.pass = "";
-}else {
+} else {
     document.getElementById("login-username").value = localStorage.user_id;
     document.getElementById("login-password").value = localStorage.pass;
     Login();
     document.getElementById("error_box").style.display = "none";
-    document.getElementById("login_modal").style.display= "none";
+    document.getElementById("login_modal").style.display = "none";
 }
 fetch('https://api.dxh000130.top/api/GetVersion', {
         method: 'GET'
@@ -285,11 +285,7 @@ function display_game() {
     // }
 }
 
-function display_play() {
-    document.getElementById("first_page").style.display = "none";
-    document.getElementById("difficult_page").style.display = "none";
-    document.getElementById("play_homepage").style.display = "block";
-}
+
 
 function change_difficult1() {
     document.getElementById("cards_wrap").className = "cards_wrap_1";
@@ -330,7 +326,7 @@ if (!localStorage.change_background) {
 } else {
     document.body.style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
- }
+}
 
 function change_background() {
     if (localStorage.change_background == "#ffffff")
@@ -361,8 +357,8 @@ if (!localStorage.change_font_family) {
     localStorage.change_font_family = "SimSun";
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 } else {
-     document.getElementById("text").style.fontFamily = localStorage.ziti;
- }
+    document.getElementById("text").style.fontFamily = localStorage.ziti;
+}
 
 function change_font_family() {
     if (localStorage.ziti == "SimSun") {
@@ -381,7 +377,7 @@ function change_font_family() {
 if (!localStorage.zitidaxiao) {
     localStorage.zitidaxiao = "20";
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
-} else{
+} else {
     console.log(localStorage.zitidaxiao);
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
@@ -400,51 +396,64 @@ function change_font_size_small() {
 
 
 
-// var difficulties = "";
-// document.getElementById('easy1').addEventListener("click", function() {
-//     difficulties = "L";
-//     display_play();
-// });
-// document.getElementById('easy2').addEventListener("click", function() {
-//     difficulties = "L";
-//     display_play();
-// });
-// document.getElementById('easy3').addEventListener("click", function() {
-//     difficulties = "L";
-//     display_play();
-// });
-// document.getElementById('normal1').addEventListener("click", function() {
-//     difficulties = "M";
-//     display_play();
-// });
-// document.getElementById('normal2').addEventListener("click", function() {
-//     difficulties = "M";
-//     display_play();
-// });
-// document.getElementById('normal3').addEventListener("click", function() {
-//     difficulties = "M";
-//     display_play();
-// });
-// document.getElementById('hard1').addEventListener("click", function() {
-//     difficulties = "H";
-//     display_play();
-// });
-// document.getElementById('hard2').addEventListener("click", function() {
-//     difficulties = "H";
-//     display_play();
-// });
-// document.getElementById('hard3').addEventListener("click", function() {
-//     difficulties = "H";
-//     display_play();
-// });
-// console.log(difficulties);
+var difficulties = "";
+var theme = "";
+document.getElementById('easy1').addEventListener("click", function() {
+    difficulties = "L";
+    theme = "Tech";
+
+});
+document.getElementById('easy2').addEventListener("click", function() {
+    difficulties = "L";
+    theme = "";
+
+});
+document.getElementById('easy3').addEventListener("click", function() {
+    difficulties = "L";
+    theme = "";
+
+});
+document.getElementById('normal1').addEventListener("click", function() {
+    difficulties = "M";
+    theme = "Tech";
+
+});
+document.getElementById('normal2').addEventListener("click", function() {
+    difficulties = "M";
+    theme = "";
+
+});
+document.getElementById('normal3').addEventListener("click", function() {
+    difficulties = "M";
+    theme = "";
+
+});
+document.getElementById('hard1').addEventListener("click", function() {
+    difficulties = "H";
+    theme = "Tech";
+
+});
+document.getElementById('hard2').addEventListener("click", function() {
+    difficulties = "H";
+    theme = "";
+
+});
+document.getElementById('hard3').addEventListener("click", function() {
+    difficulties = "H";
+    theme = "";
+
+});
 var articleid = 999;
 var error_remain = 999;
 var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 
-function choosearticle() {
+function display_play() {
+    document.getElementById("first_page").style.display = "none";
+    document.getElementById("difficult_page").style.display = "none";
+    document.getElementById("play_homepage").style.display = "block";
+
     var ArticleChooseheader = new Headers();
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
@@ -457,11 +466,12 @@ function choosearticle() {
             "Difficulty": "H", //需关联选择页面 需修改
             "Type": "Tech", //需关联选择页面 需修改
         })
-    });
+    })
     ArticleChoose.then(res => {
         res.json().then(function(return_text) {
-                console.log(return_text.article)
-                document.querySelector('#text').innerHTML = return_text.article
+                console.log(difficulties, theme);
+                console.log(return_text.article);
+                document.querySelector('#text').innerHTML = return_text.article;
                 error_remain = return_text.errorRemain;
                 articleid = return_text.id;
                 wholearticle = return_text.article;
@@ -515,6 +525,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     //console.log(return_text1)
                     document.querySelector('#text').innerHTML = return_text1.articleDisp
                     if (return_text1.correct === "yes,add score") { //用户答题正确
+                        document.querySelector("#user_input").value = "";
                         wholearticle = return_text1.article;
                         AlreadyCorrect = return_text1.alreadyCorrect;
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
