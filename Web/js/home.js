@@ -555,4 +555,3 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         document.querySelector('#text').innerHTML = wholearticle;
     }
 }
-
