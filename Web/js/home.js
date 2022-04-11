@@ -1,3 +1,11 @@
+if (!localStorage.user_id || !localStorage.pass){
+    localStorage.user_id = "";
+    localStorage.pass = "";
+}else {
+    document.getElementById("login-username").value = localStorage.user_id;
+    document.getElementById("login-password").value = localStorage.pass;
+    Login();
+}
 fetch('https://api.dxh000130.top/api/GetVersion', {
         method: 'GET'
     })
@@ -7,8 +15,6 @@ fetch('https://api.dxh000130.top/api/GetVersion', {
     .then(function(myJson) {
         console.log('Version' + myJson);
     });
-localStorage.user_id = "";
-localStorage.pass = "";
 
 let valid_log = false;
 //登录界面
@@ -319,11 +325,10 @@ if (!localStorage.change_background) {
     localStorage.content = "#adadad";
     document.body.style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
-}
-// } else {
-//     // document.body.style.backgroundColor = localStorage.change_background;
-//     document.getElementById("text").style.color = localStorage.content;
-// }
+} else {
+    document.body.style.backgroundColor = localStorage.change_background;
+    document.getElementById("text").style.color = localStorage.content;
+ }
 
 function change_background() {
     if (localStorage.change_background == "#ffffff")
@@ -353,10 +358,9 @@ function change_background() {
 if (!localStorage.change_font_family) {
     localStorage.change_font_family = "SimSun";
     document.getElementById("text").style.fontFamily = localStorage.ziti;
-}
-// } else {
-//     document.getElementById("text").style.fontFamily = localStorage.ziti;
-// }
+} else {
+     document.getElementById("text").style.fontFamily = localStorage.ziti;
+ }
 
 function change_font_family() {
     if (localStorage.ziti == "SimSun") {
@@ -372,7 +376,7 @@ function change_font_family() {
 
 // 改变字体大小
 
-if (localStorage.zitidaxiao!=20) {
+if (!localStorage.zitidaxiao) {
     localStorage.zitidaxiao = "20";
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 } else{
