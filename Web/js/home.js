@@ -580,40 +580,76 @@ function define_dictionaries() {
         },
     });
     get_meaning.then(res => res.text()).then(data => {
-        var first = data.split('meanings')[1];
-        console.log(first);
-        // 找到example开始
-        if (first.indexOf("example") == -1) {
-            document.getElementById("example").innerText = "There is no examples";
-        } else {
-            var example_index = first.split("example")[1];
-            console.log(example_index);
-            var example_index1 = example_index.indexOf(":");
-            var example_index2 = example_index.indexOf("}");
-            var example_final = example_index.substr(example_index1 + 2, example_index2 - 4);
-            document.getElementById("example").innerText = example_final;
+        if(data.indexOf('meanings')==-1){
+            document.getElementById("definition").innerText = "Sorry, we couldn't find definitions for the word you were looking for.";
+        }else{
+            var first = data.split('meanings')[1];
+            console.log(first);
+            // 找到example开始
+            // if (first.indexOf("example") == -1) {
+            //     document.getElementById("example").innerText = "There is no examples";
+            // } else {
+            //     var example_index = first.split("example")[1];
+            //     console.log(example_index);
+            //     var example_index1 = example_index.indexOf(":");
+            //     var example_index2 = example_index.indexOf("}");
+            //     var example_final = example_index.substr(example_index1 + 2, example_index2 - 4);
+            //     document.getElementById("example").innerText = example_final;
+            // }
+
+            // 找到example结束
+            // 找到definitiaon开始
+            var definition_index = first.split("definition")[2];
+            var definition_index1 = definition_index.split('definition":"')[0];
+            var definition_index2 = definition_index1.split(',"synonyms"')[0];
+            var definition_index3 = definition_index2.substr(3, );
+            var definition_final = definition_index3.replace('"', "");
+            console.log(definition_final);
+            document.getElementById("definition").innerText = definition_final;
         }
-
-        // 找到example结束
-
-        // 找到definitiaon开始
-        var definition_index = first.split("definition")[2];
-        var definition_index1 = definition_index.split('definition":"')[0];
-        var definition_index2 = definition_index1.split(',"synonyms"')[0];
-        var definition_index3 = definition_index2.substr(3, );
-        var definition_final = definition_index3.replace('"', "");
-        console.log(definition_final);
-        document.getElementById("definition").innerText = definition_final;
-
     });
 }
 
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
-    console.log(get_input);
+    // console.log(get_input);
     var audio = document.getElementById("voice");
-    var url = audio.src;
-    audio.src = "http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
-    audio.play();
-    audio;
+    // var url = audio.src;
+    // console.log(url);
+    // audio.src = "http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
+    // audio.src='http://ssl.gstatic.com/dictionary/static/sounds/20200429/'+get_input+'--_gb_1.mp3';
+    const get_voice=fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + get_input, {
+        method: "GET",
+        headers: {
+            "Accept": "text/plain",
+        },
+    });
+    get_voice.then(res => res.text()).then(data => {
+
+        var voice_first=data.indexOf('.mp3","sourceUrl"');
+        var voice_first1=data.indexOf('"audio":"https:');
+        var voice_1=data.substr(voice_first1,voice_first);
+        var voice_2=voice_1.split("sourceUrl")[0];
+        var voice_3=voice_2.split('"audio":"')[1];
+        var voice_4=voice_3.split('","')[0];
+        console.log(voice_4);
+        // var voice1=voice_first.indexOf(',"sourceUrl"');
+        // var voice2=voice_first.indexOf('http');
+        // var voice_final=voice_first.substr(voice2-1,voice1-2);
+        // console.log(voice_final);
+        if (voice_4 !='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-us.mp3'){
+            console.log('不一样');
+            audio.src='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-uk.mp3';
+            console.log(audio.src);
+            audio.play();
+            audio;
+        }else{
+            console.log('一样');
+            audio.src='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-us.mp3';
+            console.log(audio.src);
+            audio.play();
+            audio;
+        }
+    });
+
 }
