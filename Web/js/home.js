@@ -623,30 +623,40 @@ function audio_dictionaries() {
         },
     });
     get_voice.then(res => res.text()).then(data => {
+        if(data.indexOf('.mp3')==-1){
+            audio.src="http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
+            audio.play();
+            audio;
+        }else{
+            var voice_first = data.indexOf('.mp3","sourceUrl"');
+            var voice_first1 = data.indexOf('"audio":"https:');
+            var voice_1 = data.substr(voice_first1, voice_first);
+            var voice_2 = voice_1.split("sourceUrl")[0];
+            var voice_3 = voice_2.split('"audio":"')[1];
+            var voice_4 = voice_3.split('","')[0];
+            console.log(voice_4);
+            // var voice1=voice_first.indexOf(',"sourceUrl"');
+            // var voice2=voice_first.indexOf('http');
+            // var voice_final=voice_first.substr(voice2-1,voice1-2);
+            // console.log(voice_final);
 
-        var voice_first = data.indexOf('.mp3","sourceUrl"');
-        var voice_first1 = data.indexOf('"audio":"https:');
-        var voice_1 = data.substr(voice_first1, voice_first);
-        var voice_2 = voice_1.split("sourceUrl")[0];
-        var voice_3 = voice_2.split('"audio":"')[1];
-        var voice_4 = voice_3.split('","')[0];
-        console.log(voice_4);
-        // var voice1=voice_first.indexOf(',"sourceUrl"');
-        // var voice2=voice_first.indexOf('http');
-        // var voice_final=voice_first.substr(voice2-1,voice1-2);
-        // console.log(voice_final);
-        if (voice_4 != 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3') {
-            console.log('不一样');
-            audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-uk.mp3';
-            console.log(audio.src);
-            audio.play();
-            audio;
-        } else {
-            console.log('一样');
-            audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3';
-            console.log(audio.src);
-            audio.play();
-            audio;
+            if (voice_4 == 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-uk.mp3') {
+                console.log('不一样');
+                audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-uk.mp3';
+                console.log(audio.src);
+                audio.play();
+                audio;
+            } else if (voice_4 == 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3'){
+                console.log('一样');
+                audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3';
+                console.log(audio.src);
+                audio.play();
+                audio;
+            }else{
+                audio.src="http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
+                audio.play();
+                audio;
+            }
         }
     });
 
