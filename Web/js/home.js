@@ -537,7 +537,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
-                document.getElementById("score").innerHTML = return_text1.score;
+                document.getElementById("current_score_div").innerHTML = return_text1.score;
             })
 
         })
