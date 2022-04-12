@@ -245,7 +245,7 @@ function GetLeaderboard() {
         window.alert("Please Log in")
     } else {
         document.getElementById('leaderboard_page').style.display = 'block';
-        var htmltable = document.getElementById("rank")
+        var htmltable = document.getElementById("rank");
         let headers2 = new Headers();
         headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
@@ -354,24 +354,23 @@ function change_background() {
 
 // // 改变字体
 if (!localStorage.change_font_family) {
-    localStorage.change_font_family = "SimSun";
+    localStorage.change_font_family = "Georgia";
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 } else {
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
 
 function change_font_family() {
-    if (localStorage.ziti == "SimSun") {
-        localStorage.ziti = "SimHei";
-    } else if (localStorage.ziti == "SimHei") {
+    if (localStorage.ziti == "Georgia") {
+        localStorage.ziti = "Palatino Linotype";
+    } else if (localStorage.ziti == "Palatino Linotype") {
 
         localStorage.ziti = "Times New Roman";
     } else {
-        localStorage.ziti = "SimSun";
+        localStorage.ziti = "Arial";
     }
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
-
 // 改变字体大小
 
 if (!localStorage.zitidaxiao) {
@@ -391,9 +390,6 @@ function change_font_size_small() {
     localStorage.zitidaxiao--;
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
-
-
-
 
 
 var difficulties = "";
@@ -538,6 +534,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
+                console.log(error_remain);
+                document.getElementById("remain_error_div").innerHTML = error_remain;
             })
 
         })
@@ -580,9 +578,9 @@ function define_dictionaries() {
         },
     });
     get_meaning.then(res => res.text()).then(data => {
-        if(data.indexOf('meanings')==-1){
+        if (data.indexOf('meanings') == -1) {
             document.getElementById("definition").innerText = "Sorry, we couldn't find definitions for the word you were looking for.";
-        }else{
+        } else {
             var first = data.split('meanings')[1];
             console.log(first);
             // 找到example开始
@@ -618,7 +616,7 @@ function audio_dictionaries() {
     // console.log(url);
     // audio.src = "http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
     // audio.src='http://ssl.gstatic.com/dictionary/static/sounds/20200429/'+get_input+'--_gb_1.mp3';
-    const get_voice=fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + get_input, {
+    const get_voice = fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + get_input, {
         method: "GET",
         headers: {
             "Accept": "text/plain",
@@ -626,26 +624,26 @@ function audio_dictionaries() {
     });
     get_voice.then(res => res.text()).then(data => {
 
-        var voice_first=data.indexOf('.mp3","sourceUrl"');
-        var voice_first1=data.indexOf('"audio":"https:');
-        var voice_1=data.substr(voice_first1,voice_first);
-        var voice_2=voice_1.split("sourceUrl")[0];
-        var voice_3=voice_2.split('"audio":"')[1];
-        var voice_4=voice_3.split('","')[0];
+        var voice_first = data.indexOf('.mp3","sourceUrl"');
+        var voice_first1 = data.indexOf('"audio":"https:');
+        var voice_1 = data.substr(voice_first1, voice_first);
+        var voice_2 = voice_1.split("sourceUrl")[0];
+        var voice_3 = voice_2.split('"audio":"')[1];
+        var voice_4 = voice_3.split('","')[0];
         console.log(voice_4);
         // var voice1=voice_first.indexOf(',"sourceUrl"');
         // var voice2=voice_first.indexOf('http');
         // var voice_final=voice_first.substr(voice2-1,voice1-2);
         // console.log(voice_final);
-        if (voice_4 !='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-us.mp3'){
+        if (voice_4 != 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3') {
             console.log('不一样');
-            audio.src='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-uk.mp3';
+            audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-uk.mp3';
             console.log(audio.src);
             audio.play();
             audio;
-        }else{
+        } else {
             console.log('一样');
-            audio.src='https://api.dictionaryapi.dev/media/pronunciations/en/'+get_input+'-us.mp3';
+            audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3';
             console.log(audio.src);
             audio.play();
             audio;
