@@ -444,6 +444,7 @@ var error_remain = 999;
 var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
+var total_errors = 0;
 
 function display_play() {
     document.getElementById("first_page").style.display = "none";
@@ -468,7 +469,8 @@ function display_play() {
                 console.log(difficulties, theme);
                 console.log(return_text.article);
                 document.querySelector('#text').innerHTML = return_text.article;
-                error_remain = return_text.errorRemain;
+                total_errors = return_text.errorRemain;
+                error_remain = total_errors;
                 articleid = return_text.id;
                 wholearticle = return_text.article;
             })
@@ -524,6 +526,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         document.querySelector("#user_input").value = "";
                         wholearticle = return_text1.article;
                         AlreadyCorrect = return_text1.alreadyCorrect;
+                        error_remain -= 1;
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
                     } else if (return_text1.correct === "No, minus score") { //回答错误 减分
                         console.log(return_text1.correct + " Score:" + return_text1.score);
@@ -534,8 +537,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
-                console.log(error_remain);
+                document.getElementById("total_error_div").innerHTML = total_errors;
                 document.getElementById("remain_error_div").innerHTML = error_remain;
+
             })
 
         })
@@ -623,11 +627,11 @@ function audio_dictionaries() {
         },
     });
     get_voice.then(res => res.text()).then(data => {
-        if(data.indexOf('.mp3')==-1){
-            audio.src="http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
+        if (data.indexOf('.mp3') == -1) {
+            audio.src = "http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
             audio.play();
             audio;
-        }else{
+        } else {
             var voice_first = data.indexOf('.mp3","sourceUrl"');
             var voice_first1 = data.indexOf('"audio":"https:');
             var voice_1 = data.substr(voice_first1, voice_first);
@@ -646,14 +650,14 @@ function audio_dictionaries() {
                 console.log(audio.src);
                 audio.play();
                 audio;
-            } else if (voice_4 == 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3'){
+            } else if (voice_4 == 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3') {
                 console.log('一样');
                 audio.src = 'https://api.dictionaryapi.dev/media/pronunciations/en/' + get_input + '-us.mp3';
                 console.log(audio.src);
                 audio.play();
                 audio;
-            }else{
-                audio.src="http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
+            } else {
+                audio.src = "http://dict.youdao.com/dictvoice?type=0&audio=" + get_input;
                 audio.play();
                 audio;
             }
