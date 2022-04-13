@@ -662,3 +662,48 @@ function audio_dictionaries() {
     });
 }
 
+
+// 设置游戏界面的计时器开始
+var i=0;
+var timer1=null;
+var isRunning=false;
+function doubleLing(i){
+    if(i<10){
+        return "0"+i
+    }else{
+        return i
+    }
+}
+function startBtn(){
+    timer1=setInterval(function(){
+        i++
+        document.getElementById("second").innerHTML =doubleLing(parseInt(i/100)%60) ;
+        document.getElementById("minute").innerHTML =doubleLing(parseInt(i/6000)%60) ;
+        document.getElementById("hour").innerHTML =doubleLing(parseInt(i/360000)) ;
+    },10)
+}
+function pasueBtn(){
+    clearInterval(timer1)
+}
+function time_start(){
+    if(!isRunning){
+        document.getElementById("btn1").innerHTML = "Stop";
+        isRunning = true;
+        startBtn();
+    }else{
+        document.getElementById("btn1").innerHTML="Start";
+        isRunning = false;
+        pasueBtn();
+    }
+}
+function time_reset(){
+    clearInterval(timer1)
+    i = 0;
+    isRunning = false;
+    document.getElementById("btn1").innerHTML="Start";
+    document.getElementById("second").innerHTML ="00";
+    document.getElementById("minute").innerHTML ="00";
+    document.getElementById("hour").innerHTML ="00";
+}
+
+// 设置游戏界面的计时器结束

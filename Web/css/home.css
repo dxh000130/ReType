@@ -1215,12 +1215,12 @@ html {
     background-color: coral;
     position: absolute;
 }
+
 #time{
     top: 10px;
-    right: 40%;
+    right: 36vw;
     display: flex;
-
-    --width: 300px;
+    --width: 350px;
     --height: 60px;
     border: 0;
     position: fixed;
@@ -1228,7 +1228,30 @@ html {
     min-height: var(--height);
     border-radius: var(--height);
     background: slategray;
+
 }
+#time p{
+    width: 70%;
+    font-size: 40px;
+    padding-top: 5px;
+    padding-left: 8%;
+    float: left;
+}
+#btn1{
+    width:15%;
+    float: left;
+    border-radius: 50%;
+    margin-right:1%;
+}
+#reset{
+    width:15%;
+    float: left;
+    margin-right: 3%;
+    border-radius: 50%;
+}
+
+
+
 .play_left {
     width: 55%;
     height: 88%;
@@ -1524,8 +1547,8 @@ html {
 
 #dictionaries {
     width: 90%;
-    height: 19%;
-    margin-top: 4vh;
+    height: 30%;
+    /*margin-top: 4vh;*/
     margin-left: 5%;
     background-color: aqua;
     /*display: flex;*/
@@ -1534,10 +1557,6 @@ html {
 
 #dictionaries_input{
     width: 100%;
-    height: 50%;
-    /*margin-top: 5px;*/
-    /*border-radius: 15px;*/
-    /*margin-left: 3%;*/
     font-size: 20px;
 }
 #dictionaries_input::placeholder{
@@ -1548,6 +1567,8 @@ html {
 
 #dictionaries_check{
     width: 100%;
+    /*line-height: 130%;*/
+    font-size: 20px;
     /*height: 100%;*/
     /*margin-top: 5px;*/
     /*border-radius: 15px;*/
@@ -1560,7 +1581,7 @@ html {
     background: none;
     border: none;
     text-align: left;
-    margin-top: -20%;
+    margin-top: -10%;
 }
 #dictionaries_loudspeaker:hover{
     animation:  hint 0.5s ease-in-out infinite both;
