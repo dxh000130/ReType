@@ -261,6 +261,18 @@
 
     <!--游戏主界面-->
     <div id="play_homepage" style="display: block">
+        <div id="time">
+            <p>
+                <!-- <span id="houer">00</span> :  -->
+                <span id="minute">00</span> :
+                <span id="second">00</span>&ensp;
+                <span id="msecond">00</span>
+            </p>
+            <!-- 显示：时：分：秒 跑秒 ，“时”解除注释可使用 -->
+            <button id="btn1">开始</button>
+            <button id="reset">复位</button>
+
+        </div>
         <div class="homebtn-container_play">
             <button class="backhome" onclick="BackToHome()">
                 <span class="text">Back to Homepage</span>
@@ -293,7 +305,7 @@
                     <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
                     <!-- <button class="adjust_text_button ">B</button>-->
                 </div>
-                <div id="text">hjkksdhhsjdhaskjdhashdhhadhahdhashdhakjd</div>
+                <div id="text"></div>
             </div>
         </div>
 
@@ -323,7 +335,6 @@
             </div>
 
             <div id="dictionaries">
-
                 <table style="width: 100%;height: 100%;overflow:hidden;word-break: break-all">
                     <tr style="width: 100%;height: 30%;display: block">
                         <td style="width:2%"></td>
@@ -341,11 +352,10 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%;height: 65%;display: inline-block;background-color: aquamarine;word-break: break-word">
+                    <tr style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: block">
 
-                        <td style="overflow:auto;word-break: break-word;display: inline-block; ">
-                            Definition:
-                            <span id="definition" style="word-break: break-word;display: inline-block;"></span>
+                        <td id="definition" style="width:100%;height:100%;overflow:auto;text-align: center;justify-content: center;align-content: center">
+                            Definition
                         </td>
                     </tr>
 <!--                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: blueviolet">-->

@@ -579,7 +579,7 @@ function define_dictionaries() {
     });
     get_meaning.then(res => res.text()).then(data => {
         if (data.indexOf('meanings') == -1) {
-            document.getElementById("definition").innerText = "Sorry, we couldn't find definitions for the word you were looking for.";
+            document.getElementById("definition").innerHTML = "Sorry, we couldn't find definitions for the word you were looking for.Please enter again !";
         } else {
             var first = data.split('meanings')[1];
             console.log(first);
@@ -603,7 +603,8 @@ function define_dictionaries() {
             var definition_index3 = definition_index2.substr(3, );
             var definition_final = definition_index3.replace('"', "");
             console.log(definition_final);
-            document.getElementById("definition").innerText = definition_final;
+            // document.getElementById("definition").innerText = definition_final;
+            document.getElementById("definition").innerHTML = definition_final;
         }
     });
 }
@@ -659,5 +660,5 @@ function audio_dictionaries() {
             }
         }
     });
-
 }
+
