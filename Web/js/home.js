@@ -8,15 +8,15 @@ if (!localStorage.user_id || !localStorage.pass) {
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
 }
-fetch('http://127.0.0.1:5054/api/GetVersion', {
-        method: 'GET'
-    })
-    .then(function(response) {
-        return response.text()
-    })
-    .then(function(myJson) {
-        console.log('Version' + myJson);
-    });
+// fetch('http://127.0.0.1:5054/api/GetVersion', {
+//         method: 'GET'
+//     })
+//     .then(function(response) {
+//         return response.text()
+//     })
+//     .then(function(myJson) {
+//         console.log('Version' + myJson);
+//     });
 
 let valid_log = false;
 //登录界面
@@ -52,6 +52,7 @@ function Login() {
                 }
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
+                // document.querySelector(".error_button").style.display="none";
 
             } else {
                 text.innerText = "Your username or password is wrong ! Please try it again !";

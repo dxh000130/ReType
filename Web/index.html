@@ -313,7 +313,7 @@
         <div class="play_right">
             <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
             <div id="input">
-                <input id="user_input">
+                <input id="user_input" autocomplete="off">
                 <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>
             </div>
             <div id="play_score_container">
@@ -336,7 +336,7 @@
             </div>
 
             <div id="dictionaries">
-                <table style="width: 100%;height: 100%;overflow:hidden;word-break: break-all">
+                <table style="width: 100%;height: 100%">
                     <tr style="width: 100%;height: 30%;display: inline-block;background-color: blueviolet">
                         <td style="width:2%"></td>
                         <td style="width:50%">
@@ -355,8 +355,9 @@
 
                     <tr style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
 
-                        <td id="definition" style="width:100%;height:100%;overflow:auto;text-align: center;justify-content: center;align-content: center">
-                            Definition
+
+                        <td id="definition" style="width:100%;height:100%">
+                            <h3>Definition</h3>
                         </td>
                     </tr>
 <!--                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: blueviolet">-->
