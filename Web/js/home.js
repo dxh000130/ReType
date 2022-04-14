@@ -413,54 +413,33 @@ function change_font_size_small() {
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
-
 var difficulties = "";
 var theme = "";
-document.getElementById('easy1').addEventListener("click", function() {
-    difficulties = "L";
-    theme = "Tech";
 
-});
-document.getElementById('easy2').addEventListener("click", function() {
-    difficulties = "L";
-    theme = "";
+// function article() {
 
-});
-document.getElementById('easy3').addEventListener("click", function() {
-    difficulties = "L";
-    theme = "";
-
-});
-document.getElementById('normal1').addEventListener("click", function() {
-    difficulties = "M";
-    theme = "Tech";
-
-});
-document.getElementById('normal2').addEventListener("click", function() {
-    difficulties = "M";
-    theme = "";
-
-});
-document.getElementById('normal3').addEventListener("click", function() {
-    difficulties = "M";
-    theme = "";
-
-});
-document.getElementById('hard1').addEventListener("click", function() {
-    difficulties = "H";
-    theme = "Tech";
-
-});
-document.getElementById('hard2').addEventListener("click", function() {
-    difficulties = "H";
-    theme = "";
-
-});
-document.getElementById('hard3').addEventListener("click", function() {
-    difficulties = "H";
-    theme = "";
-
-});
+//     if (document.getElementById('easy1').clicked == true) {
+//         alert("button was clicked");
+//         difficulties = "L";
+//         theme = "Inspirational";
+//         display_play();
+//     } else if (document.getElementById('easy2').clicked == true) {
+//         difficulties = "L";
+//         theme = "Sport";
+//     } else if (document.getElementById('normal1').clicked == true) {
+//         difficulties = "M";
+//         theme = "Fiction";
+//     } else if (document.getElementById('normal2').clicked == true) {
+//         difficulties = "M";
+//         theme = "Prose";
+//     } else if (document.getElementById('hard1').clicked == true) {
+//         difficulties = "H";
+//         theme = "Fiction ";
+//     } else if (document.getElementById('hard2').clicked == true) {
+//         difficulties = "H";
+//         theme = "Academics ";
+//     }
+// };
 var articleid = 999;
 var error_remain = 999;
 var wholearticle = "";
@@ -468,7 +447,7 @@ var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
 
-function display_play() {
+function display_play(difficulties, theme) {
     document.getElementById("first_page").style.display = "none";
     document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "block";
@@ -481,8 +460,8 @@ function display_play() {
         method: "POST",
         headers: ArticleChooseheader,
         body: JSON.stringify({
-            "Difficulty": "H", //需关联选择页面 需修改
-            "Type": "Tech", //需关联选择页面 需修改
+            "Difficulty": difficulties, //需关联选择页面 需修改
+            "Type": theme, //需关联选择页面 需修改
         })
     })
     ArticleChoose.then(res => {

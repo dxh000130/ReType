@@ -15,7 +15,7 @@
 
 <body>
     <!--主界面的开始-->
-    <div id="first_page" style="height: 100%;width: 100%;display: none">
+    <div id="first_page" style="height: 100%;width: 100%;display: block">
         <!--log in button的开始-->
         <div id="log_in_button_container">
             <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
@@ -217,10 +217,9 @@
                     Easy</div>
                 <div class="item" id="b1" style="display: none">
                     <button type="button" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'" class="cancelbtn_play"></button>
-                    <p>Choose Style</p>
-                    <a id="easy1" href="#" onclick="display_play()">Tech</a>
-                    <a id="easy2" href="#" onclick="display_play()">Style2</a>
-                    <a id="easy3" href="#" onclick="display_play()">Style3</a>
+                    <p>Choose Theme</p>
+                    <a id="easy1" href="javascript:display_play('L','Inspirational')">Inspirational</a>
+                    <a id="easy2" href="javascript:display_play('L','Sport')">Sport</a>
                 </div>
 
                 <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
@@ -228,9 +227,8 @@
                 <div class="item" id="b2" style="display: none">
                     <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="normal1" href="#" onclick="display_play()">Tech</a>
-                    <a id="normal2" href="#" onclick="display_play()">Style2</a>
-                    <a id="normal3" href="#" onclick="display_play()">Style3</a>
+                    <a id="normal1" href="javascript:display_play('M','Fiction')">Fiction</a>
+                    <a id="normal2" href="javascript:display_play('M','Prose')">Prose</a>
                 </div>
 
                 <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
@@ -238,9 +236,8 @@
                 <div class="item" id="b3" style="display: none">
                     <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="hard1" href="#" onclick="display_play()">Tech</a>
-                    <a id="hard2" href="#" onclick="display_play()">Style2</a>
-                    <a id="hard3" href="#" onclick="display_play()">Style3</a>
+                    <a id="hard1" href="javascript:display_play('H','Fiction ')">Fiction</a>
+                    <a id="hard2" href="javascript:display_play('H','Academics ')">Academics</a>
                 </div>
             </div>
         </div>
@@ -260,7 +257,7 @@
     <!--play 困难度选择界面结束-->
 
     <!--游戏主界面-->
-    <div id="play_homepage" style="display: block">
+    <div id="play_homepage" style="display: none">
         <div id="time">
 
             <p>
