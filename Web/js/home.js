@@ -8,15 +8,15 @@ if (!localStorage.user_id || !localStorage.pass) {
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
 }
-// fetch('http://127.0.0.1:5054/api/GetVersion', {
-//         method: 'GET'
-//     })
-//     .then(function(response) {
-//         return response.text()
-//     })
-//     .then(function(myJson) {
-//         console.log('Version' + myJson);
-//     });
+fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVersion', {
+        method: 'GET'
+    })
+    .then(function(response) {
+        return response.text()
+    })
+    .then(function(myJson) {
+        console.log('Version' + myJson);
+    });
 
 let valid_log = false;
 //登录界面
@@ -198,7 +198,7 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-    const signup = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/vaildgoogleAsync", {
+    const signup = fetch("https://api.dxh000130.top/api/vaildgoogleAsync", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -488,11 +488,11 @@ document.getElementById('user_input').addEventListener("keyup", function(event) 
 });
 
 // 用户输入单词以后提示按回车
-function input_reminder(){
-    if(document.getElementById("user_input").value.length!=0){
-        document.getElementById("prompt_box").style.display="block";
-    }else{
-        document.getElementById("prompt_box").style.display="none";
+function input_reminder() {
+    if (document.getElementById("user_input").value.length != 0) {
+        document.getElementById("prompt_box").style.display = "block";
+    } else {
+        document.getElementById("prompt_box").style.display = "none";
     }
 }
 
@@ -679,46 +679,51 @@ function audio_dictionaries() {
 
 
 // 设置游戏界面的计时器开始
-var i=0;
-var timer1=null;
-var isRunning=false;
-function doubleLing(i){
-    if(i<10){
-        return "0"+i
-    }else{
+var i = 0;
+var timer1 = null;
+var isRunning = false;
+
+function doubleLing(i) {
+    if (i < 10) {
+        return "0" + i
+    } else {
         return i
     }
 }
-function startBtn(){
-    timer1=setInterval(function(){
+
+function startBtn() {
+    timer1 = setInterval(function() {
         i++
-        document.getElementById("second").innerHTML =doubleLing(parseInt(i/100)%60) ;
-        document.getElementById("minute").innerHTML =doubleLing(parseInt(i/6000)%60) ;
-        document.getElementById("hour").innerHTML =doubleLing(parseInt(i/360000)) ;
-    },10)
+        document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
+        document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
+        document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
+    }, 10)
 }
-function pasueBtn(){
+
+function pasueBtn() {
     clearInterval(timer1)
 }
-function time_start(){
-    if(!isRunning){
+
+function time_start() {
+    if (!isRunning) {
         document.getElementById("btn1").innerHTML = "Stop";
         isRunning = true;
         startBtn();
-    }else{
-        document.getElementById("btn1").innerHTML="Start";
+    } else {
+        document.getElementById("btn1").innerHTML = "Start";
         isRunning = false;
         pasueBtn();
     }
 }
-function time_reset(){
+
+function time_reset() {
     clearInterval(timer1)
     i = 0;
     isRunning = false;
-    document.getElementById("btn1").innerHTML="Start";
-    document.getElementById("second").innerHTML ="00";
-    document.getElementById("minute").innerHTML ="00";
-    document.getElementById("hour").innerHTML ="00";
+    document.getElementById("btn1").innerHTML = "Start";
+    document.getElementById("second").innerHTML = "00";
+    document.getElementById("minute").innerHTML = "00";
+    document.getElementById("hour").innerHTML = "00";
 }
 
 // 设置游戏界面的计时器结束
