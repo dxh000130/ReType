@@ -379,10 +379,17 @@ function change_font_family() {
     if (localStorage.ziti == "Georgia") {
         localStorage.ziti = "Palatino Linotype";
     } else if (localStorage.ziti == "Palatino Linotype") {
-
         localStorage.ziti = "Times New Roman";
-    } else {
+    } else if (localStorage.ziti == "Times New Roman") {
         localStorage.ziti = "Arial";
+    } else if (localStorage.ziti == "Arial") {
+        localStorage.ziti = "Monaco";
+    } else if (localStorage.ziti == "Monaco") {
+        localStorage.ziti = "Lucida Handwriting";
+    } else if (localStorage.ziti == "Lucida Handwriting") {
+        localStorage.ziti = "Lucida Console";
+    } else {
+        localStorage.ziti = "Georgia";
     }
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
