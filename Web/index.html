@@ -348,7 +348,7 @@
                     <tr style="width: 100%;height: 30%;display: inline-block;background-color: blueviolet">
                         <td style="width:2%"></td>
                         <td style="width:50%">
-                            <input id="dictionaries_input" oninput="dictionaries_input_reminder()" placeholder="It is Dictionary">
+                            <input id="dictionaries_input" autocomplete="none" placeholder="It is Dictionary">
                         </td>
                         <td style="width:2%"></td>
                         <td style="width:20%">
@@ -356,7 +356,7 @@
                         </td>
                         <td style="width:2%"></td>
                         <td id="loudspeaker" style="width: 20%">
-                            <button id="dictionaries_loudspeaker">&#128226;</button>
+                            <button id="dictionaries_loudspeaker" onclick="audio_dictionaries()">&#128226;</button>
                             <audio id="voice" src="#"></audio>
                         </td>
                     </tr>

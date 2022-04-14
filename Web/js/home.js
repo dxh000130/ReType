@@ -487,6 +487,7 @@ document.getElementById('user_input').addEventListener("keyup", function(event) 
     }
 });
 
+// 用户输入单词以后提示按回车
 function input_reminder(){
     if(document.getElementById("user_input").value.length!=0){
         document.getElementById("prompt_box").style.display="block";
@@ -575,10 +576,11 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         document.querySelector('#text').innerHTML = wholearticle;
     }
 }
-document.getElementById("dictionaries_loudspeaker").addEventListener("click", audio_dictionaries);
+// document.getElementById("dictionaries_loudspeaker").addEventListener("click", audio_dictionaries);
 
 // 单词发音: 现在只能是发一次音,不能修改单词以后再发音
 
+//
 
 function define_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
@@ -619,11 +621,9 @@ function define_dictionaries() {
         }
     });
 }
-function dictionaries_input_reminder(){
-    if(document.getElementById("dictionaries_input").value.length==0){
-        document.getElementById("definition_h3").innerHTML="Definition:";
-    }
-}
+
+
+
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     // console.log(get_input);
