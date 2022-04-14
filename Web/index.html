@@ -312,8 +312,16 @@
 
         <div class="play_right">
             <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
+            <div id="prompt_box" style="display: none">
+                 Please press Enter when finished!
+                <div id="prompt_box_triangle">
+                </div>
+
+
+            </div>
+
             <div id="input">
-                <input id="user_input" autocomplete="off">
+                <input id="user_input" oninput="input_reminder()" autocomplete="off">
                 <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>
             </div>
             <div id="play_score_container">
@@ -340,7 +348,7 @@
                     <tr style="width: 100%;height: 30%;display: inline-block;background-color: blueviolet">
                         <td style="width:2%"></td>
                         <td style="width:50%">
-                            <input id="dictionaries_input" placeholder="It is Dictionary">
+                            <input id="dictionaries_input" oninput="dictionaries_input_reminder()" placeholder="It is Dictionary">
                         </td>
                         <td style="width:2%"></td>
                         <td style="width:20%">
@@ -355,9 +363,8 @@
 
                     <tr style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
 
-
                         <td id="definition" style="width:100%;height:100%">
-                            <h3>Definition</h3>
+                            <h3 id="definition_h3">Definition</h3>
                         </td>
                     </tr>
 <!--                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: blueviolet">-->

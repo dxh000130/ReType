@@ -1368,6 +1368,41 @@ html {
     margin-top: 10vh;
 
 }
+#prompt_box{
+    width: 60%;
+    height: 5% ;
+    margin-bottom: -10%;
+    background: skyblue;
+    border-radius: 15px;
+    margin-left: 8%;
+    position: relative;
+    text-align: center;
+    font-size: 1vw;
+    padding-top: 5%;
+
+
+ }
+
+#prompt_box_triangle{
+    width:30%;
+    height:  120%;
+    position: absolute;
+    clip-path: polygon(49% 52%, 0 0, 100% 0);
+    left: 60%;
+    bottom:-100%;
+    /*!*border:2px solid #000;*!*/
+    /*transform:rotate(45deg);*/
+    background: skyblue;
+    /*background-color:#FFF;*/
+    /*position: absolute;*/
+    /*bottom: -40%;*/
+    /*left: 50%;*/
+    /*width: 0;*/
+    /*height: 0;*/
+    /*border-left: 30px solid transparent;*/
+    /*border-right: 30px solid transparent;*/
+    /*border-top: 30px solid skyblue ;*/
+}
 
 #input {
     background-color: darkslateblue;

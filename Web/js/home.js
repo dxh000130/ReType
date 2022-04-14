@@ -487,6 +487,16 @@ document.getElementById('user_input').addEventListener("keyup", function(event) 
     }
 });
 
+function input_reminder(){
+    if(document.getElementById("user_input").value.length!=0){
+        document.getElementById("prompt_box").style.display="block";
+    }else{
+        document.getElementById("prompt_box").style.display="none";
+    }
+}
+
+
+
 //Hint
 function Hint() {
     document.getElementById("user_input").value = "";
@@ -580,7 +590,7 @@ function define_dictionaries() {
     });
     get_meaning.then(res => res.text()).then(data => {
         if (data.indexOf('meanings') == -1) {
-            document.getElementById("definition").innerHTML = "Sorry, we couldn't find definitions for the word you were looking for.Please enter again !";
+            document.getElementById("definition").innerHTML = "Sorry, we couldn't find definitions for the word you were looking for. Please enter again !";
         } else {
             var first = data.split('meanings')[1];
             console.log(first);
@@ -609,7 +619,11 @@ function define_dictionaries() {
         }
     });
 }
-
+function dictionaries_input_reminder(){
+    if(document.getElementById("dictionaries_input").value.length==0){
+        document.getElementById("definition_h3").innerHTML="Definition:";
+    }
+}
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     // console.log(get_input);
