@@ -482,23 +482,24 @@
     opacity: 0.98;
     float: left;
 }
+
+
 /*排行榜界面*/
 .leaderboard_page {
     z-index: 1;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     background: linear-gradient(#555, #222);
     border-radius: 12px;
-    perspective: 400px;
-    transform-style: preserve-3d;
-    box-shadow: 0 7px 20px #242424;
     position: absolute;
-    left: 38%;
+    display: flex;
+    left: 30%;
+    right:30%;
     top: 5%;
     width: auto;
     height: auto;
     overflow: auto;
     animation: jumpdown 1s ease-out;
-
+    max-height:800px ;
 }
 
 .leaderboard_page h1 {
@@ -509,22 +510,27 @@
     color: #e1e1e1;
     padding: 1rem;
     border-radius: 10px 10px 0 0;
+
 }
 
 .leaderboard_page th {
     margin: 0;
     text-align: center;
     background: linear-gradient(#393939, #373737);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #e1e1e1;
-    padding: 1rem 3rem 1rem 3rem;
+    padding: 2%;
     border-radius: 10px 10px 0 0;
 }
-
+#ranktable{
+    width: 100%;
+    height: auto;
+}
 .rank td {
     font-size: 1.25rem;
     text-align: center;
-    padding: 1.25rem 0.625rem 1.25rem 1.5rem;
+    /*padding: 1.25rem 0.625rem 1.25rem 1.5rem;*/
+    padding: 1.5%;
     cursor: pointer;
     transform: translateZ(0) scale(1, 1);
     transition: box-shadow .2s ease-in-out;
@@ -654,18 +660,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /*猫头鹰*/
 
 .owl {
@@ -677,7 +671,6 @@
 
 
 /*提示框*/
-
 #error_box {
     float: left;
     margin-left: 69%;
