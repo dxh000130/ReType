@@ -15,38 +15,20 @@ function introduction_button() {
     document.getElementById('leaderboard_page').style.display = 'none';
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-(function () {
-    var cors_api_host = 'cors-anywhere.herokuapp.com';
-    var cors_api_url = 'https://' + cors_api_host + '/';
-    var slice = [].slice;
-    var origin = window.location.protocol + '//' + window.location.host;
-    var open = XMLHttpRequest.prototype.open;
-    XMLHttpRequest.prototype.open = function () {
-        var args = slice.call(arguments);
-        var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-        if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-            targetOrigin[1] !== cors_api_host) {
-            args[1] = cors_api_url + args[1];
-        }
-        return open.apply(this, args);
-    };
-})();
+var cors_api_host = 'cors-anywhere.herokuapp.com';
+var cors_api_url = 'https://' + cors_api_host + '/';
+var slice = [].slice;
+var origin = window.location.protocol + '//' + window.location.host;
+var open = XMLHttpRequest.prototype.open;
+XMLHttpRequest.prototype.open = function () {
+    var args = slice.call(arguments);
+    var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
+    if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
+        targetOrigin[1] !== cors_api_host) {
+        args[1] = cors_api_url + args[1];
+    }
+    return open.apply(this, args);
+};
 if (!localStorage.user_id || !localStorage.pass) {
     localStorage.user_id = "";
     localStorage.pass = "";
@@ -290,7 +272,7 @@ function onSignIn(googleUser) {
 
     });
 }
-
+var score = 0;
 // 排行榜页面
 function GetLeaderboard() {
     document.getElementById('login_modal').style.display = 'none';
@@ -323,6 +305,23 @@ function GetLeaderboard() {
         })
     }
 }
+function getscore(){
+    let headers2 = new Headers();
+    headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+    fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+        method: 'GET',
+        headers: headers2
+    }).then(r => {
+        r.json().then(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].username == localStorage.user_id) {
+                    score = data[i].score;
+                    console.log(score);
+                }
+            }
+        })
+    })
+};
 function ClearLeaderBoard() {
     var table = document.getElementById("rank");
     table.innerHTML = "";
@@ -467,14 +466,14 @@ var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
-var score = 0;
+
 
 function display_play(difficulties, theme) {
     document.getElementById("first_page").style.display = "none";
     document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "block";
-
     var ArticleChooseheader = new Headers();
+    getscore();
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
@@ -495,6 +494,8 @@ function display_play(difficulties, theme) {
             wholearticle = return_text.article;
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
+            document.getElementById("current_score_div").innerHTML = score;
+
         })
         //键盘监听
     });
@@ -569,8 +570,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
+                document.getElementById("total_error_div").innerHTML = total_errors;
+                document.getElementById("remain_error_div").innerHTML = error_remain;
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
-
             })
 
         })
