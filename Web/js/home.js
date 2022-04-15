@@ -1,18 +1,18 @@
 // 点击log_in 隐藏Homepage所有其他的界面
-function log_in_button(){
-    document.getElementById('login_modal').style.display='block';
-    document.getElementById('register_modal').style.display='none';
-    document.getElementById('error_box').style.display='none';
-    document.getElementById('leaderboard_page').style.display='none';
-    document.getElementById('introduction_model').style.display='none';
+function log_in_button() {
+    document.getElementById('login_modal').style.display = 'block';
+    document.getElementById('register_modal').style.display = 'none';
+    document.getElementById('error_box').style.display = 'none';
+    document.getElementById('leaderboard_page').style.display = 'none';
+    document.getElementById('introduction_model').style.display = 'none';
 }
 
-function introduction_button(){
-    document.getElementById('introduction_model').style.display='block';
-    document.getElementById('login_modal').style.display='none';
-    document.getElementById('register_modal').style.display='none';
-    document.getElementById('error_box').style.display='none';
-    document.getElementById('leaderboard_page').style.display='none';
+function introduction_button() {
+    document.getElementById('introduction_model').style.display = 'block';
+    document.getElementById('login_modal').style.display = 'none';
+    document.getElementById('register_modal').style.display = 'none';
+    document.getElementById('error_box').style.display = 'none';
+    document.getElementById('leaderboard_page').style.display = 'none';
 }
 
 
@@ -31,13 +31,13 @@ function introduction_button(){
 
 
 
-(function() {
+(function () {
     var cors_api_host = 'cors-anywhere.herokuapp.com';
     var cors_api_url = 'https://' + cors_api_host + '/';
     var slice = [].slice;
     var origin = window.location.protocol + '//' + window.location.host;
     var open = XMLHttpRequest.prototype.open;
-    XMLHttpRequest.prototype.open = function() {
+    XMLHttpRequest.prototype.open = function () {
         var args = slice.call(arguments);
         var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
         if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
@@ -58,12 +58,12 @@ if (!localStorage.user_id || !localStorage.pass) {
     document.getElementById("login_modal").style.display = "none";
 }
 fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVersion', {
-        method: 'GET'
-    })
-    .then(function(response) {
+    method: 'GET'
+})
+    .then(function (response) {
         return response.text()
     })
-    .then(function(myJson) {
+    .then(function (myJson) {
         console.log('Version' + myJson);
     });
 
@@ -95,7 +95,7 @@ function Login() {
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
                 const button = document.getElementById("error_button");
-                button.onclick = function() {
+                button.onclick = function () {
                     document.getElementById("error_box").style.display = "none";
                     document.getElementById("login_modal").style.display = "none";
                 }
@@ -119,9 +119,9 @@ function log_out() {
     valid_log = false;
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
-    document.getElementById('introduction_model').style.display='none';
-    document.getElementById('register_modal').style.display='none';
-    document.getElementById('leaderboard_page').style.display='none';
+    document.getElementById('introduction_model').style.display = 'none';
+    document.getElementById('register_modal').style.display = 'none';
+    document.getElementById('leaderboard_page').style.display = 'none';
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
 }
@@ -161,17 +161,17 @@ function register() {
             })
         });
         signup.then(res => {
-            res.text().then(function(return_text) {
+            res.text().then(function (return_text) {
                 text.innerText = return_text;
                 if (return_text == "User successfully registered.") {
                     const button = document.getElementById("error_button");
-                    button.onclick = function() {
+                    button.onclick = function () {
                         document.getElementById("error_box").style.display = "none";
                         document.getElementById("register_modal").style.display = "none";
                     }
                 } else {
                     const button = document.getElementById("error_button");
-                    button.onclick = function() {
+                    button.onclick = function () {
                         document.getElementById("error_box").style.display = "none";
                         document.getElementById("register_modal").style.display = "block";
                     }
@@ -202,13 +202,13 @@ function verification() {
                 "Content-Type": "application/json",
             }
         }).then(res => {
-            res.text().then(function(return_text) {
+            res.text().then(function (return_text) {
                 console.log(return_text);
                 if (return_text == '"This email has been registered by another user"') {
                     document.getElementById("error_box").style.display = "block";
                     text.innerText = "This Email Has Been Resgistered !";
                 } else {
-                    t = setInterval(function() {
+                    t = setInterval(function () {
                         countdown()
                     }, 1000)
                     countdown();
@@ -264,7 +264,7 @@ function onSignIn(googleUser) {
 
     })
     signup.then(res => {
-        res.text().then(function(text) {
+        res.text().then(function (text) {
             console.log(text);
             if (text != "This email has been occupied, please log in first and then bind Google" && text != "no") {
                 user = text.split(",");
@@ -293,10 +293,10 @@ function onSignIn(googleUser) {
 
 // 排行榜页面
 function GetLeaderboard() {
-    document.getElementById('login_modal').style.display='none';
-    document.getElementById('register_modal').style.display='none';
-    document.getElementById('error_box').style.display='none';
-    document.getElementById('introduction_model').style.display='none';
+    document.getElementById('login_modal').style.display = 'none';
+    document.getElementById('register_modal').style.display = 'none';
+    document.getElementById('error_box').style.display = 'none';
+    document.getElementById('introduction_model').style.display = 'none';
 
     ClearLeaderBoard();
     if (valid_log == false) {
@@ -310,7 +310,7 @@ function GetLeaderboard() {
             method: 'GET',
             headers: headers2
         }).then(r => {
-            r.json().then(function(data) {
+            r.json().then(function (data) {
                 for (var i = 0; i < data.length; i++) {
                     var row = ` <tr>
                                 <td>${data[i].index}</td>
@@ -366,11 +366,11 @@ function BackToHome() {
     document.getElementById("first_page").style.display = "block";
     document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "none";
-    document.getElementById('login_modal').style.display='none';
-    document.getElementById('register_modal').style.display='none';
-    document.getElementById('error_box').style.display='none';
-    document.getElementById('introduction_model').style.display='none';
-    document.getElementById('leaderboard_page').style.display='none';
+    document.getElementById('login_modal').style.display = 'none';
+    document.getElementById('register_modal').style.display = 'none';
+    document.getElementById('error_box').style.display = 'none';
+    document.getElementById('introduction_model').style.display = 'none';
+    document.getElementById('leaderboard_page').style.display = 'none';
 }
 
 
@@ -459,37 +459,13 @@ function change_font_size_small() {
 
 var difficulties = "";
 var theme = "";
-
-// function article() {
-
-//     if (document.getElementById('easy1').clicked == true) {
-//         alert("button was clicked");
-//         difficulties = "L";
-//         theme = "Inspirational";
-//         display_play();
-//     } else if (document.getElementById('easy2').clicked == true) {
-//         difficulties = "L";
-//         theme = "Sport";
-//     } else if (document.getElementById('normal1').clicked == true) {
-//         difficulties = "M";
-//         theme = "Fiction";
-//     } else if (document.getElementById('normal2').clicked == true) {
-//         difficulties = "M";
-//         theme = "Prose";
-//     } else if (document.getElementById('hard1').clicked == true) {
-//         difficulties = "H";
-//         theme = "Fiction ";
-//     } else if (document.getElementById('hard2').clicked == true) {
-//         difficulties = "H";
-//         theme = "Academics ";
-//     }
-// };
 var articleid = 999;
 var error_remain = 999;
 var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
+var score = 0;
 
 function display_play(difficulties, theme) {
     document.getElementById("first_page").style.display = "none";
@@ -509,19 +485,20 @@ function display_play(difficulties, theme) {
         })
     })
     ArticleChoose.then(res => {
-        res.json().then(function(return_text) {
-                console.log(difficulties, theme);
-                console.log(return_text.article);
-                document.querySelector('#text').innerHTML = return_text.article;
-                total_errors = return_text.errorRemain;
-                error_remain = total_errors;
-                articleid = return_text.id;
-                wholearticle = return_text.article;
-            })
-            //键盘监听
+        res.json().then(function (return_text) {
+            document.querySelector('#text').innerHTML = return_text.article;
+            total_errors = return_text.errorRemain;
+            error_remain = total_errors;
+            articleid = return_text.id;
+            wholearticle = return_text.article;
+            document.getElementById("total_error_div").innerHTML = total_errors;
+            document.getElementById("remain_error_div").innerHTML = error_remain;
+        })
+        //键盘监听
     });
 }
-document.getElementById('user_input').addEventListener("keyup", function(event) {
+
+document.getElementById('user_input').addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         //console.log("回车");
         Enterbutton = 1;
@@ -529,7 +506,7 @@ document.getElementById('user_input').addEventListener("keyup", function(event) 
     } else {
         Enterbutton = 0;
         ArticleProcessMainFunction(Enterbutton, 0)
-            //console.log("没回车");
+        //console.log("没回车");
     }
 });
 
@@ -572,7 +549,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
             })
         });
         ArticleProcess.then(res => {
-            res.json().then(function(return_text1) {
+            res.json().then(function (return_text1) {
                 if (username !== "") {
                     //console.log(return_text1)
                     document.querySelector('#text').innerHTML = return_text1.articleDisp
@@ -591,8 +568,6 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
-                document.getElementById("total_error_div").innerHTML = total_errors;
-                document.getElementById("remain_error_div").innerHTML = error_remain;
 
             })
 
@@ -613,7 +588,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 })
             });
             ArticleProcess.then(res => {
-                res.json().then(function(return_text1) {
+                res.json().then(function (return_text1) {
                     console.log(return_text1.hint); //Hint内容
                     document.querySelector('#text').innerHTML = return_text1.articleDisp; //高亮hint内容
                 })
@@ -659,7 +634,7 @@ function define_dictionaries() {
             var definition_index = first.split("definition")[2];
             var definition_index1 = definition_index.split('definition":"')[0];
             var definition_index2 = definition_index1.split(',"synonyms"')[0];
-            var definition_index3 = definition_index2.substr(3, );
+            var definition_index3 = definition_index2.substr(3,);
             var definition_final = definition_index3.replace('"', "");
             console.log(definition_final);
             // document.getElementById("definition").innerText = definition_final;
@@ -738,7 +713,7 @@ function doubleLing(i) {
 }
 
 function startBtn() {
-    timer1 = setInterval(function() {
+    timer1 = setInterval(function () {
         i++
         document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
         document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
