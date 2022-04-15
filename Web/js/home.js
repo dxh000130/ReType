@@ -298,7 +298,6 @@ function GetLeaderboard() {
     document.getElementById('error_box').style.display='none';
     document.getElementById('introduction_model').style.display='none';
 
-
     if (valid_log == false) {
         window.alert("Please Log in")
     } else {
@@ -323,9 +322,6 @@ function GetLeaderboard() {
         })
     }
 }
-
-
-
 function ClearLeaderBoard() {
     var table = document.getElementById("rank");
     table.innerHTML = "";
@@ -369,6 +365,11 @@ function BackToHome() {
     document.getElementById("first_page").style.display = "block";
     document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "none";
+    document.getElementById('login_modal').style.display='none';
+    document.getElementById('register_modal').style.display='none';
+    document.getElementById('error_box').style.display='none';
+    document.getElementById('introduction_model').style.display='none';
+    document.getElementById('leaderboard_page').style.display='none';
 }
 
 
