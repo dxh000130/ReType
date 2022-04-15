@@ -298,6 +298,7 @@ function GetLeaderboard() {
     document.getElementById('error_box').style.display='none';
     document.getElementById('introduction_model').style.display='none';
 
+    ClearLeaderBoard();
     if (valid_log == false) {
         window.alert("Please Log in")
     } else {
