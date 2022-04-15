@@ -322,6 +322,14 @@
     text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
 
+#register_button:hover{
+    opacity: 0.5;
+    transition: 1s all;
+    -webkit-transition: 1s all;
+    -moz-transition: 1s all;
+    -o-transition: 1s all;
+}
+
 
 /*login button的设置结束*/
 
@@ -886,10 +894,12 @@ input[type="text"] {
     -moz-transition: color 0.2s ease-in-out;
     -o-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
+
 }
-
-
-/*--/close--*/
+.cancelbtn:hover,.cancelbtn_play:hover{
+    animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+}
+    /*--/close--*/
 
 .code {
     font-size: 18px;
@@ -1210,8 +1220,8 @@ html {
     background: url('../images/close.png') no-repeat center papayawhip;
     background-size: 30px;
     cursor: pointer;
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 45px;
     position: absolute;
     left: 2px;
     top: 1px;
@@ -1375,11 +1385,17 @@ html {
     border-radius: 50%;
     margin-right:1%;
 }
+#btn1:hover{
+    animation:  hint 0.5s ease-in-out infinite both;
+}
 #reset{
     width:15%;
     float: left;
     margin-right: 3%;
     border-radius: 50%;
+}
+#reset:hover{
+    animation:  hint 0.5s ease-in-out infinite both;
 }
 
 
@@ -1438,6 +1454,8 @@ html {
 .adjust_text button:hover {
     -webkit-animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
     animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    border-color: seashell;
+    /*background: seashell;*/
 }
 
 @keyframes adjust_button {
@@ -1500,6 +1518,7 @@ html {
     margin-top: 10vh;
 
 }
+
 #prompt_box{
     width: 60%;
     height: 5% ;
@@ -1522,18 +1541,8 @@ html {
     clip-path: polygon(49% 52%, 0 0, 100% 0);
     left: 60%;
     bottom:-100%;
-    /*!*border:2px solid #000;*!*/
-    /*transform:rotate(45deg);*/
     background: skyblue;
-    /*background-color:#FFF;*/
-    /*position: absolute;*/
-    /*bottom: -40%;*/
-    /*left: 50%;*/
-    /*width: 0;*/
-    /*height: 0;*/
-    /*border-left: 30px solid transparent;*/
-    /*border-right: 30px solid transparent;*/
-    /*border-top: 30px solid skyblue ;*/
+
 }
 
 #input {
@@ -1735,11 +1744,10 @@ html {
 
 #dictionaries_check{
     width: 100%;
-    /*line-height: 130%;*/
     font-size: 20px;
-    /*height: 100%;*/
-    /*margin-top: 5px;*/
-    /*border-radius: 15px;*/
+}
+#dictionaries_check:hover{
+    animation:  hint 0.5s ease-in-out infinite both;
 }
 #dictionaries_loudspeaker{
     width: 100%;
@@ -1752,7 +1760,7 @@ html {
     margin-top: -10%;
 }
 #dictionaries_loudspeaker:hover{
-    animation:  hint 0.5s ease-in-out infinite both;
+    animation:  hint 0.5s ease-in-out infinite both ;
 }
 #definition{
     font-size: 20px;

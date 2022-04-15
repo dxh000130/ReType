@@ -370,6 +370,12 @@ function BackToHome() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
+    document.getElementById('i1').style.display = 'block';
+    document.getElementById('i2').style.display = 'block';
+    document.getElementById('i3').style.display = 'block';
+    document.getElementById('b1').style.display = 'none';
+    document.getElementById('b2').style.display = 'none';
+    document.getElementById('b3').style.display = 'none';
     // 让游戏界面的计时器变成0
     time_reset();
 }
