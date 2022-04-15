@@ -371,6 +371,8 @@ function BackToHome() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
+    // 让游戏界面的计时器变成0
+    time_reset();
 }
 
 
@@ -597,11 +599,6 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         document.querySelector('#text').innerHTML = wholearticle;
     }
 }
-// document.getElementById("dictionaries_loudspeaker").addEventListener("click", audio_dictionaries);
-
-// 单词发音: 现在只能是发一次音,不能修改单词以后再发音
-
-//
 
 function define_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
