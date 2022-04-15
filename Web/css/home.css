@@ -475,6 +475,7 @@
     float: left;
 }
 
+/*排行榜界面*/
 .leaderboard_page {
     z-index: 1;
     margin: 0 auto;
@@ -524,6 +525,137 @@
     box-shadow: 0 0 0.5rem 1px rgba(0, 0, 0, 0.15);
     color: #e1e1e1;
 }
+
+
+/*游戏介绍界面*/
+#introduction_model{
+    z-index: 1;
+    left: 38%;
+    top: 5%;
+    width: 30%;
+    height: 60%;
+    overflow: auto;
+    background: #2b2b36;
+    position: absolute;
+    display: block;
+    /*margin: 3% auto 0 auto;*/
+    text-align: center;
+    border-radius: 20px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 20px;
+    /*animation: jumpdown 1s ease-out;*/
+    opacity: 0.98;
+    float: left;
+}
+.ac-container{
+    width: 100%;
+    /*margin: 10px auto 30px auto;*/
+    text-align: left;
+    height: 100%;
+}
+.ac-container label{
+    /*font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;*/
+    padding: 5px 20px;
+    position: relative;
+    z-index: 20;
+    display: block;
+    cursor: pointer;
+    color: seashell;
+    /*text-shadow: 1px 1px 1px rgba(255,255,255,0.8);*/
+    line-height: 45px;
+    font-size: 19px;
+    border:1px solid slategray;
+    /*background: peru;*/
+    /*background: -moz-linear-gradient(top, #ffffff 1%, #eaeaea 100%);*/
+    /*background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#ffffff), color-stop(100%,#eaeaea));*/
+    /*background: -webkit-linear-gradient(top, #ffffff 1%,#eaeaea 100%);*/
+    /*background: -o-linear-gradient(top, #ffffff 1%,#eaeaea 100%);*/
+    /*background: -ms-linear-gradient(top, #ffffff 1%,#eaeaea 100%);*/
+    /*background: linear-gradient(top, #ffffff 1%,#eaeaea 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );*/
+    box-shadow:
+            0px 0px 0px 1px rgba(155,155,155,0.3),
+            1px 0px 0px 0px rgba(255,255,255,0.9) inset,
+            0px 2px 2px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.ac-container label:hover{
+    background: slategrey;
+}
+.ac-container input:checked + label,
+.ac-container input:checked + label:hover{
+    background: slategrey;
+    /*color: #3d7489;*/
+    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6);
+    box-shadow:
+            0px 0px 0px 1px rgba(155,155,155,0.3),
+            0px 2px 2px rgba(0,0,0,0.1);
+}
+.ac-container label:hover:after,
+.ac-container input:checked + label:hover:after{
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 13px;
+    top: 7px;
+}
+
+
+.ac-container input{
+    display: none;
+}
+.ac-container article{
+    background: lightskyblue;
+    margin-top: -1px;
+    overflow: auto;
+    height: 0;
+    position: relative;
+    z-index: 10;
+    -webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.ac-container article p{
+    line-height: 30px;
+    font-size:16px;
+    padding: 5%;
+}
+.ac-container input:checked ~ article{
+    -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    -ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+    box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3);
+}
+.ac-container input:checked ~ article.ac-small{
+    height: 200px;
+
+}
+.ac-container input:checked ~ article.ac-medium{
+    height: 200px;
+}
+.ac-container input:checked ~ article.ac-large{
+    height: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*猫头鹰*/
