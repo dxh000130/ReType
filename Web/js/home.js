@@ -505,10 +505,11 @@ document.getElementById('user_input').addEventListener("keyup", function (event)
     if (event.keyCode === 13) {
         //console.log("回车");
         Enterbutton = 1;
-        ArticleProcessMainFunction(Enterbutton)
+        ArticleProcessMainFunction(Enterbutton);
+        document.getElementById("prompt_box").style.display = "none";
     } else {
         Enterbutton = 0;
-        ArticleProcessMainFunction(Enterbutton, 0)
+        ArticleProcessMainFunction(Enterbutton, 0);
         //console.log("没回车");
     }
 });

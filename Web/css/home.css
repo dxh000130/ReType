@@ -489,6 +489,8 @@
     width: auto;
     height: auto;
     overflow: auto;
+    animation: jumpdown 1s ease-out;
+
 }
 
 .leaderboard_page h1 {
