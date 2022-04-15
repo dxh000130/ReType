@@ -18,7 +18,7 @@
     <div id="first_page" style="height: 100%;width: 100%;display: block">
         <!--log in button的开始-->
         <div id="log_in_button_container">
-            <div onclick="document.getElementById('login_modal').style.display='block';document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="button log_in_button" id="log_in_button">
+            <div onclick="log_in_button()" class="button log_in_button" id="log_in_button">
                 <p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
             </div>
         </div>
@@ -93,16 +93,15 @@
 
 
         <!--游戏介绍页面开始-->
-        <div id="introduction_model">
-            <div style="height: 10%">
-                <button type="button"  class="cancelbtn"></button>
+        <div id="introduction_model" style="display: none">
+            <div>
+                <button type="button"  class="cancelbtn" onclick="document.getElementById('introduction_model').style.display='none'"></button>
                 <h1>Introduction</h1>
             </div>
-
-            <div style="height: 90%">
+            <div>
                 <section class="ac-container" >
                     <div>
-                        <input id="ac-1" name="accordion-1" type="radio" />
+                        <input id="ac-1" name="accordion-1" type="radio"/>
                         <label for="ac-1">About Game</label>
                         <article class="ac-small" id="ac-small">
                             <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
@@ -134,27 +133,8 @@
                     </div>
                 </section>
             </div>
-
-
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
         <!--游戏介绍页面结束-->
-
-
-
 
 
         <!--中间标题retype的开始-->
@@ -213,7 +193,7 @@
                 <!--leaderboard button设置的结束-->
 
                 <!--introduction button设置的开始-->
-                <a href="#">
+                <a href="#" onclick="introduction_button()">
                     <div id="introduction_container" class="container">
                         <!--翻转以前显示的东西-->
                         <div id="introduction_front" class="front">

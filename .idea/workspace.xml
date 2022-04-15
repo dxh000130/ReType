@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="027ce9db-7e28-408b-ab38-83ccefbdd563" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Web/css/home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/Web/js/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +96,7 @@
       <workItem from="1649915300052" duration="1068000" />
       <workItem from="1649982022124" duration="5130000" />
       <workItem from="1649987657681" duration="1888000" />
+      <workItem from="1649989846831" duration="3473000" />
     </task>
     <servers />
   </component>
@@ -112,7 +113,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Web/js/home.js</url>
-          <line>143</line>
+          <line>176</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

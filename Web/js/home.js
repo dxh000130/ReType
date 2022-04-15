@@ -1,3 +1,36 @@
+// 点击log_in 隐藏Homepage所有其他的界面
+function log_in_button(){
+    document.getElementById('login_modal').style.display='block';
+    document.getElementById('register_modal').style.display='none';
+    document.getElementById('error_box').style.display='none';
+    document.getElementById('leaderboard_page').style.display='none';
+    document.getElementById('introduction_model').style.display='none';
+}
+
+function introduction_button(){
+    document.getElementById('introduction_model').style.display='block';
+    document.getElementById('login_modal').style.display='none';
+    document.getElementById('register_modal').style.display='none';
+    document.getElementById('error_box').style.display='none';
+    document.getElementById('leaderboard_page').style.display='none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (function() {
     var cors_api_host = 'cors-anywhere.herokuapp.com';
     var cors_api_url = 'https://' + cors_api_host + '/';
@@ -86,8 +119,11 @@ function log_out() {
     valid_log = false;
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
+    document.getElementById('introduction_model').style.display='none';
+    document.getElementById('register_modal').style.display='none';
+    document.getElementById('leaderboard_page').style.display='none';
     var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut()
+    auth2.signOut();
 }
 // 退出登录
 
@@ -257,6 +293,12 @@ function onSignIn(googleUser) {
 
 // 排行榜页面
 function GetLeaderboard() {
+    document.getElementById('login_modal').style.display='none';
+    document.getElementById('register_modal').style.display='none';
+    document.getElementById('error_box').style.display='none';
+    document.getElementById('introduction_model').style.display='none';
+
+
     if (valid_log == false) {
         window.alert("Please Log in")
     } else {
