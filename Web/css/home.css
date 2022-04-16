@@ -1,8 +1,5 @@
-/*最下边四个button的设置的开始*/
 
-
-/*下边四个可点击按钮的图案设置*/
-
+/*homepage start*/
 #first_page {
     background-image: url("../images/homepage.jpg");
     background-repeat: no-repeat;
@@ -19,7 +16,7 @@
 }
 
 
-/*button中字体风格和颜色的设置*/
+/* homepage button font size style*/
 
 .homepage_button_typeface1 {
     font-size: 2.7vw;
@@ -39,8 +36,7 @@
 }
 
 
-/*personal details所有设置*/
-
+/*personal details*/
 #user_container {
     width: 25%;
     height: 22vh;
@@ -52,7 +48,6 @@
     text-align: center;
     border-color: black;
 }
-
 #user_front,
 #user_back {
     width: 90%;
@@ -65,20 +60,16 @@
     align-items: center;
     display: flex;
 }
-
 #user_typeface1,
 #user_typeface3 {
     background: peru;
     margin: 0 auto;
     width: 45%;
 }
+/*personal details end*/
 
 
-/*personal details所有设置完成*/
-
-
-/*leaderboard所有设置*/
-
+/*leaderboard button start*/
 #leaderboard_container {
     width: 25%;
     height: 22vh;
@@ -89,7 +80,6 @@
     margin-left: -6vw;
     opacity: 0.9;
 }
-
 #leaderboard_front,
 #leaderboard_back {
     width: 90%;
@@ -102,25 +92,20 @@
     align-items: center;
     display: flex;
 }
-
 #leaderboard_typeface1 {
     background: peru;
     padding-left: 4.7vw;
     width: 100%;
 }
-
 #leaderboard_typeface2 {
     background: peru;
     padding-left: 9.5vw;
     width: 55%;
 }
+/*leaderboard button end*/
 
 
-/*leaderboard所有设置完成*/
-
-
-/*introduction 所有设置开始*/
-
+/*introduction button start*/
 #introduction_container {
     width: 30%;
     height: 22vh;
@@ -133,7 +118,6 @@
     margin-left: -1vw;
     opacity: 0.9;
 }
-
 #introduction_front,
 #introduction_back {
     width: 90%;
@@ -146,25 +130,20 @@
     background: peru;
     clip-path: polygon(46% 0%, 84% 37%, 82% 100%, 18% 100%, 16% 11%);
 }
-
 #introduction_typeface1 {
     background: peru;
     padding-left: 5.5vw;
     width: 60%;
 }
-
 #introduction_typeface2 {
     background: peru;
     padding-left: 5.5vw;
     width: 55%;
 }
+/*introduction button end*/
 
 
-/*introduction 所有设置结束*/
-
-
-/*play 所有设置开始*/
-
+/*play button start*/
 #play_container {
     width: 30%;
     height: 22vh;
@@ -177,7 +156,6 @@
     text-align: center;
     opacity: 0.9;
 }
-
 #play_front,
 #play_back {
     width: 90%;
@@ -190,7 +168,6 @@
     background: peru;
     clip-path: polygon(74% 4%, 100% 19%, 100% 99%, 18% 100%, 26% 36%);
 }
-
 #play_typeface1 {
     background: peru;
     padding-left: 10vw;
@@ -200,7 +177,6 @@
     color: mediumseagreen;
     text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
-
 #play_typeface2 {
     padding-left: 10vw;
     width: 55%;
@@ -208,18 +184,13 @@
     color: mediumseagreen;
     text-shadow: -2px -2px gray, 1px 1px gray, 2px 2px gray, 3px 3px gray, 4px 4px gray, 5px 5px gray, 6px 6px gray, 7px 7px gray;
 }
+/*play button start*/
 
-
-/*play 所有设置结束*/
-
-
-/*3D反转动画的实现开始*/
-
+/*3D card flip for four button in homepage animation start*/
 .container {
     position: relative;
     perspective: 1000px;
 }
-
 .front,
 .back {
     position: absolute;
@@ -227,31 +198,22 @@
     transition: 1s;
     transform-style: preserve-3d;
 }
-
 .back {
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(180deg);
 }
-
 .container:hover .front {
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(180deg);
 }
-
 .container:hover .back {
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(360deg);
 }
+/*3D card flip for four button in homepage animation end*/
 
 
-/*3D反转动画的实现结束*/
-
-
-/*最下边四个button的设置的结束*/
-
-
-/*login button的设置开始*/
-
+/*login interface start*/
 #log_in_button_container,
 #log_out_button_container {
     position: fixed;
@@ -264,13 +226,6 @@
     /*animation: move 2s 2;*/
     opacity: 0.8;
 }
-
-
-/*实现一打开网页log in 跳跃开始*/
-
-
-/*实现一打开网页log in 跳跃结束*/
-
 #log_in_button:active {
     background: beige;
 }
@@ -278,7 +233,6 @@
 #log_out_button:active {
     background: beige;
 }
-
 #log_in_button,
 #log_out_button {
     /*position: relative;*/
@@ -291,7 +245,6 @@
     text-align: center;
     position: relative;
 }
-
 #log_in_typeface1 {
     position: absolute;
     width: 100%;
@@ -303,7 +256,7 @@
     color: #fee375;
     text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
-
+/*login end*/
 #log_out_typeface1 {
     text-align: center;
     margin-top: 1vw;
@@ -313,7 +266,6 @@
     color: #fee375;
     text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
-
 #log_out_typeface2 {
     text-align: center;
     margin-left: 0.2vw;
@@ -321,7 +273,6 @@
     color: white;
     text-shadow: -2px -2px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
 }
-
 #register_button:hover{
     opacity: 0.5;
     transition: 1s all;
@@ -331,11 +282,7 @@
 }
 
 
-/*login button的设置结束*/
-
-
-/*retype设置开始*/
-
+/*retype title start*/
 .word {
     perspective: 1000px;
     text-align: center;
@@ -347,7 +294,6 @@
     display: inline;
     float: left;
 }
-
 .word span {
     position: relative;
     display: inline-block;
@@ -359,7 +305,6 @@
     animation: left_r 2.5s 2 ease-out;
     transform-origin: 0% 100% 1vw;
 }
-
 @keyframes left_r {
     0% {
         transform: rotate(0deg);
@@ -376,7 +321,6 @@
     animation: jump_e1 2s 2 ease-in-out;
     transform-origin: bottom;
 }
-
 @keyframes jump_e1 {
     25% {
         transform: scale(1.5, 0.5);
@@ -393,7 +337,6 @@
     animation: down_t 2s 2 ease-out;
     transform-origin: top;
 }
-
 @keyframes down_t {
     25% {
         transform: scale(1.5, 0.5);
@@ -409,7 +352,6 @@
 #Y {
     animation: rotate_y 2s 2 ease-out;
 }
-
 @keyframes rotate_y {
     20% {
         transform: rotateY(90deg);
@@ -425,7 +367,6 @@
 #P {
     animation: rotate_p 2s 2 ease-out;
 }
-
 @keyframes rotate_p {
     20% {
         transform: rotateZ(90deg);
@@ -442,7 +383,6 @@
     animation: right_r 2.5s 2 ease-out;
     transform-origin: 0% 100% 1vw;
 }
-
 @keyframes right_r {
     0% {
         transform: rotate(0deg);
@@ -454,13 +394,10 @@
         transform: rotate(0deg);
     }
 }
-
-
-/*retype设置结束*/
+/*retype title end*/
 
 
 /*login*/
-
 .login_modal,
 .register_modal,
 .user_modal{
@@ -484,8 +421,7 @@
     float: left;
 }
 
-
-/*排行榜界面*/
+/*leaderboard interface*/
 .leaderboard_page {
     z-index: 1;
     /*margin: 0 auto;*/
@@ -544,9 +480,9 @@
     box-shadow: 0 0 0.5rem 1px rgba(0, 0, 0, 0.15);
     color: #e1e1e1;
 }
+/*leaderboard interface end*/
 
-
-/*游戏介绍界面*/
+/*game introduction start*/
 #introduction_model{
     z-index: 1;
     left: 38%;
@@ -659,22 +595,22 @@
 .ac-container input:checked ~ article.ac-large{
     height: 200px;
 }
-/*游戏介绍结束*/
+/*game introduction end*/
 
 
 
 
-/*猫头鹰*/
-
+/*owl in log in, register start*/
 .owl {
     background: url(../images/animal.png) no-repeat center;
     width: 100%;
     height: 150px;
     /*padding-bottom: 10px;*/
 }
+/*owl in log in, register end*/
 
 
-/*提示框*/
+/*prompt dialog box in log in interface and register interface start*/
 #error_box {
     float: left;
     margin-left: 69%;
@@ -737,7 +673,9 @@
         transform: translate(0, 0);
     }
 }
+/*prompt dialog box in log in interface and register interface start*/
 
+/* user input in log in, register interface start*/
 input[type="username"] {
     width: 70%;
     padding: 1em 2em 1em 3em;
@@ -820,13 +758,9 @@ input[type="text"] {
     border-bottom: 1px solid #484856;
     margin-bottom: 3em;
 }
+/* user input in log in, register interface start*/
 
-
-/* Modal Content/Box */
-
-
-/* Modal Content/Box */
-
+/*the button in log in interface start*/
 .btnlogin {
     font-size: 30px;
     color: #fff;
@@ -861,7 +795,10 @@ input[type="text"] {
     -moz-transition: 1s all;
     -o-transition: 1s all;
 }
+/*the button in log in interface end*/
 
+
+/*button in register start*/
 .btnregister {
     font-size: 30px;
     color: #fff;
@@ -897,7 +834,9 @@ input[type="text"] {
     -moz-transition: 1s all;
     -o-transition: 1s all;
 }
+/*button in register end*/
 
+/*cancle button in top left for all interface start*/
 .cancelbtn {
     background: url('../images/close.png') no-repeat center papayawhip;
     background-size: 30px;
@@ -918,6 +857,7 @@ input[type="text"] {
     animation: adjust_button 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
 }
     /*--/close--*/
+/*cancle button in top left for all interface end*/
 
 .code {
     font-size: 18px;
@@ -931,8 +871,7 @@ input[type="text"] {
 }
 
 
-/*选择困难度界面*/
-
+/*play difficulty start*/
 * {
     padding: 0;
     margin: 0;
@@ -943,27 +882,6 @@ html {
     height: 100%;
     width: 100%;
 }
-
-
-/*body  {*/
-
-
-/*    display: flex;*/
-
-
-/*    justify-content: center;*/
-
-
-/*    align-items: center;*/
-
-
-/*    overflow: hidden;*/
-
-
-/*    background: #FFE4B5;*/
-
-
-/*}*/
 
 #difficult_page {
     display: flex;
@@ -980,6 +898,7 @@ html {
     border-top-left-radius: 15%;
 }
 
+/*three difficulty*/
 .wrap {
     position: relative;
     /*background: #FFE4B5;*/
@@ -1057,21 +976,20 @@ html {
     display: flex;
     cursor: pointer;
 }
-
+/*easy*/
 #i1 {
     background: url(../images/bg2.png) no-repeat top center;
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(0) translateZ(700px);
 }
-
+/*two theme in easy*/
 #b1 {
     opacity: 0.7;
     transform: rotateY(0deg) translateZ(700px);
     background-color: chocolate;
     animation: fade_in_style_b1 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
-
 @keyframes fade_in_style_b1 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -1088,30 +1006,28 @@ html {
         opacity: 1;
     }
 }
-
 #b1 p {
     font-size: 40px;
     padding-top: 15%;
 }
-
 #b1 a {
     font-size: 30px;
 }
 
+/*normal*/
 #i2 {
     background: url(../images/bg1.png) no-repeat top center;
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
 }
-
+/*two theme in normal*/
 #b2 {
     opacity: 0.7;
     transform: rotateY(120deg) translateZ(700px);
     background-color: chocolate;
     animation: fade_in_style_b2 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
-
 @keyframes fade_in_style_b2 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -1128,30 +1044,28 @@ html {
         opacity: 1;
     }
 }
-
 #b2 p {
     font-size: 40px;
     padding-top: 15%;
 }
-
 #b2 a {
     font-size: 30px;
 }
 
+/*hard*/
 #i3 {
     background: url(../images/bg3.png) no-repeat top center;
     background-size: cover;
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
 }
-
+/*two theme in hard*/
 #b3 {
     opacity: 0.7;
     transform: rotateY(240deg) translateZ(700px);
     background-color: chocolate;
     animation: fade_in_style_b3 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 }
-
 @keyframes fade_in_style_b3 {
     0% {
         -webkit-transform: rotateX(-100deg);
@@ -1168,16 +1082,15 @@ html {
         opacity: 1;
     }
 }
-
 #b3 p {
     font-size: 40px;
     padding-top: 15%;
 }
-
 #b3 a {
     font-size: 30px;
 }
 
+/*change difficult button*/
 .difficult_button {
     font-size: 45px;
     outline: none;
@@ -1200,7 +1113,6 @@ html {
     background-size: 400%;
     animation: run 4s linear 0s infinite;
 }
-
 @keyframes run {
     100% {
         background-position: 400% 0px;
@@ -1215,7 +1127,6 @@ html {
         transform: translateZ(-700px) rotateY(-120deg);
     }
 }
-
 @keyframes rotate2 {
     0% {
         transform: translateZ(-700px) rotateY(-120deg);
@@ -1224,7 +1135,6 @@ html {
         transform: translateZ(-700px) rotateY(-240deg);
     }
 }
-
 @keyframes rotate3 {
     0% {
         transform: translateZ(-700px) rotateY(-240deg);
@@ -1234,6 +1144,7 @@ html {
     }
 }
 
+/*cancel button in theme interface*/
 .cancelbtn_play {
     background: url('../images/close.png') no-repeat center papayawhip;
     background-size: 30px;
@@ -1250,6 +1161,7 @@ html {
     transition: color 0.2s ease-in-out;
 }
 
+/*back home button in difficulty interface*/
 .homebtn-container {
     width: 100%;
     height: 100%;
@@ -1262,7 +1174,6 @@ html {
     --btn-bg: #fac300;
     --bg: #fc6100;
 }
-
 .backhome {
     right: 20px;
     top: 10px;
@@ -1284,13 +1195,11 @@ html {
     font-family: "Montserrat";
     font-weight: bold;
 }
-
 .backhome .text,
 .backhome .icon-container {
     position: relative;
     z-index: 2;
 }
-
 .backhome .icon-container {
     --icon-size: 25px;
     position: relative;
@@ -1299,7 +1208,6 @@ html {
     margin-left: 15px;
     transition: transform 500ms ease;
 }
-
 .backhome .icon-container .icon {
     position: absolute;
     left: 0;
@@ -1308,18 +1216,15 @@ html {
     height: var(--icon-size);
     transition: transform 500ms ease, opacity 250ms ease;
 }
-
 .backhome .icon-container .icon--left {
     transform: translateX(-200%);
     opacity: 0;
 }
-
 .backhome .icon-container .icon svg {
     width: 100%;
     height: 100%;
     fill: #fff;
 }
-
 .backhome::after {
     content: "";
     position: absolute;
@@ -1332,30 +1237,24 @@ html {
     z-index: 1;
     transition: transform 500ms ease;
 }
-
 .backhome:hover::after {
     transform: translateX(70%);
 }
-
 .backhome:hover .icon-container {
     transform: translateX(40%);
 }
-
 .backhome:hover .icon-container .icon--left {
     transform: translateX(0);
     opacity: 1;
 }
-
 .backhome:hover .icon-container .icon--right {
     transform: translateX(200%);
     opacity: 0;
 }
+/*play difficulty end*/
 
 
-/*选择困难界面结束*/
-
-
-/*游戏主界面开始*/
+/*play main interface start*/
 .homebtn-container_play {
     width: 100%;
     display: flex;
@@ -1367,15 +1266,13 @@ html {
     --btn-bg: #fac300;
     --bg: #fc6100;
 }
-
-
 #play_homepage {
     width: 99%;
     height: 99%;
     background-color: coral;
     position: absolute;
 }
-
+/*time display in play main interface*/
 #time{
     top: 10px;
     right: 36vw;
@@ -1397,6 +1294,7 @@ html {
     padding-left: 8%;
     float: left;
 }
+/*time start button*/
 #btn1{
     width:15%;
     float: left;
@@ -1406,6 +1304,7 @@ html {
 #btn1:hover{
     animation:  hint 0.5s ease-in-out infinite both;
 }
+/*time reset button*/
 #reset{
     width:15%;
     float: left;
@@ -1416,8 +1315,7 @@ html {
     animation:  hint 0.5s ease-in-out infinite both;
 }
 
-
-
+/*left interface in play main interface*/
 .play_left {
     width: 55%;
     height: 88%;
@@ -1475,7 +1373,6 @@ html {
     border-color: seashell;
     /*background: seashell;*/
 }
-
 @keyframes adjust_button {
     0%,
     100% {
@@ -1510,6 +1407,7 @@ html {
     }
 }
 
+/*article*/
 #text {
     width: 92%;
     height: 88%;
@@ -1525,6 +1423,7 @@ html {
     padding-right: 3%;
 }
 
+/*right interface in play main interface*/
 .play_right {
     background-color: yellow;
     width: 30%;
@@ -1536,7 +1435,7 @@ html {
     margin-top: 10vh;
 
 }
-
+/*promote box for user input*/
 #prompt_box{
     width: 60%;
     height: 5% ;
@@ -1551,7 +1450,6 @@ html {
 
 
  }
-
 #prompt_box_triangle{
     width:30%;
     height:  120%;
@@ -1563,6 +1461,7 @@ html {
 
 }
 
+/*user input*/
 #input {
     background-color: darkslateblue;
     width: 90%;
@@ -1573,7 +1472,6 @@ html {
     background-size: cover;
     background-position: 3px;
 }
-
 #user_input {
     width: 70%;
     height: 50%;
@@ -1585,6 +1483,7 @@ html {
     font-size: 30px;
     opacity: 0.95;
 }
+/*hint button in user input*/
 .Hint{
     clip-path: polygon(20% 0%, 0% 20%, 14% 51%, 0% 80%, 20% 100%, 51% 89%, 80% 100%, 100% 80%, 86% 55%, 100% 20%, 80% 0%, 46% 14%);
     background: #ecd300;
@@ -1619,8 +1518,7 @@ html {
     }
 }
 
-
-
+/*score, error*/
 #play_score_container{
     width: 65%;
     height: 45%;
@@ -1663,9 +1561,6 @@ html {
         transform: rotateZ(200deg);
     }
 }
-
-
-
 
 #play_score {
     width: 80%;
@@ -1739,6 +1634,7 @@ html {
     margin-top: 5px;
 }
 
+/*dictionaries in play main interface*/
 #dictionaries {
     width: 90%;
     height: 25%;
@@ -1784,3 +1680,4 @@ html {
     font-size: 20px;
     padding:7px;
 }
+/*play main interface end*/

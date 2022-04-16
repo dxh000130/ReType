@@ -1,4 +1,4 @@
-// 点击log_in 隐藏Homepage所有其他的界面
+// enter log_in not display other interface
 function log_in_button() {
     document.getElementById('login_modal').style.display = 'block';
     document.getElementById('register_modal').style.display = 'none';
@@ -7,6 +7,7 @@ function log_in_button() {
     document.getElementById('introduction_model').style.display = 'none';
 }
 
+// enter introduction button  not display other interface
 function introduction_button() {
     document.getElementById('introduction_model').style.display = 'block';
     document.getElementById('login_modal').style.display = 'none';
@@ -14,6 +15,7 @@ function introduction_button() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
 }
+
 
 var cors_api_host = 'cors-anywhere.herokuapp.com';
 var cors_api_url = 'https://' + cors_api_host + '/';
@@ -50,7 +52,8 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVers
     });
 
 let valid_log = false;
-//登录界面
+
+// log in
 function Login() {
     document.getElementById("error_box").style.display = "block";
     var username = document.getElementById("login-username").value;
@@ -95,6 +98,7 @@ function Login() {
     }
 }
 
+// log out
 function log_out() {
     document.getElementById("log_in_button_container").style.display = "block";
     document.getElementById("log_out_button_container").style.display = "none";
@@ -107,10 +111,10 @@ function log_out() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
 }
-// 退出登录
 
 
-// 注册界面
+
+// register
 function register() {
     document.getElementById("error_box").style.display = "block";
     var username = document.getElementById("register-username").value;
@@ -166,7 +170,7 @@ function register() {
 }
 
 
-// 邮箱验证
+// mailbox verification in register interface
 function verification() {
     var email = document.getElementById("register-email").value;
     var text = document.getElementById("error_text");
@@ -200,16 +204,15 @@ function verification() {
     }
 }
 var time = 60;
-
 function countdown() {
     if (time == 0) {
-        //这里时设置当时间到0的时候重新设置点击事件，并且默认time修改为60
+        // Click the email verification button again when time is 0
         document.getElementById("code").onclick = "verification()";
         document.getElementById("code").value = "Get Verification Code";
         time = 60;
         clearInterval(t);
     } else {
-        //这里是显示时间倒计时的时候点击不生效
+        // cannot Click the email verification button again
         document.getElementById("code").onclick = "";
         document.getElementById("code").value = "Resend in " + time + "s";
         time--;
@@ -217,7 +220,7 @@ function countdown() {
 }
 
 
-///bug
+///google log in
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
@@ -272,8 +275,10 @@ function onSignIn(googleUser) {
 
     });
 }
+
+
+// leaderboard
 var score = 0;
-// 排行榜页面
 function GetLeaderboard() {
     document.getElementById('login_modal').style.display = 'none';
     document.getElementById('register_modal').style.display = 'none';
@@ -326,8 +331,8 @@ function ClearLeaderBoard() {
     var table = document.getElementById("rank");
     table.innerHTML = "";
 }
-// 排行榜页面结束
-//
+
+// enter play button not display other interface
 function display_game() {
     // if (valid_log == false) {
     //     window.alert("Please Log in")
@@ -339,7 +344,7 @@ function display_game() {
 }
 
 
-
+// enter change difficulty button in difficulty interface
 function change_difficult1() {
     document.getElementById("cards_wrap").className = "cards_wrap_1";
     document.getElementById("difficult_button1").style.display = "none";
@@ -361,6 +366,7 @@ function change_difficult3() {
     document.getElementById("difficult_button3").style.display = "none";
 }
 
+// enter back home button which in top right for all interface
 function BackToHome() {
     document.getElementById("first_page").style.display = "block";
     document.getElementById("difficult_page").style.display = "none";
@@ -376,14 +382,14 @@ function BackToHome() {
     document.getElementById('b1').style.display = 'none';
     document.getElementById('b2').style.display = 'none';
     document.getElementById('b3').style.display = 'none';
-    // 让游戏界面的计时器变成0
+    // Set the timer on the game interface to 0
     time_reset();
 }
 
 
 
-// 游戏主界面开始
-// 改变背景颜色
+
+// Change the background button in the game interface
 if (!localStorage.change_background) {
     localStorage.change_background = "#18222d";
     localStorage.content = "#adadad";
@@ -393,7 +399,6 @@ if (!localStorage.change_background) {
     document.getElementById("text").style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
 }
-
 function change_background() {
     if (localStorage.change_background == "#ffffff")
         localStorage.change_background = "#f6f1e7";
@@ -418,14 +423,13 @@ function change_background() {
     document.getElementById("text").style.backgroundColor = localStorage.change_background;
 }
 
-// // 改变字体
+// Change the font button in the game interface
 if (!localStorage.change_font_family) {
     localStorage.change_font_family = "Georgia";
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 } else {
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
-
 function change_font_family() {
     if (localStorage.ziti == "Georgia") {
         localStorage.ziti = "Palatino Linotype";
@@ -444,8 +448,8 @@ function change_font_family() {
     }
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
-// 改变字体大小
 
+// Change the font size button in the game interface
 if (!localStorage.zitidaxiao) {
     localStorage.zitidaxiao = "20";
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
@@ -464,6 +468,10 @@ function change_font_size_small() {
     document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
+
+
+
+// Display articles based on the difficulty and topic of the user's click
 var difficulties = "";
 var theme = "";
 var articleid = 999;
@@ -472,8 +480,6 @@ var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
-
-
 function display_play(difficulties, theme) {
     document.getElementById("first_page").style.display = "none";
     document.getElementById("difficult_page").style.display = "none";
@@ -507,6 +513,8 @@ function display_play(difficulties, theme) {
     });
 }
 
+
+// When the user enters a word in the input box of the game interface, press enter to determine whether it is correct
 document.getElementById('user_input').addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
         //console.log("回车");
@@ -520,7 +528,7 @@ document.getElementById('user_input').addEventListener("keyup", function (event)
     }
 });
 
-// 用户输入单词以后提示按回车
+// A prompt box is displayed after the user enters a word
 function input_reminder() {
     if (document.getElementById("user_input").value.length != 0) {
         document.getElementById("prompt_box").style.display = "block";
@@ -535,7 +543,9 @@ function input_reminder() {
 function Hint() {
     document.getElementById("user_input").value = "";
     ArticleProcessMainFunction(0, 1);
-} //高亮 加减分 hint主程序
+}
+
+// hight light word, change score, hint
 function ArticleProcessMainFunction(Enterbutton, hint) {
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass)); //需修改
@@ -609,6 +619,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     }
 }
 
+
+// dictionaries
 function define_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     const get_meaning = fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + get_input, {
@@ -649,6 +661,7 @@ function define_dictionaries() {
     });
 }
 
+// audio the words
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     // console.log(get_input);
@@ -703,11 +716,10 @@ function audio_dictionaries() {
 }
 
 
-// 设置游戏界面的计时器开始
+// time in game main interface
 var i = 0;
 var timer1 = null;
 var isRunning = false;
-
 function doubleLing(i) {
     if (i < 10) {
         return "0" + i
@@ -715,7 +727,6 @@ function doubleLing(i) {
         return i
     }
 }
-
 function startBtn() {
     timer1 = setInterval(function () {
         i++
@@ -724,11 +735,9 @@ function startBtn() {
         document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
     }, 10)
 }
-
 function pasueBtn() {
     clearInterval(timer1)
 }
-
 function time_start() {
     if (!isRunning) {
         document.getElementById("btn1").innerHTML = "Stop";
@@ -740,7 +749,6 @@ function time_start() {
         pasueBtn();
     }
 }
-
 function time_reset() {
     clearInterval(timer1)
     i = 0;
@@ -751,7 +759,12 @@ function time_reset() {
     document.getElementById("hour").innerHTML = "00";
 }
 
-// 设置游戏界面的计时器结束
+
+
+
+
+
+
 function edit_profile() {
     let head = new Headers();
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));

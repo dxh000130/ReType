@@ -9,21 +9,22 @@
         content="975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com">
     <title>Title</title>
     <link rel="stylesheet" href="css/home.css">
-
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
 </head>
 
 <body>
-    <!--主界面的开始-->
+    <!--start homepage-->
     <div id="first_page" style="height: 100%;width: 100%;display: block">
-        <!--log in button的开始-->
+        <!--log in button start-->
         <div id="log_in_button_container">
             <div onclick="log_in_button()" class="button log_in_button" id="log_in_button">
                 <p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
             </div>
         </div>
+        <!--log in button end-->
 
+        <!--log out button start-->
         <div id="log_out_button_container" style="display: none">
             <div onclick="log_out()" class="button log_out_button" id="log_out_button">
                 <p id="log_out_typeface1">Welcome !<br />
@@ -31,16 +32,22 @@
                 </p>
             </div>
         </div>
+        <!--log out button end-->
 
+        <!--log in interface start-->
         <div id="login_modal" class="login_modal">
             <div id="owl" class="owl">
             </div>
             <div class="login_modal-content">
                 <div class="login_form">
+                    <!--input username in log in interface-->
                     <input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
+                    <!--input password in log in interface-->
                     <input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
+                    <!--log in button  in log in interface-->
                     <input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
                     <hr style="width: 95%;border-width:2px; margin-top: 20px;margin-left: 2%">
+                    <!--register button log in interface-->
                     <div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'"
                         style="font-size: 18px;color: #9199aa;margin-left: 3%">
                         Don't have Account? &nbsp &nbsp
@@ -50,6 +57,7 @@
                     </div>
                 </div>
                 <div class="login_form">
+                <!--Out of the Log in button-->
                     <button type="button"
                         onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'"
                         class="cancelbtn"></button>
@@ -60,7 +68,7 @@
         </div>
 
 
-
+        <!--register interface start-->
         <div id="register_modal" class="register_modal">
             <div id="owl1" class="owl">
             </div>
@@ -81,9 +89,9 @@
                 </div>
             </div>
         </div>
-        <!--Log in button的结束-->
 
-        <!--排行榜页面-->
+
+        <!--leaderboard start-->
         <div id="leaderboard_page" class="leaderboard_page" style="display: none">
             <table class="ranktable" id="ranktable">
                 <h1>LeaderBoard</h1>
@@ -99,7 +107,8 @@
             <button type="button" onclick="document.getElementById('leaderboard_page').style.display='none';"
                 class="cancelbtn"></button>
         </div>
-        <!--排行榜页面结束-->
+        <!--leaderboard end-->
+
         <!-- Edit User Profile Start-->
         <div id="user_modal" class="user_modal">
             <div class="user_modal-content">
@@ -127,7 +136,9 @@
             </div>
         </div>
         <!-- Edit User Profile End-->
-        <!--游戏介绍页面开始-->
+
+
+        <!--game introduction start-->
         <div id="introduction_model" style="display: none">
             <div>
                 <button type="button" class="cancelbtn"
@@ -186,10 +197,10 @@
                 </section>
             </div>
         </div>
-        <!--游戏介绍页面结束-->
+        <!--game introduction end-->
 
 
-        <!--中间标题retype的开始-->
+        <!--retype title start-->
         <div style="width: 100%;height: 40vh">
             <div class="word">
                 <span id="R">R</span>
@@ -199,95 +210,96 @@
                 <span id="P">P</span>
                 <span id="E2">E</span>
             </div>
-            <!--登录注册状态提示框-->
 
+            <!--prompt dialog box start-->
             <div style="background-color: #2b2b36;width: 30%;height: 150px" id="error_box">
                 <button type="button" onclick="document.getElementById('error_box').style.display='none'"
                     id="error_button" class="error_button"></button>
                 <p id="error_text"></p>
             </div>
+            <!--prompt dialog box end-->
         </div>
 
-        <!--中间标题retype的结束-->
+        <!--retype title end-->
 
-        <!--最下边4个Button的开始-->
+        <!--four Button in bottom start-->
         <div id="home_page_bottom_button">
             <div id="home_page">
-                <!--personal detail button的设置开始-->
+
+                <!--personal detail button start-->
                 <a href="#" class="user_button" onclick="display_user()">
                     <div id="user_container" class="container">
-                        <!--翻转以前显示的东西-->
+                        <!--div before the button flips-->
                         <div id="user_front" class="front">
                             <p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
                         </div>
-                        <!--翻转以后显示的东西-->
+                        <!--div after the button flips-->
                         <div id="user_back" class="back">
                             <p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book"
                                     style="font-size:4vw"></i></p>
                         </div>
                     </div>
                 </a>
-                <!--			personal detail button的设置结束-->
+                <!--personal detail button end-->
 
-                <!--leaderboard button设置的开始-->
-
+                <!--leaderboard button start-->
                 <div onclick="GetLeaderboard()">
                     <div id="leaderboard_container" class="container">
-                        <!--翻转以前显示的东西-->
+                        <!--div before the button flips-->
                         <div id="leaderboard_front" class="front">
                             <p id="leaderboard_typeface1" class="homepage_button_typeface1">Leaderboard<br /></p>
                         </div>
-                        <!--翻转以后显示的东西-->
+                        <!--div after the button flips-->
                         <div id="leaderboard_back" class="back">
                             <p id="leaderboard_typeface2" class="homepage_button_typeface2"><i
                                     class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
                         </div>
                     </div>
                 </div>
+                <!--leaderboard button end-->
 
-                <!--leaderboard button设置的结束-->
-
-                <!--introduction button设置的开始-->
+                <!--introduction button start-->
                 <a href="#" onclick="introduction_button()">
                     <div id="introduction_container" class="container">
-                        <!--翻转以前显示的东西-->
+                        <!--div before the button flips-->
                         <div id="introduction_front" class="front">
                             <p id="introduction_typeface1" class="homepage_button_typeface1">Introduction</p>
                         </div>
-                        <!--翻转以后显示的东西-->
+                        <!--div after the button flips-->
                         <div id="introduction_back" class="back">
                             <p id="introduction_typeface2" class="homepage_button_typeface2"> <i
                                     class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
                         </div>
                     </div>
                 </a>
-                <!--			introduction button设置的结束-->
+                <!--introduction button end-->
 
-                <!--play button设置的开始-->
+                <!--play button start-->
                 <a href="#" onclick="display_game()">
                     <div id="play_container" class="container">
-                        <!--翻转以前显示的东西-->
+                        <!--div before the button flips-->
                         <div id="play_front" class="front">
                             <p id="play_typeface1">PLAY</p>
                         </div>
-                        <!--翻转以后显示的东西-->
+                        <!--div after the button flips-->
                         <div id="play_back" class="back">
                             <p id="play_typeface2"> <i class="fa-solid fa-circle-play" style="font-size:6vw"></i>
                             </p>
                         </div>
                     </div>
                 </a>
-                <!--play button设置的结束-->
+                <!--play button end-->
             </div>
 
         </div>
-        <!--最下边4个Button的结束-->
+        <!--four button in bottom end-->
 
     </div>
-    <!--主界面的结束-->
+    <!--homepage end-->
 
-    <!--play 困难度选择界面-->
+    <!--play choose difficulty interface start-->
     <div id="difficult_page" style="display: none">
+        <!--back home page button start-->
         <div class="homebtn-container">
             <button class="backhome" onclick="BackToHome()">
                 <span class="text">Back to Homepage</span>
@@ -310,12 +322,18 @@
                 <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
             </symbol>
         </svg>
+        <!--back home page button end-->
 
+        <!--three difficulty start-->
         <div class="wrap">
             <div class="cards_wrap" id="cards_wrap">
+
+                <!--easy start-->
                 <div class="item" id="i1"
                     onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">
-                    Easy</div>
+                    Easy
+                </div>
+                <!--two theme in easy start-->
                 <div class="item" id="b1" style="display: none">
                     <button type="button"
                         onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'"
@@ -326,10 +344,14 @@
                     <a href="javascript:display_play('L','Sport')"
                         onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>
                 </div>
+                <!--two theme in easy end-->
+                <!--easy end-->
 
+                <!--normal start-->
                 <div class="item" id="i2"
                     onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
                     Normal</div>
+                <!--two theme in normal start-->
                 <div class="item" id="b2" style="display: none">
                     <button type="button"
                         onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'"
@@ -340,10 +362,14 @@
                     <a href="javascript:display_play('M','Prose')"
                         onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>
                 </div>
+                <!--two theme in normal end-->
+                <!--normal end-->
 
+                <!--hard start-->
                 <div class="item" id="i3"
                     onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
                     Hard</div>
+                <!--two theme in hard start-->
                 <div class="item" id="b3" style="display: none">
                     <button type="button"
                         onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'"
@@ -354,9 +380,12 @@
                     <a href="javascript:display_play('H','Academics')"
                         onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>
                 </div>
+                <!--two theme in hard start-->
+                <!--hard end-->
             </div>
         </div>
 
+        <!--change difficulty level button start-->
         <div style="margin-bottom: 50px"></div>
         <div class="qiehuanbutton" style="text-align: center;width: 380px; "
             onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(
@@ -369,14 +398,17 @@
             <button class="difficult_button" id="difficult_button3" type="button " style="display: none"
                 onclick="change_difficult3()">Change difficulty level</button>
         </div>
+        <!--change difficulty level button end-->
         <!--        <div id="type_gif ">-->
         <!--            <img src="images/type.gif ">-->
         <!--        </div>-->
     </div>
-    <!--play 困难度选择界面结束-->
+    <!--play choose difficulty interface end-->
 
-    <!--游戏主界面-->
+
+    <!--play main interface start-->
     <div id="play_homepage" style="display: none">
+        <!--display time start-->
         <div id="time">
             <p>
                 <!-- <span id="houer">00</span> :  -->
@@ -384,11 +416,14 @@
                 <span id="minute">00</span> :
                 <span id="second">00</span>
             </p>
-            <!-- 显示：时：分：秒 跑秒 ，“时”解除注释可使用 -->
+            <!--start time-->
             <button id="btn1" onclick="time_start()">Start</button>
+            <!--reset time-->
             <button id="reset" onclick="time_reset()">Reset</button>
-
         </div>
+        <!--display time end-->
+
+        <!--back home button in play main interface start-->
         <div class="homebtn-container_play">
             <div class="homebtn-container">
                 <button class="backhome" onclick="BackToHome()">
@@ -413,9 +448,12 @@
                 <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
             </symbol>
         </svg>
+        <!--back home button in play main interface end-->
 
+        <!--left interface: article start-->
         <div class="play_left">
             <div id="content">
+                <!--change background, font, font size start-->
                 <div class="adjust_text">
                     <button class="adjust_text_button" onclick="change_background()">Background</button>
                     <button class="adjust_text_button" onclick="change_font_family()">Font Family</button>
@@ -423,10 +461,16 @@
                     <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
                     <!-- <button class="adjust_text_button ">B</button>-->
                 </div>
+                <!--change background, font, font size end-->
+
+                <!-- article display start-->
                 <div id="text"></div>
+                <!-- article display end-->
             </div>
         </div>
+        <!--left interface: article end-->
 
+        <!--right interface: user input, score, dictionary start-->
         <div class="play_right">
             <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
             <div id="prompt_box" style="display: none">
@@ -435,10 +479,14 @@
                 </div>
             </div>
 
+            <!--user input start-->
             <div id="input">
                 <input id="user_input" oninput="input_reminder()" autocomplete="off">
                 <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>
             </div>
+            <!--user input end-->
+
+            <!--score, error start-->
             <div id="play_score_container">
                 <div class="play_score_span1"></div>
                 <div id="play_score" data-text="score">
@@ -454,10 +502,11 @@
                         Remaining Errors:
                         <p id="remain_error_div"></p>
                     </div>
-
                 </div>
             </div>
+            <!--score, error end-->
 
+            <!--dictionary start-->
             <div id="dictionaries">
                 <table style="width: 100%;height: 100%">
                     <tr style="width: 100%;height: 30%;display: inline-block;background-color: blueviolet">
@@ -491,8 +540,12 @@
                     <!--                    </tr>-->
                 </table>
             </div>
+            <!--dictionary end-->
         </div>
+        <!--right interface: user input, score, dictionary start-->
     </div>
+    <!--play main interface end-->
+
     <script src="js/home.js"></script>
 </body>
 
