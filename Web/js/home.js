@@ -649,10 +649,6 @@ function define_dictionaries() {
     });
 }
 
-function display_user(){
-    document.getElementById("user_modal").style.display = "block";
-}
-
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     // console.log(get_input);
@@ -756,3 +752,32 @@ function time_reset() {
 }
 
 // 设置游戏界面的计时器结束
+function edit_profile() {
+    let head = new Headers();
+    head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+    head.append('Content-Type', 'application/json');
+    head.append('Accept', 'text/plain');
+    const edit_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/UpdateUserDetail', {
+        method: "POST",
+        headers: head,
+        body: JSON.stringify({
+            "UserName": localStorage.user_id,
+            "Name": document.getElementById("name").value,
+            "DataofBirth": document.getElementById("DOB").value,
+            "Gerder": document.getElementById("gender").value        
+        }),
+    })
+    edit_profile.then(res =>{
+        console.log(res.status)
+        if (res.status == 200) {
+            alert("修改成功");
+
+        } else {
+            alert("修改失败");
+        }
+    })
+}
+function display_user(){
+    document.getElementById("user_modal").style.display = "block";
+    document.getElementById("username").value= localStorage.user_id;
+}

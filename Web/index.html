@@ -107,7 +107,7 @@
                     <input id="username" type="username" placeholder="Change Username" name="uname">
                     <input id="name" type="username" placeholder="Enter Name" name="name">
                     <input id="DOB" type="date" placeholder="Enter Date of Birth">
-                    <select id="gender" name="gender">  
+                    <select id="gender" name="gender">
                         <option selected>Choose Gender</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -116,8 +116,8 @@
                         <option value="Non-Conforming">Non-Conforming</option>
                         <option value="Personal">Personal</option>
                         <option value="Eunuch">Eunuch</option>
-                      </select>
-                    <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="register()">
+                    </select>
+                    <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
                 </div>
                 <div class="login_form">
                     <button type="button"
@@ -321,9 +321,9 @@
                         onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'"
                         class="cancelbtn_play"></button>
                     <p>Choose Theme</p>
-                    <a id="easy1" href="javascript:display_play('L','Inspirational')"
+                    <a href="javascript:display_play('L','Inspirational')"
                         onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Inspirational</a>
-                    <a id="easy2" href="javascript:display_play('L','Sport')"
+                    <a href="javascript:display_play('L','Sport')"
                         onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>
                 </div>
 
@@ -335,9 +335,9 @@
                         onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'"
                         class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="normal1" href="javascript:display_play('M','Fiction')"
+                    <a href="javascript:display_play('M','Fiction')"
                         onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Fiction</a>
-                    <a id="normal2" href="javascript:display_play('M','Prose')"
+                    <a href="javascript:display_play('M','Prose')"
                         onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>
                 </div>
 
@@ -349,9 +349,9 @@
                         onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'"
                         class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="hard1" href="javascript:display_play('H','Fiction')"
+                    <a href="javascript:display_play('H','Fiction')"
                         onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Fiction</a>
-                    <a id="hard2" href="javascript:display_play('H','Academics')"
+                    <a href="javascript:display_play('H','Academics')"
                         onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>
                 </div>
             </div>
