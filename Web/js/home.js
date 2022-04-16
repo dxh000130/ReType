@@ -649,7 +649,9 @@ function define_dictionaries() {
     });
 }
 
-
+function display_user(){
+    document.getElementById("user_modal").style.display = "block";
+}
 
 function audio_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;

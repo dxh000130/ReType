@@ -462,7 +462,8 @@
 /*login*/
 
 .login_modal,
-.register_modal {
+.register_modal,
+.user_modal{
     z-index: 1;
     left: 38%;
     top: 5%;
@@ -492,14 +493,17 @@
     border-radius: 12px;
     position: absolute;
     display: flex;
-    left: 30%;
-    right:30%;
+    left: 35%;
+    right:35%;
     top: 5%;
     width: auto;
     height: auto;
     overflow: auto;
     animation: jumpdown 1s ease-out;
     max-height:800px ;
+    perspective: 400px;
+    transform-style: preserve-3d;
+    box-shadow: 0 7px 20px #242424;
 }
 
 .leaderboard_page h1 {
@@ -745,7 +749,28 @@ input[type="username"] {
     font-weight: 100;
     border-bottom: 1px solid #484856;
 }
-
+input[type="date"] {
+    width: 70%;
+    padding: 1em 2em 1em 3em;
+    color: #9199aa;
+    font-size: 18px;
+    outline: none;
+    background: url(../images/key.png) no-repeat 10px 23px;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid #202023;
+}
+select[name="gender"] {
+    width: 70%;
+    padding: 1em 2em 1em 3em;
+    color: #9199aa;
+    font-size: 18px;
+    outline: none;
+    background: url(../images/key.png) no-repeat 10px 23px;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid #202023;
+}
 input[name="psw"] {
     width: 70%;
     padding: 1em 2em 1em 3em;

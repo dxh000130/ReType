@@ -5,7 +5,8 @@
     <meta name=”viewport”content=”width=device-width,initial-scale=1″ />
     <meta name="google-signin-scope" content="profile email">
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com">
+    <meta name="google-signin-client_id"
+        content="975748479216-60enjv40f4i887qegvcnsi63bqigeveq.apps.googleusercontent.com">
     <title>Title</title>
     <link rel="stylesheet" href="css/home.css">
 
@@ -26,7 +27,7 @@
         <div id="log_out_button_container" style="display: none">
             <div onclick="log_out()" class="button log_out_button" id="log_out_button">
                 <p id="log_out_typeface1">Welcome !<br />
-                    <p id="log_out_typeface2">Log Out</p>
+                <p id="log_out_typeface2">Log Out</p>
                 </p>
             </div>
         </div>
@@ -40,15 +41,21 @@
                     <input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
                     <input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
                     <hr style="width: 95%;border-width:2px; margin-top: 20px;margin-left: 2%">
-                    <div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'" style="font-size: 18px;color: #9199aa;margin-left: 3%">
+                    <div onclick="document.getElementById('login_modal').style.display='none';document.getElementById('register_modal').style.display='block'"
+                        style="font-size: 18px;color: #9199aa;margin-left: 3%">
                         Don't have Account? &nbsp &nbsp
-                        <button id="register_button" style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px" onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
+                        <button id="register_button"
+                            style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px"
+                            onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
                     </div>
                 </div>
                 <div class="login_form">
-                    <button type="button" onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="cancelbtn"></button>
+                    <button type="button"
+                        onclick="document.getElementById('login_modal').style.display='none';document.getElementById('error_box').style.display='none'"
+                        class="cancelbtn"></button>
                 </div>
-                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" style="padding-left: 50px; padding-bottom: 15px"></div>
+                <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"
+                    style="padding-left: 50px; padding-bottom: 15px"></div>
             </div>
         </div>
 
@@ -62,12 +69,15 @@
                     <input id="register-username" type="username" placeholder="Enter Username" name="uname" required>
                     <input id="register-password" type="password" placeholder="Enter Password" name="psw1" required>
                     <input id="register-email" type="email" placeholder="Enter Email" required>
-                    <input id="code" type="button" class="code" onclick="verification()" style="vertical-align:middle" value="Get Verification Code">
+                    <input id="code" type="button" class="code" onclick="verification()" style="vertical-align:middle"
+                        value="Get Verification Code">
                     <input id="register-verification" type="text" placeholder="Enter verification code" required>
                     <input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
                 </div>
                 <div class="login_form">
-                    <button type="button" onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'" class="cancelbtn"></button>
+                    <button type="button"
+                        onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'"
+                        class="cancelbtn"></button>
                 </div>
             </div>
         </div>
@@ -75,7 +85,7 @@
 
         <!--排行榜页面-->
         <div id="leaderboard_page" class="leaderboard_page" style="display: none">
-            <table class="ranktable" id="ranktable" >
+            <table class="ranktable" id="ranktable">
                 <h1>LeaderBoard</h1>
                 <tr>
                     <th>Rank</th>
@@ -86,33 +96,65 @@
 
                 </tbody>
             </table>
-            <button type="button" onclick="document.getElementById('leaderboard_page').style.display='none';" class="cancelbtn"></button>
+            <button type="button" onclick="document.getElementById('leaderboard_page').style.display='none';"
+                class="cancelbtn"></button>
         </div>
         <!--排行榜页面结束-->
-
-
-
+        <!-- Edit User Profile Start-->
+        <div id="user_modal" class="user_modal">
+            <div class="user_modal-content">
+                <div class="register_form">
+                    <input id="username" type="username" placeholder="Change Username" name="uname">
+                    <input id="name" type="username" placeholder="Enter Name" name="name">
+                    <input id="DOB" type="date" placeholder="Enter Date of Birth">
+                    <select id="gender" name="gender">  
+                        <option selected>Choose Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Intersex">Intersex</option>
+                        <option value="Trans">Trans</option>
+                        <option value="Non-Conforming">Non-Conforming</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Eunuch">Eunuch</option>
+                      </select>
+                    <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="register()">
+                </div>
+                <div class="login_form">
+                    <button type="button"
+                        onclick="document.getElementById('user_modal').style.display='none';document.getElementById('error_box').style.display='none'"
+                        class="cancelbtn"></button>
+                </div>
+            </div>
+        </div>
+        <!-- Edit User Profile End-->
         <!--游戏介绍页面开始-->
         <div id="introduction_model" style="display: none">
             <div>
-                <button type="button"  class="cancelbtn" onclick="document.getElementById('introduction_model').style.display='none'"></button>
+                <button type="button" class="cancelbtn"
+                    onclick="document.getElementById('introduction_model').style.display='none'"></button>
                 <h1>Introduction</h1>
             </div>
             <div>
-                <section class="ac-container" >
+                <section class="ac-container">
                     <div>
-                        <input id="ac-1" name="accordion-1" type="radio"/>
+                        <input id="ac-1" name="accordion-1" type="radio" />
                         <label for="ac-1">&#10133 &nbsp;About Game</label>
                         <article class="ac-small" id="ac-small">
-                            <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.</p>
+                            <p>Well, the way they make shows is, they make one show. That show's called a pilot. Then
+                                they show that show to the people who make shows, and on the strength of that one show
+                                they decide if they're going to make more shows.</p>
                         </article>
                     </div>
 
-                    <div >
+                    <div>
                         <input id="ac-2" name="accordion-1" type="radio" />
-                        <label for="ac-2" >&#10133 &nbsp;Announcements</label>
+                        <label for="ac-2">&#10133 &nbsp;Announcements</label>
                         <article class="ac-medium">
-                            <p>Like you, I used to think the world was this great place where everybody lived by the same standards I did, then some kid with a nail showed me I was living in his world, a world where chaos rules not order, a world where righteousness is not rewarded. That's Cesar's world, and if you're not willing to play by his rules, then you're gonna have to pay the price. </p>
+                            <p>Like you, I used to think the world was this great place where everybody lived by the
+                                same standards I did, then some kid with a nail showed me I was living in his world, a
+                                world where chaos rules not order, a world where righteousness is not rewarded. That's
+                                Cesar's world, and if you're not willing to play by his rules, then you're gonna have to
+                                pay the price. </p>
                         </article>
                     </div>
 
@@ -120,7 +162,12 @@
                         <input id="ac-3" name="accordion-1" type="radio" />
                         <label for="ac-3">&#10133 &nbsp;How to play</label>
                         <article class="ac-large">
-                            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don't know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I'm breaking now. We said we'd say it was the snow that killed the other two, but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
+                            <p>You think water moves fast? You should see ice. It moves like it has a mind. Like it
+                                knows it killed the world once and got a taste for murder. After the avalanche, it took
+                                us a week to climb out. Now, I don't know exactly when we turned on each other, but I
+                                know that seven of us survived the slide... and only five made it out. Now we took an
+                                oath, that I'm breaking now. We said we'd say it was the snow that killed the other two,
+                                but it wasn't. Nature is lethal but it doesn't hold a candle to man. </p>
                         </article>
                     </div>
 
@@ -128,7 +175,12 @@
                         <input id="ac-4" name="accordion-1" type="radio" />
                         <label for="ac-4">&#10133 &nbsp;Score Changes</label>
                         <article class="ac-large">
-                            <p>You see? It's curious. Ted did figure it out - time travel. And when we get back, we gonna tell everyone. How it's possible, how it's done, what the dangers are. But then why fifty years in the future when the spacecraft encounters a black hole does the computer call it an 'unknown entry event'? Why don't they know? If they don't know, that means we never told anyone. And if we never told anyone it means we never made it back. Hence we die down here. Just as a matter of deductive logic. </p>
+                            <p>You see? It's curious. Ted did figure it out - time travel. And when we get back, we
+                                gonna tell everyone. How it's possible, how it's done, what the dangers are. But then
+                                why fifty years in the future when the spacecraft encounters a black hole does the
+                                computer call it an 'unknown entry event'? Why don't they know? If they don't know, that
+                                means we never told anyone. And if we never told anyone it means we never made it back.
+                                Hence we die down here. Just as a matter of deductive logic. </p>
                         </article>
                     </div>
                 </section>
@@ -150,7 +202,8 @@
             <!--登录注册状态提示框-->
 
             <div style="background-color: #2b2b36;width: 30%;height: 150px" id="error_box">
-                <button type="button" onclick="document.getElementById('error_box').style.display='none'" id="error_button" class="error_button"></button>
+                <button type="button" onclick="document.getElementById('error_box').style.display='none'"
+                    id="error_button" class="error_button"></button>
                 <p id="error_text"></p>
             </div>
         </div>
@@ -161,7 +214,7 @@
         <div id="home_page_bottom_button">
             <div id="home_page">
                 <!--personal detail button的设置开始-->
-                <a href="#" class="user_button">
+                <a href="#" class="user_button" onclick="display_user()">
                     <div id="user_container" class="container">
                         <!--翻转以前显示的东西-->
                         <div id="user_front" class="front">
@@ -169,7 +222,8 @@
                         </div>
                         <!--翻转以后显示的东西-->
                         <div id="user_back" class="back">
-                            <p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book" style="font-size:4vw"></i></p>
+                            <p id="user_typeface3" class="homepage_button_typeface2"><i class="fa fa-address-book"
+                                    style="font-size:4vw"></i></p>
                         </div>
                     </div>
                 </a>
@@ -185,7 +239,8 @@
                         </div>
                         <!--翻转以后显示的东西-->
                         <div id="leaderboard_back" class="back">
-                            <p id="leaderboard_typeface2" class="homepage_button_typeface2"><i class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
+                            <p id="leaderboard_typeface2" class="homepage_button_typeface2"><i
+                                    class="fa-solid fa-ranking-star" style="font-size: 6vw"></i></p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +256,8 @@
                         </div>
                         <!--翻转以后显示的东西-->
                         <div id="introduction_back" class="back">
-                            <p id="introduction_typeface2" class="homepage_button_typeface2"> <i class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
+                            <p id="introduction_typeface2" class="homepage_button_typeface2"> <i
+                                    class="fa-solid fa-circle-question" style="font-size: 6vw"></i></p>
                         </div>
                     </div>
                 </a>
@@ -257,42 +313,61 @@
 
         <div class="wrap">
             <div class="cards_wrap" id="cards_wrap">
-                <div class="item" id="i1" onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">
+                <div class="item" id="i1"
+                    onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">
                     Easy</div>
                 <div class="item" id="b1" style="display: none">
-                    <button type="button" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'" class="cancelbtn_play"></button>
+                    <button type="button"
+                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'"
+                        class="cancelbtn_play"></button>
                     <p>Choose Theme</p>
-                    <a id="easy1" href="javascript:display_play('L','Inspirational')" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Inspirational</a>
-                    <a id="easy2" href="javascript:display_play('L','Sport')" onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>
+                    <a id="easy1" href="javascript:display_play('L','Inspirational')"
+                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Inspirational</a>
+                    <a id="easy2" href="javascript:display_play('L','Sport')"
+                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>
                 </div>
 
-                <div class="item" id="i2" onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
+                <div class="item" id="i2"
+                    onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
                     Normal</div>
                 <div class="item" id="b2" style="display: none">
-                    <button type="button" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'" class="cancelbtn_play"></button>
+                    <button type="button"
+                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'"
+                        class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="normal1" href="javascript:display_play('M','Fiction')" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Fiction</a>
-                    <a id="normal2" href="javascript:display_play('M','Prose')" onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>
+                    <a id="normal1" href="javascript:display_play('M','Fiction')"
+                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Fiction</a>
+                    <a id="normal2" href="javascript:display_play('M','Prose')"
+                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>
                 </div>
 
-                <div class="item" id="i3" onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
+                <div class="item" id="i3"
+                    onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
                     Hard</div>
                 <div class="item" id="b3" style="display: none">
-                    <button type="button" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'" class="cancelbtn_play"></button>
+                    <button type="button"
+                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'"
+                        class="cancelbtn_play"></button>
                     <p>Choose Style</p>
-                    <a id="hard1" href="javascript:display_play('H','Fiction')" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Fiction</a>
-                    <a id="hard2" href="javascript:display_play('H','Academics')" onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>
+                    <a id="hard1" href="javascript:display_play('H','Fiction')"
+                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Fiction</a>
+                    <a id="hard2" href="javascript:display_play('H','Academics')"
+                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>
                 </div>
             </div>
         </div>
 
         <div style="margin-bottom: 50px"></div>
-        <div class="qiehuanbutton" style="text-align: center;width: 380px; " onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(
+        <div class="qiehuanbutton" style="text-align: center;width: 380px; "
+            onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(
                         'i1').style.display='block' ;document.getElementById( 'i2').style.display='block' ;document.getElementById( 'i3').style.display='block'">
             <!--            <div class="difficult_button " id="difficult_button1 " data-text="Change difficulty level " style="&#45;&#45;c:#1e90ff;display: block " onclick="change_difficult1() "></div>-->
-            <button class="difficult_button" id="difficult_button1" style="display: block" type="button" onclick="change_difficult1()">Change difficulty level</button>
-            <button class="difficult_button" id="difficult_button2" type="button " style="display: none" onclick="change_difficult2()">Change difficulty level</button>
-            <button class="difficult_button" id="difficult_button3" type="button " style="display: none" onclick="change_difficult3()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button1" style="display: block" type="button"
+                onclick="change_difficult1()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button2" type="button " style="display: none"
+                onclick="change_difficult2()">Change difficulty level</button>
+            <button class="difficult_button" id="difficult_button3" type="button " style="display: none"
+                onclick="change_difficult3()">Change difficulty level</button>
         </div>
         <!--        <div id="type_gif ">-->
         <!--            <img src="images/type.gif ">-->
@@ -317,20 +392,20 @@
         <div class="homebtn-container_play">
             <div class="homebtn-container">
                 <button class="backhome" onclick="BackToHome()">
-                <span class="text">Back to Homepage</span>
-                <div class="icon-container">
-                    <div class="icon icon--left">
-                        <svg>
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
+                    <span class="text">Back to Homepage</span>
+                    <div class="icon-container">
+                        <div class="icon icon--left">
+                            <svg>
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
+                        <div class="icon icon--right">
+                            <svg>
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="icon icon--right">
-                        <svg>
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
-                    </div>
-                </div>
-            </button>
+                </button>
             </div>
         </div>
         <svg style="display: none;background-color: blueviolet">
@@ -401,7 +476,8 @@
                         </td>
                     </tr>
 
-                    <tr style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
+                    <tr
+                        style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
 
                         <td id="definition" style="width:100%;height:100%">
                             <h3 id="definition_h3">Definition</h3>
