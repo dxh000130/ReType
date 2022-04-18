@@ -334,13 +334,20 @@ function ClearLeaderBoard() {
 
 // enter play button not display other interface
 function display_game() {
-    // if (valid_log == false) {
-    //     window.alert("Please Log in")
-    // } else {
-    document.getElementById("play_homepage").style.display = "none";
-    document.getElementById("first_page").style.display = "none";
-    document.getElementById("difficult_page").style.display = "block";
-    // }
+    if(valid_log==false){
+        document.getElementById("first_page").style.display = "block";
+        document.getElementById("login_modal").style.display="block";
+        document.getElementById("difficult_page").style.display = "none";
+        document.getElementById("play_homepage").style.display = "none";
+        document.getElementById("error_box").style.display = "block";
+        document.getElementById("error_text").innerHTML="Please log in first";
+    }else{
+        document.getElementById("play_homepage").style.display = "none";
+        document.getElementById("first_page").style.display = "none";
+        // document.getElementById("login_modal").style.display="none";
+        document.getElementById("difficult_page").style.display = "block";
+    }
+
 }
 
 
