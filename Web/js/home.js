@@ -5,6 +5,7 @@ function log_in_button() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
+    document.getElementById('user_modal').style.display = 'none';
 }
 
 // enter introduction button  not display other interface
@@ -14,6 +15,7 @@ function introduction_button() {
     document.getElementById('register_modal').style.display = 'none';
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
+    document.getElementById('user_modal').style.display = 'none';
 }
 
 
@@ -110,6 +112,8 @@ function log_out() {
     document.getElementById('leaderboard_page').style.display = 'none';
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
+    localStorage.user_id = "";
+    localStorage.pass = "";
 }
 
 
@@ -284,10 +288,17 @@ function GetLeaderboard() {
     document.getElementById('register_modal').style.display = 'none';
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
+    document.getElementById('user_modal').style.display = 'none';
+
 
     ClearLeaderBoard();
     if (valid_log == false) {
-        window.alert("Please Log in")
+        document.getElementById("first_page").style.display = "block";
+        document.getElementById("login_modal").style.display="block";
+        document.getElementById("difficult_page").style.display = "none";
+        document.getElementById("play_homepage").style.display = "none";
+        document.getElementById("error_box").style.display = "block";
+        document.getElementById("error_text").innerHTML="Please log in first";
     } else {
         document.getElementById('leaderboard_page').style.display = 'block';
         var htmltable = document.getElementById("rank");
@@ -341,13 +352,16 @@ function display_game() {
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
         document.getElementById("error_text").innerHTML="Please log in first";
+        document.getElementById('register_modal').style.display = 'none';
+        document.getElementById('leaderboard_page').style.display = 'none';
+        document.getElementById('introduction_model').style.display = 'none';
+        document.getElementById('user_modal').style.display = 'none';
     }else{
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
         document.getElementById("difficult_page").style.display = "block";
     }
-
 }
 
 
@@ -383,6 +397,7 @@ function BackToHome() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
+    document.getElementById("user_modal").style.display = "none";
     document.getElementById('i1').style.display = 'block';
     document.getElementById('i2').style.display = 'block';
     document.getElementById('i3').style.display = 'block';
@@ -798,6 +813,24 @@ function edit_profile() {
     })
 }
 function display_user(){
-    document.getElementById("user_modal").style.display = "block";
-    document.getElementById("username").value= localStorage.user_id;
+    if(valid_log==false){
+        document.getElementById("first_page").style.display = "block";
+        document.getElementById("login_modal").style.display="block";
+        document.getElementById("difficult_page").style.display = "none";
+        document.getElementById("play_homepage").style.display = "none";
+        document.getElementById("error_box").style.display = "block";
+        document.getElementById("error_text").innerHTML="Please log in first";
+        document.getElementById('register_modal').style.display = 'none';
+        document.getElementById('leaderboard_page').style.display = 'none';
+        document.getElementById('introduction_model').style.display = 'none';
+        document.getElementById('user_modal').style.display = 'none';
+    }else{
+        document.getElementById("user_modal").style.display = "block";
+        document.getElementById("username").value= localStorage.user_id;
+        document.getElementById('introduction_model').style.display = 'none';
+        document.getElementById('login_modal').style.display = 'none';
+        document.getElementById('register_modal').style.display = 'none';
+        document.getElementById('error_box').style.display = 'none';
+        document.getElementById('leaderboard_page').style.display = 'none';
+    }
 }

@@ -100,7 +100,7 @@
       <workItem from="1650001113158" duration="2296000" />
       <workItem from="1650007225594" duration="3373000" />
       <workItem from="1650120378566" duration="4368000" />
-      <workItem from="1650252617972" duration="1967000" />
+      <workItem from="1650252617972" duration="4021000" />
     </task>
     <servers />
   </component>
@@ -117,7 +117,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/Web/js/home.js</url>
-          <line>162</line>
+          <line>166</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
