@@ -615,7 +615,7 @@
     float: left;
     margin-left: 69%;
     margin-top: 220px;
-    animation: fade_in 1.5s;
+    animation: fade_in 1s;
     transform-origin: left;
     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 55%);
     border-radius: 10px;
