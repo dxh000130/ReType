@@ -128,6 +128,7 @@ function register() {
             credentials: 'include',
             method: "POST",
             headers: {
+                credentials: 'include',
                 "Content-Type": "application/json",
                 "Accept": "text/plain",
             },
