@@ -18,21 +18,6 @@ function introduction_button() {
     document.getElementById('user_modal').style.display = 'none';
 }
 
-
-var cors_api_host = 'cors-anywhere.herokuapp.com';
-var cors_api_url = 'https://' + cors_api_host + '/';
-var slice = [].slice;
-var origin = window.location.protocol + '//' + window.location.host;
-var open = XMLHttpRequest.prototype.open;
-XMLHttpRequest.prototype.open = function () {
-    var args = slice.call(arguments);
-    var targetOrigin = /^https?:\/\/([^\/]+)/i.exec(args[1]);
-    if (targetOrigin && targetOrigin[0].toLowerCase() !== origin &&
-        targetOrigin[1] !== cors_api_host) {
-        args[1] = cors_api_url + args[1];
-    }
-    return open.apply(this, args);
-};
 if (!localStorage.user_id || !localStorage.pass) {
     localStorage.user_id = "";
     localStorage.pass = "";
@@ -43,7 +28,8 @@ if (!localStorage.user_id || !localStorage.pass) {
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
 }
-fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVersion', {
+fetch('https://api.dxh000130.top/api/GetVersion', {
+    credentials: 'include',
     method: 'GET'
 })
     .then(function (response) {
@@ -70,7 +56,8 @@ function Login() {
         text.innerText = "Please enter your username and password !";
     } else {
         headers1.append('Authorization', 'Basic ' + btoa(username + ":" + password));
-        fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Login', {
+        fetch('https://api.dxh000130.top/api/Login', {
+            credentials: 'include',
             method: 'GET',
             headers: headers1
         }).then(r => {
@@ -137,7 +124,8 @@ function register() {
     } else if (username != "" && password != "" && !/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email) && verification == "") {
         text.innerText = "Please Enter Correct Email !";
     } else if (username != "" && password != "" && email != "" && verification != "") {
-        const signup = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Register", {
+        const signup = fetch("https://api.dxh000130.top/api/Register", {
+            credentials: 'include',
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -185,7 +173,8 @@ function verification() {
         text.innerText = "Please Enter your Correct Email !";
     } else {
         document.getElementById("error_box").style.display = "none";
-        const url = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Registrationverificationcode/" + email, {
+        const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email, {
+            credentials: 'include',
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -304,7 +293,8 @@ function GetLeaderboard() {
         var htmltable = document.getElementById("rank");
         let headers2 = new Headers();
         headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-        fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+        fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+            credentials : 'include',
             method: 'GET',
             headers: headers2
         }).then(r => {
@@ -324,7 +314,8 @@ function GetLeaderboard() {
 function getscore(){
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-    fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+    fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+        credentials : 'include',
         method: 'GET',
         headers: headers2
     }).then(r => {
@@ -511,7 +502,8 @@ function display_play(difficulties, theme) {
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
-    const ArticleChoose = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleChoose", {
+    const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
+        credentials: 'include',
         method: "POST",
         headers: ArticleChooseheader,
         body: JSON.stringify({
@@ -578,7 +570,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
 
     if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
-        const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
+        const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
+            credentials: 'include',
             method: "POST",
             headers: headers2,
             body: JSON.stringify({
@@ -617,7 +610,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         })
     } else {
         if (hint === 1) {
-            const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
+            const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
                 method: "POST",
                 credentials: 'include',
                 headers: headers2,
@@ -792,7 +785,8 @@ function edit_profile() {
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     head.append('Content-Type', 'application/json');
     head.append('Accept', 'text/plain');
-    const edit_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/UpdateUserDetail', {
+    const edit_profile = fetch('https://api.dxh000130.top/api/UpdateUserDetail', {
+        credentials: 'include',
         method: "POST",
         headers: head,
         body: JSON.stringify({
