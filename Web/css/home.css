@@ -485,9 +485,9 @@
 /*game introduction start*/
 #introduction_model{
     z-index: 1;
-    left: 38%;
+    left: 30%;
     top: 5%;
-    width: 30%;
+    width: 40%;
     height: auto;
     overflow: auto;
     background: linear-gradient(#555, #222);
@@ -576,7 +576,7 @@
 .ac-container article p{
     line-height: 30px;
     font-size:16px;
-    padding: 5%;
+    padding: 3%;
 }
 .ac-container input:checked ~ article{
     -webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
@@ -1681,3 +1681,4 @@ html {
     padding:7px;
 }
 /*play main interface end*/
+
