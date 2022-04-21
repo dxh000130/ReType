@@ -512,7 +512,45 @@
             </div>
             <!--score, error end-->
 
-            
+            <!--dictionary start-->
+            <div id="dictionaries">
+                <table style="width: 100%;height: 100%">
+                    <tr style="width: 100%;height: 30%;display: inline-block;background-color: blueviolet">
+                        <td style="width:2%"></td>
+                        <td style="width:50%">
+                            <input id="dictionaries_input" autocomplete="none" placeholder="It is Dictionary">
+                        </td>
+                        <td style="width:2%"></td>
+                        <td style="width:20%">
+                            <button id="dictionaries_check" onclick="define_dictionaries()">Define</button>
+                        </td>
+                        <td style="width:2%"></td>
+                        <td id="loudspeaker" style="width: 20%">
+                            <button id="dictionaries_loudspeaker" onclick="audio_dictionaries()">&#128226;</button>
+                            <audio id="voice" src="#"></audio>
+                        </td>
+                    </tr>
+
+                    <tr
+                        style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
+
+                        <td id="definition" style="width:100%;height:100%">
+                            <h3 id="definition_h3">Definition</h3>
+                        </td>
+                    </tr>
+                    <!--                    <tr style="width: 100%;height: 35%;display: inline-block;background-color: blueviolet">-->
+                    <!--                        <td>-->
+                    <!--                            Example:-->
+                    <!--                            <span id="example"></span>-->
+                    <!--                        </td>-->
+                    <!--                    </tr>-->
+                </table>
+            </div>
+            <!--dictionary end-->
+        </div>
+        <!--right interface: user input, score, dictionary start-->
+    </div>
+    <!--play main interface end-->
 
     <script src="js/home.js"></script>
 </body>
