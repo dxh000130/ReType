@@ -101,9 +101,13 @@ namespace ReType.Controllers
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
         [HttpGet("Login")]
-        public string Login() //if Vaild success, give back to front-end. Otherwise return error
+        public ActionResult<string> Login() //if Vaild success, give back to front-end. Otherwise return error
         {
-            return "Yes";
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username = claim.Value;
+            if (_repository.Getuser(username) != null) { return Ok(username); }
+            else { return Ok(_repository.Getuserbyemail(username).UserName); }
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
@@ -204,25 +208,25 @@ namespace ReType.Controllers
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
         [HttpPost("UpdateUserDetail")] //Allows users to add personal information
-        public string UpdateUserDetail(UpdateUser user)
+        public ActionResult<string> UpdateUserDetail(UpdateUser user)
         {
             ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
             Claim claim = ci.FindFirst("UserName");
             string username = claim.Value;
             if (user.UserName != username)
             {
-                return "You cannot change other user detail.";
+                return NotFound("You cannot change other user detail.");
             }
             if (_repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Name) | _repository.preventsqlinjection(user.Gerder) | _repository.preventsqlinjection(user.Dataofbirth))
             {
-                return "There are potential SQL instructions";
+                return NotFound("There are potential SQL instructions");
             }
             User c = _repository.Getuser(user.UserName);
             c.Name = user.Name;
             c.Dataofbirth = user.Dataofbirth;
             c.Gerder = user.Gerder;
             _repository.UpdateUserDetail(c);
-            return "success";
+            return Ok("success");
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login

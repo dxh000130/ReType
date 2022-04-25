@@ -62,7 +62,12 @@ function Login() {
             headers: headers1
         }).then(r => {
             if (r.status == 200) {
-                localStorage.user_id = username;
+                let temp1 = r.text();
+                temp1.then(function (return_text) {
+                    localStorage.user_id = return_text
+                })
+
+                //localStorage.user_id = username;
                 localStorage.pass = password;
                 console.log("Log in Success");
                 console.log(localStorage.user_id);
@@ -86,7 +91,6 @@ function Login() {
         });
     }
 }
-
 // log out
 function log_out() {
     document.getElementById("log_in_button_container").style.display = "block";
