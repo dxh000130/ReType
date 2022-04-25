@@ -183,6 +183,26 @@ namespace ReType.Controllers
         }
         [Authorize]
         [Authorize(Policy = "UserOnly")] //Vaild user login
+        [HttpGet("GetUserDetail/{username}")] //Allows users to add personal information
+        public ActionResult<UserDetail> GetUserDetail(string username)
+        {
+            ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
+            Claim claim = ci.FindFirst("UserName");
+            string username1 = claim.Value;
+            if (username1 != username)
+            {
+                return Ok("You cannot get other user detail.");
+            }
+            if (_repository.preventsqlinjection(username))
+            {
+                return Ok("There are potential SQL instructions");
+            }
+            User c = _repository.Getuser(username);
+            UserDetail userDetail = new UserDetail {Username = username, Dataofbirth = c.Dataofbirth, Gerder = c.Gerder, Name = c.Name, Google = c.Google };
+            return userDetail;
+        }
+        [Authorize]
+        [Authorize(Policy = "UserOnly")] //Vaild user login
         [HttpPost("UpdateUserDetail")] //Allows users to add personal information
         public string UpdateUserDetail(UpdateUser user)
         {
