@@ -113,7 +113,7 @@
         <div id="user_modal" class="user_modal">
             <div class="user_modal-content">
                 <div class="register_form">
-                    <input id="username" type="username" placeholder="Change Username" name="uname">
+                    <p id="username" type="username" placeholder="Change Username" name="uname"></p>
                     <input id="name" type="username" placeholder="Enter Name" name="name">
                     <input id="DOB" type="date" placeholder="Enter Date of Birth">
                     <select id="gender" name="gender">
@@ -126,8 +126,9 @@
                         <option value="Personal">Personal</option>
                         <option value="Eunuch">Eunuch</option>
                     </select>
-                    <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
+                    
                 </div>
+                <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
                 <div class="login_form">
                     <button type="button"
                         onclick="document.getElementById('user_modal').style.display='none';document.getElementById('error_box').style.display='none'"
@@ -237,7 +238,7 @@
                     <div id="user_container" class="container">
                         <!--div before the button flips-->
                         <div id="user_front" class="front">
-                            <p id="user_typeface1" class="homepage_button_typeface1"><font style="font-family:STHupo;">User Details <br /></font></p>
+                            <p id="user_typeface1" class="homepage_button_typeface1"><font style="font-family:STHupo;">User Details<br /></font></p>
                         </div>
                         <!--div after the button flips-->
                         <div id="user_back" class="back">

@@ -19,7 +19,7 @@
         <!--log in button start-->
         <div id="log_in_button_container">
             <div onclick="log_in_button()" class="button log_in_button" id="log_in_button">
-                <p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br />Sign In</p>
+                <p id="log_in_typeface1"><i class="fa fa-user" aria-hidden="true"></i><br /><font style="font-family:STHupo;">Sign In</font></p>
             </div>
         </div>
         <!--log in button end-->
@@ -52,7 +52,7 @@
                         style="font-size: 18px;color: #9199aa;margin-left: 3%">
                         Don't have Account? &nbsp &nbsp
                         <button id="register_button"
-                            style="color: #dd3e3e;margin-bottom: 15px;margin-top:25px;font-size: 20px"
+                            style="color: #e25555;margin-bottom: 15px;margin-top:25px;font-size: 20px"
                             onclick="document.getElementById('error_box').style.display='none'">Register Now!</button>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
         <div id="user_modal" class="user_modal">
             <div class="user_modal-content">
                 <div class="register_form">
-                    <input id="username" type="username" placeholder="Change Username" name="uname">
+                    <p id="username" type="username" name="uname"></p>
                     <input id="name" type="username" placeholder="Enter Name" name="name">
                     <input id="DOB" type="date" placeholder="Enter Date of Birth">
                     <select id="gender" name="gender">
@@ -126,8 +126,9 @@
                         <option value="Personal">Personal</option>
                         <option value="Eunuch">Eunuch</option>
                     </select>
-                    <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
+                    
                 </div>
+                <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
                 <div class="login_form">
                     <button type="button"
                         onclick="document.getElementById('user_modal').style.display='none';document.getElementById('error_box').style.display='none'"
@@ -151,10 +152,10 @@
                         <input id="ac-1" name="accordion-1" type="radio" />
                         <label for="ac-1">&#10133 &nbsp;About Game</label>
                         <article class="ac-small" id="ac-small">
-                            <p>This game aims to develop a simple editing game that challenges users for fun and
+                            <p><font style="font-family:STXinwei;">This game aims to develop a simple editing game that challenges users for fun and
                                 dynamics and helps them improve their proofreading abilities at the same time.
                                 Retype will challenge different users to improve their spelling and proofreading ability, timely correct mistakes,
-                                and record them according to their reading level.</p>
+                                and to record errors so that they can be viewed multiple times.</font></p>
                         </article>
                     </div>
 
@@ -162,8 +163,8 @@
                         <input id="ac-2" name="accordion-1" type="radio" />
                         <label for="ac-2">&#10133 &nbsp;Announcements</label>
                         <article class="ac-medium">
-                            <p>If you want to start the game (1), view the leaderboards (2) or modify your personal information (3), Please log in to your account first.<br><br>
-                                If you do not have an account, please click the Sign-in button to register an account</p>
+                            <p><font style="font-family:STXinwei;">If you want to modify your personal information (1), view the leaderboards (2) or start the game (3), Please log in to your account first.<br><br>
+                                If you do not have an account, please click the Sign-in button to register an account</font></p>
                         </article>
                     </div>
 
@@ -171,12 +172,12 @@
                         <input id="ac-3" name="accordion-1" type="radio" />
                         <label for="ac-3">&#10133 &nbsp;How to play</label>
                         <article class="ac-large">
-                            <p> <1> Please choose the difficulty of the game you want to challenge and the theme of your favorite article.<br>
+                            <p><font style="font-family:STXinwei;"> <1> Please choose the difficulty of the game you want to challenge and the theme of your favorite article.<br>
                                 <2> You need to find the wrong words in the article.<br>
                                 <3> Please enter the correct spelling of the wrong word in the input box.<br>
                                 <4> If you type the correct spelling and press enter on the keyboard , the wrong words in the article will be automatically corrected and highlighted in green.<br>
                                 <5> If you don't know any wrong words in the article, you can click the Hint button for help, which will highlight the wrong word in the article.
-                            </p>
+                                </font></p>
                         </article>
                     </div>
 
@@ -184,7 +185,7 @@
                         <input id="ac-4" name="accordion-1" type="radio" />
                         <label for="ac-4">&#10133 &nbsp;Score Changes</label>
                         <article class="ac-large">
-                            <p>
+                            <p>><font style="font-family:STXinwei;">
                                 <1> For Easy difficulty level:<br>
                                 &nbsp;&nbsp;&nbsp; (1) if you type the correct spelling of the wrong words, will +2;<br>
                                 &nbsp;&nbsp;&nbsp; (2) if you type the wrong spelling of the wrong words, will -2;<br>
@@ -197,7 +198,7 @@
                                 &nbsp;&nbsp;&nbsp; (1) if you type the correct spelling of the wrong words, will +4;<br>
                                 &nbsp;&nbsp;&nbsp; (2) if you type the wrong spelling of the wrong words, will -4;<br>
                                 &nbsp;&nbsp;&nbsp; (3) if you clink Hint button to get help, will -1;
-                            </p>
+                            </font></p>
                         </article>
                     </div>
                 </section>
@@ -209,12 +210,12 @@
         <!--retype title start-->
         <div style="width: 100%;height: 40vh">
             <div class="word">
-                <span id="R">R</span>
-                <span id="E1">E</span>
-                <span id="T">T</span>
-                <span id="Y">Y</span>
-                <span id="P">P</span>
-                <span id="E2">E</span>
+                <span id="R"><font style="font-family:STHupo;">R</font></span>
+                <span id="E1"><font style="font-family:STHupo;">E</font></span>
+                <span id="T"><font style="font-family:STHupo;">T</font></span>
+                <span id="Y"><font style="font-family:STHupo;">Y</font></span>
+                <span id="P"><font style="font-family:STHupo;">P</font></span>
+                <span id="E2"><font style="font-family:STHupo;">E</font></span>
             </div>
 
             <!--prompt dialog box start-->
@@ -237,7 +238,7 @@
                     <div id="user_container" class="container">
                         <!--div before the button flips-->
                         <div id="user_front" class="front">
-                            <p id="user_typeface1" class="homepage_button_typeface1">User Details<br /></p>
+                            <p id="user_typeface1" class="homepage_button_typeface1"><font style="font-family:STHupo;">User Details <br /></font></p>
                         </div>
                         <!--div after the button flips-->
                         <div id="user_back" class="back">
@@ -253,7 +254,7 @@
                     <div id="leaderboard_container" class="container">
                         <!--div before the button flips-->
                         <div id="leaderboard_front" class="front">
-                            <p id="leaderboard_typeface1" class="homepage_button_typeface1">Leaderboard<br /></p>
+                            <p id="leaderboard_typeface1" class="homepage_button_typeface1"><font style="font-family:STHupo;">Leaderboard<br /></font></p>
                         </div>
                         <!--div after the button flips-->
                         <div id="leaderboard_back" class="back">
@@ -269,7 +270,7 @@
                     <div id="introduction_container" class="container">
                         <!--div before the button flips-->
                         <div id="introduction_front" class="front">
-                            <p id="introduction_typeface1" class="homepage_button_typeface1">Introduction</p>
+                            <p id="introduction_typeface1" class="homepage_button_typeface1"><font style="font-family:STHupo;">Introduction</font></p>
                         </div>
                         <!--div after the button flips-->
                         <div id="introduction_back" class="back">
@@ -337,7 +338,7 @@
                 <!--easy start-->
                 <div class="item" id="i1"
                     onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">
-                    Easy
+                    <p><font style="font-family:STHupo;">Easy</font></p>
                 </div>
                 <!--two theme in easy start-->
                 <div class="item" id="b1" style="display: none">
@@ -356,7 +357,7 @@
                 <!--normal start-->
                 <div class="item" id="i2"
                     onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
-                    Normal</div>
+                    <p><font style="font-family:STHupo;">Normal</font></div>
                 <!--two theme in normal start-->
                 <div class="item" id="b2" style="display: none">
                     <button type="button"
@@ -374,7 +375,7 @@
                 <!--hard start-->
                 <div class="item" id="i3"
                     onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
-                    Hard</div>
+                    <p><font style="font-family:STHupo;">Hard</font></div>
                 <!--two theme in hard start-->
                 <div class="item" id="b3" style="display: none">
                     <button type="button"
@@ -532,7 +533,7 @@
                     </tr>
 
                     <tr
-                        style="width: 100%;height: 70%;background-color: aquamarine;border-radius: 15px;overflow: auto;display: inline-block">
+                        style="width: 100%;height: 70%;background-color: rgb(198, 159, 227);border-radius: 15px;overflow: auto;display: inline-block">
 
                         <td id="definition" style="width:100%;height:100%">
                             <h3 id="definition_h3">Definition</h3>

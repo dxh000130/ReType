@@ -761,7 +761,8 @@ input[type="text"] {
 /* user input in log in, register interface start*/
 
 /*the button in log in interface start*/
-.btnlogin {
+.btnlogin,
+.btnuser {
     font-size: 30px;
     color: #fff;
     outline: none;
@@ -780,7 +781,8 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.btnlogin:hover {
+.btnlogin:hover,
+.btnuser:hover {
     opacity: 0.5;
     border-bottom-left-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;

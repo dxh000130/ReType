@@ -826,7 +826,7 @@ function display_user(){
         document.getElementById('user_modal').style.display = 'none';
     }else{
         document.getElementById("user_modal").style.display = "block";
-        document.getElementById("username").value= localStorage.user_id;
+        document.getElementById("username").innerHTML= localStorage.user_id;
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('login_modal').style.display = 'none';
         document.getElementById('register_modal').style.display = 'none';
