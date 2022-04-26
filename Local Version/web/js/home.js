@@ -804,10 +804,10 @@ function edit_profile() {
     edit_profile.then(res =>{
         console.log(res.status)
         if (res.status == 200) {
-            alert("修改成功");
+            alert("Sucess");
 
         } else {
-            alert("修改失败");
+            alert("Failed");
         }
     })
 }
