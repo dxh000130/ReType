@@ -411,6 +411,7 @@ function BackToHome() {
     document.getElementById('b3').style.display = 'none';
     // Set the timer on the game interface to 0
     time_reset();
+
 }
 
 
@@ -536,7 +537,7 @@ function display_play(difficulties, theme) {
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
             document.getElementById("current_score_div").innerHTML = score;
-            time_start();
+            pause_time();
 
         })
         //键盘监听
@@ -769,17 +770,17 @@ function startBtn() {
 function pasueBtn() {
     clearInterval(timer1);
 }
-function time_start() {
-    if (!isRunning) {
-        document.getElementById("btn1").innerHTML = "Stop";
-        isRunning = true;
-        startBtn();
-    } else {
-        document.getElementById("btn1").innerHTML = "Start";
-        isRunning = false;
-        pasueBtn();
-    }
-}
+// function time_start() {
+//     if (!isRunning) {
+//         isRunning = true;
+//         document.getElementById("btn1").innerHTML = "Pause";
+//         startBtn();
+//     } else {
+//         isRunning = false;
+//         pasueBtn();
+//     }
+// }
+
 function time_reset() {
     clearInterval(timer1);
     i = 0;
@@ -790,7 +791,19 @@ function time_reset() {
     document.getElementById("hour").innerHTML = "00";
 }
 
-
+function pause_time(){
+    if (!isRunning) {
+        document.getElementById("btn1").innerHTML = "Pause";
+        isRunning = true;
+        startBtn();
+        document.getElementById("text").style.filter="blur(0px)";
+    } else {
+        document.getElementById("btn1").innerHTML = "Start";
+        isRunning = false;
+        pasueBtn();
+        document.getElementById("text").style.filter="blur(5px)";
+    }
+}
 
 
 
