@@ -308,7 +308,7 @@ function GetLeaderboard() {
         let headers2 = new Headers();
         headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
-            credentials : 'include',
+            // credentials : 'include',
             method: 'GET',
             headers: headers2
         }).then(r => {
@@ -328,8 +328,8 @@ function GetLeaderboard() {
 function getscore(){
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-    fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
-        credentials : 'include',
+    fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+        // credentials : 'include',
         method: 'GET',
         headers: headers2
     }).then(r => {
@@ -584,7 +584,6 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     headers2.append('Accept', 'text/plain');
     var textinput = document.getElementById("user_input");
     var username = textinput.value;
-
     if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
         const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
@@ -619,9 +618,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
                 }
+                document.getElementById("current_score_div").innerHTML = return_text1.score;
                 document.getElementById("total_error_div").innerHTML = total_errors;
                 document.getElementById("remain_error_div").innerHTML = error_remain;
-                document.getElementById("current_score_div").innerHTML = return_text1.score;
             })
 
         })
