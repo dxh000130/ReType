@@ -286,7 +286,7 @@ function onSignIn(googleUser) {
 
 
 // leaderboard
-var score = 0;
+localStorage.score = 0;
 function GetLeaderboard() {
     document.getElementById('login_modal').style.display = 'none';
     document.getElementById('register_modal').style.display = 'none';
@@ -336,8 +336,8 @@ function getscore(){
         r.json().then(function (data) {
             for (var i = 0; i < data.length; i++) {
                 if (data[i].username == localStorage.user_id) {
-                    score = data[i].score;
-                    console.log(score);
+                    localStorage.score = data[i].score;
+                    console.log(localStorage.score);
                 }
             }
         })
@@ -514,7 +514,6 @@ function display_play(difficulties, theme) {
     document.getElementById("play_homepage").style.display = "block";
     var ArticleChooseheader = new Headers();
     getscore();
-
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
@@ -536,9 +535,8 @@ function display_play(difficulties, theme) {
             wholearticle = return_text.article;
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
-            document.getElementById("current_score_div").innerHTML = score;
+            document.getElementById("current_score_div").innerHTML = localStorage.score;
             pause_time();
-
         })
         //键盘监听
     });
@@ -584,6 +582,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     headers2.append('Accept', 'text/plain');
     var textinput = document.getElementById("user_input");
     var username = textinput.value;
+    getscore();
+    document.getElementById("current_score_div").innerHTML = localStorage.score;
     if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
         const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
