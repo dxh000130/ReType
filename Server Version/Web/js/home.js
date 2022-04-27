@@ -338,6 +338,7 @@ function getscore(){
                 if (data[i].username == localStorage.user_id) {
                     localStorage.score = data[i].score;
                     console.log(localStorage.score);
+                    document.getElementById("current_score_div").innerHTML = localStorage.score;
                 }
             }
         })
@@ -571,6 +572,7 @@ function input_reminder() {
 //Hint
 function Hint() {
     document.getElementById("user_input").value = "";
+    getscore();
     ArticleProcessMainFunction(0, 1);
 }
 
