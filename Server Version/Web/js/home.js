@@ -202,6 +202,11 @@ function verification() {
         })
     }
 }
+
+
+
+
+
 var time = 60;
 function countdown() {
     if (time == 0) {
@@ -217,6 +222,10 @@ function countdown() {
         time--;
     }
 }
+
+
+
+
 
 
 ///google log in
@@ -284,7 +293,6 @@ function GetLeaderboard() {
     document.getElementById('error_box').style.display = 'none';
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('user_modal').style.display = 'none';
-
 
     ClearLeaderBoard();
     if (valid_log == false) {
@@ -505,6 +513,7 @@ function display_play(difficulties, theme) {
     document.getElementById("play_homepage").style.display = "block";
     var ArticleChooseheader = new Headers();
     getscore();
+
     ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     ArticleChooseheader.append('Content-Type', 'application/json')
     ArticleChooseheader.append('Accept', 'text/plain')
@@ -527,6 +536,7 @@ function display_play(difficulties, theme) {
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
             document.getElementById("current_score_div").innerHTML = score;
+            time_start();
 
         })
         //键盘监听
@@ -757,7 +767,7 @@ function startBtn() {
     }, 10)
 }
 function pasueBtn() {
-    clearInterval(timer1)
+    clearInterval(timer1);
 }
 function time_start() {
     if (!isRunning) {
@@ -771,7 +781,7 @@ function time_start() {
     }
 }
 function time_reset() {
-    clearInterval(timer1)
+    clearInterval(timer1);
     i = 0;
     isRunning = false;
     document.getElementById("btn1").innerHTML = "Start";
