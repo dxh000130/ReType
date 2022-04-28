@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\ReType.csproj": {}
+    "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Server Version\\Endpoint\\ReType\\ReType.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\ReType.csproj": {
+    "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Server Version\\Endpoint\\ReType\\ReType.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\ReType.csproj",
+        "projectUniqueName": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Server Version\\Endpoint\\ReType\\ReType.csproj",
         "projectName": "ReType",
-        "projectPath": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\ReType.csproj",
+        "projectPath": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Server Version\\Endpoint\\ReType\\ReType.csproj",
         "packagesPath": "C:\\Users\\dxh00\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Endpoint\\ReType\\obj\\",
+        "outputPath": "C:\\Users\\dxh00\\Documents\\GitHub\\HSYYDS\\Server Version\\Endpoint\\ReType\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
