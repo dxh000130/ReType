@@ -1276,32 +1276,33 @@ html {
 }
 /*time display in play main interface*/
 #time{
-    top: 10px;
-    right: 36vw;
     display: flex;
-    --width: 350px;
-    --height: 60px;
+    width: 30%;
+    height: auto;
     border: 0;
-    position: fixed;
-    min-width: var(--width);
-    min-height: var(--height);
-    border-radius: var(--height);
-    background: slategray;
+    margin-left:28%;
+    /*margin:0 auto;*/
+    /*position: fixed;*/
+    /*background: slategray;*/
+    margin-bottom: -4%;
+    margin-top: 2%;
+
 
 }
 #time p{
-    width: 70%;
-    font-size: 40px;
-    padding-top: 5px;
-    padding-left: 8%;
+    width: 60%;
+    font-size: 2.5vw;
+    font-weight: bolder;
     float: left;
 }
 /*time start button*/
 #btn1{
-    width:15%;
+    width:auto;
     float: left;
-    border-radius: 50%;
-    margin-right:1%;
+    border-radius: 15%;
+    font-size: 2vw;
+    --btn-bg: #fac300;
+    --bg: #fc6100;
 }
 #btn1:hover{
     animation:  hint 0.5s ease-in-out infinite both;
@@ -1323,7 +1324,7 @@ html {
     height: 88%;
     float: left;
     margin-left: 5%;
-    margin-top: 10vh;
+    margin-top: 4%;
     justify-content: center;
     align-items: center;
     background-image: url("../images/play.jpg");
@@ -1434,7 +1435,7 @@ html {
     /*margin-left: 5%;*/
     margin-left: 5%;
     float: left;
-    margin-top: 10vh;
+    margin-top: 4%;
 
 }
 /*promote box for user input*/
