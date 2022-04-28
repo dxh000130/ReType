@@ -1530,13 +1530,14 @@ html {
     position:relative;
     /*display: flex;*/
 }
-.play_score_span1{
+#score_animation_container{
     width: 100%;
     height: 20%;
     background:rgba(230, 126, 34,0.4);
-
 }
-
+#score_animation_thumb{
+    background-image:url("../images/thumb.png") ;
+}
 
 #play_score{
     width: 94%;
@@ -1551,9 +1552,9 @@ html {
     display: flex;
 }
 #play_score_table_container{
-    background-color: steelblue;
+    /*background-color: steelblue;*/
     width: 80%;
-    height:99%;
+    height:100%;
     align-self: center;
 }
 #play_score_table{
@@ -1565,12 +1566,13 @@ html {
 #current_score_div,#total_error_div,#remain_error_div{
     width: 100%;
     height: 100%;
-    font-size: 1em;
+    font-size: 1vw;
     text-align: center;
     align-self: center;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+    font-weight: bolder;
 }
 
 /*dictionaries in play main interface*/
