@@ -1538,7 +1538,7 @@ html {
 #score_animation_thumb{
     background-image:url("../images/thumb.png");
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 90%;
     background-position: center;
     width: 60%;
     height: 100%;
@@ -1556,6 +1556,20 @@ html {
         transform: translateX(0) rotate(0deg);
         opacity: 1;
     }
+}
+#score_animation_number{
+    margin-left: -20%;
+    width: 100%;
+    height: 100%;
+    font-size: 3vw;
+    background-color: blue;
+    position: relative;
+    justify-content: center;
+    justify-items: center;
+    text-align:left;
+    align-self: center;
+
+
 }
 
 #play_score{
