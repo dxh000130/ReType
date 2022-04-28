@@ -69,7 +69,7 @@ namespace ReType.Controllers
 
             Regex inputrgx = new Regex(".+");
             Article.Input = inputrgx.Replace(Article.Input, inputreplace);
-
+            Console.WriteLine(Article.Input + "n");
             string[] wronglist = _repository.WrongWordList(Article.ArticleID);
             string[] correctlist = _repository.CorrectWordList(Article.ArticleID);
             string pattern = pattern1 + Article.Input + pattern3;
@@ -79,33 +79,35 @@ namespace ReType.Controllers
             int articlediff = _repository.articlediff(Article.ArticleID);
             string already = Article.AlreadyCorrect;
             string articlecopy = Article.Article;
+            int wrong = 1;
             for (int i = 0; i < wronglist.Length; i++)
             {
-                if (wronglist[i].ToUpper() == Article.Input.ToUpper() && Article.Enter == 1)
+                if (wronglist[i].ToUpper() == Article.Input.ToUpper() && Article.Enter == 1) //Input correct wrong word
                 {
                     int error_remain = wronglist.Count();
                     if (already != "")
                     {
                         error_remain = wronglist.Count() - already.Split(',').Count() / 2;
+                        
                     }
-
+                    wrong = 0;
                     string result = rgx.Replace(Article.Article, replacement);
                     Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "tryagain, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
                     return Ok(final);
                 }
-                if (Regex.Matches(already.ToUpper(), Article.Input.ToUpper()).Count >= 1 && Article.Enter == 1)
+                if (Regex.Matches(already.ToUpper(), Article.Input.ToUpper()).Count >= 1 && Article.Enter == 1) //Already Input, No plus or minus score
                 {
                     int error_remain = wronglist.Count();
                     if (already != "")
                     {
                         error_remain = wronglist.Count() - already.Split(',').Count() / 2;
                     }
-
+                    wrong = 0;
                     string result = rgx.Replace(Article.Article, replacement);
                     Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Already Input, No plus or minus score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
                     return Ok(final);
                 }
-                else if (correctlist[i].ToUpper() == Article.Input.ToUpper() && Article.Enter == 1)
+                else if (correctlist[i].ToUpper() == Article.Input.ToUpper() && Article.Enter == 1) //add score
                 {
                     Regex rgx12 = new Regex(wronglist[i]);
                     string correctreplacement = "<span style=\"color: green;\">" + correctlist[i] + "</span>";
@@ -121,6 +123,7 @@ namespace ReType.Controllers
                         already += "," + wronglist[i] + "," + correctlist[i];
                     }
                     int error_remain = wronglist.Count() - already.Split(',').Count() / 2;
+                    wrong = 0;
                     Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articleout, Correct = "yes,add score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.AddUserScore(username, articlediff), hint = "", ScoreChange = articlediff };
                     return Ok(final);
                 }
@@ -131,26 +134,19 @@ namespace ReType.Controllers
             {
                 error_remain1 = wronglist.Count() - already.Split(',').Count() / 2;
             }
-
+            
             //string result1 = rgx.Replace(Article.Article, replacement);
             Regex rgx2 = new Regex("(?i:" + Article.Input + ")+");
             string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
             Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*");
             string result3 = rgx3.Replace(result2, "<span style=\"background-color: DarkGray;\">$&</span>");
             Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
-            if (articlecopy == result3)
+
+            if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0)
             {
-                string temp12 = Article.Input + "[a-zA-Z]*";
-                for (int i = 0; i < Article.Input.Length; i++)
-                {
-                    temp12 += "|"+ Article.Input.Substring(0,i) + "[a-zA-Z]*" + Article.Input.Substring(i+1);
-                }
-                Console.WriteLine(temp12);
-                Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
-                string result6 = rgx6.Replace(Article.Article, "<span style=\"color: yellow;\">$&</span>");
-                return Ok( new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result6, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 });
+                return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
             }
-            if (articlecopy == result3 && Article.Enter==1)
+            if (wrong == 1 && Article.Enter == 1 && Article.hint == 0)
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
             }
@@ -165,6 +161,18 @@ namespace ReType.Controllers
                         return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "Hint", ArticleDisp = result4, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, 1), hint = wronglist[i], ScoreChange = -1 });
                     }
                 }
+            }
+            if (articlecopy == result3 && Article.hint == 0)
+            {
+                string temp12 = Article.Input + "[a-zA-Z]*";
+                for (int i = 0; i < Article.Input.Length; i++)
+                {
+                    temp12 += "|" + Article.Input.Substring(0, i) + "[a-zA-Z]*" + Article.Input.Substring(i + 1);
+                }
+                Console.WriteLine(temp12);
+                Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
+                string result6 = rgx6.Replace(Article.Article, "<span style=\"color: yellow;\">$&</span>");
+                return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result6, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 });
             }
             return Ok(final1);
         }
