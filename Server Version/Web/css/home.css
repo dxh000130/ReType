@@ -1572,15 +1572,12 @@ html {
     align-items: center;
     display: flex;
     animation: roll-in-left 0.6s ease-out both;
-
-
-
 }
 
 #play_score{
     width: 94%;
-    height: 60%;
-    margin: 3%;
+    height: 55%;
+    margin: 4%;
     /*background-color: lightskyblue;*/
     /*position: absolute;*/
     text-align: center;
@@ -1616,7 +1613,7 @@ html {
 /*dictionaries in play main interface*/
 #dictionaries {
     width: 90%;
-    height: 25%;
+    height: 20%;
     margin-top: 20px;
     margin-left: 5%;
     background-color: aqua;
@@ -1658,6 +1655,7 @@ html {
 #definition{
     font-size: 20px;
     padding:7px;
+    overflow: auto;
 }
 /*play main interface end*/
 
