@@ -573,7 +573,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     var username = textinput.value;
     getscore();
     document.getElementById("current_score_div").innerHTML = localStorage.score;
-    if (username !== "" && username.search(" ") === -1) { //避免用户未输入或删除已输入内容报错
+    if (username !== "") { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
         const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
             // credentials: 'include',
@@ -601,6 +601,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
                         score_animation+=1;
                         if (score_animation>0){
+                            document.getElementById("score_animation_number").innerText="+"+return_text1.scoreChange;
                             document.getElementById("score_animation_container").style.display="block";
                         }
                         setTimeout(function(){
@@ -611,7 +612,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         console.log(return_text1.correct + " Score:" + return_text1.score);
                         score_animation-=1;
                         if (score_animation<0){
-                            document.getElementById("score_animation_thumb").style.backgroundImage='url("../images/wrong.png")';
+                            document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
+                            document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/wrong.png)";
                             document.getElementById("score_animation_container").style.display="block";
                         }
                         setTimeout(function(){
@@ -623,6 +625,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     }
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
+                    if (score_animation==0){
+                        document.getElementById("score_animation_container").style.display="none";
+                    }
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
                 document.getElementById("total_error_div").innerHTML = total_errors;
