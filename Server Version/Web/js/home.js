@@ -543,27 +543,13 @@ function display_play(difficulties, theme) {
     });
 }
 
-
-// When the user enters a word in the input box of the game interface, press enter to determine whether it is correct
-document.getElementById('user_input').addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        //console.log("回车");
-        Enterbutton = 1;
-        ArticleProcessMainFunction(Enterbutton);
-        document.getElementById("prompt_box").style.display = "none";
-    } else {
-        Enterbutton = 0;
-        ArticleProcessMainFunction(Enterbutton, 0);
-        //console.log("没回车");
-    }
-});
-
 // A prompt box is displayed after the user enters a word
 function input_reminder() {
     if (document.getElementById("user_input").value.length != 0) {
         document.getElementById("prompt_box").style.display = "block";
     } else {
         document.getElementById("prompt_box").style.display = "none";
+
     }
 }
 
@@ -576,6 +562,7 @@ function Hint() {
     ArticleProcessMainFunction(0, 1);
 }
 
+var score_animation=0;
 // hight light word, change score, hint
 function ArticleProcessMainFunction(Enterbutton, hint) {
     let headers2 = new Headers();
@@ -612,10 +599,17 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         AlreadyCorrect = return_text1.alreadyCorrect;
                         error_remain -= 1;
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
+                        score_animation+=1;
+                        if (score_animation!=0){
+                            document.getElementById("score_animation_container").style.display="block";
+                        }
+
                     } else if (return_text1.correct === "No, minus score") { //回答错误 减分
                         console.log(return_text1.correct + " Score:" + return_text1.score);
+                        score_animation-=1;
                     } else {
                         console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
+                        score_animation=0;
                     }
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
@@ -626,6 +620,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
             })
 
         })
+
     } else {
         if (hint === 1) {
             const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
@@ -650,7 +645,24 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
         }
         document.querySelector('#text').innerHTML = wholearticle;
     }
+    setTimeout(function(){
+        document.getElementById("score_animation_container").style.display="none";
+    },5000);
 }
+// When the user enters a word in the input box of the game interface, press enter to determine whether it is correct
+document.getElementById('user_input').addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        //console.log("回车");
+        Enterbutton = 1;
+        ArticleProcessMainFunction(Enterbutton);
+        document.getElementById("prompt_box").style.display = "none";
+
+    } else {
+        Enterbutton = 0;
+        ArticleProcessMainFunction(Enterbutton, 0);
+        //console.log("没回车");
+    }
+});
 
 
 // dictionaries
@@ -668,20 +680,6 @@ function define_dictionaries() {
         } else {
             var first = data.split('meanings')[1];
             console.log(first);
-            // 找到example开始
-            // if (first.indexOf("example") == -1) {
-            //     document.getElementById("example").innerText = "There is no examples";
-            // } else {
-            //     var example_index = first.split("example")[1];
-            //     console.log(example_index);
-            //     var example_index1 = example_index.indexOf(":");
-            //     var example_index2 = example_index.indexOf("}");
-            //     var example_final = example_index.substr(example_index1 + 2, example_index2 - 4);
-            //     document.getElementById("example").innerText = example_final;
-            // }
-
-            // 找到example结束
-            // 找到definitiaon开始
             var definition_index = first.split("definition")[2];
             var definition_index1 = definition_index.split('definition":"')[0];
             var definition_index2 = definition_index1.split(',"synonyms"')[0];
