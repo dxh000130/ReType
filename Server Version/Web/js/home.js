@@ -600,34 +600,30 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         error_remain -= 1;
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
                         score_animation+=1;
-                        if (score_animation>0){
-                            document.getElementById("score_animation_number").innerText="+"+return_text1.scoreChange;
-                            document.getElementById("score_animation_container").style.display="block";
-                        }
+                        document.getElementById("score_animation_number").innerText="+"+return_text1.scoreChange;
+                        document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/thumb.png)";
+                        document.getElementById("score_animation_container").style.display="block";
                         setTimeout(function(){
                             document.getElementById("score_animation_container").style.display="none";
-                        },3000);
+                        },3500);
 
                     } else if (return_text1.correct === "No, minus score") { //回答错误 减分
                         console.log(return_text1.correct + " Score:" + return_text1.score);
                         score_animation-=1;
-                        if (score_animation<0){
-                            document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
-                            document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/wrong.png)";
-                            document.getElementById("score_animation_container").style.display="block";
-                        }
+                        document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
+                        document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/wrong.png)";
+                        document.getElementById("score_animation_container").style.display="block";
                         setTimeout(function(){
                             document.getElementById("score_animation_container").style.display="none";
-                        },3000);
+                        },3500);
                     } else {
                         console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
                         score_animation=0;
                     }
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
-                    if (score_animation==0){
-                        document.getElementById("score_animation_container").style.display="none";
-                    }
+                    document.getElementById("score_animation_container").style.display="none";
+
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
                 document.getElementById("total_error_div").innerHTML = total_errors;
@@ -655,6 +651,12 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 res.json().then(function (return_text1) {
                     console.log(return_text1.hint); //Hint内容
                     document.querySelector('#text').innerHTML = return_text1.articleDisp; //高亮hint内容
+                    document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
+                    document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/hint.png)";
+                    document.getElementById("score_animation_container").style.display="block";
+                    setTimeout(function(){
+                        document.getElementById("score_animation_container").style.display="none";
+                    },3500);
                 })
             })
         }

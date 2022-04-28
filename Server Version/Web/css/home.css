@@ -1549,8 +1549,8 @@ html {
 }
 @keyframes roll-in-left {
     0% {
-        -webkit-transform: translateX(-800px) rotate(-540deg);
-        transform: translateX(-800px) rotate(-540deg);
+        -webkit-transform: translateX(-200px) rotate(-540deg);
+        transform: translateX(-200px) rotate(-540deg);
         opacity: 0;
     }
     100% {
@@ -1560,7 +1560,7 @@ html {
     }
 }
 #score_animation_number{
-    margin-left: -20%;
+    margin-left: -15%;
     width: 100%;
     height: 100%;
     font-size: 3vw;
