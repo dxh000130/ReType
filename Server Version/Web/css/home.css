@@ -1280,11 +1280,11 @@ html {
     width: 30%;
     height: auto;
     border: 0;
-    margin-left:28%;
+    margin-left:26%;
     /*margin:0 auto;*/
     /*position: fixed;*/
     /*background: slategray;*/
-    margin-bottom: -4%;
+    margin-bottom: -5%;
     margin-top: 2%;
 
 
@@ -1327,19 +1327,20 @@ html {
     margin-top: 4%;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/play.jpg");
+    background-image: url("../images/play1.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    /*background-color: blanchedalmond;*/
 }
 
 #content {
     background-color: beige;
-    width: 52.5%;
+    width: 53.5%;
     height: 68%;
     /*margin-top: 5%;*/
-    margin-left: 22.5%;
+    margin-left: 23%;
     margin-right: 18%;
-    margin-top: 18vh;
+    margin-top: 17.3vh;
     opacity: 0.8;
     border-radius: 30px;
 }
@@ -1424,6 +1425,8 @@ html {
     line-height: 35px;
     padding-left: 5%;
     padding-right: 3%;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 /*right interface in play main interface*/
