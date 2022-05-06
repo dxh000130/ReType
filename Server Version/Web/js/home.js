@@ -298,7 +298,7 @@ function GetLeaderboard() {
     if (valid_log == false) {
         document.getElementById("first_page").style.display = "block";
         document.getElementById("login_modal").style.display="block";
-        document.getElementById("difficult_page").style.display = "none";
+        // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
         document.getElementById("error_text").innerHTML="Please log in first";
@@ -354,7 +354,7 @@ function display_game() {
     if(valid_log==false){
         document.getElementById("first_page").style.display = "block";
         document.getElementById("login_modal").style.display="block";
-        document.getElementById("difficult_page").style.display = "none";
+        // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
         document.getElementById("error_text").innerHTML="Please log in first";
@@ -363,40 +363,50 @@ function display_game() {
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
     }else{
-        document.getElementById("play_homepage").style.display = "none";
+        document.getElementById("play_homepage").style.display = "block";
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
-        document.getElementById("difficult_page").style.display = "block";
+        // document.getElementById("difficult_page").style.display = "block";
     }
 }
 
 
 // enter change difficulty button in difficulty interface
-function change_difficult1() {
-    document.getElementById("cards_wrap").className = "cards_wrap_1";
-    document.getElementById("difficult_button1").style.display = "none";
-    document.getElementById("difficult_button3").style.display = "none";
-    document.getElementById("difficult_button2").style.display = "block";
+// function change_difficult1() {
+//     document.getElementById("cards_wrap").className = "cards_wrap_1";
+//     document.getElementById("difficult_button1").style.display = "none";
+//     document.getElementById("difficult_button3").style.display = "none";
+//     document.getElementById("difficult_button2").style.display = "block";
+// }
+//
+// function change_difficult2() {
+//     document.getElementById("cards_wrap").className = "cards_wrap_2";
+//     document.getElementById("difficult_button2").style.display = "none";
+//     document.getElementById("difficult_button1").style.display = "none";
+//     document.getElementById("difficult_button3").style.display = "block";
+// }
+//
+// function change_difficult3() {
+//     document.getElementById("cards_wrap").className = "cards_wrap_3";
+//     document.getElementById("difficult_button1").style.display = "block";
+//     document.getElementById("difficult_button2").style.display = "none";
+//     document.getElementById("difficult_button3").style.display = "none";
+// }
+function openTab(evt) {
+    var i, tablinks;
+
+    tablinks = document.getElementsByClassName("tab");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    evt.currentTarget.className += " active";
 }
 
-function change_difficult2() {
-    document.getElementById("cards_wrap").className = "cards_wrap_2";
-    document.getElementById("difficult_button2").style.display = "none";
-    document.getElementById("difficult_button1").style.display = "none";
-    document.getElementById("difficult_button3").style.display = "block";
-}
-
-function change_difficult3() {
-    document.getElementById("cards_wrap").className = "cards_wrap_3";
-    document.getElementById("difficult_button1").style.display = "block";
-    document.getElementById("difficult_button2").style.display = "none";
-    document.getElementById("difficult_button3").style.display = "none";
-}
 
 // enter back home button which in top right for all interface
 function BackToHome() {
     document.getElementById("first_page").style.display = "block";
-    document.getElementById("difficult_page").style.display = "none";
+    // document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "none";
     document.getElementById('login_modal').style.display = 'none';
     document.getElementById('register_modal').style.display = 'none';
@@ -404,12 +414,12 @@ function BackToHome() {
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById("user_modal").style.display = "none";
-    document.getElementById('i1').style.display = 'block';
-    document.getElementById('i2').style.display = 'block';
-    document.getElementById('i3').style.display = 'block';
-    document.getElementById('b1').style.display = 'none';
-    document.getElementById('b2').style.display = 'none';
-    document.getElementById('b3').style.display = 'none';
+    // document.getElementById('i1').style.display = 'block';
+    // document.getElementById('i2').style.display = 'block';
+    // document.getElementById('i3').style.display = 'block';
+    // document.getElementById('b1').style.display = 'none';
+    // document.getElementById('b2').style.display = 'none';
+    // document.getElementById('b3').style.display = 'none';
     // Set the timer on the game interface to 0
     time_reset();
 
@@ -511,7 +521,7 @@ var textinput = document.getElementById("user_input");
 var total_errors = 0;
 function display_play(difficulties, theme) {
     document.getElementById("first_page").style.display = "none";
-    document.getElementById("difficult_page").style.display = "none";
+    // document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "block";
     var ArticleChooseheader = new Headers();
     getscore();

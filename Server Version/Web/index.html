@@ -305,129 +305,129 @@
     <!--homepage end-->
 
     <!--play choose difficulty interface start-->
-    <div id="difficult_page" style="display: none">
-        <!--back home page button start-->
-        <div class="homebtn-container">
-            <button class="backhome" onclick="BackToHome()">
-                <span class="text">Back to Homepage</span>
-                <div class="icon-container">
-                    <div class="icon icon--left">
-                        <svg>
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
-                    </div>
-                    <div class="icon icon--right">
-                        <svg>
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
-                    </div>
-                </div>
-            </button>
-        </div>
-        <svg style="display: none;">
-            <symbol id="arrow-right" viewBox="0 0 20 10">
-                <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
-            </symbol>
-        </svg>
-        <!--back home page button end-->
+<!--    <div id="difficult_page" style="display: none">-->
+<!--        &lt;!&ndash;back home page button start&ndash;&gt;-->
+<!--        <div class="homebtn-container">-->
+<!--            <button class="backhome" onclick="BackToHome()">-->
+<!--                <span class="text">Back to Homepage</span>-->
+<!--                <div class="icon-container">-->
+<!--                    <div class="icon icon&#45;&#45;left">-->
+<!--                        <svg>-->
+<!--                            <use xlink:href="#arrow-right"></use>-->
+<!--                        </svg>-->
+<!--                    </div>-->
+<!--                    <div class="icon icon&#45;&#45;right">-->
+<!--                        <svg>-->
+<!--                            <use xlink:href="#arrow-right"></use>-->
+<!--                        </svg>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </button>-->
+<!--        </div>-->
+<!--        <svg style="display: none;">-->
+<!--            <symbol id="arrow-right" viewBox="0 0 20 10">-->
+<!--                <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>-->
+<!--            </symbol>-->
+<!--        </svg>-->
+<!--        &lt;!&ndash;back home page button end&ndash;&gt;-->
 
-        <!--three difficulty start-->
-        <div class="wrap">
-            <div class="cards_wrap" id="cards_wrap">
+<!--        &lt;!&ndash;three difficulty start&ndash;&gt;-->
+<!--        <div class="wrap">-->
+<!--            <div class="cards_wrap" id="cards_wrap">-->
 
-                <!--easy start-->
-                <div class="item" id="i1"
-                    onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">
-                    <p><font style="font-family:STHupo;">Easy</font></p>
-                </div>
-                <!--two theme in easy start-->
-                <div class="item" id="b1" style="display: none">
-                    <button type="button"
-                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'"
-                        class="cancelbtn_play"></button>
-                    <p>Choose Theme</p>
-                    <a href="javascript:display_play('L','Inspirational')"
-                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Inspirational</a>
-                    <a href="javascript:display_play('L','Sport')"
-                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>
-                </div>
-                <!--two theme in easy end-->
-                <!--easy end-->
+<!--                &lt;!&ndash;easy start&ndash;&gt;-->
+<!--                <div class="item" id="i1"-->
+<!--                    onclick="document.getElementById('i1').style.display='none';document.getElementById('b1').style.display='block'">-->
+<!--                    <p><font style="font-family:STHupo;">Easy</font></p>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;two theme in easy start&ndash;&gt;-->
+<!--                <div class="item" id="b1" style="display: none">-->
+<!--                    <button type="button"-->
+<!--                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'"-->
+<!--                        class="cancelbtn_play"></button>-->
+<!--                    <p>Choose Theme</p>-->
+<!--                    <a href="javascript:display_play('L','Inspirational')"-->
+<!--                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Inspirational</a>-->
+<!--                    <a href="javascript:display_play('L','Sport')"-->
+<!--                        onclick="document.getElementById('b1').style.display='none';document.getElementById('i1').style.display='block'">Sport</a>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;two theme in easy end&ndash;&gt;-->
+<!--                &lt;!&ndash;easy end&ndash;&gt;-->
 
-                <!--normal start-->
-                <div class="item" id="i2"
-                    onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">
-                    <p><font style="font-family:STHupo;">Normal</font></div>
-                <!--two theme in normal start-->
-                <div class="item" id="b2" style="display: none">
-                    <button type="button"
-                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'"
-                        class="cancelbtn_play"></button>
-                    <p>Choose Style</p>
-                    <a href="javascript:display_play('M','Fiction')"
-                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Fiction</a>
-                    <a href="javascript:display_play('M','Prose')"
-                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>
-                </div>
-                <!--two theme in normal end-->
-                <!--normal end-->
+<!--                &lt;!&ndash;normal start&ndash;&gt;-->
+<!--                <div class="item" id="i2"-->
+<!--                    onclick="document.getElementById('i2').style.display='none';document.getElementById('b2').style.display='block'">-->
+<!--                    <p><font style="font-family:STHupo;">Normal</font></div>-->
+<!--                &lt;!&ndash;two theme in normal start&ndash;&gt;-->
+<!--                <div class="item" id="b2" style="display: none">-->
+<!--                    <button type="button"-->
+<!--                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'"-->
+<!--                        class="cancelbtn_play"></button>-->
+<!--                    <p>Choose Style</p>-->
+<!--                    <a href="javascript:display_play('M','Fiction')"-->
+<!--                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Fiction</a>-->
+<!--                    <a href="javascript:display_play('M','Prose')"-->
+<!--                        onclick="document.getElementById('b2').style.display='none';document.getElementById('i2').style.display='block'">Prose</a>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;two theme in normal end&ndash;&gt;-->
+<!--                &lt;!&ndash;normal end&ndash;&gt;-->
 
-                <!--hard start-->
-                <div class="item" id="i3"
-                    onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">
-                    <p><font style="font-family:STHupo;">Hard</font></div>
-                <!--two theme in hard start-->
-                <div class="item" id="b3" style="display: none">
-                    <button type="button"
-                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'"
-                        class="cancelbtn_play"></button>
-                    <p>Choose Style</p>
-                    <a href="javascript:display_play('H','Fiction')"
-                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Fiction</a>
-                    <a href="javascript:display_play('H','Academics')"
-                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>
-                </div>
-                <!--two theme in hard start-->
-                <!--hard end-->
-            </div>
-        </div>
+<!--                &lt;!&ndash;hard start&ndash;&gt;-->
+<!--                <div class="item" id="i3"-->
+<!--                    onclick="document.getElementById('i3').style.display='none';document.getElementById('b3').style.display='block'">-->
+<!--                    <p><font style="font-family:STHupo;">Hard</font></div>-->
+<!--                &lt;!&ndash;two theme in hard start&ndash;&gt;-->
+<!--                <div class="item" id="b3" style="display: none">-->
+<!--                    <button type="button"-->
+<!--                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'"-->
+<!--                        class="cancelbtn_play"></button>-->
+<!--                    <p>Choose Style</p>-->
+<!--                    <a href="javascript:display_play('H','Fiction')"-->
+<!--                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Fiction</a>-->
+<!--                    <a href="javascript:display_play('H','Academics')"-->
+<!--                        onclick="document.getElementById('b3').style.display='none';document.getElementById('i3').style.display='block'">Academics</a>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;two theme in hard start&ndash;&gt;-->
+<!--                &lt;!&ndash;hard end&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
 
-        <!--change difficulty level button start-->
-        <div style="margin-bottom: 50px"></div>
-        <div class="qiehuanbutton" style="text-align: center;width: 380px; "
-            onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(
-                        'i1').style.display='block' ;document.getElementById( 'i2').style.display='block' ;document.getElementById( 'i3').style.display='block'">
-            <!--            <div class="difficult_button " id="difficult_button1 " data-text="Change difficulty level " style="&#45;&#45;c:#1e90ff;display: block " onclick="change_difficult1() "></div>-->
-            <button class="difficult_button" id="difficult_button1" style="display: block" type="button"
-                onclick="change_difficult1()">Change difficulty level</button>
-            <button class="difficult_button" id="difficult_button2" type="button " style="display: none"
-                onclick="change_difficult2()">Change difficulty level</button>
-            <button class="difficult_button" id="difficult_button3" type="button " style="display: none"
-                onclick="change_difficult3()">Change difficulty level</button>
-        </div>
-        <!--change difficulty level button end-->
-        <!--        <div id="type_gif ">-->
-        <!--            <img src="images/type.gif ">-->
-        <!--        </div>-->
-    </div>
-    <!--play choose difficulty interface end-->
+<!--        &lt;!&ndash;change difficulty level button start&ndash;&gt;-->
+<!--        <div style="margin-bottom: 50px"></div>-->
+<!--        <div class="qiehuanbutton" style="text-align: center;width: 380px; "-->
+<!--            onclick="document.getElementById( 'b1').style.display='none' ;document.getElementById( 'b2').style.display='none' ;document.getElementById( 'b3').style.display='none' ;document.getElementById(-->
+<!--                        'i1').style.display='block' ;document.getElementById( 'i2').style.display='block' ;document.getElementById( 'i3').style.display='block'">-->
+<!--            &lt;!&ndash;            <div class="difficult_button " id="difficult_button1 " data-text="Change difficulty level " style="&#45;&#45;c:#1e90ff;display: block " onclick="change_difficult1() "></div>&ndash;&gt;-->
+<!--            <button class="difficult_button" id="difficult_button1" style="display: block" type="button"-->
+<!--                onclick="change_difficult1()">Change difficulty level</button>-->
+<!--            <button class="difficult_button" id="difficult_button2" type="button " style="display: none"-->
+<!--                onclick="change_difficult2()">Change difficulty level</button>-->
+<!--            <button class="difficult_button" id="difficult_button3" type="button " style="display: none"-->
+<!--                onclick="change_difficult3()">Change difficulty level</button>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;change difficulty level button end&ndash;&gt;-->
+<!--        &lt;!&ndash;        <div id="type_gif ">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <img src="images/type.gif ">&ndash;&gt;-->
+<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--    &lt;!&ndash;play choose difficulty interface end&ndash;&gt;-->
 
 
     <!--play main interface start-->
     <div id="play_homepage" style="display: none">
         <!--display time start-->
-        <div id="time">
-            <p>
-                <!-- <span id="houer">00</span> :  -->
-                <span id="hour">00</span>:
-                <span id="minute">00</span>:
-                <span id="second">00</span>
-            </p>
-            <!--start time-->
-            <button id="btn1" onclick="pause_time()">Pause</button>
-            <!--reset time-->
-<!--            <button id="reset" onclick="time_reset()">Stop</button>-->
-        </div>
+<!--        <div id="time">-->
+<!--            <p>-->
+<!--                &lt;!&ndash; <span id="houer">00</span> :  &ndash;&gt;-->
+<!--                <span id="hour">00</span>:-->
+<!--                <span id="minute">00</span>:-->
+<!--                <span id="second">00</span>-->
+<!--            </p>-->
+<!--            &lt;!&ndash;start time&ndash;&gt;-->
+<!--            <button id="btn1" onclick="pause_time()">Pause</button>-->
+<!--            &lt;!&ndash;reset time&ndash;&gt;-->
+<!--&lt;!&ndash;            <button id="reset" onclick="time_reset()">Stop</button>&ndash;&gt;-->
+<!--        </div>-->
         <!--display time end-->
 
         <!--back home button in play main interface start-->
@@ -458,24 +458,88 @@
         <!--back home button in play main interface end-->
 
         <!--left interface: article start-->
-        <div class="play_left">
-            <div id="content">
-                <!--change background, font, font size start-->
-                <div class="adjust_text">
-                    <button class="adjust_text_button" onclick="change_background()">Background</button>
-                    <button class="adjust_text_button" onclick="change_font_family()">Font Family</button>
-                    <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>
-                    <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
-                    <!-- <button class="adjust_text_button ">B</button>-->
-                </div>
-                <!--change background, font, font size end-->
+<!--        <div class="play_left">-->
+<!--            <div id="content">-->
+<!--                &lt;!&ndash;change background, font, font size start&ndash;&gt;-->
+<!--                <div class="adjust_text">-->
+<!--                    <button class="adjust_text_button" onclick="change_background()">Background</button>-->
+<!--                    <button class="adjust_text_button" onclick="change_font_family()">Font Family</button>-->
+<!--                    <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>-->
+<!--                    <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>-->
+<!--                    &lt;!&ndash; <button class="adjust_text_button ">B</button>&ndash;&gt;-->
+<!--                </div>-->
+<!--                &lt;!&ndash;change background, font, font size end&ndash;&gt;-->
 
-                <!-- article display start-->
-                <div id="text"></div>
-                <!-- article display end-->
+<!--                &lt;!&ndash; article display start&ndash;&gt;-->
+<!--                <div id="text"></div>-->
+<!--                &lt;!&ndash; article display end&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;left interface: article end&ndash;&gt;-->
+        <div class="play_left">
+
+            <input class="variation1" id="i1" type="radio" value="1" name="border" checked="checked" onclick="document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#af4d98'"/>
+            <label for="i1"><span class="circle"></span></span><span style="font-size: 2vw">Easy</span></label>
+
+            <input class="variation" id="i2" type="radio" value="2" name="border" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='block';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#e5a9a9'"/>
+            <label for="i2"> <span class="circle"></span><span style="font-size: 2vw">Normal</span></label>
+
+            <input class="variation" id="i3" type="radio" value="3" name="border" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#C6A477'"/>
+            <label for="i3"><span class="circle"></span><span style="font-size: 2vw">Hard</span></label>
+
+
+            <div class="folder">
+                <div class="tabs" id="b1">
+                    <button class="tab" id="tab-1"  onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#af4d98'" >
+                        <div><span id="theme_1">Inspirational</span></div>
+                    </button>
+
+                    <button class="tab" id="tab-2" onclick="display_play('L','Sport');openTab(event);document.getElementById('content_color').style.backgroundColor='#d66ba0'">
+                        <div><span id="theme_2">Sport</span></div>
+                    </button>
+                </div>
+
+                <div class="tabs" id="b2" style="display: none">
+                    <button class="tab" id="tab-3" onclick="display_play('M','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#e5a9a9'" >
+                        <div><span id="theme_3">Fiction</span></div>
+                    </button>
+
+                    <button class="tab" id="tab-4" onclick="display_play('M','Prose');openTab(event);document.getElementById('content_color').style.backgroundColor='#6cb6bb'">
+                        <div><span id="theme_4">Prose</span></div>
+                    </button>
+                </div>
+
+                <div class="tabs" id="b3" style="display: none">
+                    <button class="tab" id="tab-5" onclick="display_play('H','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#C6A477'" >
+                        <div><span id="theme_5">Fiction</span></div>
+                    </button>
+
+                    <button class="tab" id="tab-6" onclick="display_play('H','Academics');openTab(event);document.getElementById('content_color').style.backgroundColor='#9791A0'">
+                        <div><span id="theme_6">Academics</span></div>
+                    </button>
+                </div>
+
+                <div class="content" >
+                    <div class="content__inner" id="content_color" >
+                        <div id="text_box">
+                            <div id="text">
+
+                            </div>
+                            <hr style="width: 99%;border-width:2px;margin-bottom: 2%;border-color: #3C3C3C">
+                            <div class="adjust_text">
+                                <button class="adjust_text_button" onclick="change_background()">Background</button>
+                                <button class="adjust_text_button" onclick="change_font_family()">Font Family</button>
+                                <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>
+                                <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>
+                                <!-- <button class="adjust_text_button ">B</button>-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
         </div>
-        <!--left interface: article end-->
 
         <!--right interface: user input, score, dictionary start-->
         <div class="play_right">
