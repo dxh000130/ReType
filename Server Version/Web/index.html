@@ -482,16 +482,16 @@
             <input class="variation1" id="i1" type="radio" value="1" name="border" checked="checked" onclick="document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#af4d98'"/>
             <label for="i1"><span class="circle"></span></span><span style="font-size: 2vw">Easy</span></label>
 
-            <input class="variation" id="i2" type="radio" value="2" name="border" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='block';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#e5a9a9'"/>
+            <input class="variation" id="i2" type="radio" value="2" name="border" onclick="display_play('M','Fiction');document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='block';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#e5a9a9'"/>
             <label for="i2"> <span class="circle"></span><span style="font-size: 2vw">Normal</span></label>
 
-            <input class="variation" id="i3" type="radio" value="3" name="border" onclick="document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#C6A477'"/>
+            <input class="variation" id="i3" type="radio" value="3" name="border" onclick="display_play('H','Fiction');document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#C6A477'"/>
             <label for="i3"><span class="circle"></span><span style="font-size: 2vw">Hard</span></label>
 
 
             <div class="folder">
                 <div class="tabs" id="b1">
-                    <button class="tab" id="tab-1"  onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#af4d98'" >
+                    <button class="tab active" id="tab-1"  onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#af4d98'" >
                         <div><span id="theme_1">Inspirational</span></div>
                     </button>
 
@@ -501,7 +501,7 @@
                 </div>
 
                 <div class="tabs" id="b2" style="display: none">
-                    <button class="tab" id="tab-3" onclick="display_play('M','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#e5a9a9'" >
+                    <button class="tab active" id="tab-3" onclick="display_play('M','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#e5a9a9'" >
                         <div><span id="theme_3">Fiction</span></div>
                     </button>
 
@@ -511,7 +511,7 @@
                 </div>
 
                 <div class="tabs" id="b3" style="display: none">
-                    <button class="tab" id="tab-5" onclick="display_play('H','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#C6A477'" >
+                    <button class="tab active" id="tab-5" onclick="display_play('H','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#C6A477'" >
                         <div><span id="theme_5">Fiction</span></div>
                     </button>
 

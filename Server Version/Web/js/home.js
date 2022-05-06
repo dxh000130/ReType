@@ -363,6 +363,7 @@ function display_game() {
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
     }else{
+        display_play("L","Inspirational");
         document.getElementById("play_homepage").style.display = "block";
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
@@ -400,6 +401,7 @@ function openTab(evt) {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+    // document.getElementById('tab').style.display="block";
     evt.currentTarget.className += " active";
 }
 
