@@ -1428,7 +1428,7 @@ html {
     /*background-image: url("../images/play1.png");*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-color: blanchedalmond;
+    /*background-color: blanchedalmond;*/
 }
 
 .variation {
@@ -2053,7 +2053,6 @@ html {
     font-size: 20px;
     /*display: flex;*/
 }
-
 
 #prompt_box:before, #prompt_box:after {
     content: "";
