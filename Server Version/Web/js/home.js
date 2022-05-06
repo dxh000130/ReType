@@ -399,9 +399,11 @@ function BackToHome() {
     document.getElementById("user_modal").style.display = "none";
     // Set the timer on the game interface to 0
     time_reset();
+    // document.getElementById('play_homepage').innerHTML.reload();
+    // window.location.reload();
+
 
 }
-
 
 
 
@@ -523,6 +525,7 @@ function display_play(difficulties, theme) {
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
             document.getElementById("current_score_div").innerHTML = localStorage.score;
+            document.getElementById("play_bottom").style.display="block";
             // pause_time();
         })
         //键盘监听
