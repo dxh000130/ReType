@@ -417,12 +417,6 @@ function BackToHome() {
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById("user_modal").style.display = "none";
-    // document.getElementById('i1').style.display = 'block';
-    // document.getElementById('i2').style.display = 'block';
-    // document.getElementById('i3').style.display = 'block';
-    // document.getElementById('b1').style.display = 'none';
-    // document.getElementById('b2').style.display = 'none';
-    // document.getElementById('b3').style.display = 'none';
     // Set the timer on the game interface to 0
     time_reset();
 
@@ -774,64 +768,104 @@ function audio_dictionaries() {
 }
 
 
-// time in game main interface
-var i = 0;
-var timer1 = null;
-var isRunning = false;
-function doubleLing(i) {
-    if (i < 10) {
-        return "0" + i
-    } else {
-        return i
-    }
-}
-function startBtn() {
-    timer1 = setInterval(function () {
-        i++
-        document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
-        document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
-        // document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
-    }, 10)
-}
-function pasueBtn() {
-    clearInterval(timer1);
-}
-// function time_start() {
-//     if (!isRunning) {
-//         isRunning = true;
-//         document.getElementById("btn1").innerHTML = "Pause";
-//         startBtn();
+// // time in game main interface
+// var i = 0;
+// var timer1 = null;
+// var isRunning = false;
+// function doubleLing(i) {
+//     if (i < 10) {
+//         return "0" + i
 //     } else {
+//         return i
+//     }
+// }
+// function startBtn() {
+//     timer1 = setInterval(function () {
+//         i++
+//         document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
+//         document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
+//         // document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
+//     }, 10)
+// }
+// function pasueBtn() {
+//     clearInterval(timer1);
+// }
+// // function time_start() {
+// //     if (!isRunning) {
+// //         isRunning = true;
+// //         document.getElementById("btn1").innerHTML = "Pause";
+// //         startBtn();
+// //     } else {
+// //         isRunning = false;
+// //         pasueBtn();
+// //     }
+// // }
+//
+// function time_reset() {
+//     clearInterval(timer1);
+//     i = 0;
+//     isRunning = false;
+//     document.getElementById("btn1").innerHTML = "Start";
+//     document.getElementById("second").innerHTML = "00";
+//     document.getElementById("minute").innerHTML = "00";
+//     // document.getElementById("hour").innerHTML = "00";
+// }
+//
+// function pause_time(){
+//     if (!isRunning) {
+//         document.getElementById("btn1").innerHTML = "Pause";
+//         isRunning = true;
+//         startBtn();
+//         document.getElementById("text").style.filter="blur(0px)";
+//     } else {
+//         document.getElementById("btn1").innerHTML = "Start";
 //         isRunning = false;
 //         pasueBtn();
+//         document.getElementById("text").style.filter="blur(5px)";
 //     }
 // }
 
-function time_reset() {
-    clearInterval(timer1);
-    i = 0;
-    isRunning = false;
-    document.getElementById("btn1").innerHTML = "Start";
-    document.getElementById("second").innerHTML = "00";
-    document.getElementById("minute").innerHTML = "00";
-    // document.getElementById("hour").innerHTML = "00";
+var defaults = {}
+    , one_second = 1000
+    , one_minute = one_second * 60
+    , one_hour = one_minute * 60
+    , one_day = one_hour * 24
+    , startDate = new Date()
+    , face = document.getElementById('lazy');
+
+// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
+var requestAnimationFrame = (function() {
+    return window.requestAnimationFrame       ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame    ||
+        window.oRequestAnimationFrame      ||
+        window.msRequestAnimationFrame     ||
+        function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+        };
+}());
+
+tick();
+
+function tick() {
+
+    var now = new Date()
+        , elapsed = now - startDate
+        , parts = [];
+
+    parts[0] = '' + Math.floor( elapsed / one_hour );
+    parts[1] = '' + Math.floor( (elapsed % one_hour) / one_minute );
+    parts[2] = '' + Math.floor( ( (elapsed % one_hour) % one_minute ) / one_second );
+
+    parts[0] = (parts[0].length == 1) ? '0' + parts[0] : parts[0];
+    parts[1] = (parts[1].length == 1) ? '0' + parts[1] : parts[1];
+    parts[2] = (parts[2].length == 1) ? '0' + parts[2] : parts[2];
+
+    face.innerText = parts.join(':');
+
+    requestAnimationFrame(tick);
+
 }
-
-function pause_time(){
-    if (!isRunning) {
-        document.getElementById("btn1").innerHTML = "Pause";
-        isRunning = true;
-        startBtn();
-        document.getElementById("text").style.filter="blur(0px)";
-    } else {
-        document.getElementById("btn1").innerHTML = "Start";
-        isRunning = false;
-        pasueBtn();
-        document.getElementById("text").style.filter="blur(5px)";
-    }
-}
-
-
 
 
 

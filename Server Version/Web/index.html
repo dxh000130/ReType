@@ -414,7 +414,7 @@
 
 
     <!--play main interface start-->
-    <div id="play_homepage" style="display: none">
+    <div id="play_homepage" style="display: block">
 
 <!--                display time start-->
 <!--                <div id="time">-->
@@ -459,24 +459,6 @@
         <!--back home button in play main interface end-->
 
         <!--left interface: article start-->
-<!--        <div class="play_left">-->
-<!--            <div id="content">-->
-<!--                &lt;!&ndash;change background, font, font size start&ndash;&gt;-->
-<!--                <div class="adjust_text">-->
-<!--                    <button class="adjust_text_button" onclick="change_background()">Background</button>-->
-<!--                    <button class="adjust_text_button" onclick="change_font_family()">Font Family</button>-->
-<!--                    <button class="adjust_text_button" onclick="change_font_size_big()">A+</button>-->
-<!--                    <button class="adjust_text_button" onclick="change_font_size_small()">A-</button>-->
-<!--                    &lt;!&ndash; <button class="adjust_text_button ">B</button>&ndash;&gt;-->
-<!--                </div>-->
-<!--                &lt;!&ndash;change background, font, font size end&ndash;&gt;-->
-
-<!--                &lt;!&ndash; article display start&ndash;&gt;-->
-<!--                <div id="text"></div>-->
-<!--                &lt;!&ndash; article display end&ndash;&gt;-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;left interface: article end&ndash;&gt;-->
         <div class="play_left">
 
             <input class="variation1" id="i1" type="radio" value="1" name="border" checked="checked" onclick="document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('text').innerHTML='';document.getElementById('content_color').style.backgroundColor='#af4d98'"/>
@@ -546,19 +528,26 @@
 
         <!--right interface: user input, score, dictionary start-->
         <div class="play_right">
-            <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
-<!--            <div id="prompt_box" style="display: none">-->
-<!--                Please press Enter when finished!-->
-<!--                <div id="prompt_box_triangle">-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="timer-group">
+                <div class="timer hour">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="timer minute">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="timer second">
+                    <div class="hand"><span></span></div>
+                    <div class="hand"><span></span></div>
+                </div>
+                <div class="face">
+                    <h2>Pause</h2>
+                    <p id="lazy">00:00</p>
+                </div>
 
-<!--            &lt;!&ndash;user input start&ndash;&gt;-->
-<!--            <div id="input">-->
-<!--                <input id="user_input" oninput="input_reminder()" autocomplete="off">-->
-<!--                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>-->
-<!--            </div>-->
-            <!--user input end-->
+            </div>
+
 
             <!--score, error start-->
             <div id="play_score_container">
