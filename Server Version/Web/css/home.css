@@ -1380,9 +1380,6 @@ html {
     /*background: slategray;*/
     margin-bottom: -5%;
     margin-top: 2%;
-
-
-
 }
 #time p{
     width: auto;
@@ -1422,16 +1419,16 @@ html {
 
 .play_left {
     width: 55%;
-    height: 80%;
+    height: 75%;
     float: left;
     margin-left: 5%;
-    margin-top: 7%;
+    margin-top: 5%;
     justify-content: center;
     align-items: center;
     /*background-image: url("../images/play1.png");*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /*background-color: blanchedalmond;*/
+    background-color: blanchedalmond;
 }
 
 .variation {
@@ -1454,11 +1451,12 @@ html {
     /*margin-top: 5%;*/
     margin-top: 5%;
     height: 90%;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 
 #text_box {
     height: 100%;
+    opacity: 0.8;
 }
 
 .tabs {
@@ -1834,10 +1832,11 @@ html {
     /*padding-top: 2%;*/
     font-size: 20px;
     word-spacing: 3px;
-    line-height: 35px;
+    line-height: 45px;
     padding-left: 5%;
     padding-right: 1%;
     padding-top: 3%;
+    opacity: 0.8;
     /*background-color: slategray;*/
 
 }
@@ -2014,64 +2013,38 @@ html {
 .play_right {
     /*background-color: yellow;*/
     width: 30%;
-    height: 88%;
+    height: 75%;
     /*margin-top: 5%;*/
     /*margin-left: 5%;*/
     margin-left: 5%;
     float: left;
-    margin-top: 4%;
+    margin-top: 5%;
+    background-color: blanchedalmond;
 
 }
 
-/*promote box for user input*/
-#prompt_box {
-    width: 60%;
-    height: 5%;
-    margin-bottom: -10%;
-    background: skyblue;
-    border-radius: 15px;
-    margin-left: 8%;
-    position: relative;
-    text-align: center;
-    font-size: 1vw;
-    padding-top: 5%;
 
-
-}
-
-#prompt_box_triangle {
-    width: 30%;
-    height: 120%;
-    position: absolute;
-    clip-path: polygon(49% 52%, 0 0, 100% 0);
-    left: 60%;
-    bottom: -100%;
-    background: skyblue;
-
-}
 
 /*user input*/
-#input {
-    background-color: darkslateblue;
-    width: 90%;
-    height: 15%;
-    margin-top: 6vh;
-    margin-left: 5%;
-    background-image: url("../images/type.gif");
-    background-size: cover;
-    background-position: 3px;
-    border-radius: 15px;
+#play_bottom{
+    width: 80%;
+    height: auto;
+    /*background-color: blanchedalmond;*/
+    float: left;
+    margin-top: 3%;
+    margin-left: 10%;
 }
+
 
 #user_input {
     width: 70%;
-    height: 50%;
-    margin-left: 15%;
-    margin-top: 3vh;
-
+    height: 100%;
+    /*margin-left: 15%;*/
+    /*margin-top: 3vh;*/
     background-color: blanchedalmond;
     float: left;
     font-size: 30px;
+    margin-left: 15%;
     opacity: 0.95;
 }
 
@@ -2079,16 +2052,17 @@ html {
 .Hint {
     clip-path: polygon(20% 0%, 0% 20%, 14% 51%, 0% 80%, 20% 100%, 51% 89%, 80% 100%, 100% 80%, 86% 55%, 100% 20%, 80% 0%, 46% 14%);
     background: #ecd300;
-    width: 28%;
-    height: 53%;
+    width: 20%;
+    height: 55px;
     float: left;
-    margin-left: -22%;
-    margin-top: 2vh;
+    margin-left: -15%;
+    margin-top: -1%;
     text-align: center;
     justify-content: center;
     align-items: center;
-    font-size: 1.5vw;
-    padding-top: 2vh;
+    font-size: 1.8vw;
+
+    line-height: 55px;
     text-shadow: 0 0 30px skyblue, 0 0 10px darkslateblue, 0 0 30px hotpink, 0 0 40px #ff417d, 0 0 70px #ff417d, 0 0 80px #ff417d, 0 0 100px #ff417d, 0 0 150px #ff417d;
     color: blanchedalmond;
 }

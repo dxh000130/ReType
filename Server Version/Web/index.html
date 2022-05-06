@@ -547,17 +547,17 @@
         <!--right interface: user input, score, dictionary start-->
         <div class="play_right">
             <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
-            <div id="prompt_box" style="display: none">
-                Please press Enter when finished!
-                <div id="prompt_box_triangle">
-                </div>
-            </div>
+<!--            <div id="prompt_box" style="display: none">-->
+<!--                Please press Enter when finished!-->
+<!--                <div id="prompt_box_triangle">-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <!--user input start-->
-            <div id="input">
-                <input id="user_input" oninput="input_reminder()" autocomplete="off">
-                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>
-            </div>
+<!--            &lt;!&ndash;user input start&ndash;&gt;-->
+<!--            <div id="input">-->
+<!--                <input id="user_input" oninput="input_reminder()" autocomplete="off">-->
+<!--                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">Hint</div>-->
+<!--            </div>-->
             <!--user input end-->
 
             <!--score, error start-->
@@ -644,6 +644,23 @@
                 </table>
             </div>
             <!--dictionary end-->
+        </div>
+
+        <div id="play_bottom">
+            <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
+            <div id="prompt_box" style="display: block">
+                Please press Enter when finished!
+                <div id="prompt_box_triangle">
+                </div>
+            </div>
+
+            <!--user input start-->
+
+                <input id="user_input" oninput="input_reminder()" autocomplete="off">
+                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">
+                    Hint</div>
+            <!--user input end-->
+
         </div>
 
 
