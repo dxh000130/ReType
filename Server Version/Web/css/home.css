@@ -2024,7 +2024,6 @@ html {
 }
 
 
-
 /*user input*/
 #play_bottom{
     width: 80%;
@@ -2036,6 +2035,61 @@ html {
 }
 
 
+#prompt_box{
+    float: left;
+    width: 20%;
+    /*height: 50%;*/
+    margin-top: -2%;
+    background-color: slategray;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5%;
+    position: relative;
+    border: 2px solid #f99;
+    padding-top: 1%;
+    padding-left: 2%;
+    padding-bottom: 1%;
+    /*padding-right: 2%;*/
+    font-size: 20px;
+    /*display: flex;*/
+}
+
+
+#prompt_box:before, #prompt_box:after {
+    content: "";
+    display: block;
+    border-width: 1.5vw;
+    position: absolute;
+    right: -17.5%;
+    top: 15px;
+    border-style: dashed solid solid dashed;
+    border-color: transparent transparent transparent #f99;
+    font-size: 0;
+    line-height: 0;
+}
+
+#prompt_box:after {
+    border-width: 1.2vw;
+    right: -14%;
+    top: 20px;
+    border-color: transparent transparent transparent #FFF;
+}
+#input_container{
+    float: left;
+    width: 70%;
+    margin-left: 2%;
+}
+/*#prompt_box_triangle{*/
+/*    width:30%;*/
+/*    height:  120%;*/
+/*    position: absolute;*/
+/*    clip-path: polygon(49% 52%, 0 0, 100% 0);*/
+/*    left: 60%;*/
+/*    bottom:-100%;*/
+/*    background: skyblue;*/
+
+/*}*/
+
 #user_input {
     width: 70%;
     height: 100%;
@@ -2044,7 +2098,7 @@ html {
     background-color: blanchedalmond;
     float: left;
     font-size: 30px;
-    margin-left: 15%;
+    /*margin-left: 15%;*/
     opacity: 0.95;
 }
 
