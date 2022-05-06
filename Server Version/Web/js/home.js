@@ -367,6 +367,7 @@ function display_game() {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
         // document.getElementById("difficult_page").style.display = "block";
+        pause_time();
     }
 }
 
@@ -393,8 +394,8 @@ function display_game() {
 //     document.getElementById("difficult_button3").style.display = "none";
 // }
 function openTab(evt) {
-    var i, tablinks;
-
+    var i;
+    var tablinks;
     tablinks = document.getElementsByClassName("tab");
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
@@ -509,7 +510,6 @@ function change_font_size_small() {
 
 
 
-
 // Display articles based on the difficulty and topic of the user's click
 var difficulties = "";
 var theme = "";
@@ -547,7 +547,7 @@ function display_play(difficulties, theme) {
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
             document.getElementById("current_score_div").innerHTML = localStorage.score;
-            pause_time();
+            // pause_time();
         })
         //键盘监听
     });
@@ -788,7 +788,7 @@ function startBtn() {
         i++
         document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
         document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
-        document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
+        // document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
     }, 10)
 }
 function pasueBtn() {
@@ -812,7 +812,7 @@ function time_reset() {
     document.getElementById("btn1").innerHTML = "Start";
     document.getElementById("second").innerHTML = "00";
     document.getElementById("minute").innerHTML = "00";
-    document.getElementById("hour").innerHTML = "00";
+    // document.getElementById("hour").innerHTML = "00";
 }
 
 function pause_time(){
@@ -863,7 +863,7 @@ function display_user(){
     if(valid_log==false){
         document.getElementById("first_page").style.display = "block";
         document.getElementById("login_modal").style.display="block";
-        document.getElementById("difficult_page").style.display = "none";
+        // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
         document.getElementById("error_text").innerHTML="Please log in first";
