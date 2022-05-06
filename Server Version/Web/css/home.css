@@ -963,266 +963,7 @@ html {
     width: 100%;
 }
 
-/*#difficult_page {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    overflow: hidden;*/
-/*    background: #336699;*/
-/*    !*position: absolute;*!*/
-/*    !*top: 0;*!*/
-/*    !*bottom: 0;*!*/
-/*    min-width: 100%;*/
-/*    min-height: 100%;*/
-/*    border-bottom-right-radius: 35%;*/
-/*    border-top-left-radius: 15%;*/
-/*}*/
 
-/*!*three difficulty*!*/
-/*.wrap {*/
-/*    position: relative;*/
-/*    !*background: #FFE4B5;*!*/
-/*    height: 250px;*/
-/*    width: 380px;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    !*flex-wrap: wrap;*!*/
-/*    perspective: 900px;*/
-/*    margin-top: 230px;*/
-/*    margin-left: 39%;*/
-/*    margin-right: 20%;*/
-/*}*/
-
-/*.cards_wrap {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    transform-style: preserve-3d;*/
-/*    transform: rotateY(0) translateZ(-700px);*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.cards_wrap_1 {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    transform-style: preserve-3d;*/
-/*    transform: rotateY(0) translateZ(-700px);*/
-/*    animation: rotate 1s;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    animation-fill-mode: forwards;*/
-/*}*/
-
-/*.cards_wrap_2 {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    transform-style: preserve-3d;*/
-/*    transform: rotateY(0) translateZ(-700px);*/
-/*    animation: rotate2 1s;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    animation-fill-mode: forwards;*/
-/*}*/
-
-/*.cards_wrap_3 {*/
-/*    position: absolute;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    transform-style: preserve-3d;*/
-/*    transform: rotateY(0) translateZ(-700px);*/
-/*    animation: rotate3 1s;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    animation-fill-mode: forwards;*/
-/*}*/
-
-/*.item {*/
-/*    border: 1px solid #ccc;*/
-/*    align-items: center;*/
-/*    justify-content: center;*/
-/*    text-align: center;*/
-/*    font-size: 4rem;*/
-/*    font-weight: bold;*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    bottom: 0;*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    display: flex;*/
-/*    cursor: pointer;*/
-/*}*/
-/*!*easy*!*/
-/*#i1 {*/
-/*    background: url(../images/bg2.png) no-repeat top center;*/
-/*    background-size: cover;*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(0) translateZ(700px);*/
-/*}*/
-/*!*two theme in easy*!*/
-/*#b1 {*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(0deg) translateZ(700px);*/
-/*    background-color: chocolate;*/
-/*    animation: fade_in_style_b1 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;*/
-/*}*/
-/*@keyframes fade_in_style_b1 {*/
-/*    0% {*/
-/*        -webkit-transform: rotateX(-100deg);*/
-/*        transform: rotateX(-100deg);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 0;*/
-/*    }*/
-/*    100% {*/
-/*        -webkit-transform: rotateX(0deg);*/
-/*        transform: rotateY(0deg) translateZ(700px);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
-/*#b1 p {*/
-/*    font-size: 40px;*/
-/*    padding-top: 15%;*/
-/*}*/
-/*#b1 a {*/
-/*    font-size: 30px;*/
-/*}*/
-
-/*!*normal*!*/
-/*#i2 {*/
-/*    background: url(../images/bg1.png) no-repeat top center;*/
-/*    background-size: cover;*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(120deg) translateZ(700px);*/
-/*}*/
-/*!*two theme in normal*!*/
-/*#b2 {*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(120deg) translateZ(700px);*/
-/*    background-color: chocolate;*/
-/*    animation: fade_in_style_b2 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;*/
-/*}*/
-/*@keyframes fade_in_style_b2 {*/
-/*    0% {*/
-/*        -webkit-transform: rotateX(-100deg);*/
-/*        transform: rotateX(-100deg);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 0;*/
-/*    }*/
-/*    100% {*/
-/*        -webkit-transform: rotateX(0deg);*/
-/*        transform: rotateY(120deg) translateZ(700px);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
-/*#b2 p {*/
-/*    font-size: 40px;*/
-/*    padding-top: 15%;*/
-/*}*/
-/*#b2 a {*/
-/*    font-size: 30px;*/
-/*}*/
-
-/*!*hard*!*/
-/*#i3 {*/
-/*    background: url(../images/bg3.png) no-repeat top center;*/
-/*    background-size: cover;*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(240deg) translateZ(700px);*/
-/*}*/
-/*!*two theme in hard*!*/
-/*#b3 {*/
-/*    opacity: 0.7;*/
-/*    transform: rotateY(240deg) translateZ(700px);*/
-/*    background-color: chocolate;*/
-/*    animation: fade_in_style_b3 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;*/
-/*}*/
-/*@keyframes fade_in_style_b3 {*/
-/*    0% {*/
-/*        -webkit-transform: rotateX(-100deg);*/
-/*        transform: rotateX(-100deg);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 0;*/
-/*    }*/
-/*    100% {*/
-/*        -webkit-transform: rotateX(0deg);*/
-/*        transform: rotateY(240deg) translateZ(700px);*/
-/*        -webkit-transform-origin: top;*/
-/*        transform-origin: top;*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
-/*#b3 p {*/
-/*    font-size: 40px;*/
-/*    padding-top: 15%;*/
-/*}*/
-/*#b3 a {*/
-/*    font-size: 30px;*/
-/*}*/
-
-/*!*change difficult button*!*/
-/*.difficult_button {*/
-/*    font-size: 45px;*/
-/*    outline: none;*/
-/*    border: none;*/
-/*    !*background: burlywood;*!*/
-/*    width: 70vw;*/
-/*    padding: 15px 0;*/
-/*    border-radius: 15px;*/
-/*    cursor: pointer;*/
-/*    background: burlywood;*/
-/*    color: #fee375;*/
-/*    text-shadow: -1px -1px black, 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black;*/
-/*    font-weight: bold;*/
-/*    font-style: italic;*/
-/*    margin-left: 60%;*/
-/*}*/
-
-/*.difficult_button:hover {*/
-/*    background-image: linear-gradient(to left, #03a9f4, #f441a5, rgb(124, 241, 241), #e3a5f0, #03a9f4);*/
-/*    background-size: 400%;*/
-/*    animation: run 4s linear 0s infinite;*/
-/*}*/
-/*@keyframes run {*/
-/*    100% {*/
-/*        background-position: 400% 0px;*/
-/*    }*/
-/*}*/
-
-/*@keyframes rotate {*/
-/*    0% {*/
-/*        transform: translateZ(-700px) rotateY(0);*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateZ(-700px) rotateY(-120deg);*/
-/*    }*/
-/*}*/
-/*@keyframes rotate2 {*/
-/*    0% {*/
-/*        transform: translateZ(-700px) rotateY(-120deg);*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateZ(-700px) rotateY(-240deg);*/
-/*    }*/
-/*}*/
-/*@keyframes rotate3 {*/
-/*    0% {*/
-/*        transform: translateZ(-700px) rotateY(-240deg);*/
-/*    }*/
-/*    100% {*/
-/*        transform: translateZ(-700px) rotateY(-360deg);*/
-/*    }*/
-/*}*/
 
 /*cancel button in theme interface*/
 .cancelbtn_play {
@@ -1344,22 +1085,7 @@ html {
     opacity: 0;
 }
 
-/*play difficulty end*/
 
-
-/*play main interface start*/
-/* .homebtn-container_play {
-    width: 10vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg);
-}
-
-.homebtn-container_play:nth-child(1) {
-    --btn-bg: #fac300;
-    --bg: #fc6100;
-} */
 
 #play_homepage {
     width: 100%;
@@ -1369,53 +1095,6 @@ html {
     background-size: cover;
 }
 
-/*time display in play main interface*/
-#time {
-    display: flex;
-    width: 30%;
-    height: auto;
-    border: 0;
-    margin-left: 26%;
-    /*margin:0 auto;*/
-    /*position: fixed;*/
-    /*background: slategray;*/
-    margin-bottom: -5%;
-    margin-top: 2%;
-}
-#time p{
-    width: auto;
-    font-size: 2.5vw;
-    font-weight: bolder;
-    float: left;
-
-}
-
-/*time start button*/
-#btn1{
-    width:auto;
-    float: right;
-    border-radius: 15%;
-    font-size: 2vw;
-    --btn-bg: #fac300;
-    --bg: #fc6100;
-    margin-left: 5%;
-}
-
-#btn1:hover {
-    animation: hint 0.5s ease-in-out infinite both;
-}
-
-/*time reset button*/
-#reset {
-    width: 15%;
-    float: left;
-    margin-right: 3%;
-    border-radius: 50%;
-}
-
-#reset:hover {
-    animation: hint 0.5s ease-in-out infinite both;
-}
 
 
 .play_left {
@@ -1923,48 +1602,18 @@ html {
     margin-left: 5%;
     float: left;
     margin-top: 5%;
-    background-color: blanchedalmond;
+    /*background-color: blanchedalmond;*/
 }
-/*time start*/
-/*.timer-group{*/
-/*    width: 90%;*/
-/*    height: 20%;*/
-/*    margin-left: 5%;*/
-/*    margin-top: 5%;*/
-/*    background-color: slategray;*/
-/*    position: relative;*/
-/*}*/
-/*.timer{*/
-/*    border-radius: 50%;*/
-/*    height: 100%;*/
-/*    overflow: hidden;*/
-/*    position: absolute;*/
-/*    width: 30%;*/
-/*    min-width: 100px;*/
-/*    background-color: steelblue;*/
-/*    margin-left: 30%;*/
-/*}*/
-/*.timer:after {*/
-/*    background: #111 url(http://codepen.io/images/classy_fabric.png);*/
-/*    border-radius: 50%;*/
-/*    content: "";*/
-/*    display: block;*/
-/*    height: 80%;*/
-/*    position: absolute;*/
-/*    margin-top: 10%;*/
-/*    !*min-height: 90px;*!*/
 
-/*    width: 20%;*/
-/*    min-width: 100px;*/
-/*    margin-left: 10%;*/
+/*time display in play main interface*/
 
-/*}*/
+
 
 
 .timer-group{
     width: 170px;
     height: 170px;
-    background-color: steelblue;
+    /*background-color: steelblue;*/
     margin: 0 auto;
     position: relative;
 }
@@ -1977,7 +1626,7 @@ html {
     background-color: aquamarine;
 }
 .timer:after {
-    background: #111 url(http://codepen.io/images/classy_fabric.png);
+    background: #111 ;
     border-radius: 50%;
     content: "";
     display: block;
@@ -2086,17 +1735,7 @@ html {
     width: 64px;
     top: 2px;
 }
-/*.face {*/
-/*    background: rgba(0, 0, 0, .1);*/
-/*    border-radius: 50%;*/
-/*    height: 296px;*/
-/*    left: 52px;*/
-/*    padding: 165px 40px 0;*/
-/*    position: absolute;*/
-/*    width: 296px;*/
-/*    text-align: center;*/
-/*    top: 52px;*/
-/*}*/
+
 .face{
     border-radius: 50%;
     height: 90px;
@@ -2107,8 +1746,25 @@ html {
     text-align: center;
     top: 40px;
     background-color: aqua;
+    line-height: 90px;
+    font-size: 30px;
+}
+/*time start button*/
+#btn1{
+    width:80px;
+    float: right;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    --btn-bg: #fac300;
+    --bg: #fc6100;
+    /*margin-left: 25px;*/
+    /*margin-top: 5px;*/
 }
 
+#btn1:hover {
+    animation: hint 0.5s ease-in-out infinite both;
+}
 
 @keyframes spin1 {
     0% {
@@ -2133,13 +1789,15 @@ html {
         transform: rotate(405deg);
     }
 }
+
+
 /*score, error*/
 #play_score_container {
     width: 90%;
-    height: 45%;
+    height: 48%;
     margin-top: 5%;
     margin-left: 5%;
-    background-color: burlywood;
+    /*background-color: burlywood;*/
     position: relative;
     border-radius: 15px;
 }
