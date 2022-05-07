@@ -1686,12 +1686,33 @@ html {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-.timer .hand:first-child span {
-    /*animation: spin1;*/
+/*.timer .hand:first-child span {*/
+/*    animation-name: spin1;*/
+/*}*/
+
+/*.timer .hand:last-child span {*/
+/*    animation-name: spin2;*/
+/*}*/
+.hand_span1{
+    animation-name: spin1;
 }
 
-.timer .hand:last-child span {
-    /*animation: spin2;*/
+.hand_span2{
+    animation-name: spin2;
+}
+.hand_span3{
+    animation-name: spin1;
+}
+
+.hand_span4{
+    animation-name: spin2;
+}
+.hand_span5{
+    animation-name: spin1;
+}
+
+.hand_span6{
+    animation-name: spin2;
 }
 @keyframes spin1 {
     0% {
@@ -1726,7 +1747,7 @@ html {
     top: 0;
 }
 .timer.hour .hand span {
-    animation-duration: 3600s;
+    animation-duration: 300s;
     border-top-color: rgba(255, 0, 255, .4);
     border-right-color: rgba(255, 0, 255, .4);
     border-width: 85px;
@@ -1767,7 +1788,7 @@ html {
 }
 
 .timer.second .hand span {
-    animation-duration: 1s;
+    animation-duration: 60s;
     border-top-color: rgba(255, 255, 255, .15);
     border-right-color: rgba(255, 255, 255, .15);
     border-width: 35px;

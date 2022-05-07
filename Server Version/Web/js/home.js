@@ -529,6 +529,8 @@ function display_play(difficulties, theme) {
         document.getElementById("remain_error_div").innerHTML = "";
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
+
+
     }else {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("difficult_page").style.display = "none";
@@ -563,12 +565,12 @@ function display_play(difficulties, theme) {
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
                 document.getElementById("play_bottom").style.display = "block";
 
-
-
-                document.getElementsByClassName('hand_span2').style.animation="spin2";
-
-                // document.getElementsByClassName('hand_span2').style.animation='spin2';
-
+                document.getElementById("hand_span1").className="hand_span1";
+                document.getElementById("hand_span2").className="hand_span2";
+                document.getElementById("hand_span3").className="hand_span3";
+                document.getElementById("hand_span4").className="hand_span4";
+                document.getElementById("hand_span5").className="hand_span5";
+                document.getElementById("hand_span6").className="hand_span6";
                 
             })
             //键盘监听
