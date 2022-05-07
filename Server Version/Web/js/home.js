@@ -73,6 +73,10 @@ function Login() {
                 console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
+                if(valid_log == true){
+                    document.getElementById("login_modal").style.display = "none";
+                    document.getElementById("error_box").style.display = "none";
+                }
                 const button = document.getElementById("error_button");
                 button.onclick = function () {
                     document.getElementById("error_box").style.display = "none";
@@ -510,6 +514,12 @@ function display_play(difficulties, theme) {
         if(document.getElementById("tab").className=="tab active"){
             document.getElementById("tab").className = "tab";
         }
+        document.getElementById("i1").checked = true;
+        document.getElementById('b1').style.display='block';
+        document.getElementById('b2').style.display='none';
+        document.getElementById('b3').style.display='none';
+        document.getElementById('text').innerHTML='';
+        document.getElementById('content_color').style.backgroundColor='#af4d98';
         document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
         document.getElementById("current_score_div").innerHTML = "";
         document.getElementById("total_error_div").innerHTML = "";
@@ -538,7 +548,8 @@ function display_play(difficulties, theme) {
         ArticleChoose.then(res => {
             res.json().then(function (return_text) {
                 document.querySelector('#text').innerHTML = return_text.article;
-                pause_time();
+                start_timer();
+                document.getElementById("btn1").style.display = "block";
                 total_errors = return_text.errorRemain;
                 error_remain = total_errors;
                 articleid = return_text.id;
@@ -815,6 +826,17 @@ function pause_time() {
         isRunning = false;
         pasueBtn();
         document.getElementById("text").style.filter = "blur(5px)";
+    }
+}
+function start_timer() {
+    if (!isRunning) {
+        document.getElementById("btn1").innerHTML = "Pause";
+        isRunning = true;
+        startBtn();
+    } else {
+        document.getElementById("btn1").innerHTML = "Start";
+        isRunning = false;
+        pasueBtn();
     }
 }
 
