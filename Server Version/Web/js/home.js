@@ -368,6 +368,7 @@ function display_game() {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
         // document.getElementById("difficult_page").style.display = "block";
+        
     }
 }
 
@@ -502,6 +503,8 @@ var wholearticle = "";
 var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
+var timer1 = null;
+var isRunning = false;
 function display_play(difficulties, theme) {
     if (difficulties == "" && theme == "") {
         if(document.getElementById("tab").className=="tab active"){
@@ -519,6 +522,7 @@ function display_play(difficulties, theme) {
         document.getElementById("play_homepage").style.display = "block";
         var ArticleChooseheader = new Headers();
         getscore();
+        time_reset();
         ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         ArticleChooseheader.append('Content-Type', 'application/json')
         ArticleChooseheader.append('Accept', 'text/plain')
@@ -771,8 +775,7 @@ function audio_dictionaries() {
 
 // time in game main interface
 var i = 0;
-var timer1 = null;
-var isRunning = false;
+
 function doubleLing(i) {
     if (i < 10) {
         return "0" + i
