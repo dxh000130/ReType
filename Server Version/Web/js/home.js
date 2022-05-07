@@ -404,17 +404,13 @@ function BackToHome() {
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById("user_modal").style.display = "none";
     // Set the timer on the game interface to 0
-    game_reset();
+    display_play("", "");
     // document.getElementById('play_homepage').innerHTML.reload();
     // window.location.reload();
 
 
 }
-function game_reset() {
-    time_reset();
-    display_play("", "");
-    
-}
+
 
 
 // Change the background button in the game interface
@@ -514,11 +510,15 @@ function display_play(difficulties, theme) {
         if(document.getElementById("tab").className=="tab active"){
             document.getElementById("tab").className = "tab";
         }
+        time_reset();
         document.getElementById("i1").checked = true;
         document.getElementById('b1').style.display='block';
         document.getElementById('b2').style.display='none';
         document.getElementById('b3').style.display='none';
         document.getElementById('text').innerHTML='';
+        document.getElementById("play_bottom").style.display = "none";
+        document.getElementById("btn1").style.display = "none";
+        document.getElementById("text").style.filter = "blur(0px)";
         document.getElementById('content_color').style.backgroundColor='#af4d98';
         document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
         document.getElementById("current_score_div").innerHTML = "";
