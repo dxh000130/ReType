@@ -861,6 +861,32 @@ function edit_profile() {
         }
     })
 }
+
+function get_profile(){
+    let head = new Headers();
+    head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+    head.append('Content-Type', 'application/json');
+    head.append('Accept', 'text/plain');
+    const get_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetUserDetail/'+ localStorage.user_id, {
+        // credentials: 'include',
+        method: "GET",
+        headers: head,
+    })
+    .then(r => {
+        r.json().then(function (data) {
+            {
+                if (data.username == localStorage.user_id) {
+                    console.log(data);
+                    document.getElementById("username").value = data.username;
+                    document.getElementById("name").value = data.name;
+                    document.getElementById("gender").value = data.gerder;
+                    document.getElementById("DOB").value = data.dataofbirth;
+                }
+            }
+        })
+    })
+}
+
 function display_user(){
     if(valid_log==false){
         document.getElementById("first_page").style.display = "block";
@@ -874,6 +900,7 @@ function display_user(){
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
     }else{
+        get_profile();
         document.getElementById("user_modal").style.display = "block";
         document.getElementById("username").innerHTML= localStorage.user_id;
         document.getElementById('introduction_model').style.display = 'none';

@@ -1,6 +1,6 @@
 /*homepage start*/
 #first_page {
-    background-image: url("../images/homepage.jpg");
+    background-image: url("../images/hh.gif");
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
@@ -668,7 +668,12 @@
     height: 150px;
     /*padding-bottom: 10px;*/
 }
-
+.profile_picture{
+    background: url(../images/pp.png) no-repeat center;
+    background-size:5em;
+    width: 100%;
+    height: 100px;
+}
 /*owl in log in, register end*/
 
 
@@ -762,19 +767,22 @@ input[type="date"] {
     color: #9199aa;
     font-size: 18px;
     outline: none;
-    background: url(../images/key.png) no-repeat 10px 23px;
+    background: url(../images/DOB.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
     border-bottom: 1px solid #202023;
 }
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
 
 select[name="gender"] {
-    width: 70%;
+    width: 92%;
     padding: 1em 2em 1em 3em;
     color: #9199aa;
     font-size: 18px;
     outline: none;
-    background: url(../images/key.png) no-repeat 10px 23px;
+    background: url(../images/gender.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
     border-bottom: 1px solid #202023;
@@ -791,6 +799,17 @@ input[name="psw"] {
     font-weight: 100;
     border-bottom: 1px solid #484856;
     margin-bottom: 3em;
+}
+input[name="name"] {
+    width: 70%;
+    padding: 1em 2em 1em 3em;
+    color: #9199aa;
+    font-size: 18px;
+    outline: none;
+    background: url(../images/name.png) no-repeat 10px 15px;
+    border: none;
+    font-weight: 100;
+    border-bottom: 1px solid #484856;
 }
 
 input[name="psw1"] {
@@ -823,7 +842,7 @@ input[type="text"] {
     color: #dd3e3e;
     font-size: 18px;
     outline: none;
-    background: url(../images/key.png) no-repeat 10px 23px;
+    background: url(../images/VC.png) no-repeat 10px 23px;
     border: none;
     font-weight: 100;
     border-bottom: 1px solid #484856;
@@ -833,8 +852,7 @@ input[type="text"] {
 /* user input in log in, register interface start*/
 
 /*the button in log in interface start*/
-.btnlogin,
-.btnuser {
+.btnlogin{
     font-size: 30px;
     color: #fff;
     outline: none;
@@ -853,8 +871,7 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.btnlogin:hover,
-.btnuser:hover {
+.btnlogin:hover{
     opacity: 0.5;
     border-bottom-left-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;
@@ -874,7 +891,8 @@ input[type="text"] {
 
 
 /*button in register start*/
-.btnregister {
+.btnregister,
+.btnuser {
     font-size: 30px;
     color: #fff;
     outline: none;
@@ -894,7 +912,8 @@ input[type="text"] {
     margin-bottom: 20px;
 }
 
-.btnregister:hover {
+.btnregister:hover,
+.btnuser:hover {
     opacity: 0.5;
     border-bottom-left-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;
@@ -2044,7 +2063,7 @@ html {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5%;
-    position: relative;
+    position: absolute;
     border: 2px solid #f99;
     padding-top: 1%;
     padding-left: 2%;

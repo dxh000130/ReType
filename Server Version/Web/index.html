@@ -111,10 +111,11 @@
 
         <!-- Edit User Profile Start-->
         <div id="user_modal" class="user_modal">
+            <div id="profile_picture" class="profile_picture"></div>
             <div class="user_modal-content">
                 <div class="register_form">
-                    <p id="username" type="username" placeholder="Change Username" name="uname"></p>
-                    <input id="name" type="username" placeholder="Enter Name" name="name">
+                    <input id="username" type="username" name="username" readonly></input>
+                    <input id="name" type="name" placeholder="Enter Name" name="name">
                     <input id="DOB" type="date" placeholder="Enter Date of Birth">
                     <select id="gender" name="gender">
                         <option selected>Choose Gender</option>
@@ -153,28 +154,27 @@
                         <label for="ac-1">&#10133 &nbsp;About Game</label>
                         <article class="ac-small" id="ac-small">
                             <p><font style="font-family:STXinwei;">This game aims to develop a simple editing game that challenges users for fun and
-                                dynamics and helps them improve their proofreading abilities at the same time.
-                                Retype will challenge different users to improve their spelling and proofreading ability, timely correct mistakes,
+                                dynamics and helps them improve their proofreading skills at the same time.
+                                ReType will challenge different users to improve their spelling and proofreading ability, timely correct mistakes,
                                 and to record errors so that they can be viewed multiple times.</font></p>
                         </article>
                     </div>
 
                     <div>
                         <input id="ac-2" name="accordion-1" type="radio" />
-                        <label for="ac-2">&#10133 &nbsp;Announcements</label>
+                        <label for="ac-2">&#10133 &nbsp;Contact Us</label>
                         <article class="ac-medium">
-                            <p><font style="font-family:STXinwei;">If you want to modify your personal information (1), view the leaderboards (2) or start the game (3), Please log in to your account first.<br><br>
-                                If you do not have an account, please click the Sign-in button to register an account</font></p>
+                            <p><font style="font-family:STXinwei;">If you have any enquiries or experiencing any issues, feel free to contact us at info@retype.com.</font></p>
                         </article>
                     </div>
 
                     <div>
                         <input id="ac-3" name="accordion-1" type="radio" />
-                        <label for="ac-3">&#10133 &nbsp;How to play</label>
+                        <label for="ac-3">&#10133 &nbsp;How to play?</label>
                         <article class="ac-large">
                             <p><font style="font-family:STXinwei;"> <1> Please choose the difficulty of the game you want to challenge and the theme of your favorite article.<br>
-                                <2> You need to find the wrong words in the article.<br>
-                                <3> Please enter the correct spelling of the wrong word in the input box.<br>
+                                <2> You need to find the words with wrong spelling in the article.<br>
+                                <3> Please enter the correct spelling in the input box.<br>
                                 <4> If you type the correct spelling and press enter on the keyboard , the wrong words in the article will be automatically corrected and highlighted in green.<br>
                                 <5> If you don't know any wrong words in the article, you can click the Hint button for help, which will highlight the wrong word in the article.
                                 </font></p>
@@ -183,21 +183,21 @@
 
                     <div>
                         <input id="ac-4" name="accordion-1" type="radio" />
-                        <label for="ac-4">&#10133 &nbsp;Score Changes</label>
+                        <label for="ac-4">&#10133 &nbsp;Scoring</label>
                         <article class="ac-large">
-                            <p>><font style="font-family:STXinwei;">
-                                <1> For Easy difficulty level:<br>
-                                &nbsp;&nbsp;&nbsp; (1) if you type the correct spelling of the wrong words, will +2;<br>
-                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong spelling of the wrong words, will -2;<br>
-                                &nbsp;&nbsp;&nbsp; (3) if you clink Hint button to get help, will -1;<br><br>
-                                <2> For Normal difficulty level:<br>
-                                &nbsp;&nbsp;&nbsp; (1) if you type the correct spelling of the wrong words, will +3;<br>
-                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong spelling of the wrong words, will -3;<br>
-                                &nbsp;&nbsp;&nbsp; (3) if you clink Hint button to get help, will -1;<br><br>
-                                <3> For Hard difficulty level:<br>
-                                &nbsp;&nbsp;&nbsp; (1) if you type the correct spelling of the wrong words, will +4;<br>
-                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong spelling of the wrong words, will -4;<br>
-                                &nbsp;&nbsp;&nbsp; (3) if you clink Hint button to get help, will -1;
+                            <p><font style="font-family:STXinwei;">
+                                1: For Easy level:<br>
+                                &nbsp;&nbsp;&nbsp; (1) if you type the correct answer, will +2 points;<br>
+                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong answer, will -2 points;<br>
+                                &nbsp;&nbsp;&nbsp; (3) if you click Hint button to get help, will -1 point;<br><br>
+                                2: For Normal level:<br>
+                                &nbsp;&nbsp;&nbsp; (1) if you type the correct answer, will +3 points;<br>
+                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong answer, will -3 points;<br>
+                                &nbsp;&nbsp;&nbsp; (3) if you click Hint button to get help, will -1 point;<br><br>
+                                3: For Hard level:<br>
+                                &nbsp;&nbsp;&nbsp; (1) if you type the correct answer, will +4 points;<br>
+                                &nbsp;&nbsp;&nbsp; (2) if you type the wrong answer, will -4 points;<br>
+                                &nbsp;&nbsp;&nbsp; (3) if you click Hint button to get help, will -1 point;
                             </font></p>
                         </article>
                     </div>
@@ -491,7 +491,7 @@
 
             <div class="folder">
                 <div class="tabs" id="b1">
-                    <button class="tab active" id="tab-1"  onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#af4d98'" >
+                    <button class="tab" id="tab-1" onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#af4d98'" >
                         <div><span id="theme_1">Inspirational</span></div>
                     </button>
 
