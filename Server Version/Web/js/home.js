@@ -363,7 +363,7 @@ function display_game() {
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
     }else{
-        display_play("L","Inspirational");
+        // display_play("L","Inspirational");
         document.getElementById("play_homepage").style.display = "block";
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
@@ -373,27 +373,7 @@ function display_game() {
 }
 
 
-// enter change difficulty button in difficulty interface
-// function change_difficult1() {
-//     document.getElementById("cards_wrap").className = "cards_wrap_1";
-//     document.getElementById("difficult_button1").style.display = "none";
-//     document.getElementById("difficult_button3").style.display = "none";
-//     document.getElementById("difficult_button2").style.display = "block";
-// }
-//
-// function change_difficult2() {
-//     document.getElementById("cards_wrap").className = "cards_wrap_2";
-//     document.getElementById("difficult_button2").style.display = "none";
-//     document.getElementById("difficult_button1").style.display = "none";
-//     document.getElementById("difficult_button3").style.display = "block";
-// }
-//
-// function change_difficult3() {
-//     document.getElementById("cards_wrap").className = "cards_wrap_3";
-//     document.getElementById("difficult_button1").style.display = "block";
-//     document.getElementById("difficult_button2").style.display = "none";
-//     document.getElementById("difficult_button3").style.display = "none";
-// }
+
 function openTab(evt) {
     var i;
     var tablinks;
@@ -417,17 +397,13 @@ function BackToHome() {
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById("user_modal").style.display = "none";
-    // document.getElementById('i1').style.display = 'block';
-    // document.getElementById('i2').style.display = 'block';
-    // document.getElementById('i3').style.display = 'block';
-    // document.getElementById('b1').style.display = 'none';
-    // document.getElementById('b2').style.display = 'none';
-    // document.getElementById('b3').style.display = 'none';
     // Set the timer on the game interface to 0
     time_reset();
+    // document.getElementById('play_homepage').innerHTML.reload();
+    // window.location.reload();
+
 
 }
-
 
 
 
@@ -549,6 +525,7 @@ function display_play(difficulties, theme) {
             document.getElementById("total_error_div").innerHTML = total_errors;
             document.getElementById("remain_error_div").innerHTML = error_remain;
             document.getElementById("current_score_div").innerHTML = localStorage.score;
+            document.getElementById("play_bottom").style.display="block";
             // pause_time();
         })
         //键盘监听
@@ -790,22 +767,12 @@ function startBtn() {
         i++
         document.getElementById("second").innerHTML = doubleLing(parseInt(i / 100) % 60);
         document.getElementById("minute").innerHTML = doubleLing(parseInt(i / 6000) % 60);
-        // document.getElementById("hour").innerHTML = doubleLing(parseInt(i / 360000));
     }, 10)
 }
 function pasueBtn() {
     clearInterval(timer1);
 }
-// function time_start() {
-//     if (!isRunning) {
-//         isRunning = true;
-//         document.getElementById("btn1").innerHTML = "Pause";
-//         startBtn();
-//     } else {
-//         isRunning = false;
-//         pasueBtn();
-//     }
-// }
+
 
 function time_reset() {
     clearInterval(timer1);
@@ -814,7 +781,6 @@ function time_reset() {
     document.getElementById("btn1").innerHTML = "Start";
     document.getElementById("second").innerHTML = "00";
     document.getElementById("minute").innerHTML = "00";
-    // document.getElementById("hour").innerHTML = "00";
 }
 
 function pause_time(){
