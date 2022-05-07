@@ -1714,6 +1714,8 @@ html {
 .hand_span6{
     animation-name: spin2;
 }
+
+
 @keyframes spin1 {
     0% {
         transform: rotate(225deg);
