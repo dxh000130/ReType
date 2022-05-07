@@ -368,7 +368,6 @@ function display_game() {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
         // document.getElementById("difficult_page").style.display = "block";
-        pause_time();
     }
 }
 
@@ -535,6 +534,7 @@ function display_play(difficulties, theme) {
         ArticleChoose.then(res => {
             res.json().then(function (return_text) {
                 document.querySelector('#text').innerHTML = return_text.article;
+                pause_time();
                 total_errors = return_text.errorRemain;
                 error_remain = total_errors;
                 articleid = return_text.id;
@@ -543,7 +543,7 @@ function display_play(difficulties, theme) {
                 document.getElementById("remain_error_div").innerHTML = error_remain;
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
                 document.getElementById("play_bottom").style.display = "block";
-                // pause_time();
+                
             })
             //键盘监听
         });
