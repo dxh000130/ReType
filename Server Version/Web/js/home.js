@@ -512,6 +512,8 @@ function display_play(difficulties, theme) {
         document.getElementById("current_score_div").innerHTML = "";
         document.getElementById("total_error_div").innerHTML = "";
         document.getElementById("remain_error_div").innerHTML = "";
+        document.getElementById("play_bottom").style.display = "none";
+        document.getElementById("user_input").innerHTML = "";
     }else {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("difficult_page").style.display = "none";
