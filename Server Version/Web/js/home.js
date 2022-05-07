@@ -421,6 +421,14 @@ function BackToHome() {
     document.getElementById("hand_span4").removeAttribute("style");
     document.getElementById("hand_span5").removeAttribute("style");
     document.getElementById("hand_span6").removeAttribute("style");
+    document.getElementById("tab1").className="tab";
+    document.getElementById("tab2").className="tab";
+    document.getElementById("tab3").className="tab";
+    document.getElementById("tab4").className="tab";
+    document.getElementById("tab5").className="tab";
+    document.getElementById("tab6").className="tab";
+
+
 }
 
 
@@ -519,9 +527,9 @@ var timer1 = null;
 var isRunning = false;
 function display_play(difficulties, theme) {
     if (difficulties == "" && theme == "") {
-        if(document.getElementById("tab").className=="tab active"){
-            document.getElementById("tab").className = "tab";
-        }
+        // if(document.getElementById("tab").className=="tab active"){
+        //     document.getElementById("tab").className = "tab";
+        // }
         time_reset();
 
         document.getElementById("i1").checked = true;
