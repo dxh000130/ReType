@@ -62,10 +62,10 @@ function Login() {
             headers: headers1
         }).then(r => {
             if (r.status == 200) {
-            	let temp1 = r.text();
-            	temp1.then(function (return_text) {
-            		localStorage.user_id = return_text
-    			})
+                let temp1 = r.text();
+                temp1.then(function (return_text) {
+                    localStorage.user_id = return_text
+                })
 
                 //localStorage.user_id = username;
                 localStorage.pass = password;
@@ -133,7 +133,7 @@ function register() {
             // credentials: 'include',
             method: "POST",
             headers: {
-                
+
                 "Content-Type": "application/json",
                 "Accept": "text/plain",
             },
@@ -297,11 +297,11 @@ function GetLeaderboard() {
     ClearLeaderBoard();
     if (valid_log == false) {
         document.getElementById("first_page").style.display = "block";
-        document.getElementById("login_modal").style.display="block";
+        document.getElementById("login_modal").style.display = "block";
         // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
-        document.getElementById("error_text").innerHTML="Please log in first";
+        document.getElementById("error_text").innerHTML = "Please log in first";
     } else {
         document.getElementById('leaderboard_page').style.display = 'block';
         var htmltable = document.getElementById("rank");
@@ -325,7 +325,7 @@ function GetLeaderboard() {
         })
     }
 }
-function getscore(){
+function getscore() {
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
@@ -351,18 +351,18 @@ function ClearLeaderBoard() {
 
 // enter play button not display other interface
 function display_game() {
-    if(valid_log==false){
+    if (valid_log == false) {
         document.getElementById("first_page").style.display = "block";
-        document.getElementById("login_modal").style.display="block";
+        document.getElementById("login_modal").style.display = "block";
         // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
-        document.getElementById("error_text").innerHTML="Please log in first";
+        document.getElementById("error_text").innerHTML = "Please log in first";
         document.getElementById('register_modal').style.display = 'none';
         document.getElementById('leaderboard_page').style.display = 'none';
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
-    }else{
+    } else {
         // display_play("L","Inspirational");
         document.getElementById("play_homepage").style.display = "block";
         document.getElementById("first_page").style.display = "none";
@@ -386,8 +386,10 @@ function openTab(evt) {
 }
 
 
+
 // enter back home button which in top right for all interface
 function BackToHome() {
+
     document.getElementById("first_page").style.display = "block";
     // document.getElementById("difficult_page").style.display = "none";
     document.getElementById("play_homepage").style.display = "none";
@@ -398,13 +400,17 @@ function BackToHome() {
     document.getElementById('leaderboard_page').style.display = 'none';
     document.getElementById("user_modal").style.display = "none";
     // Set the timer on the game interface to 0
-    time_reset();
+    game_reset();
     // document.getElementById('play_homepage').innerHTML.reload();
     // window.location.reload();
 
 
 }
-
+function game_reset() {
+    time_reset();
+    display_play("", "");
+    
+}
 
 
 // Change the background button in the game interface
@@ -498,38 +504,48 @@ var AlreadyCorrect = "";
 var textinput = document.getElementById("user_input");
 var total_errors = 0;
 function display_play(difficulties, theme) {
-    document.getElementById("first_page").style.display = "none";
-    // document.getElementById("difficult_page").style.display = "none";
-    document.getElementById("play_homepage").style.display = "block";
-    var ArticleChooseheader = new Headers();
-    getscore();
-    ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-    ArticleChooseheader.append('Content-Type', 'application/json')
-    ArticleChooseheader.append('Accept', 'text/plain')
-    const ArticleChoose = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleChoose", {
-        // credentials: 'include',
-        method: "POST",
-        headers: ArticleChooseheader,
-        body: JSON.stringify({
-            "Difficulty": difficulties, //需关联选择页面 需修改
-            "Type": theme, //需关联选择页面 需修改
+    if (difficulties == "" && theme == "") {
+        if(document.getElementById("tab").className=="tab active"){
+            document.getElementById("tab").className = "tab";
+        }
+        document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
+        document.getElementById("current_score_div").innerHTML = "";
+        document.getElementById("total_error_div").innerHTML = "";
+        document.getElementById("remain_error_div").innerHTML = "";
+    }else {
+        document.getElementById("first_page").style.display = "none";
+        // document.getElementById("difficult_page").style.display = "none";
+        document.getElementById("play_homepage").style.display = "block";
+        var ArticleChooseheader = new Headers();
+        getscore();
+        ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+        ArticleChooseheader.append('Content-Type', 'application/json')
+        ArticleChooseheader.append('Accept', 'text/plain')
+        const ArticleChoose = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleChoose", {
+            // credentials: 'include',
+            method: "POST",
+            headers: ArticleChooseheader,
+            body: JSON.stringify({
+                "Difficulty": difficulties, //需关联选择页面 需修改
+                "Type": theme, //需关联选择页面 需修改
+            })
         })
-    })
-    ArticleChoose.then(res => {
-        res.json().then(function (return_text) {
-            document.querySelector('#text').innerHTML = return_text.article;
-            total_errors = return_text.errorRemain;
-            error_remain = total_errors;
-            articleid = return_text.id;
-            wholearticle = return_text.article;
-            document.getElementById("total_error_div").innerHTML = total_errors;
-            document.getElementById("remain_error_div").innerHTML = error_remain;
-            document.getElementById("current_score_div").innerHTML = localStorage.score;
-            document.getElementById("play_bottom").style.display="block";
-            // pause_time();
-        })
-        //键盘监听
-    });
+        ArticleChoose.then(res => {
+            res.json().then(function (return_text) {
+                document.querySelector('#text').innerHTML = return_text.article;
+                total_errors = return_text.errorRemain;
+                error_remain = total_errors;
+                articleid = return_text.id;
+                wholearticle = return_text.article;
+                document.getElementById("total_error_div").innerHTML = total_errors;
+                document.getElementById("remain_error_div").innerHTML = error_remain;
+                document.getElementById("current_score_div").innerHTML = localStorage.score;
+                document.getElementById("play_bottom").style.display = "block";
+                // pause_time();
+            })
+            //键盘监听
+        });
+    }
 }
 
 // A prompt box is displayed after the user enters a word
@@ -551,7 +567,7 @@ function Hint() {
     ArticleProcessMainFunction(0, 1);
 }
 
-var score_animation=0;
+var score_animation = 0;
 // hight light word, change score, hint
 function ArticleProcessMainFunction(Enterbutton, hint) {
     let headers2 = new Headers();
@@ -588,30 +604,30 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                         AlreadyCorrect = return_text1.alreadyCorrect;
                         error_remain -= 1;
                         console.log(return_text1.correct + " Score:" + return_text1.score); //可查看增加了多少分
-                        score_animation+=1;
-                        document.getElementById("score_animation_number").innerText="+"+return_text1.scoreChange;
-                        document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/thumb.png)";
-                        document.getElementById("score_animation_container").style.display="block";
-                        setTimeout(function(){
-                            document.getElementById("score_animation_container").style.display="none";
-                        },3500);
+                        score_animation += 1;
+                        document.getElementById("score_animation_number").innerText = "+" + return_text1.scoreChange;
+                        document.getElementById("score_animation_thumb").style.backgroundImage = "url(./images/thumb.png)";
+                        document.getElementById("score_animation_container").style.display = "block";
+                        setTimeout(function () {
+                            document.getElementById("score_animation_container").style.display = "none";
+                        }, 3500);
 
                     } else if (return_text1.correct === "No, minus score") { //回答错误 减分
                         console.log(return_text1.correct + " Score:" + return_text1.score);
-                        score_animation-=1;
-                        document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
-                        document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/wrong.png)";
-                        document.getElementById("score_animation_container").style.display="block";
-                        setTimeout(function(){
-                            document.getElementById("score_animation_container").style.display="none";
-                        },3500);
+                        score_animation -= 1;
+                        document.getElementById("score_animation_number").innerText = return_text1.scoreChange;
+                        document.getElementById("score_animation_thumb").style.backgroundImage = "url(./images/wrong.png)";
+                        document.getElementById("score_animation_container").style.display = "block";
+                        setTimeout(function () {
+                            document.getElementById("score_animation_container").style.display = "none";
+                        }, 3500);
                     } else {
                         console.log(return_text1.correct) //不加分不减分， 用户输入文章中的错误单词：tryagain, No plus or minus score， 用户输入已经答对的单词：Already Input, No plus or minus score， 高亮单词： No, No plus or minus score
-                        score_animation=0;
+                        score_animation = 0;
                     }
                 } else {
                     document.querySelector('#text').innerHTML = wholearticle;
-                    document.getElementById("score_animation_container").style.display="none";
+                    document.getElementById("score_animation_container").style.display = "none";
 
                 }
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
@@ -640,12 +656,12 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 res.json().then(function (return_text1) {
                     console.log(return_text1.hint); //Hint内容
                     document.querySelector('#text').innerHTML = return_text1.articleDisp; //高亮hint内容
-                    document.getElementById("score_animation_number").innerText=return_text1.scoreChange;
-                    document.getElementById("score_animation_thumb").style.backgroundImage="url(./images/hint.png)";
-                    document.getElementById("score_animation_container").style.display="block";
-                    setTimeout(function(){
-                        document.getElementById("score_animation_container").style.display="none";
-                    },3500);
+                    document.getElementById("score_animation_number").innerText = return_text1.scoreChange;
+                    document.getElementById("score_animation_thumb").style.backgroundImage = "url(./images/hint.png)";
+                    document.getElementById("score_animation_container").style.display = "block";
+                    setTimeout(function () {
+                        document.getElementById("score_animation_container").style.display = "none";
+                    }, 3500);
                 })
             })
         }
@@ -783,17 +799,17 @@ function time_reset() {
     document.getElementById("minute").innerHTML = "00";
 }
 
-function pause_time(){
+function pause_time() {
     if (!isRunning) {
         document.getElementById("btn1").innerHTML = "Pause";
         isRunning = true;
         startBtn();
-        document.getElementById("text").style.filter="blur(0px)";
+        document.getElementById("text").style.filter = "blur(0px)";
     } else {
         document.getElementById("btn1").innerHTML = "Start";
         isRunning = false;
         pasueBtn();
-        document.getElementById("text").style.filter="blur(5px)";
+        document.getElementById("text").style.filter = "blur(5px)";
     }
 }
 
@@ -814,10 +830,10 @@ function edit_profile() {
             "UserName": localStorage.user_id,
             "Name": document.getElementById("name").value,
             "DataofBirth": document.getElementById("DOB").value,
-            "Gerder": document.getElementById("gender").value        
+            "Gerder": document.getElementById("gender").value
         }),
     })
-    edit_profile.then(res =>{
+    edit_profile.then(res => {
         console.log(res.status)
         if (res.status == 200) {
             alert("Sucess");
@@ -828,47 +844,47 @@ function edit_profile() {
     })
 }
 
-function get_profile(){
+function get_profile() {
     let head = new Headers();
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     head.append('Content-Type', 'application/json');
     head.append('Accept', 'text/plain');
-    const get_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetUserDetail/'+ localStorage.user_id, {
+    const get_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetUserDetail/' + localStorage.user_id, {
         // credentials: 'include',
         method: "GET",
         headers: head,
     })
-    .then(r => {
-        r.json().then(function (data) {
-            {
-                if (data.username == localStorage.user_id) {
-                    console.log(data);
-                    document.getElementById("username").value = data.username;
-                    document.getElementById("name").value = data.name;
-                    document.getElementById("gender").value = data.gerder;
-                    document.getElementById("DOB").value = data.dataofbirth;
+        .then(r => {
+            r.json().then(function (data) {
+                {
+                    if (data.username == localStorage.user_id) {
+                        console.log(data);
+                        document.getElementById("username").value = data.username;
+                        document.getElementById("name").value = data.name;
+                        document.getElementById("gender").value = data.gerder;
+                        document.getElementById("DOB").value = data.dataofbirth;
+                    }
                 }
-            }
+            })
         })
-    })
 }
 
-function display_user(){
-    if(valid_log==false){
+function display_user() {
+    if (valid_log == false) {
         document.getElementById("first_page").style.display = "block";
-        document.getElementById("login_modal").style.display="block";
+        document.getElementById("login_modal").style.display = "block";
         // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "none";
         document.getElementById("error_box").style.display = "block";
-        document.getElementById("error_text").innerHTML="Please log in first";
+        document.getElementById("error_text").innerHTML = "Please log in first";
         document.getElementById('register_modal').style.display = 'none';
         document.getElementById('leaderboard_page').style.display = 'none';
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('user_modal').style.display = 'none';
-    }else{
+    } else {
         get_profile();
         document.getElementById("user_modal").style.display = "block";
-        document.getElementById("username").innerHTML= localStorage.user_id;
+        document.getElementById("username").innerHTML = localStorage.user_id;
         document.getElementById('introduction_model').style.display = 'none';
         document.getElementById('login_modal').style.display = 'none';
         document.getElementById('register_modal').style.display = 'none';

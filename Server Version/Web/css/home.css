@@ -1775,8 +1775,7 @@ html {
     height: 40px;
     border-radius: 50%;
     font-size: 20px;
-    --btn-bg: #fac300;
-    --bg: #fc6100;
+    background-color: #ebd725;
     /*margin-left: 25px;*/
     /*margin-top: 5px;*/
 }
