@@ -1837,8 +1837,8 @@ html {
 /*score, error*/
 #play_score_container {
     width: 90%;
-    height: 48%;
-    margin-top: 5%;
+    height: 43%;
+    margin-top: 8%;
     margin-left: 5%;
     /*background-color: burlywood;*/
     position: relative;
@@ -1851,6 +1851,7 @@ html {
     align-self: center;
     margin-left: 20%;
     padding-left: 8%;
+    float: left;
     /*background:rgba(230, 126, 34,0.4);*/
 }
 
@@ -1939,8 +1940,8 @@ html {
 #dictionaries {
     width: 90%;
     height: 20%;
-    margin-top: 5%;
-    margin-bottom: 0%;
+    margin-top: 3%;
+    /*margin-bottom: 0%;*/
     margin-left: 5%;
     background-color: aqua;
     /*display: flex;*/
@@ -2003,51 +2004,58 @@ html {
 
 
 #prompt_box{
-    float: left;
-    width: 20%;
+    float: right;
+    width: auto;
+    /*height:100%;*/
     /*height: 50%;*/
-    margin-top: -2%;
-    background-color: slategray;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    margin-top: -12%;
+    background-color: blanchedalmond;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
     border-radius: 5%;
     position: relative;
-    border: 2px solid #f99;
-    padding-top: 1%;
-    padding-left: 2%;
-    padding-bottom: 1%;
+    border: 8px solid #f99;
+    padding-top: 1.5%;
+    padding-left: 10%;
+    padding-bottom: 1.5%;
     /*padding-right: 2%;*/
-    font-size: 20px;
-    /*display: flex;*/
+    /*padding: 2%;*/
+    font-size: 1.2vw;
+    display: flex;
+    right:6%;
 }
 
 #prompt_box:before, #prompt_box:after {
     content: "";
     display: block;
-    border-width: 1.5vw;
+    border-width: 1.2vw;
     position: absolute;
-    right: -17.5%;
-    top: 15px;
+    right: -13.8%;
+    top: 1.2vw;
     border-style: dashed solid solid dashed;
     border-color: transparent transparent transparent #f99;
     font-size: 0;
     line-height: 0;
+    rotate: 50deg;
 }
 
 #prompt_box:after {
-    border-width: 1.2vw;
-    right: -14%;
-    top: 20px;
+    border-width: 1vw;
+    right: -9.8%;
+    top: 1.4vw;
     border-color: transparent transparent transparent #FFF;
 }
 /*user input*/
 #input_container{
     float: left;
-    width: 70%;
-    margin-left: 2%;
+    width: 100%;
+    /*margin-left: 3%;*/
+    /*position: fixed;*/
+    /*background-color: #6cb6bb;*/
+
 }
 #user_input {
-    width: 70%;
+    width: 85%;
     height: 100%;
     /*margin-left: 15%;*/
     /*margin-top: 3vh;*/
@@ -2056,6 +2064,8 @@ html {
     font-size: 30px;
     /*margin-left: 15%;*/
     opacity: 0.95;
+
+
 }
 
 /*hint button in user input*/

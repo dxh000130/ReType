@@ -509,7 +509,7 @@
                     </tr>
 
                     <tr
-                        style="width: 100%;height: 65%;background-color: rgb(198, 159, 227);border-radius: 15px;overflow: auto;display: inline-block;margin-top: 1%">
+                        style="width: 100%;height: 65%;border-radius: 15px;overflow: auto;display: inline-block;margin-top: 1%">
                         <td id="definition" style="width:100%;height:95%">
                             <h3 id="definition_h3">Definition</h3>
                         </td>
@@ -520,19 +520,31 @@
         </div>
 
         <div id="play_bottom" style="display: none">
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 25%;margin-right: 5%">
+                        <div id="prompt_box" style="display: none;">
+                            Please press Enter when finished!
+
+                        </div>
+                    </td>
+                    <td style="width: 70%">
+                        <div id="input_container">
+                            <!--user input start-->
+
+                            <input id="user_input" oninput="input_reminder()" autocomplete="off">
+                            <div class="Hint" id="Hint" value="Hint" onclick="Hint()">
+                                Hint</div>
+                            <!--user input end-->
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
             <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
-            <div id="prompt_box" style="display: none">
-                Please press Enter when finished!
-            </div>
 
-            <div id="input_container">
-                <!--user input start-->
 
-                <input id="user_input" oninput="input_reminder()" autocomplete="off">
-                <div class="Hint" id="Hint" value="Hint" onclick="Hint()">
-                    Hint</div>
-                <!--user input end-->
-            </div>
+
 
 
 
