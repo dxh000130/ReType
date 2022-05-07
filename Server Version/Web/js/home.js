@@ -407,6 +407,8 @@ function BackToHome() {
     display_play("", "");
     // document.getElementById('play_homepage').innerHTML.reload();
     // window.location.reload();
+    document.getElementById("dictionaries_input").value="";
+    document.getElementById("definition").innerHTML="<h3>Definition</h3>";
 
 
 }
@@ -511,6 +513,7 @@ function display_play(difficulties, theme) {
             document.getElementById("tab").className = "tab";
         }
         time_reset();
+
         document.getElementById("i1").checked = true;
         document.getElementById('b1').style.display='block';
         document.getElementById('b2').style.display='none';
@@ -533,6 +536,7 @@ function display_play(difficulties, theme) {
         var ArticleChooseheader = new Headers();
         getscore();
         time_reset();
+
         ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         ArticleChooseheader.append('Content-Type', 'application/json')
         ArticleChooseheader.append('Accept', 'text/plain')
@@ -558,6 +562,13 @@ function display_play(difficulties, theme) {
                 document.getElementById("remain_error_div").innerHTML = error_remain;
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
                 document.getElementById("play_bottom").style.display = "block";
+
+
+
+                document.getElementsByClassName('hand_span2').style.animation="spin2";
+
+                // document.getElementsByClassName('hand_span2').style.animation='spin2';
+
                 
             })
             //键盘监听
@@ -727,6 +738,13 @@ function define_dictionaries() {
             document.getElementById("definition").innerHTML = definition_final;
         }
     });
+}
+
+
+function display_defintion(){
+    if (document.getElementById("dictionaries_input").value.length==0){
+        document.getElementById("definition").innerHTML = "<h3>Definition</h3>";
+    }
 }
 
 // audio the words

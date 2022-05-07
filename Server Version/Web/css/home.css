@@ -1687,12 +1687,36 @@ html {
     animation-timing-function: linear;
 }
 .timer .hand:first-child span {
-    animation-name: spin1;
+    /*animation: spin1;*/
 }
 
 .timer .hand:last-child span {
-    animation-name: spin2;
+    /*animation: spin2;*/
 }
+@keyframes spin1 {
+    0% {
+        transform: rotate(225deg);
+    }
+    50% {
+        transform: rotate(225deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
+@keyframes spin2 {
+    0% {
+        transform: rotate(225deg);
+    }
+    50% {
+        transform: rotate(405deg);
+    }
+    100% {
+        transform: rotate(405deg);
+    }
+}
+
 
 .timer.hour {
     background: rgba(0, 0, 0, .3);
@@ -1784,29 +1808,7 @@ html {
     animation: hint 0.5s ease-in-out infinite both;
 }
 
-@keyframes spin1 {
-    0% {
-        transform: rotate(225deg);
-    }
-    50% {
-        transform: rotate(225deg);
-    }
-    100% {
-        transform: rotate(405deg);
-    }
-}
 
-@keyframes spin2 {
-    0% {
-        transform: rotate(225deg);
-    }
-    50% {
-        transform: rotate(405deg);
-    }
-    100% {
-        transform: rotate(405deg);
-    }
-}
 
 
 /*score, error*/

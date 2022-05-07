@@ -410,16 +410,16 @@
         <div class="play_right">
             <div class="timer-group">
                 <div class="timer hour">
-                    <div class="hand"><span></span></div>
-                    <div class="hand"><span></span></div>
+                    <div class="hand"><span class="hand_span1"></span></div>
+                    <div class="hand"><span class="hand_span2"></span></div>
                 </div>
                 <div class="timer minute">
-                    <div class="hand"><span></span></div>
-                    <div class="hand"><span></span></div>
+                    <div class="hand"><span class="hand_span1"></span></div>
+                    <div class="hand"><span class="hand_span2"></span></div>
                 </div>
                 <div class="timer second">
-                    <div class="hand"><span></span></div>
-                    <div class="hand"><span></span></div>
+                    <div class="hand"><span class="hand_span1"></span></div>
+                    <div class="hand"><span class="hand_span2"></span></div>
                 </div>
                 <div class="face">
                     <p>
@@ -495,7 +495,7 @@
                     <tr style="width: 100%;height: 30%;display: inline-block">
                         <td style="width:2%"></td>
                         <td style="width:50%">
-                            <input id="dictionaries_input" autocomplete="none" placeholder="It is Dictionary">
+                            <input id="dictionaries_input" autocomplete="none" placeholder="It is Dictionary" oninput="display_defintion()">
                         </td>
                         <td style="width:2%"></td>
                         <td style="width:20%">
