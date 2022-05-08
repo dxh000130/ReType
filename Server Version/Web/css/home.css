@@ -1109,7 +1109,7 @@ html {
 #play_homepage {
     width: 100%;
     height: 100%;
-    background-image: url("../images/bg.jpg");
+    background-image: url("../images/ig.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1296,11 +1296,11 @@ html {
 
 #i1:checked~.folder .tab:nth-of-type(1),
 #i1:checked~.folder .content__inner:nth-of-type(1) {
-    --background: #af4d98;
+    --background: #e2ba34;
 }
 
 #i1:checked~.folder .tab:nth-of-type(2) {
-    --background: #d66ba0;
+    --background: #94c584;
 }
 
 
@@ -1320,7 +1320,7 @@ html {
 }
 
 #i3:checked~.folder .tab {
-    --background: #9791A0;
+    --background: #9f99a8;
 }
 
 
@@ -1750,7 +1750,7 @@ html {
 }
 .timer.hour .hand span {
     animation-duration: 300s;
-    border-top-color: rgba(255, 0, 255, .4);
+    border-top-color:rgba(255, 0, 255, .4);
     border-right-color: rgba(255, 0, 255, .4);
     border-width: 85px;
 }
@@ -1943,7 +1943,7 @@ html {
     margin-top: 3%;
     /*margin-bottom: 0%;*/
     margin-left: 5%;
-    background-color: aqua;
+    background-color: rgba(248, 190, 81, 0.925);
     /*display: flex;*/
     border-radius: 15px;
     overflow: auto;
