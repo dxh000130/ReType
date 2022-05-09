@@ -73,7 +73,7 @@ function Login() {
                 console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
-                if(valid_log == true){
+                if (valid_log == true) {
                     document.getElementById("login_modal").style.display = "none";
                     document.getElementById("error_box").style.display = "none";
                 }
@@ -372,13 +372,13 @@ function display_game() {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("login_modal").style.display="none";
         // document.getElementById("difficult_page").style.display = "block";
-        document.getElementById("hand_span1").className="hand_span8";
-        document.getElementById("hand_span2").className="hand_span8";
-        document.getElementById("hand_span3").className="hand_span8";
-        document.getElementById("hand_span4").className="hand_span8";
-        document.getElementById("hand_span5").className="hand_span8";
-        document.getElementById("hand_span6").className="hand_span8";
-        
+        document.getElementById("hand_span1").className = "hand_span8";
+        document.getElementById("hand_span2").className = "hand_span8";
+        document.getElementById("hand_span3").className = "hand_span8";
+        document.getElementById("hand_span4").className = "hand_span8";
+        document.getElementById("hand_span5").className = "hand_span8";
+        document.getElementById("hand_span6").className = "hand_span8";
+
     }
 }
 
@@ -413,20 +413,20 @@ function BackToHome() {
     display_play("", "");
     // document.getElementById('play_homepage').innerHTML.reload();
     // window.location.reload();
-    document.getElementById("dictionaries_input").value="";
-    document.getElementById("definition").innerHTML="<h3>Definition</h3>";
+    document.getElementById("dictionaries_input").value = "";
+    document.getElementById("definition").innerHTML = "<h3>Definition</h3>";
     document.getElementById("hand_span1").removeAttribute("style");
     document.getElementById("hand_span2").removeAttribute("style");
     document.getElementById("hand_span3").removeAttribute("style");
     document.getElementById("hand_span4").removeAttribute("style");
     document.getElementById("hand_span5").removeAttribute("style");
     document.getElementById("hand_span6").removeAttribute("style");
-    document.getElementById("tab1").className="tab";
-    document.getElementById("tab2").className="tab";
-    document.getElementById("tab3").className="tab";
-    document.getElementById("tab4").className="tab";
-    document.getElementById("tab5").className="tab";
-    document.getElementById("tab6").className="tab";
+    document.getElementById("tab1").className = "tab";
+    document.getElementById("tab2").className = "tab";
+    document.getElementById("tab3").className = "tab";
+    document.getElementById("tab4").className = "tab";
+    document.getElementById("tab5").className = "tab";
+    document.getElementById("tab6").className = "tab";
 
 
 }
@@ -526,35 +526,37 @@ var total_errors = 0;
 var timer1 = null;
 var isRunning = false;
 function display_play(difficulties, theme) {
+    document.getElementById("hand_span1").removeAttribute("style");
+    document.getElementById("hand_span2").removeAttribute("style");
+    document.getElementById("hand_span3").removeAttribute("style");
+    document.getElementById("hand_span4").removeAttribute("style");
+    document.getElementById("hand_span5").removeAttribute("style");
+    document.getElementById("hand_span6").removeAttribute("style");
     if (difficulties == "" && theme == "") {
         // if(document.getElementById("tab").className=="tab active"){
         //     document.getElementById("tab").className = "tab";
         // }
+
         time_reset();
 
         document.getElementById("i1").checked = true;
-        document.getElementById('b1').style.display='block';
-        document.getElementById('b2').style.display='none';
-        document.getElementById('b3').style.display='none';
-        document.getElementById('text').innerHTML='';
+        document.getElementById('b1').style.display = 'block';
+        document.getElementById('b2').style.display = 'none';
+        document.getElementById('b3').style.display = 'none';
+        document.getElementById('text').innerHTML = '';
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("btn1").style.display = "none";
         document.getElementById("text").style.filter = "blur(0px)";
-        document.getElementById('content_color').style.backgroundColor='#e2ba34';
+        document.getElementById('content_color').style.backgroundColor = '#e2ba34';
         document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
         document.getElementById("current_score_div").innerHTML = "";
         document.getElementById("total_error_div").innerHTML = "";
         document.getElementById("remain_error_div").innerHTML = "";
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
-        document.getElementById("hand_span1").className="hand_span1";
-        document.getElementById("hand_span2").className="hand_span2";
-        document.getElementById("hand_span3").className="hand_span3";
-        document.getElementById("hand_span4").className="hand_span4";
-        document.getElementById("hand_span5").className="hand_span5";
-        document.getElementById("hand_span6").className="hand_span6";
 
-    }else {
+
+    } else {
         document.getElementById("first_page").style.display = "none";
         // document.getElementById("difficult_page").style.display = "none";
         document.getElementById("play_homepage").style.display = "block";
@@ -591,22 +593,22 @@ function display_play(difficulties, theme) {
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
                 document.getElementById("play_bottom").style.display = "block";
 
-                document.getElementById("hand_span1").className="hand_span1";
-                document.getElementById("hand_span2").className="hand_span2";
-                document.getElementById("hand_span3").className="hand_span3";
-                document.getElementById("hand_span4").className="hand_span4";
-                document.getElementById("hand_span5").className="hand_span5";
-                document.getElementById("hand_span6").className="hand_span6";
+                document.getElementById("hand_span1").className = "hand_span1";
+                document.getElementById("hand_span2").className = "hand_span2";
+                document.getElementById("hand_span3").className = "hand_span3";
+                document.getElementById("hand_span4").className = "hand_span4";
+                document.getElementById("hand_span5").className = "hand_span5";
+                document.getElementById("hand_span6").className = "hand_span6";
             })
             //键盘监听
         });
     }
-    document.getElementById("hand_span1").className="hand_span9";
-    document.getElementById("hand_span2").className="hand_span9";
-    document.getElementById("hand_span3").className="hand_span9";
-    document.getElementById("hand_span4").className="hand_span9";
-    document.getElementById("hand_span5").className="hand_span9";
-    document.getElementById("hand_span6").className="hand_span9";
+    document.getElementById("hand_span1").className = "hand_span9";
+    document.getElementById("hand_span2").className = "hand_span9";
+    document.getElementById("hand_span3").className = "hand_span9";
+    document.getElementById("hand_span4").className = "hand_span9";
+    document.getElementById("hand_span5").className = "hand_span9";
+    document.getElementById("hand_span6").className = "hand_span9";
 }
 
 // A prompt box is displayed after the user enters a word
@@ -747,7 +749,7 @@ document.getElementById('user_input').addEventListener("keyup", function (event)
 
 
 // dictionaries
-function define_dictionaries(){
+function define_dictionaries() {
     const get_input = document.getElementById("dictionaries_input").value;
     const get_meaning = fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + get_input, {
         method: "GET",
@@ -774,8 +776,8 @@ function define_dictionaries(){
 }
 
 
-function display_defintion(){
-    if (document.getElementById("dictionaries_input").value.length==0){
+function display_defintion() {
+    if (document.getElementById("dictionaries_input").value.length == 0) {
         document.getElementById("definition").innerHTML = "<h3>Definition</h3>";
     }
 }
@@ -873,24 +875,24 @@ function pause_time() {
         startBtn();
         document.getElementById("text").style.filter = "blur(0px)";
 
-        document.querySelector(".hand_span1").style.animationPlayState="running";
-        document.querySelector(".hand_span2").style.animationPlayState="running";
-        document.querySelector(".hand_span3").style.animationPlayState="running";
-        document.querySelector(".hand_span4").style.animationPlayState="running";
-        document.querySelector(".hand_span5").style.animationPlayState="running";
-        document.querySelector(".hand_span1").style.animationPlayState="running";
+        document.querySelector(".hand_span1").style.animationPlayState = "running";
+        document.querySelector(".hand_span2").style.animationPlayState = "running";
+        document.querySelector(".hand_span3").style.animationPlayState = "running";
+        document.querySelector(".hand_span4").style.animationPlayState = "running";
+        document.querySelector(".hand_span5").style.animationPlayState = "running";
+        document.querySelector(".hand_span1").style.animationPlayState = "running";
 
     } else {
         document.getElementById("btn1").innerHTML = "Start";
         isRunning = false;
         pasueBtn();
         document.getElementById("text").style.filter = "blur(5px)";
-        document.querySelector(".hand_span1").style.animationPlayState="paused";
-        document.querySelector(".hand_span2").style.animationPlayState="paused";
-        document.querySelector(".hand_span3").style.animationPlayState="paused";
-        document.querySelector(".hand_span4").style.animationPlayState="paused";
-        document.querySelector(".hand_span5").style.animationPlayState="paused";
-        document.querySelector(".hand_span1").style.animationPlayState="paused";
+        document.querySelector(".hand_span1").style.animationPlayState = "paused";
+        document.querySelector(".hand_span2").style.animationPlayState = "paused";
+        document.querySelector(".hand_span3").style.animationPlayState = "paused";
+        document.querySelector(".hand_span4").style.animationPlayState = "paused";
+        document.querySelector(".hand_span5").style.animationPlayState = "paused";
+        document.querySelector(".hand_span1").style.animationPlayState = "paused";
     }
 }
 function start_timer() {
