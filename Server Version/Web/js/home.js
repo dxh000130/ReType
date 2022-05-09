@@ -547,7 +547,12 @@ function display_play(difficulties, theme) {
         document.getElementById("remain_error_div").innerHTML = "";
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
-
+        document.getElementById("hand_span1").className="hand_span1";
+        document.getElementById("hand_span2").className="hand_span2";
+        document.getElementById("hand_span3").className="hand_span3";
+        document.getElementById("hand_span4").className="hand_span4";
+        document.getElementById("hand_span5").className="hand_span5";
+        document.getElementById("hand_span6").className="hand_span6";
 
     }else {
         document.getElementById("first_page").style.display = "none";
