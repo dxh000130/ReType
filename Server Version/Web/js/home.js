@@ -880,7 +880,7 @@ function pause_time() {
         document.querySelector(".hand_span3").style.animationPlayState = "running";
         document.querySelector(".hand_span4").style.animationPlayState = "running";
         document.querySelector(".hand_span5").style.animationPlayState = "running";
-        document.querySelector(".hand_span1").style.animationPlayState = "running";
+        document.querySelector(".hand_span6").style.animationPlayState = "running";
 
     } else {
         document.getElementById("btn1").innerHTML = "Start";
@@ -892,7 +892,7 @@ function pause_time() {
         document.querySelector(".hand_span3").style.animationPlayState = "paused";
         document.querySelector(".hand_span4").style.animationPlayState = "paused";
         document.querySelector(".hand_span5").style.animationPlayState = "paused";
-        document.querySelector(".hand_span1").style.animationPlayState = "paused";
+        document.querySelector(".hand_span6").style.animationPlayState = "paused";
     }
 }
 function start_timer() {
