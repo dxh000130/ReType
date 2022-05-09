@@ -579,6 +579,7 @@ function display_play(difficulties, theme) {
                 error_remain = total_errors;
                 articleid = return_text.id;
                 wholearticle = return_text.article;
+                document.getElementById("text").style.filter = "blur(0px)";
 
                 document.getElementById("total_error_div").innerHTML = total_errors;
                 document.getElementById("remain_error_div").innerHTML = error_remain;
