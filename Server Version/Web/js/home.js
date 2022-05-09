@@ -525,7 +525,8 @@ function change_font_size_small() {
 function display_content_h3(){
     isRunning = false;
     time_reset();
-    document.getElementById("text").style.filter = "blur(0px)";
+    document.getElementById("text").style.display = "block";
+    document.getElementById("think").style.display = "none";
     document.getElementById("btn1").style.display="none";
     document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
     document.getElementById("hand_span1").className = "hand_span9";
@@ -570,7 +571,8 @@ function display_play(difficulties, theme) {
         document.getElementById('text').innerHTML = '';
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("btn1").style.display = "none";
-        document.getElementById("text").style.filter = "blur(0px)";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("think").style.display = "none";
         document.getElementById('content_color').style.backgroundColor = '#e2ba34';
         document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
         document.getElementById("current_score_div").innerHTML = "";
@@ -610,8 +612,8 @@ function display_play(difficulties, theme) {
                 error_remain = total_errors;
                 articleid = return_text.id;
                 wholearticle = return_text.article;
-                document.getElementById("text").style.filter = "blur(0px)";
-
+                document.getElementById("text").style.display = "block";
+                document.getElementById("think").style.display = "none";
                 document.getElementById("total_error_div").innerHTML = total_errors;
                 document.getElementById("remain_error_div").innerHTML = error_remain;
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
@@ -897,8 +899,8 @@ function pause_time() {
         document.getElementById("btn1").innerHTML = "Pause";
         isRunning = true;
         startBtn();
-        document.getElementById("text").style.filter = "blur(0px)";
-
+        document.getElementById("text").style.display = "block";
+        document.getElementById("think").style.display = "none";
         document.querySelector(".hand_span1").style.animationPlayState = "running";
         document.querySelector(".hand_span2").style.animationPlayState = "running";
         document.querySelector(".hand_span3").style.animationPlayState = "running";
@@ -910,7 +912,8 @@ function pause_time() {
         document.getElementById("btn1").innerHTML = "Start";
         isRunning = false;
         pasueBtn();
-        document.getElementById("text").style.filter = "blur(5px)";
+        document.getElementById("text").style.display = "none";
+        document.getElementById("think").style.display = "block";
         document.querySelector(".hand_span1").style.animationPlayState = "paused";
         document.querySelector(".hand_span2").style.animationPlayState = "paused";
         document.querySelector(".hand_span3").style.animationPlayState = "paused";
