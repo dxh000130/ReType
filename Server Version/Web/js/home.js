@@ -522,6 +522,21 @@ function change_font_size_small() {
 }
 
 
+function display_content_h3(){
+    isRunning = false;
+    time_reset();
+    document.getElementById("text").style.filter = "blur(0px)";
+    document.getElementById("btn1").style.display="none";
+    document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
+    document.getElementById("hand_span1").className = "hand_span9";
+    document.getElementById("hand_span2").className = "hand_span9";
+    document.getElementById("hand_span3").className = "hand_span9";
+    document.getElementById("hand_span4").className = "hand_span9";
+    document.getElementById("hand_span5").className = "hand_span9";
+    document.getElementById("hand_span6").className = "hand_span9";
+
+}
+
 
 // Display articles based on the difficulty and topic of the user's click
 var difficulties = "";
