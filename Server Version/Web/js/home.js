@@ -40,6 +40,12 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVers
     });
 
 let valid_log = false;
+var usernamedisplay = "";
+if (localStorage.user_id.length > 9) {
+    usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
+} else {
+    usernamedisplay = localStorage.user_id;
+}
 
 // log in
 function Login() {
@@ -84,6 +90,9 @@ function Login() {
                 }
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
+                document.getElementById("log_out_typeface1").innerHTML = "Welcome, " + usernamedisplay+ "!";
+
+                
                 // document.querySelector(".error_button").style.display="none";
 
             } else {

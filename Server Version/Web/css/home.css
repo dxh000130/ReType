@@ -54,7 +54,7 @@
     height: 90%;
     margin-left: 1vw;
     margin-top: 1vh;
-    background: peru;
+    background: rgb(251, 159, 68);
     clip-path: polygon(50% 0%, 100% 100%, 12% 100%, 23% 19%);
     position: absolute;
     align-items: center;
@@ -63,7 +63,7 @@
 
 #user_typeface1,
 #user_typeface3 {
-    background: peru;
+    background: rgb(244, 161, 77);
     margin: 0 auto;
     width: 45%;
 }
@@ -89,7 +89,7 @@
     height: 90%;
     margin-left: 1.5vw;
     margin-top: 1.4vh;
-    background: peru;
+    background: rgb(251, 159, 68);
     clip-path: polygon(99% 30%, 84% 100%, 40% 100%, 0 0%);
     position: absolute;
     align-items: center;
@@ -97,7 +97,7 @@
 }
 
 #leaderboard_typeface1 {
-    background: peru;
+    background: rgb(251, 159, 68);
     padding-left: 4.7vw;
     width: 100%;
 }
@@ -134,18 +134,18 @@
     position: absolute;
     align-items: center;
     display: flex;
-    background: peru;
+    background: rgb(251, 159, 68);
     clip-path: polygon(46% 0%, 84% 37%, 82% 100%, 18% 100%, 16% 11%);
 }
 
 #introduction_typeface1 {
-    background: peru;
+    background: rgb(251, 159, 68);
     padding-left: 5.5vw;
     width: 60%;
 }
 
 #introduction_typeface2 {
-    background: peru;
+    background: rgb(251, 159, 68);
     padding-left: 5.5vw;
     width: 55%;
 }
@@ -176,12 +176,12 @@
     position: absolute;
     align-items: center;
     display: flex;
-    background: peru;
+    background: rgb(251, 159, 68);
     clip-path: polygon(74% 4%, 100% 19%, 100% 99%, 18% 100%, 26% 36%);
 }
 
 #play_typeface1 {
-    background: peru;
+    background: rgb(251, 159, 68);
     padding-left: 10vw;
     width: 55%;
     font-size: 5.5vw;
@@ -262,7 +262,7 @@
     margin-top: 1vw;
     margin-left: 1vw;
     border-radius: 25px;
-    background: peru;
+    background: rgb(251, 159, 68);
     text-align: center;
     position: relative;
 }
