@@ -540,7 +540,7 @@ function display_play(difficulties, theme) {
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("btn1").style.display = "none";
         document.getElementById("text").style.filter = "blur(0px)";
-        document.getElementById('content_color').style.backgroundColor='#af4d98';
+        document.getElementById('content_color').style.backgroundColor='#e2ba34';
         document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
         document.getElementById("current_score_div").innerHTML = "";
         document.getElementById("total_error_div").innerHTML = "";

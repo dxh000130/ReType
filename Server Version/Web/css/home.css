@@ -1843,6 +1843,10 @@ html {
     /*background-color: burlywood;*/
     position: relative;
     border-radius: 15px;
+    background-image: url("../images/cat.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #score_animation_container {
@@ -1906,6 +1910,7 @@ html {
     align-items: center;
     vertical-align: middle;
     display: flex;
+
 }
 
 #play_score_table_container {
@@ -1934,6 +1939,8 @@ html {
     align-items: center;
     vertical-align: middle;
     font-weight: bolder;
+    /*color: #e1e1e1;*/
+
 }
 
 /*dictionaries in play main interface*/
@@ -1947,6 +1954,10 @@ html {
     /*display: flex;*/
     border-radius: 15px;
     overflow: auto;
+    /*background-image: url("../images/cat.jpg") ;*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+
 }
 
 #dictionaries_input {
@@ -1988,6 +1999,9 @@ html {
     font-size: 20px;
     padding: 7px;
     overflow: auto;
+    /*background-image: url("../images/cat.jpg") ;*/
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
 }
 
 
