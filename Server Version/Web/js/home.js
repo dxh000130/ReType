@@ -722,6 +722,10 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 document.getElementById("current_score_div").innerHTML = return_text1.score;
                 document.getElementById("total_error_div").innerHTML = total_errors;
                 document.getElementById("remain_error_div").innerHTML = error_remain;
+                if (error_remain == 0) {
+                    window.alert("You Win!");
+                    display_play("","");
+                }
             })
 
         })
