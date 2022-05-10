@@ -139,10 +139,10 @@ namespace ReType.Controllers
             Regex rgx2 = new Regex("(?i:" + Article.Input + ")+");
             string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
 
-            string temp12 = "(?<=[ ,.\'\"”“])" + Article.Input + "[a-zA-Z]{0,3}(?=[ ,.\'\"”“])";
+            string temp12 = "(?<=[ ,.\'\"”“:;])" + Article.Input + "[a-zA-Z]{0,3}(?=[ ,.\'\"”“:;])";
             for (int i = 1; i < Article.Input.Length; i++)
             {
-                temp12 += "|(?<=[ ,.\'\"”“])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“])";
+                temp12 += "|(?<=[ ,.\'\"”“:;])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“:;])";
             }
             Console.WriteLine(temp12);
             //Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
