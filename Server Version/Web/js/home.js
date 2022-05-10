@@ -606,6 +606,7 @@ function display_play(difficulties, theme) {
                 document.getElementById("btn1").style.display = "block";
                 total_errors = return_text.errorRemain;
                 error_remain = total_errors;
+                AlreadyCorrect = ""
                 articleid = return_text.id;
                 wholearticle = return_text.article;
                 document.getElementById("text").style.display = "block";
