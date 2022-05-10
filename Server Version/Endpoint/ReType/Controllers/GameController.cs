@@ -171,7 +171,7 @@ namespace ReType.Controllers
                 }
                 Console.WriteLine(temp12);
                 Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
-                string result6 = rgx6.Replace(Article.Article, "<span style=\"color: yellow;\">$&</span>");
+                string result6 = rgx6.Replace(Article.Article, "<span style=\"color: #e25555;\">$&</span>");
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result6, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 });
             }
             return Ok(final1);
