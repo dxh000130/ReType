@@ -69,6 +69,7 @@ namespace ReType.Controllers
 
             Regex inputrgx = new Regex(".+");
             Article.Input = inputrgx.Replace(Article.Input, inputreplace);
+            Console.WriteLine(Article.Input + "n");
             string[] wronglist = _repository.WrongWordList(Article.ArticleID);
             string[] correctlist = _repository.CorrectWordList(Article.ArticleID);
             string pattern = pattern1 + Article.Input + pattern3;
@@ -135,37 +136,19 @@ namespace ReType.Controllers
             }
 
             //string result1 = rgx.Replace(Article.Article, replacement);
+            string temp12 = @"(?<=[\s,."\(\)-])" + Article.Input + @"[a-zA-Z]{0,3}(?=[\s,."\(\)])";
+            for (int i = 1; i < Article.Input.Length; i++)
+            {
+                temp12 += @"|(?<=[\s,."\(\)-])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + @"(?=[\s,."\(\)-])";
+            }
+            Console.WriteLine(temp12);
+            Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
             
             Regex rgx2 = new Regex("(?i:" + Article.Input + ")+");
             string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
-
-            string temp12 = "(?<=[ ,.\'\"”“:;])" + Article.Input + "[a-zA-Z]{0,3}(?=[ ,.\'\"”“:;])";
-            for (int i = 1; i < Article.Input.Length; i++)
-            {
-                temp12 += "|(?<=[ ,.\'\"”“:;])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“:;])";
-            }
-            Console.WriteLine(temp12);
-            //Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
-            Match match6 = Regex.Match(result2, "(?i:" + temp12 + ")+");
-            Console.WriteLine(result2);
-            Console.WriteLine(match6.Success);
-            while (match6.Success)
-            {
-                Console.WriteLine(match6.Value);
-                if (!match6.Value.Contains("span") & result2.Substring(match6.Index + match6.Length, match6.Index + match6.Length+1) != "=" & result2.Substring(match6.Index + match6.Length, match6.Index + match6.Length + 1) != ";")
-                {
-                    Console.WriteLine(match6.Value);
-                    result2 = result2.Substring(0, match6.Index) + "<span style=\"color: #e25555;\">" + match6.Value + "</span>" + result2.Substring(match6.Index + match6.Length);
-                    match6 = match6.NextMatch();
-                }
-                else
-                {
-                    match6 = match6.NextMatch();
-                }
-            }
-            //string result6 = rgx6.Replace(result2, "<span style=\"color: #e25555;\">$&</span>");
+            string result6 = rgx6.Replace(result2, "<span style=\"color: #e25555;\">$&</span>");
             Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*");
-            string result3 = rgx3.Replace(result2, "<span style=\"background-color: DarkGray;\">$&</span>");
+            string result3 = rgx3.Replace(result6, "<span style=\"background-color: DarkGray;\">$&</span>");
             Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
 
             if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0)
