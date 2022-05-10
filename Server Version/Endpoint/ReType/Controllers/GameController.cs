@@ -53,11 +53,11 @@ namespace ReType.Controllers
         {
             ClaimsIdentity ci = HttpContext.User.Identities.FirstOrDefault();
             Claim claim = ci.FindFirst("UserName");
-            string username = claim.Value;
-            string pattern1 = @"[A-Za-z]*(?i:";
-            string pattern3 = ")+[A-Za-z]*";
+            string username = claim.Value; //验证登录
+            string pattern1 = @"[A-Za-z]*(?i:"; //初始化正则
+            string pattern3 = ")+[A-Za-z]*";//初始化正则
             string inputreplace = "";
-            Match mc2 = Regex.Match(Article.Input, "[A-Za-z]+");
+            Match mc2 = Regex.Match(Article.Input, "[A-Za-z]+"); //删除空白，多余的东西
             if (mc2.Value != "")
             {
                 inputreplace = mc2.Value;
@@ -68,9 +68,9 @@ namespace ReType.Controllers
             }
 
             Regex inputrgx = new Regex(".+");
-            Article.Input = inputrgx.Replace(Article.Input, inputreplace);
-            string[] wronglist = _repository.WrongWordList(Article.ArticleID);
-            string[] correctlist = _repository.CorrectWordList(Article.ArticleID);
+            Article.Input = inputrgx.Replace(Article.Input, inputreplace); //删除空白，多余的东西
+            string[] wronglist = _repository.WrongWordList(Article.ArticleID); //错误单词列表
+            string[] correctlist = _repository.CorrectWordList(Article.ArticleID); //正确单词列表
             string pattern = pattern1 + Article.Input + pattern3;
             string replacement = "<span style=\"color: LightGray;\">$&</span>";
             Regex rgx = new Regex(pattern);
@@ -133,50 +133,54 @@ namespace ReType.Controllers
             {
                 error_remain1 = wronglist.Count() - already.Split(',').Count() / 2;
             }
-
-            //string result1 = rgx.Replace(Article.Article, replacement);
-            
             Regex rgx2 = new Regex("(?i:" + Article.Input + ")+");
-            string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>");
+            string result2 = rgx2.Replace(Article.Article, "<span style=\"color: blue;\">$&</span>"); //完全匹配 字体蓝色高亮
 
-            string temp12 = "(?<=[ ,.\'\"”“:;])" + Article.Input + "[a-zA-Z]{0,3}(?=[ ,.\'\"”“:;])";
-            for (int i = 1; i < Article.Input.Length; i++)
+            string temp12 = "(?<=[ ,.\'\"”“:;])" + Article.Input + "[a-zA-Z]{0,8}(?=[ ,.\'\"”“:;])";
+            for (int i = 1; i < Article.Input.Length; i++) //生成可能拼错的单词
             {
-                temp12 += "|(?<=[ ,.\'\"”“:;])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“:;])";
-            }
-            Console.WriteLine(temp12);
-            //Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
-            Match match6 = Regex.Match(result2, "(?i:" + temp12 + ")+");
-            Console.WriteLine(result2);
-            Console.WriteLine(match6.Success);
+                temp12 += "|(?<=[ ,.\'\"”“:;])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,8}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“:;])";
+            } 
+            Regex match8 = new Regex(temp12, RegexOptions.IgnoreCase); //Match
+            Match match6 = match8.Match(result2, 0);
             while (match6.Success)
             {
-                Console.WriteLine(match6.Value);
-                if (!match6.Value.Contains("span") & result2.Substring(match6.Index + match6.Length, match6.Index + match6.Length+1) != "=" & result2.Substring(match6.Index + match6.Length, match6.Index + match6.Length + 1) != ";")
+
+                if (!match6.Value.Contains("span")) //避免匹配到已经变成蓝色的单词
                 {
-                    Console.WriteLine(match6.Value);
-                    result2 = result2.Substring(0, match6.Index) + "<span style=\"color: #e25555;\">" + match6.Value + "</span>" + result2.Substring(match6.Index + match6.Length);
-                    match6 = match6.NextMatch();
+                    result2 = result2.Substring(0, match6.Index) + "<span style=\"color: #e25555;\">" + match6.Value + "</span>" + result2.Substring(match6.Index + match6.Length); //模糊匹配 字体橙色高亮
+                    match6 = match8.Match(result2, match6.Index + 37); //跳过该单词
                 }
                 else
                 {
-                    match6 = match6.NextMatch();
+                    match6 = match8.Match(result2, match6.Index);//跳过该单词
                 }
             }
-            //string result6 = rgx6.Replace(result2, "<span style=\"color: #e25555;\">$&</span>");
-            Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*");
+
+
+            Regex match9 = new Regex("(?<=[ ,.\'\"”“:;])[" + Article.Input + "]{" + Article.Input.Length + "}(?=[ ,.\'\"”“:;])", RegexOptions.IgnoreCase); //Match
+            Match match10 = match9.Match(result2, 0);
+            while (match10.Success)
+            {
+                Console.WriteLine(match10.Value);
+                match10 = match10.NextMatch();
+            }
+
+                Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*"); //蓝色的字添加灰色底
             string result3 = rgx3.Replace(result2, "<span style=\"background-color: DarkGray;\">$&</span>");
             Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
 
-            if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0)
+
+
+            if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0) //输错并回车 扣分
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
             }
-            if (wrong == 1 && Article.Enter == 1 && Article.hint == 0)
+            if (wrong == 1 && Article.Enter == 1 && Article.hint == 0) //输错并回车 扣分
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
             }
-            if (Article.hint == 1)
+            if (Article.hint == 1) //hint
             {
                 for (int i = 0; i < correctlist.Count(); i++)
                 {
@@ -188,18 +192,6 @@ namespace ReType.Controllers
                     }
                 }
             }
-            //if (articlecopy == result3 && Article.hint == 0)
-            //{
-            //    string temp12 = Article.Input + "[a-zA-Z]*";
-            //    for (int i = 0; i < Article.Input.Length; i++)
-            //    {
-            //        temp12 += "|" + Article.Input.Substring(0, i) + "[a-zA-Z]*" + Article.Input.Substring(i + 1);
-            //    }
-            //    Console.WriteLine(temp12);
-            //    Regex rgx6 = new Regex("(?i:" + temp12 + ")+");
-            //    string result6 = rgx6.Replace(Article.Article, "<span style=\"color: #e25555;\">$&</span>");
-            //    return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result6, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 });
-            //}
             return Ok(final1);
         }
 
