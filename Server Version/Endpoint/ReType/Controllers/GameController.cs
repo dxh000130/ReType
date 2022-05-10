@@ -136,7 +136,7 @@ namespace ReType.Controllers
             }
 
             //string result1 = rgx.Replace(Article.Article, replacement);
-            string temp12 = @"(?<=[\s,.])" + Article.Input + @"(?=[\s,.])";
+            string temp12 = @"(?<=[\s,.])" + Article.Input + @"[a-zA-Z]{0,3}(?=[\s,.])";
             for (int i = 1; i < Article.Input.Length; i++)
             {
                 temp12 += @"|(?<=[\s,.])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,1}" + Article.Input.Substring(i + 1) + @"(?=[\s,.])";
