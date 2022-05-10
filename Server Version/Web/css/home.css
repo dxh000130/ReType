@@ -593,7 +593,7 @@
 
 .ac-container input:checked+label,
 .ac-container input:checked+label:hover {
-    background: slategrey;
+    background: rgba(0, 0, 0, 0);
     /*color: #3d7489;*/
     text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
     box-shadow:
@@ -616,7 +616,7 @@
 }
 
 .ac-container article {
-    background: lightskyblue;
+    background: rgb(251, 159, 68);
     margin-top: 2px;
     overflow: auto;
     height: 0;
@@ -627,6 +627,7 @@
     -o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
     -ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
     transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+    opacity: 0.8;
 }
 
 .ac-container article p {
@@ -668,12 +669,14 @@
     height: 150px;
     /*padding-bottom: 10px;*/
 }
-.profile_picture{
+
+.profile_picture {
     background: url(../images/pp.png) no-repeat center;
-    background-size:5em;
+    background-size: 5em;
     width: 100%;
     height: 100px;
 }
+
 /*owl in log in, register end*/
 
 
@@ -772,6 +775,7 @@ input[type="date"] {
     font-weight: 100;
     border-bottom: 1px solid #202023;
 }
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
@@ -800,6 +804,7 @@ input[name="psw"] {
     border-bottom: 1px solid #484856;
     margin-bottom: 3em;
 }
+
 input[name="name"] {
     width: 70%;
     padding: 1em 2em 1em 3em;
@@ -849,10 +854,25 @@ input[type="text"] {
     margin-bottom: 3em;
 }
 
+input[type="radio"] {
+    appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #555555;
+	border-radius: 50%;
+	background-clip: content-box;
+	padding: 3px;
+}
+
+input[type="radio"]:checked {
+	background-color: #f19b50;
+}
+
+
 /* user input in log in, register interface start*/
 
 /*the button in log in interface start*/
-.btnlogin{
+.btnlogin {
     font-size: 30px;
     color: #fff;
     outline: none;
@@ -871,7 +891,7 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.btnlogin:hover{
+.btnlogin:hover {
     opacity: 0.5;
     border-bottom-left-radius: 15px;
     -webkit-border-bottom-left-radius: 15px;
@@ -1029,7 +1049,7 @@ html {
     background: rgba(0, 0, 0, 0.3);
     cursor: pointer;
     overflow: hidden;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 1rem;
@@ -1629,13 +1649,14 @@ html {
 
 
 
-.timer-group{
+.timer-group {
     width: 170px;
     height: 170px;
     /*background-color: steelblue;*/
     margin: 0 auto;
     position: relative;
 }
+
 .timer {
     border-radius: 50%;
     height: 150px;
@@ -1644,8 +1665,9 @@ html {
     width: 150px;
     background-color: aquamarine;
 }
+
 .timer:after {
-    background: #111 ;
+    background: #111;
     border-radius: 50%;
     content: "";
     display: block;
@@ -1655,6 +1677,7 @@ html {
     width: 130px;
     top: 10px;
 }
+
 .timer .hand {
     float: left;
     height: 100%;
@@ -1686,6 +1709,7 @@ html {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
 /*.timer .hand:first-child span {*/
 /*    animation-name: spin1;*/
 /*}*/
@@ -1693,25 +1717,27 @@ html {
 /*.timer .hand:last-child span {*/
 /*    animation-name: spin2;*/
 /*}*/
-.hand_span1{
+.hand_span1 {
     animation-name: spin1;
 }
 
-.hand_span2{
+.hand_span2 {
     animation-name: spin2;
 }
-.hand_span3{
+
+.hand_span3 {
     animation-name: spin1;
 }
 
-.hand_span4{
+.hand_span4 {
     animation-name: spin2;
 }
-.hand_span5{
+
+.hand_span5 {
     animation-name: spin1;
 }
 
-.hand_span6{
+.hand_span6 {
     animation-name: spin2;
 }
 
@@ -1720,9 +1746,11 @@ html {
     0% {
         transform: rotate(225deg);
     }
+
     50% {
         transform: rotate(225deg);
     }
+
     100% {
         transform: rotate(405deg);
     }
@@ -1732,9 +1760,11 @@ html {
     0% {
         transform: rotate(225deg);
     }
+
     50% {
         transform: rotate(405deg);
     }
+
     100% {
         transform: rotate(405deg);
     }
@@ -1748,12 +1778,14 @@ html {
     width: 170px;
     top: 0;
 }
+
 .timer.hour .hand span {
     animation-duration: 300s;
-    border-top-color:rgba(255, 0, 255, .4);
+    border-top-color: rgba(255, 0, 255, .4);
     border-right-color: rgba(255, 0, 255, .4);
     border-width: 85px;
 }
+
 .timer.hour:after {
     height: 130px;
     left: 20px;
@@ -1775,12 +1807,14 @@ html {
     border-right-color: rgba(0, 255, 255, .4);
     border-width: 60px;
 }
+
 .timer.minute:after {
     height: 80px;
     left: 20px;
     width: 80px;
     top: 20px;
 }
+
 .timer.second {
     background: rgba(0, 0, 0, .2);
     height: 70px;
@@ -1795,6 +1829,7 @@ html {
     border-right-color: rgba(255, 255, 255, .15);
     border-width: 35px;
 }
+
 .timer.second:after {
     height: 64px;
     left: 2px;
@@ -1802,7 +1837,7 @@ html {
     top: 2px;
 }
 
-.face{
+.face {
     border-radius: 50%;
     height: 90px;
     left: 40px;
@@ -1815,9 +1850,10 @@ html {
     line-height: 90px;
     font-size: 30px;
 }
+
 /*time start button*/
-#btn1{
-    width:80px;
+#btn1 {
+    width: 80px;
     float: right;
     height: 40px;
     border-radius: 50%;
@@ -1843,7 +1879,7 @@ html {
     /*background-color: burlywood;*/
     position: relative;
     border-radius: 15px;
-    background-image: url("../images/cat.jpg") ;
+    background-image: url("../images/cat.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -2007,7 +2043,7 @@ html {
 
 
 
-#play_bottom{
+#play_bottom {
     width: 80%;
     height: auto;
     /*background-color: blanchedalmond;*/
@@ -2017,7 +2053,7 @@ html {
 }
 
 
-#prompt_box{
+#prompt_box {
     float: right;
     width: auto;
     /*height:100%;*/
@@ -2036,10 +2072,11 @@ html {
     /*padding: 2%;*/
     font-size: 1.2vw;
     display: flex;
-    right:6%;
+    right: 6%;
 }
 
-#prompt_box:before, #prompt_box:after {
+#prompt_box:before,
+#prompt_box:after {
     content: "";
     display: block;
     border-width: 1.2vw;
@@ -2059,8 +2096,9 @@ html {
     top: 1.4vw;
     border-color: transparent transparent transparent #FFF;
 }
+
 /*user input*/
-#input_container{
+#input_container {
     float: left;
     width: 100%;
     /*margin-left: 3%;*/
@@ -2068,6 +2106,7 @@ html {
     /*background-color: #6cb6bb;*/
 
 }
+
 #user_input {
     width: 85%;
     height: 100%;
