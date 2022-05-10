@@ -462,12 +462,8 @@ function change_background() {
     else if (localStorage.change_background == "#dae9da")
         localStorage.change_background = "#ebcece";
     else if (localStorage.change_background == "#ebcece") {
-        localStorage.change_background = "#18222d";
-        localStorage.content = "#adadad";
-        document.getElementById("text").style.color = localStorage.content;
-    } else if (localStorage.change_background == "#18222d") {
         localStorage.change_background = "#ebddae";
-        localStorage.content = "";
+        // localStorage.content = "#adadad";
         document.getElementById("text").style.color = localStorage.content;
     } else if (localStorage.change_background == "#ebddae")
         localStorage.change_background = "#dfecf0";
