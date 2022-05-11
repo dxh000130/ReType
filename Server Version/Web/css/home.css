@@ -4,8 +4,8 @@
     background-repeat: no-repeat;
     background-position: center 0;
     background-size: cover;
-    min-height: 768px;
-    min-width: 1024px;
+    /* min-height: 768px;
+    min-width: 1024px; */
 
 }
 
@@ -100,7 +100,7 @@
 
 #leaderboard_typeface1 {
     background: rgb(251, 159, 68);
-    padding-left: 4.7vw;
+    padding-left: 6vw;
     width: 100%;
 }
 
@@ -1129,8 +1129,8 @@ html {
 
 
 #play_homepage {
-    min-width: 1024px;
-    min-height: 768px;
+    /* min-width: 1024px;
+    min-height: 768px; */
     width: 100%;
     height: 100%;
     background-image: url("../images/ig.jpg");
@@ -1138,8 +1138,11 @@ html {
     background-size: cover;
 }
 
-
-
+@media (-webkit-device-pixel-ratio: 1.5) {
+    * {
+      zoom: 98%;
+    }
+  }
 .play_left {
     width: 55%;
     height: 75%;
