@@ -101,13 +101,13 @@
 
 #leaderboard_typeface1 {
     background: rgb(251, 159, 68);
-    padding-left: 7.5vw;
+    padding-left: 27%;
     width: 100%;
 }
 
 #leaderboard_typeface2 {
     background: peru;
-    padding-left: 12.5vw;
+    padding-left: 45%;
     padding-top: 5%;
     width: 55%;
 }
@@ -186,7 +186,7 @@
 
 #play_typeface1 {
     background: rgb(251, 159, 68);
-    padding-left: 12vw;
+    padding-left: 35%;
     width: 55%;
     padding-top: 5%;
     font-size: 5.5vw;
@@ -196,7 +196,7 @@
 }
 
 #play_typeface2 {
-    padding-left: 12vw;
+    padding-left: 35%;
     width: 55%;
     padding-top: 5%;
     word-break: break-word;
