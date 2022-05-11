@@ -162,8 +162,15 @@ namespace ReType.Controllers
             Match match10 = match9.Match(result2, 0);
             while (match10.Success)
             {
-                Console.WriteLine(match10.Value);
-                match10 = match10.NextMatch();
+                if (!match10.Value.Contains("span")) //避免匹配到已经变成蓝色的单词
+                {
+                    result2 = result2.Substring(0, match10.Index) + "<span style=\"color: #e25555;\">" + match10.Value + "</span>" + result2.Substring(match10.Index + match10.Length); //模糊匹配 字体橙色高亮
+                    match10 = match9.Match(result2, match10.Index + 37); //跳过该单词
+                }
+                else
+                {
+                    match10 = match9.Match(result2, match10.Index);//跳过该单词
+                }
             }
 
                 Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*"); //蓝色的字添加灰色底
