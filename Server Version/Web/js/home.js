@@ -463,7 +463,7 @@ function change_background() {
         localStorage.change_background = "#ebcece";
     else if (localStorage.change_background == "#ebcece") {
         localStorage.change_background = "#ebddae";
-        // localStorage.content = "#adadad";
+        localStorage.content = "";
         document.getElementById("text").style.color = localStorage.content;
     } else if (localStorage.change_background == "#ebddae")
         localStorage.change_background = "#dfecf0";
