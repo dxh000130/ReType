@@ -43,9 +43,9 @@
             <div class="login_modal-content">
                 <div class="login_form">
                     <!--input username in log in interface-->
-                    <input id="login-username" type="username" placeholder="Enter Username" name="uname" required>
+                    <input id="login-username" type="username" placeholder="Enter Username" name="uname" required autocomplete="off">
                     <!--input password in log in interface-->
-                    <input id="login-password" type="password" placeholder="Enter Password" name="psw" required>
+                    <input id="login-password" type="password" placeholder="Enter Password" name="psw" required autocomplete="off">
                     <!--log in button  in log in interface-->
                     <input class="btnlogin" id="btnlogin" type="button" value="Login" onclick="Login()">
                     <hr style="width: 95%;border-width:2px; margin-top: 20px;margin-left: 2%">
@@ -76,12 +76,12 @@
             </div>
             <div class="register_modal-content">
                 <div class="register_form">
-                    <input id="register-username" type="username" placeholder="Enter Username" name="uname" required>
-                    <input id="register-password" type="password" placeholder="Enter Password" name="psw1" required>
-                    <input id="register-email" type="email" placeholder="Enter Email" required>
+                    <input id="register-username" type="username" placeholder="Enter Username" name="uname" required autocomplete="off">
+                    <input id="register-password" type="password" placeholder="Enter Password" name="psw1" required autocomplete="off">
+                    <input id="register-email" type="email" placeholder="Enter Email" required autocomplete="off">
                     <input id="code" type="button" class="code" onclick="verification()" style="vertical-align:middle"
                         value="Get Verification Code">
-                    <input id="register-verification" type="text" placeholder="Enter verification code" required>
+                    <input id="register-verification" type="text" placeholder="Enter verification code" required autocomplete="off">
                     <input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
                 </div>
                 <div class="login_form">
@@ -116,7 +116,7 @@
             <div class="user_modal-content">
                 <div class="register_form">
                     <input id="username" type="username" name="username" readonly></input>
-                    <input id="name" type="name" placeholder="Enter Name" name="name">
+                    <input id="name" type="name" placeholder="Enter Name" name="name" autocomplete="off">
                     <input id="DOB" type="date" placeholder="Enter Date of Birth">
                     <select id="gender" name="gender">
                         <option selected>Choose Gender</option>
@@ -128,6 +128,7 @@
                         <option value="Personal">Personal</option>
                         <option value="Eunuch">Eunuch</option>
                     </select>
+                    <input id="password" placeholder="Change Password" autocomplete="off">
 
                 </div>
                 <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">

@@ -954,16 +954,19 @@ function edit_profile() {
             "DataofBirth": document.getElementById("DOB").value,
             "Gerder": document.getElementById("gender").value
         }),
-    })
+    });
     edit_profile.then(res => {
         console.log(res.status)
         if (res.status == 200) {
             alert("Sucess");
+            // document.getElementById('error_box').style.display="block";
+            // document.getElementById('error_text').innerHTML="Successfully changed";
 
         } else {
             alert("Failed");
         }
-    })
+    });
+
 }
 
 function get_profile() {
