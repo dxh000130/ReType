@@ -2086,6 +2086,8 @@ html {
     /*font-size: 1.2vw;*/
     display: flex;
     /*right: 6%;*/
+    min-height: 50px;
+    min-width: 214px;
 
 }
 
