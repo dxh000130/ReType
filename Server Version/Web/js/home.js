@@ -444,8 +444,7 @@ function BackToHome() {
 
 // Change the background button in the game interface
 if (!localStorage.change_background) {
-    localStorage.change_background = "#18222d";
-    localStorage.content = "#adadad";
+    localStorage.change_background = "#ffffff";
     document.getElementById("text").style.backgroundColor = localStorage.change_background;
     document.getElementById("text").style.color = localStorage.content;
 } else {
