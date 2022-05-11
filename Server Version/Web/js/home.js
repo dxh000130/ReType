@@ -607,6 +607,7 @@ function display_play(difficulties, theme) {
                 total_errors = return_text.errorRemain;
                 error_remain = total_errors;
                 AlreadyCorrect = ""
+                document.getElementById("user_input").value = ""
                 articleid = return_text.id;
                 wholearticle = return_text.article;
                 document.getElementById("text").style.display = "block";
