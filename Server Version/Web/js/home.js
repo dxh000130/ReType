@@ -116,6 +116,7 @@ function log_out() {
     document.getElementById('introduction_model').style.display = 'none';
     document.getElementById('register_modal').style.display = 'none';
     document.getElementById('leaderboard_page').style.display = 'none';
+    document.getElementById('user_modal').style.display = 'none';
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut();
     localStorage.user_id = "";
@@ -284,6 +285,8 @@ function onSignIn(googleUser) {
                 document.getElementById("login_modal").style.display = "none";
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
+                document.getElementById("error_box").style.display = "none";
+
             } else if (text == "This email has been occupied, please log in first and then bind Google") {
                 document.getElementById("error_box").style.display = "block";
                 text1.innerText = "This email has been occupied, please log in first and then bind Google!";
@@ -480,6 +483,7 @@ if (!localStorage.change_font_family) {
     document.getElementById("text").style.fontFamily = localStorage.ziti;
 }
 function change_font_family() {
+
     if (localStorage.ziti == "Georgia") {
         localStorage.ziti = "Palatino Linotype";
     } else if (localStorage.ziti == "Palatino Linotype") {
@@ -496,6 +500,24 @@ function change_font_family() {
         localStorage.ziti = "Georgia";
     }
     document.getElementById("text").style.fontFamily = localStorage.ziti;
+
+    // if (document.getElementById('text_h2').style.fontFamily=="Papyrus"){
+    //     document.getElementById('text_h2').style.fontFamily="Georgia";
+    // }else if (document.getElementById('text_h2').style.fontFamily=="Georgia"){
+    //     document.getElementById('text_h2').style.fontFamily="Palatino Linotype";
+    // }else if (document.getElementById('text_h2').style.fontFamily=="Palatino Linotype"){
+    //     document.getElementById('text_h2').style.fontFamily="Times New Roman";
+    // }else if (document.getElementById('text_h2').style.fontFamily=="Times New Roman"){
+    //     document.getElementById('text_h2').style.fontFamily="Arial";
+    // }else if ( document.getElementById('text_h2').style.fontFamily=="Arial"){
+    //     document.getElementById('text_h2').style.fontFamily="Monaco";
+    // }else if (document.getElementById('text_h2').style.fontFamily=="Monaco"){
+    //     document.getElementById('text_h2').style.fontFamily="Lucida Handwriting";
+    // }else if (document.getElementById('text_h2').style.fontFamily="Lucida Handwriting"){
+    //     document.getElementById('text_h2').style.fontFamily="Lucida Console";
+    // }else{
+    //     document.getElementById('text_h2').style.fontFamily="Papyrus";
+    // }
 }
 
 // Change the font size button in the game interface
@@ -617,6 +639,7 @@ function display_play(difficulties, theme) {
                 document.getElementById("current_score_div").innerHTML = localStorage.score;
                 document.getElementById("play_bottom").style.display = "block";
 
+                document.getElementById("prompt_box").style.display = "none";
                 document.getElementById("hand_span1").className = "hand_span1";
                 document.getElementById("hand_span2").className = "hand_span2";
                 document.getElementById("hand_span3").className = "hand_span3";
@@ -963,13 +986,18 @@ function edit_profile() {
                 console.log("change pass");
                 change_password();
             } else {
-                alert("Success");
+                // alert("Success");
+                document.getElementById('error_box').style.display="block";
+                document.getElementById('error_text').innerHTML="Successfully Changed";
             }
             // document.getElementById('error_box').style.display="block";
             // document.getElementById('error_text').innerHTML="Successfully changed";
+            document.getElementById("change_pass").value = "";
 
         } else {
-            alert("Failed");
+            // alert("Failed");
+            document.getElementById('error_box').style.display="block";
+            document.getElementById('error_text').innerHTML="Change Failed";
         }
     });
 
@@ -992,11 +1020,20 @@ function change_password() {
     change_password.then(res => {
         console.log(res.status)
         if (res.status == 200) {
-            alert("Sucess");
-            // document.getElementById('error_box').style.display="block";
-            // document.getElementById('error_text').innerHTML="Successfully changed";
+            // alert("Sucess");
+            document.getElementById('error_box').style.display="block";
+            document.getElementById('error_text').innerHTML="Successfully Changed and Log In again";
+            valid_log=false;
+            // auth2.signOut();
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut();
+            localStorage.user_id = "";
+            localStorage.pass = "";
+            document.getElementById("log_in_button_container").style.display = "block";
+            document.getElementById("log_out_button_container").style.display = "none";
         } else {
-            alert("Failed");
+            document.getElementById('error_box').style.display="block";
+            document.getElementById('error_text').innerHTML="Change Failed";
         }
     });
 }

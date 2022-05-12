@@ -377,15 +377,15 @@
         <!--left interface: article start-->
         <div class="play_left">
             <input class="variation1" id="i1" type="radio" value="1" name="border" checked="checked"
-                onclick="display_content_h3();document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('content_color').style.backgroundColor='#e2ba34'" />
+                onclick="display_content_h3();document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('content_color').style.backgroundColor='#e2ba34'; document.getElementById('play_bottom').style.display = 'none'" />
             <label for="i1"><span class="circle"></span></span><span style="font-size: 2vw">Easy</span></label>
 
             <input class="variation" id="i2" type="radio" value="2" name="border"
-                onclick="display_content_h3();document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='block';document.getElementById('b3').style.display='none';document.getElementById('content_color').style.backgroundColor='#e5a9a9'" />
+                onclick="display_content_h3();document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='block';document.getElementById('b3').style.display='none';document.getElementById('content_color').style.backgroundColor='#e5a9a9'; document.getElementById('play_bottom').style.display = 'none'" />
             <label for="i2"> <span class="circle"></span><span style="font-size: 2vw">Normal</span></label>
 
             <input class="variation" id="i3" type="radio" value="3" name="border"
-                onclick="display_content_h3();document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('content_color').style.backgroundColor='#C6A477'" />
+                onclick="display_content_h3();document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('content_color').style.backgroundColor='#C6A477'; document.getElementById('play_bottom').style.display = 'none'" />
             <label for="i3"><span class="circle"></span><span style="font-size: 2vw">Hard</span></label>
 
 
@@ -434,7 +434,7 @@
                             <img src="images/fireworks.gif" id="firework" width="98%" height="98%"
                                 style="display: none;margin-left: auto;margin-right: auto;">
                             <div id="text" style="display: block;">
-                                <h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px">
+                                <h2 id="text_h2" style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px">
                                     Please select the difficulty level and the theme of article first</h2>
 
                             </div>
