@@ -581,7 +581,6 @@ function display_play(difficulties, theme) {
         // }
 
         time_reset();
-
         document.getElementById("i1").checked = true;
         document.getElementById('b1').style.display = 'block';
         document.getElementById('b2').style.display = 'none';
@@ -598,6 +597,8 @@ function display_play(difficulties, theme) {
         document.getElementById("remain_error_div").innerHTML = "";
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
+        document.getElementById("firwork").style.display = "none";
+
 
 
     } else {
