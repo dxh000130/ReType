@@ -28,8 +28,8 @@ if (!localStorage.user_id || !localStorage.pass) {
     document.getElementById("error_box").style.display = "none";
     document.getElementById("login_modal").style.display = "none";
 }
-fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVersion', {
-    // credentials: 'include',
+fetch('https://api.dxh000130.top/api/GetVersion', {
+    credentials: 'include',
     method: 'GET'
 })
     .then(function (response) {
@@ -63,8 +63,8 @@ function Login() {
         text.innerText = "Please enter your username and password !";
     } else {
         headers1.append('Authorization', 'Basic ' + btoa(username + ":" + password));
-        fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Login', {
-            // credentials: 'include',
+        fetch('https://api.dxh000130.top/api/Login', {
+            credentials: 'include',
             method: 'GET',
             headers: headers1
         }).then(r => {
@@ -144,8 +144,8 @@ function register() {
     } else if (username != "" && password != "" && !/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email) && verification == "") {
         text.innerText = "Please Enter Correct Email !";
     } else if (username != "" && password != "" && email != "" && verification != "") {
-        const signup = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Register", {
-            // credentials: 'include',
+        const signup = fetch("https://api.dxh000130.top/api/Register", {
+            credentials: 'include',
             method: "POST",
             headers: {
 
@@ -194,8 +194,8 @@ function verification() {
         text.innerText = "Please Enter your Correct Email !";
     } else {
         document.getElementById("error_box").style.display = "none";
-        const url = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Registrationverificationcode/" + email, {
-            // // credentials: 'include',
+        const url = fetch("https://api.dxh000130.top/api/Registrationverificationcode/" + email, {
+            // credentials: 'include',
             method: "GET",
             headers: {
                 "Accept": "application/json",
@@ -258,7 +258,7 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-    const signup = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/vaildgoogleAsync", {
+    const signup = fetch("https://api.dxh000130.top/api/vaildgoogleAsync", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -324,8 +324,8 @@ function GetLeaderboard() {
         var htmltable = document.getElementById("rank");
         let headers2 = new Headers();
         headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-        fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
-            // credentials : 'include',
+        fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+            credentials : 'include',
             method: 'GET',
             headers: headers2
         }).then(r => {
@@ -345,8 +345,8 @@ function GetLeaderboard() {
 function getscore() {
     let headers2 = new Headers();
     headers2.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
-    fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
-        // credentials : 'include',
+    fetch("https://api.dxh000130.top/api/Leaderboard/" + localStorage.user_id, {
+        credentials : 'include',
         method: 'GET',
         headers: headers2
     }).then(r => {
@@ -612,8 +612,8 @@ function display_play(difficulties, theme) {
         ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         ArticleChooseheader.append('Content-Type', 'application/json')
         ArticleChooseheader.append('Accept', 'text/plain')
-        const ArticleChoose = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleChoose", {
-            // credentials: 'include',
+        const ArticleChoose = fetch("https://api.dxh000130.top/api/ArticleChoose", {
+            credentials: 'include',
             method: "POST",
             headers: ArticleChooseheader,
             body: JSON.stringify({
@@ -690,8 +690,8 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
     document.getElementById("current_score_div").innerHTML = localStorage.score;
     if (username !== "") { //避免用户未输入或删除已输入内容报错
         //console.log(Enterbutton)
-        const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
-            // credentials: 'include',
+        const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
+            credentials: 'include',
             method: "POST",
             headers: headers2,
             body: JSON.stringify({
@@ -753,9 +753,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
 
     } else {
         if (hint === 1) {
-            const ArticleProcess = fetch("https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ArticleProcess", {
+            const ArticleProcess = fetch("https://api.dxh000130.top/api/ArticleProcess", {
                 method: "POST",
-                // credentials: 'include',
+                credentials: 'include',
                 headers: headers2,
                 body: JSON.stringify({
                     "ArticleID": articleid,
@@ -968,8 +968,8 @@ function edit_profile() {
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     head.append('Content-Type', 'application/json');
     head.append('Accept', 'text/plain');
-    const edit_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/UpdateUserDetail', {
-        // credentials: 'include',
+    const edit_profile = fetch('https://api.dxh000130.top/api/UpdateUserDetail', {
+        credentials: 'include',
         method: "POST",
         headers: head,
         body: JSON.stringify({
@@ -1008,8 +1008,8 @@ function change_password() {
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     head.append('Content-Type', 'application/json');
     head.append('Accept', 'text/plain');
-    const change_password = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ChangePassword', {
-        // credentials: 'include',
+    const change_password = fetch('https://api.dxh000130.top/api/ChangePassword', {
+        credentials: 'include',
         method: "POST",
         headers: head,
         body: JSON.stringify({
@@ -1043,8 +1043,8 @@ function get_profile() {
     head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
     head.append('Content-Type', 'application/json');
     head.append('Accept', 'text/plain');
-    const get_profile = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetUserDetail/' + localStorage.user_id, {
-        // credentials: 'include',
+    const get_profile = fetch('https://api.dxh000130.top/api/GetUserDetail/' + localStorage.user_id, {
+        credentials: 'include',
         method: "GET",
         headers: head,
     })
