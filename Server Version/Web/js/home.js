@@ -38,14 +38,21 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVers
     .then(function (myJson) {
         console.log('Version' + myJson);
     });
-
+var displayname = "";
 let valid_log = false;
 var usernamedisplay = "";
-if (localStorage.user_id.length > 9) {
-    usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
-} else {
-    usernamedisplay = localStorage.user_id;
+if (displayname != "") {
+    console.log(displayname);
+    usernamedisplay = displayname;
 }
+else {
+    if (localStorage.user_id.length > 9) {
+        usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
+    } else {
+        usernamedisplay = localStorage.user_id;
+    }
+}
+
 
 // log in
 function Login() {
@@ -79,6 +86,7 @@ function Login() {
                 console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
+                get_profile();
                 if (valid_log == true) {
                     document.getElementById("login_modal").style.display = "none";
                     document.getElementById("error_box").style.display = "none";
@@ -958,7 +966,8 @@ function edit_profile() {
     edit_profile.then(res => {
         console.log(res.status)
         if (res.status == 200) {
-            if (document.getElementById("change_pass").value !=null) {
+            if (document.getElementById("change_pass").value !="") {
+                console.log("change pass");
                 change_password();
             } else {
                 alert("Success");
@@ -993,7 +1002,7 @@ function change_password() {
             alert("Sucess");
             // document.getElementById('error_box').style.display="block";
             // document.getElementById('error_text').innerHTML="Successfully changed";
-        } else {
+        } else {    
             alert("Failed");
         }
     });
@@ -1013,11 +1022,11 @@ function get_profile() {
             r.json().then(function (data) {
                 {
                     if (data.username == localStorage.user_id) {
-                        console.log(data);
                         document.getElementById("username").value = data.username;
                         document.getElementById("name").value = data.name;
                         document.getElementById("gender").value = data.gerder;
                         document.getElementById("DOB").value = data.dataofbirth;
+                        displayname = data.name;
                     }
                 }
             })
