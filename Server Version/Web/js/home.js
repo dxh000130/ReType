@@ -958,7 +958,11 @@ function edit_profile() {
     edit_profile.then(res => {
         console.log(res.status)
         if (res.status == 200) {
-            alert("Sucess");
+            if (document.getElementById("change_pass").value !=null) {
+                change_password();
+            } else {
+                alert("Success");
+            }
             // document.getElementById('error_box').style.display="block";
             // document.getElementById('error_text').innerHTML="Successfully changed";
 
@@ -967,6 +971,32 @@ function edit_profile() {
         }
     });
 
+}
+
+function change_password() {
+    let head = new Headers();
+    head.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
+    head.append('Content-Type', 'application/json');
+    head.append('Accept', 'text/plain');
+    const change_password = fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/ChangePassword', {
+        // credentials: 'include',
+        method: "POST",
+        headers: head,
+        body: JSON.stringify({
+            "UserName": localStorage.user_id,
+            "Password": document.getElementById("change_pass").value
+        }),
+    });
+    change_password.then(res => {
+        console.log(res.status)
+        if (res.status == 200) {
+            alert("Sucess");
+            // document.getElementById('error_box').style.display="block";
+            // document.getElementById('error_text').innerHTML="Successfully changed";
+        } else {
+            alert("Failed");
+        }
+    });
 }
 
 function get_profile() {
