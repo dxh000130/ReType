@@ -38,19 +38,13 @@ fetch('https://cors-anywhere.herokuapp.com/https://api.dxh000130.top/api/GetVers
     .then(function (myJson) {
         console.log('Version' + myJson);
     });
-var displayname = "";
 let valid_log = false;
 var usernamedisplay = "";
-if (displayname != "") {
-    console.log(displayname);
-    usernamedisplay = displayname;
-}
-else {
-    if (localStorage.user_id.length > 9) {
-        usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
-    } else {
-        usernamedisplay = localStorage.user_id;
-    }
+
+if (localStorage.user_id.length > 9) {
+    usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
+} else {
+    usernamedisplay = localStorage.user_id;
 }
 
 
@@ -86,7 +80,6 @@ function Login() {
                 console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
-                get_profile();
                 if (valid_log == true) {
                     document.getElementById("login_modal").style.display = "none";
                     document.getElementById("error_box").style.display = "none";
@@ -98,9 +91,9 @@ function Login() {
                 }
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
-                document.getElementById("log_out_typeface1").innerHTML = "Welcome, " + usernamedisplay+ "!";
+                document.getElementById("log_out_typeface1").innerHTML = "Welcome, " + usernamedisplay + "!";
 
-                
+
                 // document.querySelector(".error_button").style.display="none";
 
             } else {
@@ -525,12 +518,12 @@ function change_font_size_small() {
 }
 
 
-function display_content_h3(){
+function display_content_h3() {
     isRunning = false;
     time_reset();
     document.getElementById("text").style.display = "block";
     document.getElementById("think").style.display = "none";
-    document.getElementById("btn1").style.display="none";
+    document.getElementById("btn1").style.display = "none";
     document.getElementById("text").innerHTML = `<h2 style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px"> Please select the difficulty level and the theme of article first</h2>`;
     document.getElementById("hand_span1").className = "hand_span9";
     document.getElementById("hand_span2").className = "hand_span9";
@@ -966,7 +959,7 @@ function edit_profile() {
     edit_profile.then(res => {
         console.log(res.status)
         if (res.status == 200) {
-            if (document.getElementById("change_pass").value !="") {
+            if (document.getElementById("change_pass").value != "") {
                 console.log("change pass");
                 change_password();
             } else {
@@ -1002,7 +995,7 @@ function change_password() {
             alert("Sucess");
             // document.getElementById('error_box').style.display="block";
             // document.getElementById('error_text').innerHTML="Successfully changed";
-        } else {    
+        } else {
             alert("Failed");
         }
     });
@@ -1026,7 +1019,6 @@ function get_profile() {
                         document.getElementById("name").value = data.name;
                         document.getElementById("gender").value = data.gerder;
                         document.getElementById("DOB").value = data.dataofbirth;
-                        displayname = data.name;
                     }
                 }
             })
