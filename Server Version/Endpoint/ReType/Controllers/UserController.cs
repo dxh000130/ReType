@@ -1,20 +1,9 @@
-﻿using ReType.Model;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 using ReType.data;
 using ReType.Dtos;
-using Google.Apis.Oauth2.v2;
-using Google.Apis.Auth;
+using ReType.Model;
+using System.Security.Claims;
 
 namespace ReType.Controllers
 {
@@ -69,7 +58,7 @@ namespace ReType.Controllers
         [HttpPost("Register")]
         public string Register(Register user) //Register function
         {
-            if (_repository.preventsqlinjection(user.UserName)| _repository.preventsqlinjection(user.Email)| _repository.preventsqlinjection(user.Password) | _repository.preventsqlinjection(user.Code))
+            if (_repository.preventsqlinjection(user.UserName) | _repository.preventsqlinjection(user.Email) | _repository.preventsqlinjection(user.Password) | _repository.preventsqlinjection(user.Code))
             {
                 return "There are potential SQL instructions";
             }
@@ -90,7 +79,7 @@ namespace ReType.Controllers
                 {
                     _repository.Deleteverificationcode(c);
                 }
-                User c1 = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0, Google = "false", FaceBook = "false", Microsoft = "false"}; //From user input get data and store in database
+                User c1 = new User { UserName = user.UserName, Password = user.Password, Email = user.Email, Score = 0, Google = "false", FaceBook = "false", Microsoft = "false" }; //From user input get data and store in database
                 _repository.Register(c1);
                 return "User successfully registered.";
             }
@@ -121,7 +110,7 @@ namespace ReType.Controllers
             {
                 return "You can not change other user password";
             }
-            if (_repository.preventsqlinjection(password.UserName)| _repository.preventsqlinjection(password.Password))
+            if (_repository.preventsqlinjection(password.UserName) | _repository.preventsqlinjection(password.Password))
             {
                 return "There are potential SQL instructions";
             }
@@ -172,12 +161,14 @@ namespace ReType.Controllers
             if (c == null)
             {
                 return "verification code Wrong";
-            } else if (c.Date.AddMinutes(30) <= DateTime.Now)
+            }
+            else if (c.Date.AddMinutes(30) <= DateTime.Now)
             {
                 _repository.Deleteverificationcode(c);
                 return "verification code timeout";
             }
-            else {
+            else
+            {
                 _repository.Deleteverificationcode(c);
                 User c1 = _repository.Getuserbyemail(code.Email);
                 c1.Password = code.Password;
@@ -202,7 +193,7 @@ namespace ReType.Controllers
                 return Ok("There are potential SQL instructions");
             }
             User c = _repository.Getuser(username);
-            UserDetail userDetail = new UserDetail {Username = username, Dataofbirth = c.Dataofbirth, Gerder = c.Gerder, Name = c.Name, Google = c.Google };
+            UserDetail userDetail = new UserDetail { Username = username, Dataofbirth = c.Dataofbirth, Gerder = c.Gerder, Name = c.Name, Google = c.Google };
             return userDetail;
         }
         [Authorize]
@@ -306,7 +297,7 @@ namespace ReType.Controllers
                 User userbyemail = _repository.Getuserbyemail(token.Email); //Username alread exist or not
                 if (user1 == null && userbyemail == null)
                 {
-                    
+
                     User c1 = new User { UserName = token.Email, Password = code, Email = token.Email, Score = 0, Google = "true", FaceBook = "false", Microsoft = "false", Name = token.Name }; //From user input get data and store in database
                     _repository.Register(c1);
                     return token.Email + "," + code;
@@ -325,7 +316,7 @@ namespace ReType.Controllers
                     _repository.Register(c1);
                     return token.Email + "," + code;
                 }
-                else if(userbyemail != null && userbyemail.Google == "true")
+                else if (userbyemail != null && userbyemail.Google == "true")
                 {
                     return token.Email + "," + userbyemail.Password;
                 }
@@ -333,7 +324,7 @@ namespace ReType.Controllers
                 {
                     return "This email has been occupied, please log in first and then bind Google";
                 }
-                
+
             }
             return "no";
         }
@@ -364,11 +355,11 @@ namespace ReType.Controllers
                         }
                         return Ok(out1); //输出
                     }
-                    
+
                     for (int i = 0; i < 10; i++)
                     {
                         User temp = users.ElementAt(i);
-                        out1 = out1.Append(new LeaderBoard_output { Username =temp.UserName, Score = temp.Score, Index = i+1 }); //把前十名的用户名，分数，排行 挨个加到output中
+                        out1 = out1.Append(new LeaderBoard_output { Username = temp.UserName, Score = temp.Score, Index = i + 1 }); //把前十名的用户名，分数，排行 挨个加到output中
 
                     }
                     return Ok(out1); //输出
@@ -382,11 +373,12 @@ namespace ReType.Controllers
                         out1 = out1.Append(new LeaderBoard_output { Username = temp.UserName, Score = temp.Score, Index = i + 1 });//把前十名的用户名，分数，排行 挨个加到output中
 
                     }
-                    out1 = out1.Append(new LeaderBoard_output { Username = c.UserName, Score = c.Score, Index = Currrentuser+1 }); //添加当前用户的用户名，分数，排行
+                    out1 = out1.Append(new LeaderBoard_output { Username = c.UserName, Score = c.Score, Index = Currrentuser + 1 }); //添加当前用户的用户名，分数，排行
                     return Ok(out1); //输出
                 }
-            }else
-            return NotFound();
+            }
+            else
+                return NotFound();
         }
     }
 }

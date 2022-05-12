@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
-using System.Net.Http.Headers;
-using System.Text;
-using ReType.Model;
-using System.Security.Claims;
 using ReType.data;
+using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Text;
+using System.Text.Encodings.Web;
 
 namespace ReType.Handler
 {

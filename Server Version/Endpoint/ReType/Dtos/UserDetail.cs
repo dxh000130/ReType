@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ReType.Dtos
 {
@@ -11,12 +7,12 @@ namespace ReType.Dtos
         [Required]
         public string Username { get; set; }
 
-        public string ?Name { get; set; }
+        public string? Name { get; set; }
 
-        public string ?Dataofbirth { get; set; }
+        public string? Dataofbirth { get; set; }
 
-        public string ?Gerder { get; set; }
+        public string? Gerder { get; set; }
 
-        public string ?Google { get; set; }
+        public string? Google { get; set; }
     }
 }

@@ -1,21 +1,8 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.EntityFrameworkCore;
+using ReType.data;
 using ReType.Data;
 using ReType.Handler;
-using ReType.data;
 
 namespace ReType
 {
@@ -76,9 +63,9 @@ namespace ReType
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireCors("any"); 
+                endpoints.MapControllers().RequireCors("any");
             });
         }
-        
+
     }
 }

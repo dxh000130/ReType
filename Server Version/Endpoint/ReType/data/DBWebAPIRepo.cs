@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ReType.Model;
-using ReType.Data;
+﻿using Google.Apis.Auth;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Collections;
+using ReType.Data;
+using ReType.Model;
 using System.Net.Mail;
 using System.Text;
-using Google.Apis.Auth;
 
 namespace ReType.data
 {
@@ -31,13 +26,13 @@ namespace ReType.data
             {
                 return false;
             }
-            User c = _dbContext.User.FirstOrDefault(e => (e.UserName == userName && e.Password == password )); //Vaild username and password from database and user input
+            User c = _dbContext.User.FirstOrDefault(e => (e.UserName == userName && e.Password == password)); //Vaild username and password from database and user input
             if (c == null)
                 return false;
             else
                 return true;
         }
-        public bool ValidLoginbyemail(string Email, string password) 
+        public bool ValidLoginbyemail(string Email, string password)
         {
             User c = _dbContext.User.FirstOrDefault(e => (e.Email == Email && e.Password == password)); //Vaild email and password from database and user input
             if (c == null)
@@ -231,7 +226,8 @@ namespace ReType.data
             if (Article.Difficulty == "L")
             {
                 return 2;
-            }else if (Article.Difficulty == "M")
+            }
+            else if (Article.Difficulty == "M")
             {
                 return 3;
             }

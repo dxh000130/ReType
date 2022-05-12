@@ -1,20 +1,9 @@
-﻿using ReType.Model;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Drawing.Imaging;
-using System.Drawing;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authorization;
 using ReType.data;
 using ReType.Dtos;
-using Google.Apis.Oauth2.v2;
-using Google.Apis.Auth;
+using ReType.Model;
+using System.Security.Claims;
 using System.Text.RegularExpressions;
 
 namespace ReType.Controllers
@@ -34,11 +23,11 @@ namespace ReType.Controllers
         [HttpPost("ArticleChoose")]
         public ActionResult<Article_Choose_output> ArticleChoose(Article_Choose choose) //API
         {
-            
+
             Article c = _repository.ChooseArticle(choose.Difficulty, choose.Type);
             if (c != null)
             {
-                Article_Choose_output output = new Article_Choose_output { ID = c.Id, Article = c.WholeArticle, ErrorRemain = _repository.WrongWordList(c.Id).Count()};
+                Article_Choose_output output = new Article_Choose_output { ID = c.Id, Article = c.WholeArticle, ErrorRemain = _repository.WrongWordList(c.Id).Count() };
                 return Ok(output);
             }
             else
@@ -74,7 +63,7 @@ namespace ReType.Controllers
             string pattern = pattern1 + Article.Input + pattern3;
             string replacement = "<span style=\"color: LightGray;\">$&</span>";
             Regex rgx = new Regex(pattern);
-            //string result = rgx.Replace(Article.Article, replacement);
+
             int articlediff = _repository.articlediff(Article.ArticleID);
             string already = Article.AlreadyCorrect;
             string articlecopy = Article.Article;
@@ -87,7 +76,7 @@ namespace ReType.Controllers
                     if (already != "")
                     {
                         error_remain = wronglist.Count() - already.Split(',').Count() / 2;
-                        
+
                     }
                     wrong = 0;
                     string result = rgx.Replace(Article.Article, replacement);
@@ -126,7 +115,7 @@ namespace ReType.Controllers
                     Article_Process_out final = new Article_Process_out { ArticleID = Article.ArticleID, Article = articleout, Correct = "yes,add score", ArticleDisp = result, ErrorRemain = error_remain, AlreadyCorrect = already, Score = _repository.AddUserScore(username, articlediff), hint = "", ScoreChange = articlediff };
                     return Ok(final);
                 }
-                
+
             }
             int error_remain1 = wronglist.Count();
             if (already != "")
@@ -140,7 +129,7 @@ namespace ReType.Controllers
             for (int i = 1; i < Article.Input.Length; i++) //生成可能拼错的单词
             {
                 temp12 += "|(?<=[ ,.\'\"”“:;])" + Article.Input.Substring(0, i) + "[a-zA-Z]{0,8}" + Article.Input.Substring(i + 1) + "(?=[ ,.\'\"”“:;])";
-            } 
+            }
             Regex match8 = new Regex(temp12, RegexOptions.IgnoreCase); //Match
             Match match6 = match8.Match(result2, 0);
             while (match6.Success)
@@ -173,16 +162,11 @@ namespace ReType.Controllers
                 }
             }
 
-                Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*"); //蓝色的字添加灰色底
+            Regex rgx3 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*"); //蓝色的字添加灰色底
             string result3 = rgx3.Replace(result2, "<span style=\"background-color: DarkGray;\">$&</span>");
             Article_Process_out final1 = new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, No plus or minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.GetUserScore(username), hint = "", ScoreChange = 0 };
 
 
-
-            //if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0) //输错并回车 扣分
-            //{
-            //    return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
-            //}
             if (wrong == 1 && Article.Enter == 1 && Article.hint == 0) //输错并回车 扣分
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
