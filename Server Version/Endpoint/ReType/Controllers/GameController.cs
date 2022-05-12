@@ -179,10 +179,10 @@ namespace ReType.Controllers
 
 
 
-            if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0) //输错并回车 扣分
-            {
-                return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
-            }
+            //if (articlecopy == result3 && Article.Enter== 1 && Article.hint == 0) //输错并回车 扣分
+            //{
+            //    return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
+            //}
             if (wrong == 1 && Article.Enter == 1 && Article.hint == 0) //输错并回车 扣分
             {
                 return Ok(new Article_Process_out { ArticleID = Article.ArticleID, Article = articlecopy, Correct = "No, minus score", ArticleDisp = result3, ErrorRemain = error_remain1, AlreadyCorrect = already, Score = _repository.MinusUserScore(username, articlediff), hint = "", ScoreChange = -1 * articlediff });
