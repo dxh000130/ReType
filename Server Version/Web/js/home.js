@@ -750,6 +750,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     document.getElementById("firework").style.display = "block";
                     pause_time();
                     document.getElementById("think").style.display = "none";
+                    document.getElementById("play_bottom").style.display = "none";
                 }
             })
 
