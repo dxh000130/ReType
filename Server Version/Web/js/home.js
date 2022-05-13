@@ -991,10 +991,8 @@ function edit_profile() {
         console.log(res.status)
         if (res.status == 200) {
             if (document.getElementById("change_pass").value != "") {
-                console.log("change pass");
                 change_password();
             } else {
-                // alert("Success");
                 document.getElementById('error_box').style.display="block";
                 document.getElementById('error_text').innerHTML="Successfully Changed";
             }
@@ -1028,7 +1026,6 @@ function change_password() {
     change_password.then(res => {
         console.log(res.status)
         if (res.status == 200) {
-            // alert("Sucess");
             document.getElementById('error_box').style.display="block";
             document.getElementById('error_text').innerHTML="Successfully Changed and Log In again";
             valid_log=false;
