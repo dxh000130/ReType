@@ -538,13 +538,21 @@ if (!localStorage.zitidaxiao) {
 }
 
 function change_font_size_big() {
-    localStorage.zitidaxiao++;
-    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    if (parseInt(localStorage.zitidaxiao)<30){
+        localStorage.zitidaxiao++;
+        document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    }
+    // localStorage.zitidaxiao++;
+    // document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
 function change_font_size_small() {
-    localStorage.zitidaxiao--;
-    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    if (parseInt(localStorage.zitidaxiao)>15){
+        localStorage.zitidaxiao--;
+        document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    }
+    // localStorage.zitidaxiao--;
+    // document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
 
