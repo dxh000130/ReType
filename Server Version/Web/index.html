@@ -68,7 +68,7 @@
                     style="padding-left: 50px; padding-bottom: 15px"></div>
             </div>
         </div>
-
+        <!--log in interface end-->
 
         <!--register interface start-->
         <div id="register_modal" class="register_modal">
@@ -84,6 +84,7 @@
                     <input id="register-verification" type="text" placeholder="Enter verification code" required autocomplete="off">
                     <input class="btnregister" id="btnregister" type="button" value="Register" onclick="register()">
                 </div>
+                <!--close register interface-->
                 <div class="login_form">
                     <button type="button"
                         onclick="document.getElementById('register_modal').style.display='none';document.getElementById('error_box').style.display='none'"
@@ -91,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <!--register interface end-->
 
         <!--leaderboard start-->
         <div id="leaderboard_page" class="leaderboard_page" style="display: none">
@@ -105,6 +107,7 @@
 
                 </tbody>
             </table>
+            <!--close leaderboard interface-->
             <button type="button" onclick="document.getElementById('leaderboard_page').style.display='none';"
                 class="cancelbtn"></button>
         </div>
@@ -131,6 +134,7 @@
                     <input id="change_pass" type="password" placeholder="Change Password" autocomplete="off" value="">
 
                 </div>
+                <!--change password element-->
                 <input class="btnuser" id="btnuser" type="button" value="Submit" onclick="edit_profile()">
                 <div class="login_form">
                     <button type="button"
@@ -141,15 +145,18 @@
         </div>
         <!-- Edit User Profile End-->
 
-
         <!--game introduction start-->
         <div id="introduction_model" style="display: none">
+
             <div>
                 <button type="button" class="cancelbtn"
                     onclick="document.getElementById('introduction_model').style.display='none'"></button>
                 <h1>Introduction</h1>
             </div>
+
+            <!--content of introduction-->
             <div>
+                <!--about game-->
                 <section class="ac-container">
                     <div>
                         <input id="ac-1" name="accordion-1" type="radio" />
@@ -166,6 +173,7 @@
                         </article>
                     </div>
 
+                    <!--contact us-->
                     <div>
                         <input id="ac-2" name="accordion-1" type="radio" />
                         <label for="ac-2">&#10133 &nbsp;Contact Us</label>
@@ -177,12 +185,12 @@
                         </article>
                     </div>
 
+                    <!--How to play-->
                     <div>
                         <input id="ac-3" name="accordion-1" type="radio" />
                         <label for="ac-3">&#10133 &nbsp;How to play?</label>
                         <article class="ac-large">
                             <p>
-
                                     <1> Please choose the difficulty of the game you want to challenge and the theme of
                                         your favorite article.<br>
                                         <2> You need to find the words with wrong spelling in the article.<br>
@@ -198,6 +206,7 @@
                         </article>
                     </div>
 
+                    <!--Scoring-->
                     <div>
                         <input id="ac-4" name="accordion-1" type="radio" />
                         <label for="ac-4">&#10133 &nbsp;Scoring</label>
@@ -257,7 +266,6 @@
             </div>
             <!--prompt dialog box end-->
         </div>
-
         <!--retype title end-->
 
         <!--four Button in bottom start-->
@@ -346,7 +354,6 @@
     <!--play main interface start-->
     <div id="play_homepage" style="display: none">
 
-        <!--right interface: user input, score, dictionary start-->
         <!--back home button in play main interface start-->
         <div class="homebtn-container_play">
             <div class="homebtn-container">
@@ -376,6 +383,8 @@
 
         <!--left interface: article start-->
         <div class="play_left">
+
+            <!--three different difficulty level button-->
             <input class="variation1" id="i1" type="radio" value="1" name="border" checked="checked"
                 onclick="display_content_h3();document.getElementById('b1').style.display='block';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='none';document.getElementById('content_color').style.backgroundColor='#e2ba34'; document.getElementById('play_bottom').style.display = 'none'" />
             <label for="i1"><span class="circle"></span></span><span style="font-size: 2vw">Easy</span></label>
@@ -388,8 +397,10 @@
                 onclick="display_content_h3();document.getElementById('b1').style.display='none';document.getElementById('b2').style.display='none';document.getElementById('b3').style.display='block';document.getElementById('content_color').style.backgroundColor='#C6A477'; document.getElementById('play_bottom').style.display = 'none'" />
             <label for="i3"><span class="circle"></span><span style="font-size: 2vw">Hard</span></label>
 
-
+            <!--two article theme button-->
             <div class="folder">
+
+                <!--two article theme in easy level button-->
                 <div class="tabs" id="b1">
                     <button class="tab" id="tab1"
                         onclick="display_play('L','Inspirational');openTab(event);document.getElementById('content_color').style.backgroundColor='#e2ba34'">
@@ -402,6 +413,7 @@
                     </button>
                 </div>
 
+                <!--two article theme in normal level button-->
                 <div class="tabs" id="b2" style="display: none">
                     <button class="tab" id="tab3"
                         onclick="display_play('M','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#e5a9a9'">
@@ -414,6 +426,7 @@
                     </button>
                 </div>
 
+                <!--two article theme in hard level button-->
                 <div class="tabs" id="b3" style="display: none">
                     <button class="tab" id="tab5"
                         onclick="display_play('H','Fiction');openTab(event);document.getElementById('content_color').style.backgroundColor='#C6A477'">
@@ -426,37 +439,40 @@
                     </button>
                 </div>
 
+                <!--display whole article box-->
                 <div class="content">
                     <div class="content__inner" id="content_color">
+                        <!--article box-->
                         <div id="text_box">
+                            <!--display image after click pause-->
                             <img src="images/think.png" id="think" width="500px" height="100%"
                                 style="display: none;margin-left: auto;margin-right: auto;">
+                            <!--display image after finished game-->
                             <img src="images/fireworks.gif" id="firework" width="98%" height="98%"
                                 style="display: none;margin-left: auto;margin-right: auto;">
                             <div id="text" style="display: block;">
                                 <h2 id="text_h2" style="font-family: 'Papyrus';text-align: center;margin-top: 15%;line-height: 80px;word-spacing: 15px">
                                     Please select the difficulty level and the theme of article first</h2>
-
                             </div>
+
                             <hr style="width: 99.6%;border-width:2px;margin-bottom: 2%;border-color: #3C3C3C">
+
+                            <!--four button below article-->
                             <div class="adjust_text">
                                 <button class="adjust_text_button" onclick="change_background()"><p style="font-size: medium;">Background</p></button>
                                 <button class="adjust_text_button" onclick="change_font_family()"><p style="font-size: medium;">Font Family</p></button>
                                 <button class="adjust_text_button" onclick="change_font_size_big()"><p style="font-size: medium;">A+</p></button>
                                 <button class="adjust_text_button" onclick="change_font_size_small()"><p style="font-size: medium;">A-</p></button>
-                                <!-- <button class="adjust_text_button ">B</button>-->
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
+        <!--left interface: article end-->
 
 
-
-        <!--right interface: user input, score, dictionary start-->
+        <!--right interface: score, dictionary start-->
         <div class="play_right">
             <div class="timer-group">
                 <div class="timer hour">
@@ -573,6 +589,7 @@
             </div>
             <!--dictionary end-->
         </div>
+        <!--right interface: score, dictionary end-->
 
         <div id="play_bottom" style="display: none">
             <table style="width: 100%;height: 100%">

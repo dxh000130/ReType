@@ -168,6 +168,10 @@ function register() {
                         document.getElementById("error_box").style.display = "none";
                         document.getElementById("register_modal").style.display = "none";
                     }
+                    setTimeout(function(){
+                        document.getElementById("register_modal").style.display = "none";
+                        document.getElementById("error_box").style.display = "none";
+                    },2000)
                 } else {
                     const button = document.getElementById("error_button");
                     button.onclick = function () {
@@ -534,13 +538,21 @@ if (!localStorage.zitidaxiao) {
 }
 
 function change_font_size_big() {
-    localStorage.zitidaxiao++;
-    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    if (parseInt(localStorage.zitidaxiao)<30){
+        localStorage.zitidaxiao++;
+        document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    }
+    // localStorage.zitidaxiao++;
+    // document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
 function change_font_size_small() {
-    localStorage.zitidaxiao--;
-    document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    if (parseInt(localStorage.zitidaxiao)>15){
+        localStorage.zitidaxiao--;
+        document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
+    }
+    // localStorage.zitidaxiao--;
+    // document.getElementById("text").style.fontSize = localStorage.zitidaxiao + 'px';
 }
 
 
@@ -995,6 +1007,10 @@ function edit_profile() {
             } else {
                 document.getElementById('error_box').style.display="block";
                 document.getElementById('error_text').innerHTML="Successfully Changed";
+                setTimeout(function(){
+                    document.getElementById("user_modal").style.display = "none";
+                    document.getElementById("error_box").style.display = "none";
+                },2000)
             }
             // document.getElementById('error_box').style.display="block";
             // document.getElementById('error_text').innerHTML="Successfully changed";
@@ -1003,7 +1019,7 @@ function edit_profile() {
         } else {
             // alert("Failed");
             document.getElementById('error_box').style.display="block";
-            document.getElementById('error_text').innerHTML="Change Failed";
+            document.getElementById('error_text').innerHTML="Failed";
         }
     });
 
@@ -1036,6 +1052,10 @@ function change_password() {
             localStorage.pass = "";
             document.getElementById("log_in_button_container").style.display = "block";
             document.getElementById("log_out_button_container").style.display = "none";
+            setTimeout(function(){
+                document.getElementById("user_modal").style.display = "none";
+                document.getElementById("error_box").style.display = "none";
+            },2000)
         } else {
             document.getElementById('error_box').style.display="block";
             document.getElementById('error_text').innerHTML="Change Failed";
