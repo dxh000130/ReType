@@ -747,6 +747,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 if (error_remain == 0) {
                     document.getElementById("text").style.display = "none";
                     document.getElementById("firework").style.display = "block";
+                    pause_time();
                 }
             })
 
