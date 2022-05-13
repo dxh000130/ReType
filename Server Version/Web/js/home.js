@@ -556,6 +556,8 @@ function display_content_h3() {
     document.getElementById("hand_span4").className = "hand_span9";
     document.getElementById("hand_span5").className = "hand_span9";
     document.getElementById("hand_span6").className = "hand_span9";
+    document.getElementById('firework').style.display = 'none';
+    document.getElementById('play_bottom').style.display = 'none';
 
 }
 
@@ -748,6 +750,7 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                 if (error_remain == 0) {
                     document.getElementById("text").style.display = "none";
                     document.getElementById("firework").style.display = "block";
+                    document.getElementById("btn1").style.display = "none";
                     pause_time();
                     document.getElementById("think").style.display = "none";
                     document.getElementById("play_bottom").style.display = "none";
