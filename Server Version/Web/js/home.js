@@ -597,7 +597,7 @@ function display_play(difficulties, theme) {
         document.getElementById("remain_error_div").innerHTML = "";
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
-        document.getElementById("firwork").style.display = "none";
+        document.getElementById("firework").style.display = "none";
 
 
 
