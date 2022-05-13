@@ -748,6 +748,9 @@ function ArticleProcessMainFunction(Enterbutton, hint) {
                     document.getElementById("text").style.display = "none";
                     document.getElementById("firework").style.display = "block";
                     pause_time();
+                    document.getElementById("think").style.display = "none";
+
+  
                 }
             })
 
