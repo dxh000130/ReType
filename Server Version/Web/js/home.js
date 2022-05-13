@@ -51,6 +51,8 @@ function Login() {
     var password = document.getElementById("login-password").value;
     let headers1 = new Headers();
     var text = document.getElementById("error_text");
+
+    // prompt if user not input all information
     if (username == "" && password != "") {
         text.innerText = "Please Enter Your Username !";
     } else if (username != "" && password == "") {
@@ -69,16 +71,18 @@ function Login() {
                 temp1.then(function (return_text) {
                     localStorage.user_id = return_text
                 })
-
-                //localStorage.user_id = username;
                 localStorage.pass = password;
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
+
+                // display in sign box
                 if (document.getElementById("login-username").value.length > 9) {
                     usernamedisplay = document.getElementById("login-username").value.substring(0, 9) + "...";
                 } else {
                     usernamedisplay = document.getElementById("login-username").value;
                 }
+
+                // if log in, set auto close log in inpterface after 2s
                 if (valid_log == true) {
                     setTimeout(function(){
                     document.getElementById("login_modal").style.display = "none";
@@ -92,10 +96,6 @@ function Login() {
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
                 document.getElementById("log_out_typeface1").innerHTML = "Welcome, " + usernamedisplay + "!";
-
-
-                // document.querySelector(".error_button").style.display="none";
-
             } else {
                 text.innerText = "Your username or password is wrong ! Please try it again !";
                 valid_log = false;
@@ -614,8 +614,6 @@ function display_play(difficulties, theme) {
         document.getElementById("play_bottom").style.display = "none";
         document.getElementById("user_input").innerHTML = "";
         document.getElementById("firework").style.display = "none";
-
-
 
     } else {
         document.getElementById("first_page").style.display = "none";

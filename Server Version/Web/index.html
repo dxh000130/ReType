@@ -472,8 +472,9 @@
         <!--left interface: article end-->
 
 
-        <!--right interface: score, dictionary start-->
+        <!--right interface: timer, score, dictionary start-->
         <div class="play_right">
+            <!--display time-->
             <div class="timer-group">
                 <div class="timer hour">
                     <div class="hand"><span id="hand_span1"></span></div>
@@ -498,8 +499,8 @@
 
             </div>
 
-
             <!--score, error start-->
+            <!--display animation of changing score-->
             <div id="play_score_container">
                 <div id="score_animation_container" style="display: none">
                     <table id="score_animation_table" style="width: 100%;height: 100%">
@@ -516,7 +517,7 @@
                     </table>
                 </div>
 
-
+                <!--display current score,error-->
                 <div id="play_score" data-text="score">
                     <div id="play_score_table_container">
                         <table id="play_score_table">
@@ -591,33 +592,31 @@
         </div>
         <!--right interface: score, dictionary end-->
 
+        <!--input box and prompt start-->
         <div id="play_bottom" style="display: none">
             <table style="width: 100%;height: 100%">
                 <tr style="width: 100%;height: 100%">
+                    <!--display prompt-->
                     <td style="width: 25%;margin-right: 5%;height: 100%">
                         <div id="prompt_box" style="display: none">
                             <img style="width: 100%;height: 100%" src="images/prompt.png">
 
                         </div>
                     </td>
+
+                    <!--user input start-->
                     <td style="width: 70%">
                         <div id="input_container">
-                            <!--user input start-->
-
                             <input id="user_input" oninput="input_reminder()" placeholder="Please type the correct spelling here" autocomplete="off">
                             <div class="Hint" id="Hint" value="Hint" onclick="Hint()">
                                 Hint</div>
-                            <!--user input end-->
                         </div>
                     </td>
+                    <!--user input end-->
                 </tr>
-
             </table>
-            <!--            <input class="Hint" id="Hint" type="button" value="Hint" onclick="Hint()">-->
-
         </div>
-
-
+        <!--input box and prompt end-->
     </div>
     <!--play main interface end-->
 
