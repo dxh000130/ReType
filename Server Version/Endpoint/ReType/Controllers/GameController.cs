@@ -134,15 +134,32 @@ namespace ReType.Controllers
             Match match6 = match8.Match(result2, 0);
             while (match6.Success)
             {
-
-                if (!match6.Value.Contains("span")) //避免匹配到已经变成蓝色的单词
+                Regex regex8 = new Regex("<span style=\"color: blue;\">(" + Article.Input + ")+</span>", RegexOptions.IgnoreCase);
+                Match match20 = regex8.Match(result2, 0);
+                int repeat = 0;
+                while (match20.Success)
+                {
+                    //Console.WriteLine(match20.Index + match20.Length);
+                    if (match6.Index > match20.Index && match6.Index + match6.Length < match20.Index + match20.Length)
+                    {
+                        repeat = 1;
+                        break;
+                    }
+                    else
+                    {
+                        match20 = regex8.Match(result2, match20.Index + match20.Length);
+                        //Console.WriteLine(34343434344);
+                    }
+                }
+                if (repeat == 0) //避免匹配到已经变成蓝色的单词
                 {
                     result2 = result2.Substring(0, match6.Index) + "<span style=\"color: #e25555;\">" + match6.Value + "</span>" + result2.Substring(match6.Index + match6.Length); //模糊匹配 字体橙色高亮
                     match6 = match8.Match(result2, match6.Index + 37); //跳过该单词
+                    Console.WriteLine(result2);
                 }
                 else
                 {
-                    match6 = match8.Match(result2, match6.Index);//跳过该单词
+                    match6 = match8.Match(result2, Math.Max(match20.Index + match20.Length, match6.Index));//跳过该单词
                 }
             }
 
@@ -151,14 +168,29 @@ namespace ReType.Controllers
             Match match10 = match9.Match(result2, 0);
             while (match10.Success)
             {
-                if (!match10.Value.Contains("span")) //避免匹配到已经变成蓝色的单词
+                Regex regex8 = new Regex("[A-Za-z]*<span style=\"color: blue;\">(?i:" + Article.Input + ")+</span>[A-Za-z]*", RegexOptions.IgnoreCase);
+                Match match20 = regex8.Match(result2, 0);
+                int repeat = 0;
+                while (match20.Success)
+                {
+                    if (match6.Index > match20.Index && match6.Index + match6.Length < match20.Index + match20.Length)
+                    {
+                        repeat = 1;
+                        break;
+                    }
+                    else
+                    {
+                        match20 = regex8.Match(result2, match20.Index + match20.Length);
+                    }
+                }
+                if (repeat == 0) //避免匹配到已经变成蓝色的单词
                 {
                     result2 = result2.Substring(0, match10.Index) + "<span style=\"color: #e25555;\">" + match10.Value + "</span>" + result2.Substring(match10.Index + match10.Length); //模糊匹配 字体橙色高亮
                     match10 = match9.Match(result2, match10.Index + 37); //跳过该单词
                 }
                 else
                 {
-                    match10 = match9.Match(result2, match10.Index);//跳过该单词
+                    match10 = match9.Match(result2, Math.Max(match20.Index + match20.Length, match10.Index));//跳过该单词
                 }
             }
 
