@@ -1,4 +1,5 @@
 // enter log_in not display other interface
+var usernamedisplay = "";
 function log_in_button() {
     document.getElementById('login_modal').style.display = 'block';
     document.getElementById('register_modal').style.display = 'none';
@@ -39,13 +40,8 @@ fetch('https://api.dxh000130.top/api/GetVersion', {
         console.log('Version' + myJson);
     });
 let valid_log = false;
-var usernamedisplay = "";
 
-if (localStorage.user_id.length > 9) {
-    usernamedisplay = localStorage.user_id.substring(0, 9) + "...";
-} else {
-    usernamedisplay = localStorage.user_id;
-}
+
 
 
 // log in
@@ -77,9 +73,13 @@ function Login() {
                 //localStorage.user_id = username;
                 localStorage.pass = password;
                 console.log("Log in Success");
-                console.log(localStorage.user_id);
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
+                if (document.getElementById("login-username").value.length > 9) {
+                    usernamedisplay = document.getElementById("login-username").value.substring(0, 9) + "...";
+                } else {
+                    usernamedisplay = document.getElementById("login-username").value;
+                }
                 if (valid_log == true) {
                     document.getElementById("login_modal").style.display = "none";
                     document.getElementById("error_box").style.display = "none";
@@ -247,17 +247,16 @@ function countdown() {
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
-
+    // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    // console.log('Full Name: ' + profile.getName());
+    // console.log('Given Name: ' + profile.getGivenName());
+    // console.log('Family Name: ' + profile.getFamilyName());
+    // console.log("Image URL: " + profile.getImageUrl());
+    // console.log("Email: " + profile.getEmail());
     var text1 = document.getElementById("error_text");
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
-    console.log("ID Token: " + id_token);
+    // console.log("ID Token: " + id_token);
     const signup = fetch("https://api.dxh000130.top/api/vaildgoogleAsync", {
         method: "POST",
         headers: {
@@ -273,19 +272,21 @@ function onSignIn(googleUser) {
     })
     signup.then(res => {
         res.text().then(function (text) {
-            console.log(text);
+            usernamedisplay=profile.getEmail().substring(0, 9) + "...";
             if (text != "This email has been occupied, please log in first and then bind Google" && text != "no") {
                 user = text.split(",");
                 localStorage.user_id = user[0];
                 localStorage.pass = user[1];
-                console.log(localStorage.user_id);
-                console.log(localStorage.pass);
+
                 valid_log = true;
+                document.getElementById("log_out_typeface1").innerHTML = "Welcome, " + usernamedisplay + "!";
+
                 const button = document.getElementById("error_button");
                 document.getElementById("login_modal").style.display = "none";
                 document.getElementById("log_in_button_container").style.display = "none";
                 document.getElementById("log_out_button_container").style.display = "block";
                 document.getElementById("error_box").style.display = "none";
+
 
             } else if (text == "This email has been occupied, please log in first and then bind Google") {
                 document.getElementById("error_box").style.display = "block";
@@ -608,8 +609,7 @@ function display_play(difficulties, theme) {
         var ArticleChooseheader = new Headers();
         getscore();
         time_reset();
-
-
+        document.getElementById("firework").style.display = "none";
         ArticleChooseheader.append('Authorization', 'Basic ' + btoa(localStorage.user_id + ":" + localStorage.pass));
         ArticleChooseheader.append('Content-Type', 'application/json')
         ArticleChooseheader.append('Accept', 'text/plain')
