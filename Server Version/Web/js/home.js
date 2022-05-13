@@ -72,7 +72,6 @@ function Login() {
 
                 //localStorage.user_id = username;
                 localStorage.pass = password;
-                console.log("Log in Success");
                 text.innerText = "You have successfully logged in!";
                 valid_log = true;
                 if (document.getElementById("login-username").value.length > 9) {
@@ -81,9 +80,10 @@ function Login() {
                     usernamedisplay = document.getElementById("login-username").value;
                 }
                 if (valid_log == true) {
+                    setTimeout(function(){
                     document.getElementById("login_modal").style.display = "none";
                     document.getElementById("error_box").style.display = "none";
-                }
+                },2000)}
                 const button = document.getElementById("error_button");
                 button.onclick = function () {
                     document.getElementById("error_box").style.display = "none";
@@ -204,14 +204,17 @@ function verification() {
         }).then(res => {
             res.text().then(function (return_text) {
                 console.log(return_text);
-                if (return_text == '"This email has been registered by another user"') {
+                if(return_text == '"yes"'){
                     document.getElementById("error_box").style.display = "block";
-                    text.innerText = "This Email Has Been Resgistered !";
-                } else {
+                    text.innerText = "Verification code successfully sent!";
                     t = setInterval(function () {
                         countdown()
                     }, 1000)
                     countdown();
+                }
+                else if (return_text == '"This email has been registered by another user"') {
+                    document.getElementById("error_box").style.display = "block";
+                    text.innerText = "This Email Has Been Resgistered !";
                 }
             });
         })
