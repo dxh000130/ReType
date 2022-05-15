@@ -933,7 +933,6 @@ function pause_time() {
         startBtn();
         document.getElementById("text").style.display = "block";
         document.getElementById("think").style.display = "none";
-        document.getElementById("user_input").style.display = "none";
         // make animation start
         document.querySelector(".hand_span1").style.animationPlayState = "running";
         document.querySelector(".hand_span2").style.animationPlayState = "running";
@@ -947,6 +946,7 @@ function pause_time() {
         pasueBtn();
         document.getElementById("text").style.display = "none";
         document.getElementById("think").style.display = "block";
+        document.getElementById("user_input").style.display = "none";
         // make animation pause
         document.querySelector(".hand_span1").style.animationPlayState = "paused";
         document.querySelector(".hand_span2").style.animationPlayState = "paused";
