@@ -933,6 +933,8 @@ function pause_time() {
         startBtn();
         document.getElementById("text").style.display = "block";
         document.getElementById("think").style.display = "none";
+        document.getElementById("play_bottom").style.display = "block";
+
         // make animation start
         document.querySelector(".hand_span1").style.animationPlayState = "running";
         document.querySelector(".hand_span2").style.animationPlayState = "running";
