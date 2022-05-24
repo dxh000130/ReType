@@ -1077,6 +1077,7 @@ function get_profile() {
                             document.getElementById("gender").value = data.gerder;
                         }
                     }
+                }
             })
         })
 }
