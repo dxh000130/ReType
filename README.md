@@ -10,7 +10,7 @@ Table of Contents
 * [Docker Installation](#Docker-Installation-For-Endpoint)
 * [Backend Test](#EndPoint-Test)
 * [Directory Structure](#Directory-Structure)
-* 
+* [Contributing](#Contributing)
 ---
 
 What is ReType?
@@ -56,3 +56,12 @@ Directory Structure
         ├── js                  # Javascript
         ├── images              # Some images
         
+Contributing
+------
+
+Alex Qin
+Jiaxuan Shi
+Shasha Jiang
+Shelvin Liu
+Song Han
+Xuheng Duan
