@@ -11,6 +11,13 @@ If you don't want to host your own instance, check out https://api.dxh000130.top
 ```
 docker build -t aspnetapp .
 ```
+Need to apply for the domain name and the SSL certificate corresponding to the domain name
+SSL Certificate Directory: \Endpoint\ReType\ssl
+Also need to set the certificate directory and password in the Docker environment variable.
+```
+ASPNETCORE_Kestrel__Certificates__Default__Path:
+ASPNETCORE_Kestrel__Certificates__Default__Password:
+```
 ### [Server] Backend Test
 
 Check out https://github.com/uoa-compsci399-s1-2022/HSYYDS/tree/main/PostMan%20test for local version and hosted version
