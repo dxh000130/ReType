@@ -59,9 +59,9 @@ Directory Structure
 Contributing
 ------
 
-Alex Qin
-Jiaxuan Shi
-Shasha Jiang
-Shelvin Liu
-Song Han
-Xuheng Duan
+Alex Qin  
+Jiaxuan Shi  
+Shasha Jiang  
+Shelvin Liu  
+Song Han  
+Xuheng Duan  
