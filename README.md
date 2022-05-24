@@ -1,7 +1,8 @@
 # ReType Web Game
 
 ![status](https://img.shields.io/badge/Build%20and%20Test-Pass-success)
-![Building Status](https://img.shields.io/badge/Status-Building-orange)
+![DockerStautus](https://img.shields.io/badge/Docker%20Build%20Status-Pass-success)
+![Building Status](https://img.shields.io/badge/Status-Pass-success)
 <img width="1919" alt="image" src="https://user-images.githubusercontent.com/34475380/169993603-39ad495b-5aad-40c8-93af-b369f7395061.png">
 Table of Contents
 =======================
