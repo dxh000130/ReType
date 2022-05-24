@@ -1072,10 +1072,11 @@ function get_profile() {
                     if (data.username == localStorage.user_id) {
                         document.getElementById("username").value = data.username;
                         document.getElementById("name").value = data.name;
-                        document.getElementById("gender").value = data.gerder;
                         document.getElementById("DOB").value = data.dataofbirth;
+                        if(data.gerder!=null){
+                            document.getElementById("gender").value = data.gerder;
+                        }
                     }
-                }
             })
         })
 }
