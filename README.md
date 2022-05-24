@@ -39,7 +39,7 @@ Check out https://github.com/uoa-compsci399-s1-2022/HSYYDS/tree/main/PostMan%20t
 Directory Structure
 ------
     .
-    ├── Endpoint/ReType     # The EndPoint (Asp .net Core)
+    ├── Endpoint/ReType     # The EndPoint (Asp .Net Core)
         ├── Controllers          # Implementation of API ports and functions
         ├── Dtos                 # Input or output format
         ├── Handler              # Help file (authentication)
@@ -52,5 +52,7 @@ Directory Structure
         ├── obj                  # Cache
     ├── PostMan test        # Endpoint Test
     ├── Web                 # Frontend
-
+        ├── css                 # CSS style
+        ├── js                  # Javascript
+        ├── images              # Some images
         
