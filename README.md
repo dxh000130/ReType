@@ -7,8 +7,8 @@ Table of Contents
 =======================
 
 * [What is ReType?](#what-is-ReType)
-* [Docker Installation](#[Server]-Docker-Installation)
-* [Backend Test](#[Server]-backend-Test)
+* [Docker Installation](#Docker-Installation)
+* [Backend Test](#backend-Test)
 
 ---
 
@@ -18,7 +18,7 @@ ReType: Quick Text Editing with Keyboard and Gaze is an application developed jo
 
 If you don't want to host your own instance, check out https://api.dxh000130.top for a hosted version of the backend, and check out https://www.dxh000130.top for a hosted version of the front-end.
 
-[Server] Docker Installation
+Docker Installation
 ------
 ```
 docker build -t aspnetapp .
@@ -31,6 +31,6 @@ ASPNETCORE_Kestrel__Certificates__Default__Path:
 ASPNETCORE_Kestrel__Certificates__Default__Password:
 ```
 
-[Server] Backend Test
+Backend Test
 ------
 Check out https://github.com/uoa-compsci399-s1-2022/HSYYDS/tree/main/PostMan%20test for local version and hosted version
