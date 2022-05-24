@@ -7,8 +7,8 @@ Table of Contents
 =======================
 
 * [What is ReType?](#what-is-ReType)
-* [Docker Installation](#running-in-a-car)
-* [Backend Test](#running-on-pc)
+* [Docker Installation](#[Server]-Docker-Installation)
+* [Backend Test](#[Server]-backend-Test)
 
 ---
 
