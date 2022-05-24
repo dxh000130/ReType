@@ -45,7 +45,7 @@ Docker Installation For EndPoint
 docker build -t aspnetapp .
 ```
 Need to apply for the domain name and the SSL certificate corresponding to the domain name
-SSL Certificate Directory: \Endpoint\ReType\ssl
+SSL Certificate Directory: \Endpoint\ReType\ssl  
 Also need to set the certificate directory and password in the Docker environment variable.
 ```
 ASPNETCORE_Kestrel__Certificates__Default__Path:
