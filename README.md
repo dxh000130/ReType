@@ -15,6 +15,7 @@ Table of Contents
 * [Endpoint Test](#EndPoint-Test)
 * [Future Plan](#Future-Plan)
 * [Directory Structure](#Directory-Structure)
+* [Project Management Tool](#Project-Management-Tool)
 * [Contributing](#Contributing)
 * [Acknowledgements](#Acknowledgements)
 ---
@@ -72,7 +73,10 @@ Moreover, in order to improve the user experience and focus on UI design, we are
 (2)	Design online competition matching, which can be interpreted as a way for users to find other players currently online on the site and compete with that player.  
 (3)	Add a user feedback interface that allows users to make sound suggestions to and receive feedback from web designers.
 In short, our goal is to go beyond existing features and interfaces, and we are committed to improving and following up, to introduce and recommend this project to more people.  
-
+Project Management Tool
+------
+We have chosen Kanban methodology and Wechat communication for our project management.
+https://alexscompany34.teamwork.com/#/home/inbox
 Directory Structure
 ------
     .
