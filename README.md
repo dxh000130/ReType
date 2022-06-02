@@ -49,9 +49,11 @@ Need to apply for the domain name and the SSL certificate corresponding to the d
 SSL Certificate Directory: \Endpoint\ReType\ssl  
 Also need to set the certificate directory and password in the Docker environment variable.
 ```
-ASPNETCORE_Kestrel__Certificates__Default__Path:
-ASPNETCORE_Kestrel__Certificates__Default__Password:
+ASPNETCORE_Kestrel__Certificates__Default__Path: /ssl/aspnetapp.pfx
+ASPNETCORE_Kestrel__Certificates__Default__Password: ********
 ```
+Note: The certificate must be in PFX format only and must have a password
+
 
 EndPoint Test
 ------
