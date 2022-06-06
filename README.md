@@ -118,5 +118,5 @@ My deepest gratitude goes first and foremost to teaching team (Asma Shakil & And
 We are also deeply indebted to those who use our web game and fill out the questionnaire. It was because of the bugs they found and the constructive comments they provided that the project came to a successful end.
 
 **Contact us**
-EMAIL: pqin316@gmail.com
+EMAIL: pqin316@aucklanduni.ac.nz
 Please feel free to contact us if you have any questions.
