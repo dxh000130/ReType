@@ -116,3 +116,7 @@ We would like to express our gratitude to all those who helped us during the com
 My deepest gratitude goes first and foremost to teaching team (Asma Shakil & Andrey Borro) and clients (Shyamli & Gerald). The teacher team provides a platform for us to communicate with customers in a timely manner and provide feedback and help to our requirements. Meanwhile, clients who play a vital role in the design of the project put forward a lot of instructive advice and useful suggestions for us.  
   
 We are also deeply indebted to those who use our web game and fill out the questionnaire. It was because of the bugs they found and the constructive comments they provided that the project came to a successful end.
+
+**Contact us**
+EMAIL: pqin316@gmail.com
+Please feel free to contact us if you have any questions.
