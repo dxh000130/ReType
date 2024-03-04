@@ -65,7 +65,7 @@ namespace ReType.data
             email.IsBodyHtml = true; //Body style
 
             SmtpClient smtp_Gmail = new SmtpClient("smtp.gmail.com", 587); // Email server (Use GOOGLE Gmail as server)
-            smtp_Gmail.Credentials = new System.Net.NetworkCredential("xdua752@gmail.com", "zvkfwrpekddzeedf"); // Login to Gmail
+            smtp_Gmail.Credentials = new System.Net.NetworkCredential("xxxxxx", "xxxxxx"); // Login to Gmail
             smtp_Gmail.EnableSsl = true; // Securte option (Gmail require)
             smtp_Gmail.Send(email); //Send email
 
